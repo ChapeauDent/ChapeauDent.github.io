@@ -4,69 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Alchimie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #1d1d1d;
-            color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #053959;
-            color: #f5f5f5;
-            text-align: center;
-            padding: 20px;
-        }
-
-        nav {
-            background-color: #730255;
-            padding: 15px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            font-family: 'Fira Code', monospace;
-            color: #f5f5f5;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #99036C;
-        }
-
-        .container {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .code-block {
-            background-color: #2d2d2d;
-            border: 1px solid #053959;
-            padding: 15px;
-            border-radius: 8px;
-            font-family: 'Fira Code', monospace;
-            color: #f5f5f5;
-            text-align: left;
-        }
-    </style>
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -74,12 +15,18 @@
         <p>Transformez les lignes de code en magie du savoir.</p>
     </header>
     <nav>
-        <ul>
-            <li><a href="#git">Git</a></li>
-            <li><a href="#github">GitHub</a></li>
-            <li><a href="#html5">HTML5</a></li>
-            <li><a href="#css3">CSS3</a></li>
-            <li><a href="#javascript">JavaScript</a></li>
+        <button class="menutoggle" aria-expanded="false" >
+            <span class="menutoggleicon"></span>
+            <span class="menutoggleicon"></span>
+            <span class="menutoggleicon"></span>
+        </button>
+        <ul class="menuitems">
+            <li class="menuitem"><a class="menulink" href="../index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li class="menuitem"><a class="menulink" href="../www/PresentationGit.html"><i class="fa-brands fa-git"></i> Git</a></li>
+            <li class="menuitem"><a class="menulink" href="#github"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li class="menuitem"><a class="menulink" href="#html5"><i class="fa-brands fa-html5"></i> HTML5</a></li>
+            <li class="menuitem"><a class="menulink" href="#css3"><i class="fa-brands fa-css3"></i> CSS3</a></li>
+            <li class="menuitem"><a class="menulink" href="#javascript"><i class="fa-brands fa-js"></i> JavaScript</a></li>
         </ul>
     </nav>
     <div class="container">

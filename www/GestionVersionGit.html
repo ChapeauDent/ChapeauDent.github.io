@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <script src="../js/scripts.js" defer></script>
+    <title>Gestion des Versions avec Git</title>
+  
+</head>
+<body>
+    <header>
+        <p class="site-title">Code Alchimie</p>
+        <p class="slogan">Transformez les lignes de code en magie du savoir.</p>
+        <h1>Gestion des Versions avec Git</h1>
+    </header>
+    <nav>
+        <button class="menutoggle" aria-expanded="false" >
+            <span class="menutoggleicon"></span>
+            <span class="menutoggleicon"></span>
+            <span class="menutoggleicon"></span>
+        </button>
+        <ul class="menuitems">
+            <li class="menuitem"><a class="menulink" href="../index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li class="menuitem"><a class="menulink" href="../www/PresentationGit.html"><i class="fa-brands fa-git"></i> Git</a></li>
+            <li class="menuitem"><a class="menulink" href="#github"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li class="menuitem"><a class="menulink" href="#html5"><i class="fa-brands fa-html5"></i> HTML5</a></li>
+            <li class="menuitem"><a class="menulink" href="#css3"><i class="fa-brands fa-css3"></i> CSS3</a></li>
+            <li class="menuitem"><a class="menulink" href="#javascript"><i class="fa-brands fa-js"></i> JavaScript</a></li>
+        </ul>
+    </nav>
+    <main>
+
+    <div class="module">
+        <h2>Introduction au Versionnage</h2>
+        <p>Git est un système de gestion de versions distribué qui permet de suivre l'évolution de ton projet au fil du temps. Grâce à Git, tu peux revenir à des états antérieurs de ton projet, collaborer efficacement avec d'autres développeurs, et garder un historique clair des modifications.</p>
+        <p><strong>Cas de Figure :</strong> Imagine que tu travailles sur un projet de site web. Tu ajoutes des fonctionnalités régulièrement, mais un jour, une fonctionnalité introduit un bug. Avec Git, tu peux facilement revenir à une version précédente du site pour corriger le problème.</p>
+    </div>
+    <section class="cours">
+    <div class="module">
+        <h2>Commandes de Base pour Commencer avec Git</h2>
+        <h3>1. <code>git init</code></h3>
+        <p><strong>Explication :</strong><br>
+        La commande <code>git init</code> est utilisée pour initialiser un nouveau repository Git dans le répertoire courant. Cela signifie que Git va commencer à suivre les changements des fichiers de ce répertoire. Lors de l'exécution de <code>git init</code>, un sous-dossier caché appelé <code>.git</code> est créé. Ce dossier contient tous les fichiers nécessaires pour suivre l'historique des versions, les configurations, et les métadonnées du projet.</p>
+        <p><strong>Quand l'utiliser ?</strong><br>
+        Tu utilises <code>git init</code> lorsque tu veux commencer à utiliser Git pour un nouveau projet ou lorsque tu souhaites transformer un projet existant en un repository Git.</p>
+        <p><strong>Exemple d'utilisation :</strong></p>
+        <pre><code>git init</code></pre>
+        <p>Cette commande crée un repository Git vide dans le répertoire actuel.</p>
+
+        <h3>2. <code>git add .</code></h3>
+        <p><strong>Explication :</strong><br>
+        La commande <code>git add .</code> ajoute tous les fichiers et les modifications (fichiers modifiés, nouveaux fichiers, fichiers supprimés) de ton répertoire actuel à la zone de préparation (ou "staging area"). La "staging area" est comme une étape intermédiaire où tu peux rassembler tous les changements que tu veux inclure dans le prochain commit.</p>
+        <p><strong>Détail :</strong><br>
+        Le <code>.</code> (point) signifie "ajouter tous les fichiers". Si tu souhaites ajouter un fichier spécifique, tu peux utiliser <code>git add nom_du_fichier</code>.</p>
+        <p><strong>Pourquoi l'utiliser ?</strong><br>
+        Cela te permet de sélectionner les changements que tu veux enregistrer, tout en gardant les autres modifications en attente pour un futur commit.</p>
+        <p><strong>Exemple d'utilisation :</strong></p>
+        <pre><code>git add .</code></pre>
+        <p>Cette commande ajoute tous les fichiers et dossiers dans le répertoire courant à la zone de préparation.</p>
+
+        <h3>3. <code>git commit -m "message"</code></h3>
+        <p><strong>Explication :</strong><br>
+        La commande <code>git commit -m "message"</code> enregistre les changements ajoutés à la zone de préparation dans l'historique des commits. Chaque commit capture un instantané de l'état de tes fichiers à ce moment-là. L'option <code>-m</code> te permet de spécifier un message de commit directement dans la commande, entre guillemets. Ce message doit décrire brièvement les modifications apportées.</p>
+        <p><strong>Pourquoi l'utiliser ?</strong><br>
+        Le message de commit est important car il explique pourquoi tu as fait ces changements, facilitant la compréhension de l'historique du projet. C'est une bonne pratique de rédiger des messages de commit clairs et informatifs.</p>
+        <p><strong>Exemple d'utilisation :</strong></p>
+        <pre><code>git commit -m "Ajout de la fonctionnalité de connexion"</code></pre>
+        <p>Cela enregistre les changements avec un message de commit décrivant ce qui a été fait.</p>
+
+        <h3>Résumé des étapes :</h3>
+        <ul>
+            <li><code>git init</code> : Initialise un nouveau repository Git.</li>
+            <li><code>git add .</code> : Ajoute tous les fichiers modifiés, nouveaux ou supprimés à la zone de préparation.</li>
+            <li><code>git commit -m "message"</code> : Enregistre les changements avec un message descriptif dans l'historique des versions.</li>
+        </ul>
+    </div>
+
+    <aside>
+        <h2>Glossaire</h2>
+        <ul>
+            <li><strong>Commit :</strong> Un enregistrement des modifications apportées à ton projet, avec un message descriptif.</li>
+            <li><strong>SHA-1 :</strong> Un identifiant unique généré pour chaque commit. C’est un code de 40 caractères qui permet de retrouver un commit spécifique.</li>
+            <li><strong>Mode Détaché (Detached HEAD) :</strong> Un état où tu es sur un commit spécifique sans être rattaché à une branche.</li>
+            <li><strong>Branch :</strong> Une version parallèle de ton projet où tu peux développer de nouvelles fonctionnalités sans affecter la branche principale.</li>
+            <li><strong>Staging Area :</strong> Une étape intermédiaire où tu places les fichiers que tu veux inclure dans le prochain commit.</li>
+        </ul>
+    </aside>
+    <div class="module">
+        <h2>Commandes pour Gérer les Commits</h2>
+        <h3>1. <code>git log</code></h3>
+        <p>Affiche l'historique des commits de ton repository, montrant le SHA-1, l'auteur, la date, et le message de chaque commit.</p>
+        <h3>2. <code>git show sha-1</code></h3>
+        <p>Affiche les détails d'un commit spécifique, comme les changements apportés et le message du commit. Remplace <code>sha-1</code> par l'identifiant unique du commit.</p>
+        <h3>3. <code>git checkout sha-1</code></h3>
+        <p>Te permet de naviguer vers un commit spécifique pour examiner l'état de ton projet à ce moment-là. Tu seras en mode "détaché".</p>
+        <h3>4. <code>git checkout main</code></h3>
+        <p>Revient à la branche principale, quittant le mode détaché pour reprendre le développement habituel.</p>
+    </div>
+
+    <aside>
+        <h2>Glossaire</h2>
+        <ul>
+            <li><strong>Commit :</strong> Un enregistrement des modifications apportées à ton projet, avec un message descriptif.</li>
+            <li><strong>SHA-1 :</strong> Un identifiant unique généré pour chaque commit. C’est un code de 40 caractères qui permet de retrouver un commit spécifique.</li>
+            <li><strong>Mode Détaché (Detached HEAD) :</strong> Un état où tu es sur un commit spécifique sans être rattaché à une branche.</li>
+            <li><strong>Branch :</strong> Une version parallèle de ton projet où tu peux développer de nouvelles fonctionnalités sans affecter la branche principale.</li>
+            <li><strong>Staging Area :</strong> Une étape intermédiaire où tu places les fichiers que tu veux inclure dans le prochain commit.</li>
+        </ul>
+    </aside>
+</main>
+</section>
+</body>
+</html>

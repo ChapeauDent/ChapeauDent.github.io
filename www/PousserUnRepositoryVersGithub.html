@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <script src="../js/scripts.js" defer></script>
+    <title>Gestion des Versions avec Git</title>
+  
+</head>
+<body>
+    <header>
+        <p class="site-title">Code Alchimie</p>
+        <p class="slogan">Transformez les lignes de code en magie du savoir.</p>
+        <h1>Créer un Repository sur GitHub et Pousser un Projet Local</h1>
+    </header>
+    <nav>
+        <button class="menutoggle" aria-expanded="false" >
+            <span class="menutoggleicon"></span>
+            <span class="menutoggleicon"></span>
+            <span class="menutoggleicon"></span>
+        </button>
+        <ul class="menuitems">
+            <li class="menuitem"><a class="menulink" href="../index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li class="menuitem"><a class="menulink" href="../www/PresentationGit.html"><i class="fa-brands fa-git"></i> Git</a></li>
+            <li class="menuitem"><a class="menulink" href="#github"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li class="menuitem"><a class="menulink" href="#html5"><i class="fa-brands fa-html5"></i> HTML5</a></li>
+            <li class="menuitem"><a class="menulink" href="#css3"><i class="fa-brands fa-css3"></i> CSS3</a></li>
+            <li class="menuitem"><a class="menulink" href="#javascript"><i class="fa-brands fa-js"></i> JavaScript</a></li>
+        </ul>
+    </nav>
+    <main>
+
+    <div class="module">
+        <h2>Introduction</h2>
+        <p>GitHub est une plateforme qui permet de stocker, gérer et partager ton code. Pour collaborer efficacement avec d'autres développeurs et garder un historique clair de l'évolution de ton projet, il est essentiel de savoir comment créer un repository et y pousser un projet local. Cette fiche explique comment faire cela étape par étape.</p>
+    </div>
+    <section class="cours">
+    <div class="module">
+        <h2>1. Créer un Repository sur GitHub</h2>
+        <p>Pour créer un repository sur GitHub, suis ces étapes :</p>
+        <ol>
+            <li>Connecte-toi à ton compte <a href="https://github.com" target="_blank">GitHub</a>.</li>
+            <li>Clique sur le bouton <strong>New</strong> (ou le signe <strong>+</strong> en haut à droite) pour créer un nouveau repository.</li>
+            <li>Donne un nom à ton repository, par exemple <code>mon-projet</code>.</li>
+            <li>Choisis si tu veux que ton repository soit <strong>Public</strong> ou <strong>Privé</strong>.</li>
+            <li>Ajoute une description (facultatif) et coche l'option <strong>Initialize this repository with a README</strong> si tu veux démarrer avec un fichier README.</li>
+            <li>Clique sur <strong>Create repository</strong> pour finaliser la création.</li>
+        </ol>
+    </div>
+
+    <div class="module">
+        <h2>2. Pousser un Projet Local sur GitHub</h2>
+        <p>Pour pousser ton projet local vers GitHub, suis ces étapes :</p>
+        <ol>
+            <li>Ouvre Git Bash et navigue jusqu'à ton projet local :</li>
+            <pre><code>cd /chemin/vers/ton/projet</code></pre>
+            <li>Initialise un repository Git (si ce n'est pas déjà fait) :</li>
+            <pre><code>git init</code></pre>
+            <li>Ajoute tous les fichiers à la zone de préparation :</li>
+            <pre><code>git add .</code></pre>
+            <li>Crée un commit avec un message descriptif :</li>
+            <pre><code>git commit -m "Premier commit"</code></pre>
+            <li>Ajoute le lien du repository distant (copie le lien HTTPS de ton repository GitHub) :</li>
+            <pre><code>git remote add origin https://github.com/nom-utilisateur/mon-projet.git</code></pre>
+            <li>Pousse les fichiers vers GitHub :</li>
+            <pre><code>git push -u origin main</code></pre>
+            <p><strong>Remarque :</strong> Si ta branche principale s'appelle <code>master</code> au lieu de <code>main</code>, remplace <code>main</code> par <code>master</code> dans la commande ci-dessus.</p>
+        </ol>
+    </div>
+
+    <aside>
+        <h2>Glossaire</h2>
+        <ul>
+            <li><strong>Repository :</strong> Un espace de stockage pour ton projet, contenant tous les fichiers et l'historique des modifications.</li>
+            <li><strong>Commit :</strong> Un enregistrement des modifications apportées à ton projet, avec un message descriptif.</li>
+            <li><strong>Remote :</strong> Un repository distant, comme celui hébergé sur GitHub.</li>
+            <li><strong>Push :</strong> L'action d'envoyer des commits depuis ton repository local vers un repository distant.</li>
+            <li><strong>Branch :</strong> Une version parallèle de ton projet, te permettant de développer de nouvelles fonctionnalités sans affecter la branche principale.</li>
+            <li><strong>Main/Master :</strong> La branche principale d'un projet. Le nom <code>main</code> est souvent utilisé par défaut, mais certains projets utilisent encore <code>master</code>.</li>
+        </ul>
+    </aside>
+    </section>
+    </main>
+</section>
+</body>
+</html>

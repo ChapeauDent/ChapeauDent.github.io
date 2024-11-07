@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <script src="../js/scripts.js" defer></script>
+    <title>Gestion des Versions avec Git</title>
+  
+</head>
+<body>
+    <header>
+        <p class="site-title">Code Alchimie</p>
+        <p class="slogan">Transformez les lignes de code en magie du savoir.</p>
+        <h1>Gestion des Versions avec Git</h1>
+    </header>
+    <nav>
+        <button class="menutoggle" aria-expanded="false" >
+            <span class="menutoggleicon"></span>
+            <span class="menutoggleicon"></span>
+            <span class="menutoggleicon"></span>
+        </button>
+        <ul class="menuitems">
+            <li class="menuitem"><a class="menulink" href="../index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li class="menuitem"><a class="menulink" href="../www/PresentationGit.html"><i class="fa-brands fa-git"></i> Git</a></li>
+            <li class="menuitem"><a class="menulink" href="#github"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li class="menuitem"><a class="menulink" href="#html5"><i class="fa-brands fa-html5"></i> HTML5</a></li>
+            <li class="menuitem"><a class="menulink" href="#css3"><i class="fa-brands fa-css3"></i> CSS3</a></li>
+            <li class="menuitem"><a class="menulink" href="#javascript"><i class="fa-brands fa-js"></i> JavaScript</a></li>
+        </ul>
+    </nav>
+    <main>
+    <h1>Configuration de Git</h1>
+
+    <div class="module">
+        <h2>Pourquoi configurer Git ?</h2>
+        <p>La configuration de Git est essentielle pour identifier l'auteur de chaque modification (commit) et pour collaborer efficacement avec d'autres développeurs. Cela garantit un suivi clair de l'historique des contributions dans un projet.</p>
+    </div>
+
+    <div class="module">
+        <h2>Étapes pour configurer Git</h2>
+        <ol>
+            <li><span class="important">Ouvrir Git Bash</span> : Lance Git Bash pour entrer les commandes de configuration.</li>
+            <li><span class="important">Configurer le nom d'utilisateur</span> :<br>
+                Utilise la commande :<br>
+                <code>git config --global user.name "Ton Nom"</code><br>
+                <em>Remplace "Ton Nom" par ton nom complet.</em>
+            </li>
+            <li><span class="important">Configurer l'adresse e-mail</span> :<br>
+                Utilise la commande :<br>
+                <code>git config --global user.email "ton.email@example.com"</code><br>
+                <em>Remplace "ton.email@example.com" par ton adresse e-mail.</em>
+            </li>
+            <li><span class="important">Vérifier la configuration</span> :<br>
+                Pour vérifier tes informations, exécute :<br>
+                <code>git config --global --list</code>
+            </li>
+        </ol>
+    </div>
+
+    <div class="module">
+        <h2>Utilité</h2>
+        <p>La configuration de Git permet de :</p>
+        <ul>
+            <li>Identifier l'auteur de chaque commit.</li>
+            <li>Maintenir un historique clair des contributions.</li>
+            <li>Faciliter la collaboration sur des projets partagés.</li>
+        </ul>
+    </div>
+    </main>
+</body>
+</html>
