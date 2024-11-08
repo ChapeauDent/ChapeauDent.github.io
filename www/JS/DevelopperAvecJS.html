@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <script src="../js/scripts.js" defer></script>
+    <title>Gestion des Versions avec Git</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "neutral",  // Utiliser un thème sans couleurs par défaut
+            themeVariables: {
+                clusterBkg: "transparent",  // Suppression du fond
+                clusterBorder: "transparent"  // Suppression des contours
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <p class="site-title">Code Alchimie</p>
+        <p class="slogan">Transformez les lignes de code en magie créative.</p>
+        <h1>Configuration de Git</h1>
+    </header>
+    <nav>
+        <button class="menutoggle" aria-expanded="false" >
+            <span class="menutoggleicon"></span>
+            <span class="menutoggleicon"></span>
+            <span class="menutoggleicon"></span>
+        </button>
+        <ul class="menuitems">
+            <li class="menuitem"><a class="menulink" href="../../index.html"><i class="fa-solid fa-house"></i></a></li>
+            <li class="menuitem"><a class="menulink" href="../../www/PresentationGit.html"><i class="fa-brands fa-git"></i> Git</a></li>
+            <li class="menuitem"><a class="menulink" href="#github"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li class="menuitem"><a class="menulink" href="#html5"><i class="fa-brands fa-html5"></i> HTML5</a></li>
+            <li class="menuitem"><a class="menulink" href="#css3"><i class="fa-brands fa-css3"></i> CSS3</a></li>
+            <li class="menuitem"><a class="menulink" href="#javascript"><i class="fa-brands fa-js"></i> JavaScript</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="mermaid">
+            flowchart TD
+            A[Développement du script en local] --> B[Versionnage avec Git]
+            B --> C[Création du dépôt sur GitHub]
+            C --> D[Test et validation du script]
+            D --> E{Script stable ?}
+            E -- Oui --> F[Création de la release sur GitHub]
+            F --> G[Automatisation avec GitHub Actions]
+            G --> H[Minification du script]
+            H --> I[Déploiement sur jsDelivr]
+            I --> J[Utilisation sur le site web]
+            E -- Non --> A
+          
+            subgraph "Processus de publication"
+              F --> G
+              G --> H
+              H --> I
+            end
+
+            style A fill:#E0E0E0,stroke:#053959,stroke-width:2px;
+            style B fill:#E0E0E0,stroke:#053959,stroke-width:2px;
+            style C fill:#E0E0E0,stroke:#053959,stroke-width:2px;
+            style D fill:#E0E0E0,stroke:#053959,stroke-width:2px;
+            style E fill:#E0E0E0,stroke:#730255,stroke-width:2px;
+            style F fill:#E0E0E0,stroke:#053959,stroke-width:2px;
+            style G fill:#E0E0E0,stroke:#053959,stroke-width:2px;
+            style H fill:#E0E0E0,stroke:#053959,stroke-width:2px;
+            style I fill:#E0E0E0,stroke:#053959,stroke-width:2px;
+            style J fill:#E0E0E0,stroke:#053959,stroke-width:2px;
+
+        </div>
+        
+</main>
+</body>
+</html>
