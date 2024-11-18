@@ -210,15 +210,18 @@ main .fa-brands {
     flex-wrap: wrap;
 
 }
-#pages-container a{
+.page-link {
     width: 25vw;
     margin: 10px;
     padding: 20px;
     border-radius: 8px;
     background-color: #f5f5f5;
     border: 1px solid #053959;
-    cursor: pointer;
+    text-decoration: none; /* Supprimer la sous-ligne */
+    color: #1d1d1d;
+    transition: background-color 0.3s ease;
 }
-#pages-container a:hover{
+
+.page-link:hover {
     background-color: #d5d5d5;
 }

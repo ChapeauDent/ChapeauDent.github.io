@@ -1,7 +1,7 @@
    // Fonction pour récupérer les pages et les afficher
    async function fetchPages() {
     try {
-        const response = await fetch('pages.json');
+        const response = await fetch('../pages.json');
         const pages = await response.json();
 
         const container = document.getElementById('pages-container');
@@ -9,8 +9,7 @@
             // Créer un élément div qui contiendra les informations
             const div = document.createElement('a');
             div.href = page.url;
-            div.style.textDecoration = 'none'; // Optionnel : stylisation pour le lien
-
+            div.classList.add('page-link'); // Ajouter la classe appropriée
             
             // Ajouter un lien vers la page
             const titre = document.createElement('h2');
