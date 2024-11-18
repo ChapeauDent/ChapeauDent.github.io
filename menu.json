@@ -1,0 +1,39 @@
+{
+    "header": {
+      "title": "Code Alchimie",
+      "subtitle": "Transformez les lignes de code en magie créative."
+    },
+    "menu": [
+      {
+        "label": "Accueil",
+        "url": "../index.html",
+        "icon": "fa-solid fa-house"
+      },
+      {
+        "label": "Git",
+        "url": "../www/PresentationGit.html",
+        "icon": "fa-brands fa-git"
+      },
+      {
+        "label": "GitHub",
+        "url": "#github",
+        "icon": "fa-brands fa-github"
+      },
+      {
+        "label": "HTML5",
+        "url": "#html5",
+        "icon": "fa-brands fa-html5"
+      },
+      {
+        "label": "CSS3",
+        "url": "#css3",
+        "icon": "fa-brands fa-css3"
+      },
+      {
+        "label": "JavaScript",
+        "url": "#javascript",
+        "icon": "fa-brands fa-js"
+      }
+    ]
+  }
+  

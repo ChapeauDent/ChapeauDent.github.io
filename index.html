@@ -10,37 +10,21 @@
     <script src="js/scripts.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Code Alchimie</h1>
-        <p>Transformez les lignes de code en magie créative.</p>
-    </header>
-    <nav>
-        <button class="menutoggle" aria-expanded="false" >
-            <span class="menutoggleicon"></span>
-            <span class="menutoggleicon"></span>
-            <span class="menutoggleicon"></span>
-        </button>
-        <ul class="menuitems">
-            <li class="menuitem"><a class="menulink" href="../index.html"><i class="fa-solid fa-house"></i></a></li>
-            <li class="menuitem"><a class="menulink" href="../www/PresentationGit.html"><i class="fa-brands fa-git"></i> Git</a></li>
-            <li class="menuitem"><a class="menulink" href="#github"><i class="fa-brands fa-github"></i> GitHub</a></li>
-            <li class="menuitem"><a class="menulink" href="#html5"><i class="fa-brands fa-html5"></i> HTML5</a></li>
-            <li class="menuitem"><a class="menulink" href="#css3"><i class="fa-brands fa-css3"></i> CSS3</a></li>
-            <li class="menuitem"><a class="menulink" href="#javascript"><i class="fa-brands fa-js"></i> JavaScript</a></li>
-        </ul>
-    </nav>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>    
     <div class="container">
         <h2>Bienvenue dans l'Alchimie du Code</h2>
         <p>Explorez les technologies modernes du web et voyez comment elles se connectent ensemble pour donner vie à des créations numériques uniques. Git, GitHub, HTML5, CSS3 et JavaScript sont au cœur de cette magie.</p>
+        <hr>
+        <h2>les fiches de cours</h2>
+        <section id="pages-container">
+            
+        </section>
 
-        <div class="code-block">
-            <pre><code>// Ceci est un exemple de code JavaScript basique
-function sayHello() {
-    console.log("Bienvenue dans l'alchimie du code !");
-}
-sayHello();
-            </code></pre>
+
         </div>
     </div>
+        <script src="../js/pages.js"></script>
+        <script src="../js/menu.js"></script>
 </body>
 </html>

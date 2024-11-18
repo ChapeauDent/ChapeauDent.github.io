@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js, React.js, Vue.js, et Angular - Fiches de Présentation</title>
+    <meta name="description" content="Présentation détaillée des technologies Node.js, React.js, Vue.js, et Angular, leurs caractéristiques, avantages, inconvénients et cas d'utilisation." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+    <main>
+    <div class="container">
+        <h1>Node.js, React.js, Vue.js, et Angular - Fiches de Présentation</h1>
+
+        <div class="module">
+            <i class="fa-brands fa-node-js"></i>
+            <h2>Node.js</h2>
+            <h3>Qu'est-ce que Node.js ?</h3>
+            <p>Node.js est un environnement d'exécution JavaScript côté serveur. Il permet d'exécuter du JavaScript en dehors du navigateur, souvent pour créer des serveurs et des scripts backend. Node.js est basé sur le moteur JavaScript V8 de Google, qui est également utilisé par le navigateur Chrome, ce qui le rend très rapide et performant.</p>
+
+            <h3>Caractéristiques</h3>
+            <ul>
+                <li><strong>Asynchrone et non-bloquant</strong> : Les opérations I/O (lecture/écriture de fichiers, requêtes HTTP) sont asynchrones, ce qui permet à Node.js de gérer des milliers de connexions simultanément.</li>
+                <li><strong>Utilise JavaScript</strong> : JavaScript peut être utilisé à la fois côté client (navigateur) et côté serveur, ce qui permet une cohérence de langage sur toute l'application.</li>
+                <li><strong>npm (Node Package Manager)</strong> : Node.js inclut un gestionnaire de packages puissant appelé npm, qui permet d'installer des bibliothèques et des outils pour améliorer la productivité.</li>
+            </ul>
+
+            <h3>Cas d'utilisation</h3>
+            <ul>
+                <li><strong>Applications web en temps réel</strong> : Chat en temps réel (comme Slack), jeux multi-joueurs.</li>
+                <li><strong>Serveurs API</strong> : Création de backend pour des APIs RESTful qui peuvent gérer de nombreuses requêtes simultanément.</li>
+                <li><strong>Automatisation des tâches</strong> : Scripts pour automatiser des processus (ex: automatiser les builds de projets).</li>
+            </ul>
+
+            <h3>Avantages</h3>
+            <ul>
+                <li><strong>Rapide</strong> grâce à V8 et à sa nature asynchrone.</li>
+                <li><strong>Large écosystème</strong> : Des millions de packages npm sont disponibles pour accélérer le développement.</li>
+            </ul>
+
+            <h3>Inconvénients</h3>
+            <ul>
+                <li><strong>Pas adapté aux calculs lourds</strong> : Node.js n'est pas très performant pour des opérations intensives (comme la manipulation de vidéo ou le traitement d'images).</li>
+            </ul>
+        </div>
+
+        <div class="module">
+            <i class="fa-brands fa-react"></i>
+            <h2>React</h2>
+            <h3>Qu'est-ce que React ?</h3>
+            <p>React est une bibliothèque JavaScript développée par Facebook pour créer des interfaces utilisateurs dynamiques et interactives. Elle se concentre sur la construction de composants réutilisables qui gèrent l'interface utilisateur de manière efficace.</p>
+
+            <h3>Caractéristiques</h3>
+            <ul>
+                <li><strong>Basé sur des composants</strong> : Les applications sont construites en utilisant des "composants" réutilisables, facilitant la maintenabilité et la modularité du code.</li>
+                <li><strong>Virtual DOM</strong> : React utilise un Virtual DOM, qui permet de minimiser les modifications à apporter au DOM réel, rendant les mises à jour rapides et efficaces.</li>
+                <li><strong>JSX</strong> : React propose un langage appelé JSX qui combine HTML et JavaScript, ce qui permet d'écrire facilement des composants.</li>
+            </ul>
+
+            <h3>Cas d'utilisation</h3>
+            <ul>
+                <li><strong>Applications web modernes</strong> : Applications à page unique (Single Page Applications - SPA) comme Instagram ou Airbnb.</li>
+                <li><strong>PWA (Progressive Web Apps)</strong> : Pour créer des applications web qui se comportent comme des applications natives.</li>
+            </ul>
+
+            <h3>Avantages</h3>
+            <ul>
+                <li><strong>Performances améliorées</strong> grâce au Virtual DOM.</li>
+                <li><strong>Communauté très active</strong> : De nombreux tutoriels, librairies, et solutions pour aider à développer avec React.</li>
+            </ul>
+
+            <h3>Inconvénients</h3>
+            <ul>
+                <li><strong>Nécessite un écosystème complexe</strong> : Pour les projets importants, React est souvent combiné avec d'autres bibliothèques comme Redux, ce qui peut rendre l'apprentissage plus difficile.</li>
+            </ul>
+        </div>
+
+        <div class="module">
+            <i class="fa-brands fa-vuejs"></i>
+            <h2>Vue.js</h2>
+            <h3>Qu'est-ce que Vue.js ?</h3>
+            <p>Vue.js est un framework JavaScript progressif créé par Evan You. Il est destiné à la création d'interfaces utilisateur et s'inspire à la fois de React et Angular. Vue.js est souvent décrit comme une solution très flexible, capable de s'intégrer facilement à des projets existants ou de fonctionner de manière autonome pour créer des SPA complètes.</p>
+
+            <h3>Caractéristiques</h3>
+            <ul>
+                <li><strong>Basé sur des composants</strong> : Comme React, Vue.js repose sur des composants réutilisables.</li>
+                <li><strong>Directives</strong> : Vue fournit des "directives" pour ajouter des comportements au DOM (comme <code>v-if</code>, <code>v-for</code>, etc.), ce qui simplifie la logique d'affichage.</li>
+                <li><strong>Double liaison de données (Two-way data binding)</strong> : Vue facilite la synchronisation entre le modèle et la vue, à la manière d'Angular.</li>
+            </ul>
+
+            <h3>Cas d'utilisation</h3>
+            <ul>
+                <li><strong>Interfaces utilisateur interactives</strong> : Tableau de bord, application de gestion de contenu.</li>
+                <li><strong>Projets à petite échelle</strong> : Vue est très facile à intégrer, ce qui le rend idéal pour ajouter des fonctionnalités interactives à des applications existantes.</li>
+            </ul>
+
+            <h3>Avantages</h3>
+            <ul>
+                <li><strong>Facile à apprendre</strong> : Une courbe d'apprentissage plus douce que React ou Angular, idéale pour les développeurs qui débutent.</li>
+                <li><strong>Très flexible</strong> : Vue peut être utilisé progressivement, sans tout refondre.</li>
+            </ul>
+
+            <h3>Inconvénients</h3>
+            <ul>
+                <li><strong>Communauté plus petite</strong> : Bien qu'elle soit en croissance, la communauté de Vue est plus petite comparée à React, ce qui peut rendre plus difficile la recherche de solutions à des problèmes très spécifiques.</li>
+            </ul>
+        </div>
+
+        <div class="module">
+            <i class="fa-brands fa-angular"></i>
+            <h2>Angular</h2>
+            <h3>Qu'est-ce qu'Angular ?</h3>
+            <p>Angular est un framework JavaScript complet développé par Google pour la création d'applications web. Contrairement à React ou Vue, Angular est une solution tout-en-un qui propose une structure solide, idéale pour les grandes applications web complexes. Angular est basé sur TypeScript, une version améliorée de JavaScript, qui ajoute une couche de typage statique.</p>
+
+            <h3>Caractéristiques</h3>
+            <ul>
+                <li><strong>Framework complet</strong> : Angular est un framework complet, offrant des outils intégrés pour la gestion des formulaires, le routage, la validation, etc., ce qui le rend adapté aux projets de grande envergure.</li>
+                <li><strong>TypeScript</strong> : Angular utilise TypeScript, ce qui facilite le développement de code maintenable et améliore la détection des erreurs.</li>
+                <li><strong>Architecture MVC</strong> : Angular suit une architecture Model-View-Controller (MVC), facilitant la séparation des responsabilités dans le code.</li>
+                <li><strong>Injection de dépendances</strong> : Angular utilise l'injection de dépendances, qui permet de gérer plus facilement les services et les modules.</li>
+            </ul>
+
+            <h3>Cas d'utilisation</h3>
+            <ul>
+                <li><strong>Applications d'entreprise</strong> : Angular est couramment utilisé pour développer des applications web complexes et à grande échelle pour des entreprises (ERP, CRM).</li>
+                <li><strong>Progressive Web Apps (PWA)</strong> : Angular dispose d'outils intégrés pour développer des PWAs performantes.</li>
+            </ul>
+
+            <h3>Avantages</h3>
+            <ul>
+                <li><strong>Outil tout-en-un</strong> : Fournit tout ce dont on a besoin pour construire une application complète, sans nécessiter beaucoup de bibliothèques externes.</li>
+                <li><strong>Robuste</strong> : Angular est très structuré, ce qui en fait un bon choix pour les projets d'entreprise et de grande échelle.</li>
+                <li><strong>TypeScript</strong> : Le typage statique de TypeScript aide à éviter des erreurs courantes et à rendre le code plus facile à maintenir.</li>
+            </ul>
+
+            <h3>Inconvénients</h3>
+            <ul>
+                <li><strong>Courbe d'apprentissage raide</strong> : Angular a une courbe d'apprentissage plus élevée par rapport à React ou Vue, en raison de sa complexité et de sa richesse en fonctionnalités.</li>
+                <li><strong>Verbosité</strong> : Angular peut sembler plus verbeux, nécessitant plus de code pour accomplir des tâches simples, surtout pour des projets de petite taille.</li>
+            </ul>
+        </div>
+    </div>
+</main>
+    <footer>
+        <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+    </footer>
+
+    <script src="../js/menu.js" defer></script>
+</body>
+</html>
