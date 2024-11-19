@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - Comprendre et Utiliser les Composants</title>
+    <meta name="description" content="Fiche pédagogique sur l'utilisation des composants dans Angular : structure, création, cycle de vie, et personnalisation.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+
+    <div class="container">
+        <h1>Utiliser les Composants dans Angular</h1>
+
+        <div class="module">
+            <h2>Comprendre la notion de composant</h2>
+            <p>Les <strong>composants</strong> sont l'un des concepts centraux d'Angular. L'interface de l'application est constituée d'une arborescence de composants. Un composant est un bloc de code réutilisable, ce qui permet d'emboîter ces composants les uns dans les autres. Par exemple, une application Angular commence par un <strong>composant racine</strong>, appelé <em>AppComponent</em>, qui représente l'application entière. Ce composant contiendra d'autres sous-composants comme le menu, le corps de la page ou une barre de navigation (NavBar). Ces sous-composants peuvent eux-mêmes contenir d'autres sous-composants, formant ainsi une structure hiérarchique.</p>
+            <p>En résumé, un composant Angular représente un morceau d'interface de l'application. Un composant peut aller d'un simple bouton à une page web entière. Cette modularité offre une grande flexibilité pour construire des interfaces riches et complexes.</p>
+        </div>
+
+        <div class="module">
+            <h2>La structure d'un composant Angular</h2>
+            <p>Pour mieux comprendre comment fonctionnent les composants, il est important de se familiariser avec leur structure. Chaque composant Angular est constitué de plusieurs fichiers :</p>
+            <ul>
+                <li><strong>HTML :</strong> Fichier contenant le code de l'interface utilisateur du composant. Par exemple, <em>app.component.html</em>.</li>
+                <li><strong>CSS :</strong> Fichier contenant les styles du composant, par exemple <em>app.component.css</em>. Chaque composant Angular possède son propre fichier de style, ce qui permet d'appliquer des styles à l'échelle locale du composant.</li>
+                <li><strong>TypeScript (TS) :</strong> Fichier qui contient la logique du composant, par exemple <em>app.component.ts</em>. Ce fichier est écrit en TypeScript et contient le code permettant de gérer les comportements de l'interface.</li>
+                <li><strong>Fichier de test (spec.ts) :</strong> Utilisé pour les tests unitaires du composant. Bien que nous n'utiliserons pas ces fichiers dans ce cours, ils sont importants dans le cadre de développement d'applications robustes.</li>
+            </ul>
+            <p>Un composant Angular est généralement construit à l'aide d'un <strong>décorateur @Component</strong>, qui relie les différents fichiers ensemble. Le décorateur contient notamment :</p>
+            <ul>
+                <li><strong>selector :</strong> Le nom de la balise HTML pour afficher ce composant, par exemple <em>app-root</em>.</li>
+                <li><strong>templateUrl :</strong> Le chemin vers le fichier HTML du composant.</li>
+                <li><strong>styleUrls :</strong> Le chemin vers le fichier CSS du composant.</li>
+            </ul>
+            <p>Voici un exemple de décorateur de composant :</p>
+            <pre><code>@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Mon Application Angular';
+}</code></pre>
+        </div>
+
+        <div class="module">
+            <h2>Le cycle de vie d'un composant</h2>
+            <p>Chaque composant Angular passe par plusieurs états au cours de son existence, appelés <strong>cycle de vie du composant</strong>. Cela inclut la création, la mise à jour et la destruction du composant. Angular propose des <strong>hooks de cycle de vie</strong> permettant aux développeurs d'exécuter du code à différents moments de la vie d'un composant.</p>
+            <p>Voici quelques hooks de cycle de vie importants :</p>
+            <ul>
+                <li><strong>ngOnChanges :</strong> Appelé lors de la modification des données d'entrée d'un composant.</li>
+                <li><strong>ngOnInit :</strong> Appelé une fois lors de l'initialisation du composant. Idéal pour effectuer des tâches comme la récupération de données à partir d'un service.</li>
+                <li><strong>ngOnDestroy :</strong> Appelé juste avant la destruction du composant, utile pour nettoyer des ressources (comme des abonnements).</li>
+            </ul>
+            <p>Voici un exemple d'utilisation du hook <em>ngOnInit</em> :</p>
+            <pre><code>import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-article',
+  templateUrl: './article.component.html',
+  styleUrls: ['./article.component.css']
+})
+export class ArticleComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit(): void {
+    console.log('Le composant Article est initialisé');
+  }
+}</code></pre>
+        </div>
+
+        <div class="module">
+            <h2>Créer un nouveau composant</h2>
+            <p>Pour créer un nouveau composant dans Angular, vous pouvez utiliser la commande Angular CLI suivante :</p>
+            <pre><code>ng generate component nom-du-composant</code></pre>
+            <p>Par exemple, pour créer un composant <em>article</em> :</p>
+            <pre><code>ng generate component article</code></pre>
+            <p>Cette commande créera un dossier <strong>article</strong> contenant les fichiers nécessaires : <em>article.component.html</em>, <em>article.component.css</em>, <em>article.component.ts</em>, et <em>article.component.spec.ts</em>. Vous pourrez alors personnaliser chaque fichier pour construire votre interface.</p>
+        </div>
+
+        <div class="module">
+            <h2>Intégrer un composant dans l'application</h2>
+            <p>Une fois un composant créé, vous pouvez l'intégrer à d'autres composants en utilisant sa balise HTML définie par le <strong>selector</strong>. Par exemple, si le <strong>selector</strong> de votre composant <em>article</em> est <em>app-article</em>, vous pouvez l'ajouter au composant principal (<em>app.component.html</em>) comme suit :</p>
+            <pre><code>&lt;app-article&gt;&lt;/app-article&gt;</code></pre>
+            <p>Vous pouvez répéter cette balise autant de fois que nécessaire pour afficher plusieurs instances du composant.</p>
+        </div>
+
+        <div class="module">
+            <h2>Personnaliser un composant</h2>
+            <p>Un composant est un bloc de code réutilisable et personnalisable. Pour personnaliser l'apparence d'un composant, vous pouvez modifier son fichier CSS. Chaque composant possède son propre fichier de style, garantissant que les styles ne se propagent pas en dehors du composant.</p>
+            <p>Pour appliquer des styles à l'ensemble de l'application, vous pouvez utiliser le fichier <strong>styles.css</strong> situé à la racine du projet. Cela permet d'appliquer des règles de style à tous les composants.</p>
+        </div>
+
+        <div class="module">
+            <h2>Comprendre les modules dans Angular</h2>
+            <p>Angular utilise des <strong>modules</strong> pour structurer l'application. Chaque application Angular a au moins un module principal, <em>app.module.ts</em>. Un module regroupe des composants, des services, des directives, etc., et définit leur portée.</p>
+            <p>Le décorateur <strong>@NgModule</strong> est utilisé pour définir un module. Il inclut plusieurs propriétés, telles que :</p>
+            <ul>
+                <li><strong>declarations :</strong> Liste des composants appartenant à ce module.</li>
+                <li><strong>imports :</strong> Liste des modules dont ce module dépend.</li>
+                <li><strong>providers :</strong> Définit les services disponibles dans ce module.</li>
+                <li><strong>bootstrap :</strong> Définit le composant racine à lancer au démarrage de l'application.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+    </footer>
+
+    <script src="../js/menu.js" defer></script>
+</body>
+</html>
