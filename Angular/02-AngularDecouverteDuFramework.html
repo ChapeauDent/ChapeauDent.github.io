@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - fiche 2 : Découverte du Framework</title>
+    <meta name="description" content="Fiche pédagogique sur la découverte du framework Angular : introduction, architecture MVC, TypeScript, différence entre framework et bibliothèque, installation de l'environnement de développement.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+
+    <div class="container">
+        <h1>Découverte d'Angular</h1>
+
+        <div class="module">
+            <div>
+            <h2>Qu'est-ce que le framework Angular ?</h2>
+            <p>Angular est un framework open source frontend de JavaScript développé par Google. Historiquement, Angular a évolué à partir d'AngularJS lancé en 2010, qui souffrait d'une syntaxe complexe et de limitations liées à JavaScript. En 2016, Google a lancé une version totalement repensée appelée Angular ou Angular 2, à ne pas confondre avec AngularJS. Angular est aujourd'hui l'un des frameworks les plus populaires pour le développement web.</p>
+
+            <h3>Pourquoi utiliser Angular ?</h3>
+            <p>Le principal atout d'Angular est son architecture de type MVC (Modèle - Vue - Contrôleur), qui divise la structure du projet en trois parties :</p>
+            <ul>
+                <li><strong>Modèle :</strong> Responsable de la gestion des données, comme la récupération d'informations depuis une base de données.</li>
+                <li><strong>Vue :</strong> Gère l'interface graphique, comme le template HTML.</li>
+                <li><strong>Contrôleur :</strong> Gère la logique de l'application et fait le lien entre le Modèle et la Vue.</li>
+            </ul>
+            <p>Angular utilise <strong>TypeScript</strong>, un sur-ensemble de JavaScript qui apporte des fonctionnalités de typage stricte, offrant un développement plus stable, rapide et sécurisé. Angular permet aussi de créer des <strong>Single Page Applications (SPA)</strong>, où une seule page HTML est modifiée dynamiquement sans rechargement complet, améliorant l'expérience utilisateur.</p>
+
+            <h3>Liaison de données bidirectionnelle</h3>
+            <p>Angular se distingue par sa <strong>liaison de données bidirectionnelle</strong>, c'est-à-dire une synchronisation instantanée entre le Modèle et la Vue. Cela permet de mettre à jour automatiquement l'interface lorsque les données changent, et inversement.</p>
+        </div>
+    </div>
+
+        <div class="module">
+            <div>
+            <h2>Différence entre une library et un framework</h2>
+            <p>Angular est un <strong>framework</strong>, mais qu'est-ce qu'un framework, et en quoi diffère-t-il d'une <strong>library</strong> (bibliothèque) ?</p>
+            
+            <h3>Library</h3>
+            <p>Une <strong>library</strong> est un ensemble de fonctionnalités que l'on peut utiliser selon nos besoins. Elle ne définit pas l'architecture du projet, laissant la liberté au développeur de choisir ce qu'il souhaite utiliser.</p>
+            
+            <h3>Framework</h3>
+            <p>Un <strong>framework</strong>, quant à lui, impose une architecture globale. Le développeur doit insérer son code dans cette structure, et c'est le framework qui appelle le code du développeur en fonction de ses propres règles. Angular, en tant que framework, offre une base solide et pré-structurée pour créer des applications robustes.</p>
+        </div>
+    </div>
+
+        <div class="module">
+            <div>
+            <h2>Découvrir TypeScript</h2>
+            <p>Angular est basé sur <strong>TypeScript</strong>, un sur-ensemble de JavaScript. TypeScript est transcompilé en JavaScript, ce qui signifie qu'il est converti en JavaScript exécutable après compilation.</p>
+            <p>TypeScript apporte des fonctionnalités telles que le typage strict, qui permet de s'assurer que les variables et les valeurs respectent un type précis, rendant le code plus sûr et plus facile à maintenir. Il offre aussi une syntaxe orientée objet et permet l'utilisation de <strong>classes</strong> et <strong>interfaces</strong>, facilitant le développement modulaire et la réutilisation du code.</p>
+        </div>
+    </div>
+
+        <div class="module">
+            <div>
+            <h2>Installer l'environnement de développement</h2>
+            <p>Pour travailler avec Angular, il est nécessaire de configurer un environnement de développement complet. Voici les étapes et les éléments à installer, avec des explications sur l'utilité de chaque composant :</p>
+            <ol>
+                <li><strong>IDE (Environnement de développement intégré) - Visual Studio Code</strong></li>
+                <p>Un IDE est un outil essentiel pour écrire, organiser et tester du code. Visual Studio Code (VS Code) est un des IDE les plus populaires pour le développement Angular, car il est léger, gratuit, et possède de nombreuses extensions qui facilitent le travail avec Angular et TypeScript. Pour l'installer, rendez-vous sur <a href="https://code.visualstudio.com/" target="_blank">code.visualstudio.com</a> et suivez les instructions.</p>
+
+                <li><strong>Node.js</strong></li>
+                <p>Node.js est un environnement d'exécution JavaScript qui permet de lancer des outils en ligne de commande nécessaires au développement Angular. Par exemple, Angular CLI utilise Node.js pour exécuter des commandes qui gèrent les dépendances, génèrent des composants, ou démarrent des serveurs de développement. Pour installer Node.js, allez sur <a href="https://nodejs.org" target="_blank">nodejs.org</a> et téléchargez la version recommandée.</p>
+
+                <li><strong>npm (Node Package Manager)</strong></li>
+                <p>Avec l'installation de Node.js, vous obtiendrez également <strong>npm</strong>. npm est un gestionnaire de paquets qui permet d'installer des librairies et des outils nécessaires au développement de votre application. Vous utiliserez npm pour installer Angular CLI ainsi que d'autres dépendances utiles.</p>
+
+                <li><strong>Angular CLI (Command Line Interface)</strong></li>
+                <p>Angular CLI est un outil de ligne de commande qui simplifie la gestion des projets Angular. Il permet de créer, de configurer et de développer des applications Angular directement depuis le terminal.rendez-vous sur <a href="https://angular.io/cli/" target="_blank">Angular.io</a> pour obtenir plus d'information. Pour l'installer, ouvrez un terminal et exécutez la commande suivante :</p>
+                <pre><code>npm install -g @angular/cli</code></pre>
+                <p>Le paramètre <code>-g</code> signifie que l'installation est globale, c'est-à-dire qu'Angular CLI sera disponible pour tous vos projets.</p>
+            </ol>
+            <p>Une fois l'environnement configuré, vous pourrez utiliser Angular CLI pour créer un nouveau projet en tapant :</p>
+            <pre><code>ng new nom-du-projet</code></pre>
+            <p>Cette commande crée la structure de base de votre projet Angular et installe automatiquement toutes les dépendances nécessaires. Vous serez alors prêt à commencer le développement.</p>
+        </div>
+    </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+    </footer>
+
+    <script src="../js/menu.js" ></script>
+</body>
+</html>

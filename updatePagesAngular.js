@@ -28,7 +28,7 @@ fs.readdir(directoryPath, (err, files) => {
             pages.push({
                 title: title,
                 description: description,
-                url: `www/${file}`
+                url: `Angular/${file}`
             });
         }
     });

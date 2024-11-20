@@ -1,27 +1,17 @@
 [
     {
-        "title": "Configuration de Git",
-        "description": "La configuration de Git est essentielle pour identifier l'auteur de chaque modification (commit) et pour collaborer efficacement avec d'autres développeurs. Cela garantit un suivi clair de l'historique des contributions dans un projet.",
-        "url": "www/ConfigurationGit.html"
+        "title": "Angular - fiche 1 : Comprendre la structure du framework",
+        "description": "Fiche pédagogique sur la découverte du framework Angular : introduction, architecture MVC, TypeScript, différence entre framework et bibliothèque, installation de l'environnement de développement.",
+        "url": "Angular/01-AngularStructureDuFramework.html"
     },
     {
-        "title": "Gestion des Versions avec Git",
-        "description": "Git est un système de gestion de versions distribué qui permet de suivre l'évolution de ton projet au fil du temps. Grâce à Git, tu peux revenir à des états antérieurs de ton projet, collaborer efficacement avec d'autres développeurs, et garder un historique clair des modifications.",
-        "url": "www/GestionVersionGit.html"
+        "title": "Angular - fiche 2 : Découverte du Framework",
+        "description": "Fiche pédagogique sur la découverte du framework Angular : introduction, architecture MVC, TypeScript, différence entre framework et bibliothèque, installation de l'environnement de développement.",
+        "url": "Angular/02-AngularDecouverteDuFramework.html"
     },
     {
-        "title": "Node.js, React.js, Vue.js, et Angular - Fiches de Présentation",
-        "description": "Présentation détaillée des technologies Node.js, React.js, Vue.js, et Angular, leurs caractéristiques, avantages, inconvénients et cas d'utilisation.",
-        "url": "www/node_react_vue_angular_presentation.html"
-    },
-    {
-        "title": "Pousser un repository vers GitHub",
-        "description": "GitHub est une plateforme qui permet de stocker, gérer et partager ton code. Pour collaborer efficacement avec d'autres développeurs et garder un historique clair de l'évolution de ton projet, il est essentiel de savoir comment créer un repository et y pousser un projet local. Cette fiche explique comment faire cela étape par étape.",
-        "url": "www/PousserUnRepositoryVersGithub.html"
-    },
-    {
-        "title": "Présentation de Git",
-        "description": "Découvrez comment gérer les versions de vos projets avec Git.",
-        "url": "www/PresentationGit.html"
+        "title": "Angular - fiche 3 : Comprendre et Utiliser les Composants",
+        "description": "Fiche pédagogique sur l'utilisation des composants dans Angular : structure, création, cycle de vie, et personnalisation.",
+        "url": "Angular/03-AngularComprendreEtUtiliserLesComposants.html"
     }
 ]

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - fiche 1 : Comprendre la structure du framework</title>
+    <meta name="description"
+        content="Fiche pédagogique sur la découverte du framework Angular : introduction, architecture MVC, TypeScript, différence entre framework et bibliothèque, installation de l'environnement de développement.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+    <main>
+        <div class="container">
+            <h1>Comprendre la Structure d'un Projet Angular</h1>
+            <p>Angular est un framework JavaScript populaire qui permet de construire des applications web dynamiques et
+                performantes. Voici une vue d'ensemble de la structure des fichiers d'un projet Angular, adaptée pour
+                les novices.</p>
+            <div class="module">
+                <div>
+                    <h2>Description des Dossiers et Fichiers Importants</h2>
+                    <h3>1. <code>src/</code> : Dossier Principal</h3>
+                    <ul>
+                        <li><strong><code>app/</code></strong> : Contient tout le code métier de l'application.
+                            <ul>
+                                <li><strong>Composants (<code>*.component.ts</code>)</strong> : Un composant est un bloc
+                                    de construction de l'interface utilisateur dans Angular. Chaque composant possède
+                                    quatre fichiers :
+                                    <ul>
+                                        <li><code>nom.component.ts</code> : Contient la logique du composant
+                                            (TypeScript).</li>
+                                        <li><code>nom.component.html</code> : Template HTML pour la vue.</li>
+                                        <li><code>nom.component.css</code> : Styles spécifiques au composant.</li>
+                                        <li><code>nom.component.spec.ts</code> : Fichier de tests unitaires.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Services (<code>*.service.ts</code>)</strong> : Les services contiennent la
+                                    logique partagée, comme les appels HTTP pour obtenir des données.</li>
+                                <li><strong><code>app.module.ts</code></strong> : Module principal, déclare tous les
+                                    composants, services, et modules utilisés dans l'application.</li>
+                            </ul>
+                        </li>
+                        <li><strong><code>assets/</code></strong> : Contient des ressources statiques (images, fichiers
+                            JSON, polices, etc.).</li>
+                        <li><strong><code>environments/</code></strong> : Fichiers de configuration selon les
+                            environnements (<code>dev</code>, <code>prod</code>).</li>
+                        <li><strong><code>index.html</code></strong> : Fichier HTML principal contenant l'élément
+                            <code>&lt;app-root&gt;</code>.</li>
+                        <li><strong><code>main.ts</code></strong> : Fichier qui démarre l'application en bootstrappant
+                            le module principal (<code>AppModule</code>).</li>
+                        <li><strong><code>polyfills.ts</code></strong> : Pour la compatibilité avec les anciens
+                            navigateurs.</li>
+                        <li><strong><code>styles.css</code></strong> : Styles globaux de l'application.</li>
+                    </ul>
+
+                    <h3>2. Fichiers de Configuration Racine</h3>
+                    <ul>
+                        <li><strong><code>angular.json</code></strong> : Configuration du projet (chemins des fichiers,
+                            paramètres de compilation, etc.).</li>
+                        <li><strong><code>package.json</code></strong> : Liste des dépendances npm et scripts du projet.
+                        </li>
+                        <li><strong><code>tsconfig.json</code></strong> : Configuration TypeScript.</li>
+                        <li><strong><code>.gitignore</code></strong> : Spécifie les fichiers à exclure du contrôle de
+                            version.</li>
+                    </ul>
+
+                    <h3>Les Services</h3>
+                    <p>Les <strong>services</strong> permettent de centraliser la logique qui peut être partagée entre
+                        plusieurs composants, comme des appels à une API.</p>
+
+                </div>
+                <div>
+                    <h2>Structure G&eacute;n&eacute;rale d'un Projet Angular</h2>
+                    <pre>
+                /mon-projet-angular
+                │
+                ├── e2e/                # Tests end-to-end, automatisation des tests utilisateurs
+                ├── node_modules/       # Dépendances installées via npm
+                ├── src/                # Contient les fichiers source du projet
+                │   ├── app/            # Dossier principal de l'application
+                │   │   ├── components/ # Sous-dossier regroupant les composants personnalisés
+                │   │   ├── services/   # Services pour la logique métier et les appels d'API
+                │   │   ├── app.module.ts  # Module principal de l'application
+                │   │   └── app.component.ts # Composant racine de l'application
+                │   │
+                │   ├── assets/         # Contient les fichiers statiques (images, icônes, etc.)
+                │   ├── environments/   # Fichiers de configuration par environnement (dev, prod)
+                │   ├── index.html      # Fichier HTML principal (point d'entrée)
+                │   ├── main.ts         # Point d'entrée pour le lancement de l'application Angular
+                │   ├── polyfills.ts    # Polyfills pour la compatibilité avec les anciens navigateurs
+                │   ├── styles.css      # Styles globaux de l'application (ou `.scss` si SASS est utilisé)
+                │   └── angular.json    # Fichier de configuration du projet Angular
+                │
+                ├── .browserslistrc     # Spécifie la compatibilité navigateur
+                ├── .editorconfig       # Fichier pour uniformiser la configuration des éditeurs de texte
+                ├── .gitignore          # Fichiers et dossiers ignorés par Git
+                ├── angular.json        # Fichier de configuration du projet Angular
+                ├── karma.conf.js       # Configuration de Karma pour les tests unitaires
+                ├── package.json        # Déclaration des dépendances et scripts npm du projet
+                ├── tsconfig.json       # Configuration TypeScript
+                └── tslint.json         # Règles de linting pour TypeScript (peut être remplacé par ESLint)
+                   
+            </pre>
+
+                </div>
+            </div>
+            <div class="module">
+                <div>
+                    <h2>Schéma de Chargement de l'Application Angular</h2>
+                    <p>Pour bien comprendre l'ordre d'utilisation des différents éléments d'Angular lors de l'ouverture
+                        du fichier <code>index.html</code>, voici une explication schématique du processus :</p>
+                    <h3>1. Chargement de <code>index.html</code></h3>
+                    <p>Le navigateur charge le fichier <code>index.html</code> qui contient l’élément
+                        <code>&lt;app-root&gt;</code>, conteneur du composant principal de l'application.</p>
+                    <h3>2. Chargement de <code>main.ts</code></h3>
+                    <p><code>main.ts</code> est exécuté, il initialise l'application en utilisant le module principal
+                        (<code>AppModule</code>).</p>
+                    <h3>3. Démarrage de l'Application par <code>AppModule</code></h3>
+                    <p><code>AppModule</code> est importé et chargé, déclarant tous les composants, services, et modules
+                        nécessaires. Le composant racine (<code>AppComponent</code>) est ensuite bootstrappé (instancié
+                        et inséré dans le DOM).</p>
+                    <h3>4. Affichage du Composant Racine (<code>AppComponent</code>)</h3>
+                    <p><code>AppComponent</code> est rendu à l'intérieur de <code>&lt;app-root&gt;</code> dans
+                        <code>index.html</code>. Le fichier <code>app.component.html</code> est utilisé pour définir le
+                        contenu de ce composant, et les styles du composant (<code>app.component.css</code>) sont
+                        chargés.</p>
+                    <h3>5. Utilisation des Autres Composants</h3>
+                    <p><code>AppComponent</code> peut contenir d'autres composants qui sont à leur tour rendus selon
+                        leur hiérarchie.</p>
+                    <h3>6. Services Angular</h3>
+                    <p>Les services définis dans les fichiers <code>*.service.ts</code> sont injectés dans les
+                        composants au besoin (gestion des données, appels API, etc.).</p>
+                    <h3>7. Gestion des Ressources Statiques (<code>assets/</code>)</h3>
+                    <p>Les images, polices, fichiers JSON, etc. nécessaires sont chargés depuis le dossier
+                        <code>assets/</code>.</p>
+                    <h3>8. Compatibilité des Navigateurs (<code>polyfills.ts</code>)</h3>
+                    <p><code>polyfills.ts</code> est chargé pour garantir la compatibilité avec les anciens navigateurs.
+                    </p>
+                    <h3>9. Application des Styles Globaux (<code>styles.css</code>)</h3>
+                    <p>Les styles globaux définis dans <code>styles.css</code> sont appliqués sur l'ensemble de
+                        l'application.</p>
+                </div>
+                <div>
+                    <h2>Représentation Schématique</h2>
+                    <pre>
+index.html
+└── <app-root>
+     └── main.ts  (Point d'entrée Angular)
+         └── AppModule  (Module principal)
+             └── AppComponent  (Composant racine)
+                 ├── app.component.html  (Template HTML)
+                 ├── app.component.css   (Styles du composant)
+                 └── Utilisation des autres composants
+                     ├── Components/      (Header, Content, Footer, etc.)
+                     └── Services/        (Gestion des données, appels API)
+    </pre>
+
+                    <h2>Conclusion</h2>
+                    <p>La structure des fichiers d'un projet Angular peut sembler complexe au premier abord, mais elle
+                        est conçue pour faciliter le développement modulaire, la maintenance et la mise à l'échelle.
+                        L'utilisation d'Angular CLI pour générer des composants, services, et modules garantit une bonne
+                        uniformité tout au long du projet.</p>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </main>
+
+    <aside>
+        <h3>Glossaire des Termes Spécifiques</h3>
+        <ul>
+            <li><strong>AppComponent</strong> : Composant racine de l'application Angular qui sert de point d'entrée pour l'affichage.</li>
+            <li><strong>AppModule</strong> : Module principal de l'application, qui déclare tous les composants et services nécessaires.</li>
+            <li><strong>Composant</strong> : Bloc de construction de l'interface utilisateur, composé de fichiers TypeScript, HTML et CSS.</li>
+            <li><strong>Service</strong> : Classe Angular qui contient de la logique partagée, comme les appels HTTP ou la gestion des données.</li>
+            <li><strong>Bootstrap</strong> : Processus par lequel Angular démarre l'application, en utilisant le composant racine.</li>
+            <li><strong>Polyfills</strong> : Scripts qui fournissent des fonctionnalités modernes à des navigateurs plus anciens.</li>
+            <li><strong>Angular CLI</strong> : Outil en ligne de commande permettant de créer, développer, et gérer des projets Angular.</li>
+            <li><strong>Template</strong> : Partie HTML d'un composant, décrivant son interface utilisateur.</li>
+            <li><strong>Node Modules</strong> : Dossier contenant toutes les dépendances installées via npm (Node Package Manager).</li>
+            <li><strong>Environment</strong> : Fichiers de configuration spécifiques aux différents environnements (développement, production).</li>
+        </ul>
+    </aside>
+    <footer>
+        <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+    </footer>
+
+    <script src="../js/menu.js"></script>
+</body>
+
+</html>

@@ -14,24 +14,10 @@
         "url": "../www/PresentationGit.html",
         "icon": "fa-brands fa-git"
       },
+  
       {
-        "label": "GitHub",
-        "url": "#github",
-        "icon": "fa-brands fa-github"
-      },
-      {
-        "label": "HTML5",
-        "url": "#html5",
-        "icon": "fa-brands fa-html5"
-      },
-      {
-        "label": "CSS3",
-        "url": "#css3",
-        "icon": "fa-brands fa-css3"
-      },
-      {
-        "label": "JavaScript",
-        "url": "#javascript",
+        "label": "Angular",
+        "url": "../AngularPresentation.html",
         "icon": "fa-brands fa-js"
       }
     ]

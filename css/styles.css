@@ -148,6 +148,15 @@ button{
     padding: 20px;
     margin: 10px 0;
     border-radius: 8px;
+    display: grid;
+
+}
+@media screen and (min-width:1000px){
+    .module {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+    }
 }
 .module:hover {
     background-color: #d5d5d5;

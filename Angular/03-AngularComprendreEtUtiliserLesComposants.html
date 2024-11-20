@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - fiche 3 : Comprendre et Utiliser les Composants</title>
+    <meta name="description"
+        content="Fiche pédagogique sur l'utilisation des composants dans Angular : structure, création, cycle de vie, et personnalisation.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+
+    <div class="container">
+        <h1>Comprendre et Utiliser les Composants dans Angular</h1>
+
+        <div class="module">
+            <div>
+            <h2>Comprendre la notion de composant</h2>
+            <p>Les <strong>composants</strong> sont l'un des concepts centraux d'Angular. L'interface de l'application
+                est constituée d'une arborescence de composants. Un composant est un bloc de code réutilisable, ce qui
+                permet d'emboîter ces composants les uns dans les autres. Par exemple, une application Angular commence
+                par un <strong>composant racine</strong>, appelé <em>AppComponent</em>, qui représente l'application
+                entière. Ce composant contiendra d'autres sous-composants comme le menu, le corps de la page ou une
+                barre de navigation (NavBar). Ces sous-composants peuvent eux-mêmes contenir d'autres sous-composants,
+                formant ainsi une structure hiérarchique.</p>
+            <p>En résumé, un composant Angular représente un morceau d'interface de l'application. Un composant peut
+                aller d'un simple bouton à une page web entière. Cette modularité offre une grande flexibilité pour
+                construire des interfaces riches et complexes.</p>
+            <p>Chaque composant est autonome et possède ses propres données et méthodes, ce qui facilite le développement
+                modulaire. Les composants peuvent également être partagés entre différentes parties de l'application, ce
+                qui améliore la réutilisabilité du code et la maintenabilité.</p>
+        </div>
+    </div>
+
+        <div class="module">
+            <div>
+            <h2>La structure d'un composant Angular</h2>
+            <p>Pour mieux comprendre comment fonctionnent les composants, il est important de se familiariser avec leur
+                structure. Chaque composant Angular est constitué de plusieurs fichiers :</p>
+            <ul>
+                <li><strong>HTML :</strong> Fichier contenant le code de l'interface utilisateur du composant. Par
+                    exemple, <em>app.component.html</em>.</li>
+                <li><strong>CSS :</strong> Fichier contenant les styles du composant, par exemple
+                    <em>app.component.css</em>. Chaque composant Angular possède son propre fichier de style, ce qui
+                    permet d'appliquer des styles à l'échelle locale du composant.</li>
+                <li><strong>TypeScript (TS) :</strong> Fichier qui contient la logique du composant, par exemple
+                    <em>app.component.ts</em>. Ce fichier est écrit en TypeScript et contient le code permettant de
+                    gérer les comportements de l'interface.</li>
+                <li><strong>Fichier de test (spec.ts) :</strong> Utilisé pour les tests unitaires du composant. Bien que
+                    nous n'utiliserons pas ces fichiers dans ce cours, ils sont importants dans le cadre de
+                    développement d'applications robustes.</li>
+            </ul>
+            <p>Un composant Angular est généralement construit à l'aide d'un <strong>décorateur @Component</strong>, qui
+                relie les différents fichiers ensemble. Le décorateur contient notamment :</p>
+            <ul>
+                <li><strong>selector :</strong> Le nom de la balise HTML pour afficher ce composant, par exemple
+                    <em>app-root</em>.</li>
+                <li><strong>templateUrl :</strong> Le chemin vers le fichier HTML du composant.</li>
+                <li><strong>styleUrls :</strong> Le chemin vers le fichier CSS du composant.</li>
+            </ul>
+            <p>Voici un exemple de décorateur de composant :</p>
+            <pre><code>@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Mon Application Angular';
+}</code></pre>
+            <p>Les composants peuvent également être enrichis avec des <strong>Input</strong> et <strong>Output</strong> pour la communication entre les composants. Les propriétés <strong>@Input()</strong> permettent de recevoir des données d'un composant parent, tandis que <strong>@Output()</strong> permet d'envoyer des événements à un composant parent.</p>
+        </div>
+    </div>
+
+        <div class="module">
+            <div>
+            <h2>Le cycle de vie d'un composant</h2>
+            <p>Chaque composant Angular passe par plusieurs états au cours de son existence, appelés <strong>cycle de
+                    vie du composant</strong>. Cela inclut la création, la mise à jour et la destruction du composant.
+                Angular propose des <strong>hooks de cycle de vie</strong> permettant aux développeurs d'exécuter du
+                code à différents moments de la vie d'un composant.</p>
+            <p>Voici quelques hooks de cycle de vie importants :</p>
+            <ul>
+                <li><strong>ngOnChanges :</strong> Appelé lors de la modification des données d'entrée d'un composant.
+                </li>
+                <li><strong>ngOnInit :</strong> Appelé une fois lors de l'initialisation du composant. Idéal pour
+                    effectuer des tâches comme la récupération de données à partir d'un service.</li>
+                <li><strong>ngOnDestroy :</strong> Appelé juste avant la destruction du composant, utile pour nettoyer
+                    des ressources (comme des abonnements).</li>
+            </ul>
+            <p>Voici un exemple d'utilisation du hook <em>ngOnInit</em> :</p>
+            <pre><code>import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-article',
+  templateUrl: './article.component.html',
+  styleUrls: ['./article.component.css']
+})
+export class ArticleComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit(): void {
+    console.log('Le composant Article est initialisé');
+  }
+}</code></pre>
+            <p>Comprendre le cycle de vie des composants est essentiel pour optimiser la gestion des ressources et s'assurer que les actions appropriées sont effectuées au bon moment (par exemple, initialiser des données, se désabonner de services).</p>
+        </div>
+        </div>
+        <h2>Créer un Composant Angular</h2>
+        <p>Pour apprendre à créer un composant Angular, nous allons détailler chaque étape en partant de l'exemple fourni dans <a href="https://angular.dev/guide/components" target="_blank">la documentation officielle Angular</a>. Voici comment procéder :</p>
+        <div class="module">
+            <div>
+            <h3>Étape 1 : Créer un Nouveau Composant</h3>
+            <p>Pour créer un composant Angular, tu utilises la <strong>CLI d’Angular</strong> qui te permet de générer automatiquement les fichiers nécessaires. Ouvre ton terminal et exécute la commande suivante :</p>
+            <pre><code>ng generate component user-profile</code></pre>
+            <p>Cette commande génère un composant appelé <strong>UserProfileComponent</strong> avec les fichiers suivants :</p>
+            <ul>
+                <li><strong>user-profile.component.html</strong> : Fichier contenant le template HTML du composant.</li>
+                <li><strong>user-profile.component.css</strong> : Fichier contenant le style du composant.</li>
+                <li><strong>user-profile.component.ts</strong> : Fichier contenant la logique du composant en TypeScript.</li>
+                <li><strong>user-profile.component.spec.ts</strong> : Fichier utilisé pour les tests unitaires.</li>
+            </ul>
+        </div>
+
+        <div>
+            
+            <h3>Étape 2 : Comprendre la Structure du Composant</h3>
+            <p>Voici un exemple simple du fichier <strong>user-profile.component.ts</strong> pour comprendre la structure de base d'un composant Angular :</p>
+            <pre><code>import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-user-profile',
+  templateUrl: './user-profile.component.html',
+  styleUrls: ['./user-profile.component.css']
+})
+export class UserProfileComponent {
+  name: string = 'John Doe';
+  age: number = 30;
+  bio: string = 'Développeur passionné par Angular et les technologies web.';
+}</code></pre>
+            <p>Voici les parties importantes à comprendre :</p>
+            <ul>
+                <li><strong>Importation du décorateur `@Component`</strong> : Importation du décorateur `@Component` depuis le module `@angular/core`. Ce décorateur est essentiel pour déclarer à Angular que cette classe est un composant.</li>
+                <li><strong>Décorateur `@Component`</strong> : Le décorateur contient des propriétés telles que :</li>
+                <ul>
+                    <li><strong>`selector`</strong> : Le nom de la balise HTML utilisée pour insérer ce composant dans d'autres templates. Ici, la balise sera `<app-user-profile>`.</li>
+                    <li><strong>`templateUrl`</strong> : Spécifie le fichier HTML contenant le template de ce composant.</li>
+                    <li><strong>`styleUrls`</strong> : Spécifie le fichier CSS contenant les styles associés à ce composant.</li>
+                </ul>
+                <li><strong>Classe `UserProfileComponent`</strong> : La classe contient des <em>propriétés</em> qui représentent les données du composant. Par exemple, `name`, `age`, et `bio`.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Étape 3 : Créer le Template HTML</h3>
+            <p>Dans le fichier <strong>user-profile.component.html</strong>, crée la vue qui sera rendue par ton composant :</p>
+            <pre><code>&lt;div class="user-profile"&gt;
+  &lt;h2&gt;{{ name }}&lt;/h2&gt;
+  &lt;p&gt;Âge : {{ age }}&lt;/p&gt;
+  &lt;p&gt;Bio : {{ bio }}&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            <p>Ici, tu utilises la syntaxe <strong>`{{ }}`</strong> pour lier les propriétés définies dans le composant TypeScript (comme `name`, `age`, `bio`) à la vue. Cela s'appelle la <strong>liaison de données</strong> ou <em>data binding</em>.</p>
+        </div>
+
+        <div>
+            <h3>Étape 4 : Ajouter des Styles</h3>
+            <p>Dans le fichier <strong>user-profile.component.css</strong>, ajoute des styles spécifiques à ce composant :</p>
+            <pre><code>.user-profile {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 300px;
+  margin: 16px auto;
+  text-align: center;
+}
+
+.user-profile h2 {
+  font-size: 1.5em;
+  color: #333;
+}</code></pre>
+            <p>Ces styles sont <strong>encapsulés</strong> et n'affecteront que ce composant.</p>
+        </div>
+
+        <div >
+            <h3>Étape 5 : Intégrer le Composant dans l'Application</h3>
+            <p>Pour intégrer ce nouveau composant dans une autre partie de ton application, par exemple dans <strong>app.component.html</strong> (le composant principal), ajoute la balise définie par le `selector` de ton composant :</p>
+            <pre><code>&lt;app-user-profile&gt;&lt;/app-user-profile&gt;</code></pre>
+            <p>Cela inclut le composant <strong>UserProfileComponent</strong> dans le composant racine de ton application.</p>
+        </div>
+
+        <div >
+            <h3>Étape 6 : Exemple Complet</h3>
+            <h4>user-profile.component.ts</h4>
+            <pre><code>import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-user-profile',
+  templateUrl: './user-profile.component.html',
+  styleUrls: ['./user-profile.component.css']
+})
+export class UserProfileComponent {
+  name: string = 'John Doe';
+  age: number = 30;
+  bio: string = 'Développeur passionné par Angular et les technologies web.';
+}</code></pre>
+            <h4>user-profile.component.html</h4>
+            <pre><code>&lt;div class="user-profile"&gt;
+  &lt;h2&gt;{{ name }}&lt;/h2&gt;
+  &lt;p&gt;Âge : {{ age }}&lt;/p&gt;
+  &lt;p&gt;Bio : {{ bio }}&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            <h4>user-profile.component.css</h4>
+            <pre><code>.user-profile {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 300px;
+  margin: 16px auto;
+  text-align: center;
+}
+
+.user-profile h2 {
+  font-size: 1.5em;
+  color: #333;
+}</code></pre>
+            <h4>app.component.html (Pour l'intégration)</h4>
+            <pre><code>&lt;app-user-profile&gt;&lt;/app-user-profile&gt;</code></pre>
+        </div>
+
+        <div>
+            <h3>Étape 7 : Ajouter une Interaction avec des Propriétés `@Input`</h3>
+            <p>Pour rendre ce composant plus dynamique, utilise <strong>`@Input`</strong> pour permettre au composant de recevoir des données depuis un composant parent :</p>
+            <h3>user-profile.component.ts (avec `@Input`)</h3>
+            <pre><code>import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-user-profile',
+  templateUrl: './user-profile.component.html',
+  styleUrls: ['./user-profile.component.css']
+})
+export class UserProfileComponent {
+  @Input() name: string = 'John Doe';
+  @Input() age: number = 30;
+  @Input() bio: string = 'Développeur passionné par Angular et les technologies web.';
+}</code></pre>
+            <p>Maintenant, lorsque tu veux intégrer ce composant dans <strong>app.component.html</strong>, tu peux passer des valeurs différentes à chaque instance :</p>
+            <pre><code>&lt;app-user-profile name="Alice" age="25" bio="Designer créatif passionné par l'UI/UX."&gt;&lt;/app-user-profile&gt;
+&lt;app-user-profile name="Bob" age="40" bio="Chef de projet expert en Agile et en gestion d'équipe."&gt;&lt;/app-user-profile&gt;</code></pre>
+            <p>Avec cette approche, tu peux réutiliser le même composant tout en ayant des données différentes, ce qui le rend très puissant pour créer des interfaces dynamiques et modulaires.</p>
+        </div>
+
+    </div>
+
+
+        <footer>
+            <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+        </footer>
+
+        <script src="../js/menu.js" defer></script>
+</body>
+
+</html>
