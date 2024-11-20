@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - fiche 4 : Comprendre et Utiliser Le Databinding avec Angular</title>
+    <meta name="description"
+        content="Fiche pédagogique sur les différentes méthodes de liaison de données disponibles dans Angular, notamment l'interpolation, la liaison de propriété, la liaison d'événement, et la liaison bidirectionnelle. Elle explique également comment transmettre des données entre des composants enfants et parents en utilisant des annotations comme @Input() et @Output().">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+<main>
+    <div class="container">
+        <h1>Comprendre et Utiliser Le Databinding avec Angular</h1>
+        <p>
+            Le <strong>databinding</strong> est un concept essentiel d'Angular qui permet de lier la logique de l'application aux vues, facilitant ainsi la gestion des interactions utilisateur. Grâce au databinding, les données de l'application peuvent être affichées dynamiquement dans l'interface utilisateur, et les actions de l'utilisateur peuvent être facilement capturées et traitées. Cela permet de rendre les applications Angular interactives et réactives, en assurant une synchronisation fluide entre la logique du composant et les éléments du DOM.
+        </p>
+        <p>
+            Angular propose plusieurs types de liaisons de données pour répondre aux différents besoins des développeurs, notamment : l'interpolation, la liaison de propriété, la liaison d'événement, la liaison bidirectionnelle, ainsi que des mécanismes permettant de transmettre des données entre composants parents et enfants. Chaque méthode de databinding a son propre cas d'utilisation spécifique et contribue à rendre le développement plus modulaire et maintenable.
+        </p>
+
+        <div class="module">
+            <div>
+            <h2>1. Interpolation</h2>
+            <p>
+                L'interpolation est une méthode de liaison de données qui permet d'afficher des données dynamiques dans
+                le DOM. Elle utilise la syntaxe double accolade (<code>{{ "{{ expression }}" }}</code>) pour insérer des
+                expressions JavaScript simples directement dans le code HTML.
+            </p>
+            <pre><code class="html">&lt;h1&gt;{{ title }}&lt;/h1&gt;</code></pre>
+            <p>Exemple TypeScript :</p>
+            <pre><code class="typescript">export class AppComponent {
+  title = 'Bienvenue sur Angular!';
+}</code></pre>
+        </div></div>
+        <div class="module">
+            <div>
+                <h2>2. Property Binding (liaison de propriété)</h2>
+                <p>
+                    La liaison de propriété est une méthode utilisée pour lier des valeurs aux propriétés HTML ou aux
+                    propriétés de directives Angular. Cela permet d'établir une connexion entre une propriété du
+                    composant et une propriété d'un élément du DOM.
+                </p>
+                <pre><code class="html">&lt;img [src]="imageUrl" alt="Logo Angular"&gt;</code></pre>
+                <p>Exemple TypeScript :</p>
+                <pre><code class="typescript">export class AppComponent {
+  imageUrl = 'https://angular.dev/assets/images/logos/angular/angular.png';
+}</code></pre>
+            </div>
+        </div>
+        <div class="module">
+            <div>
+                <h2>3. Event Binding (liaison d'événement)</h2>
+                <p>
+                    La liaison d'événement permet de lier des événements utilisateur (comme les clics) aux méthodes du
+                    composant. Cela permet de capturer des interactions utilisateur.
+                </p>
+                <pre><code class="html">&lt;button (click)="onClick()"&gt;Cliquez-moi&lt;/button&gt;</code></pre>
+                <p>Exemple TypeScript :</p>
+                <pre><code class="typescript">export class AppComponent {
+  message = '';
+
+  onClick() {
+    this.message = 'Vous avez cliqué sur le bouton !';
+  }
+}</code></pre>
+            </div>
+        </div>
+        <div class="module">
+            <div>
+                <h2>4. Two-Way Binding (liaison bidirectionnelle)</h2>
+                <p>
+                    Le <em>two-way binding</em> (liaison bidirectionnelle) permet de synchroniser automatiquement les
+                    données entre le composant et la vue. Angular utilise la directive <code>ngModel</code> pour cela.
+                </p>
+                <pre><code class="html">&lt;input [(ngModel)]="username" placeholder="Entrez votre nom"&gt;</code></pre>
+                <p>Exemple TypeScript :</p>
+                <pre><code class="typescript">export class AppComponent {
+  username = '';
+}</code></pre>
+            </div>
+        </div>
+        <div class="module">
+            <div>
+                <h2>5. Transmission de données vers un composant enfant</h2>
+                <p>
+                    Pour transmettre des données d'un composant parent à un composant enfant, Angular utilise
+                    <code>@Input()</code>.
+                </p>
+                <pre><code class="typescript">// composant enfant
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: '&lt;p&gt;{{ childMessage }}&lt;/p&gt;'
+})
+export class ChildComponent {
+  @Input() childMessage: string;
+}</code></pre>
+                <p>Dans le composant parent :</p>
+                <pre><code class="typescript">&lt;app-child [childMessage]="parentMessage"&gt;&lt;/app-child&gt;</code></pre>
+            </div>
+        </div>
+        <div class="module">
+            <div>
+                <h2>6. Transmission de données vers un composant parent</h2>
+                <p>
+                    Pour envoyer des données d'un composant enfant à un composant parent, Angular utilise
+                    <code>@Output()</code> en combinaison avec un <code>EventEmitter</code>.
+                </p>
+                <pre><code class="typescript">// composant enfant
+import { Component, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: '&lt;button (click)="sendMessage()"&gt;Envoyer un message au parent&lt;/button&gt;'
+})
+export class ChildComponent {
+  @Output() messageEvent = new EventEmitter<string>();
+
+  sendMessage() {
+    this.messageEvent.emit('Bonjour du composant enfant !');
+  }
+}</code></pre>
+                <p>Dans le composant parent :</p>
+                <pre><code class="typescript">&lt;app-child (messageEvent)="receiveMessage($event)"&gt;&lt;/app-child&gt;
+&lt;p&gt;{{ message }}&lt;/p&gt;</code></pre>
+            </div>
+        </div>
+        <div class="module">
+            <div>
+                <h2>7. Autres Types de Liaison</h2>
+                <p>En plus des méthodes mentionnées ci-dessus, il existe :</p>
+                <ul>
+                    <li>
+                        <strong>Attribute Binding</strong> : Utilisé pour lier des attributs HTML qui ne sont pas des
+                        propriétés DOM standard, par exemple <code>aria-*</code> ou <code>colspan</code>.
+                    </li>
+                    <li>
+                        <strong>Class Binding</strong> : Permet d'ajouter ou de retirer dynamiquement des classes CSS à
+                        un élément.
+                    </li>
+                    <li>
+                        <strong>Style Binding</strong> : Utilisé pour définir dynamiquement les styles d'un élément.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="module">
+            <div>
+                <h2>Résumé</h2>
+                <p>
+                    Angular fournit différentes manières de lier les données entre les composants et les vues, notamment
+                    :
+                </p>
+                <ul>
+                    <li><strong>Interpolation</strong> (<code>{{ "{{ }}" }}</code>) : Pour afficher des données dans le
+                        template.</li>
+                    <li><strong>Property Binding</strong> (<code>[property]</code>) : Pour lier des propriétés
+                        d'éléments DOM.</li>
+                    <li><strong>Event Binding</strong> (<code>(event)</code>) : Pour réagir à des événements
+                        utilisateur.</li>
+                    <li><strong>Two-Way Binding</strong> (<code>[(ngModel)]</code>) : Pour synchroniser les données
+                        entre l'UI et le composant.</li>
+                    <li><strong>Transmission de données</strong> avec <code>@Input()</code> et <code>@Output()</code> :
+                        Pour partager des données entre composants.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+    <footer>
+        <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+    </footer>
+
+    <script src="../js/menu.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+          hljs.highlightAll();
+        });
+      </script>
+</body>
+
+</html>

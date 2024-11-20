@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - fiche 5 : Illustration Du Databinding avec Angular</title>
+    <meta name="description"
+        content="Fiche pédagogique sur les différentes méthodes de liaison de données disponibles dans Angular, notamment l'interpolation, la liaison de propriété, la liaison d'événement, et la liaison bidirectionnelle. Elle explique également comment transmettre des données entre des composants enfants et parents en utilisant des annotations comme @Input() et @Output().">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+</head>
+
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+<main>
+    <div class="container">
+    <h1>Illustration Du Databinding avec Angular</h1>
+    <p>Pour illustrer l'utilisation du databinding dans Angular, nous allons reprendre et adapter des exemples issus de la <a href="https://angular.dev/" target="_blank">documentation officielle d'Angular</a>, en particulier sur le sujet des composants, pour montrer concrètement comment les différents types de databinding peuvent être utilisés dans une application réelle.</p>
+    <p>Nous allons commencer par créer deux composants : un composant parent qui va contenir une liste de héros, et un composant enfant qui recevra les informations sur un héros et les affichera.</p>
+        <div class="module"><div>
+    <h2>Étape 1 : Création des Composants</h2>
+    <p>Imaginons que nous construisons une application de gestion de héros, où nous avons un composant principal HeroParentComponent et un composant enfant HeroChildComponent. Dans cette illustration, nous allons aborder l'interpolation, le property binding, l'event binding, le two-way binding, ainsi que la transmission de données entre les composants parent et enfant.</p>
+    <h3>Composant Enfant : HeroChildComponent</h3>
+    <p>Le composant enfant va recevoir les données d'un héros depuis le composant parent. Pour ce faire, il va utiliser le décorateur <code>@Input()</code> pour accepter des valeurs passées par le parent.</p>
+
+    <h4>Fichier TypeScript du Composant Enfant (hero-child.component.ts) :</h4>
+    <pre><code class="typescript">
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-hero-child',
+  template: `
+    &lt;h3&gt;{{ hero.name }} est mon héros préféré&lt;/h3&gt;
+    &lt;button (click)="notifyParent()"&gt;Notifie le parent&lt;/button&gt;
+  `
+})
+export class HeroChildComponent {
+  @Input() hero: { name: string };
+  @Output() heroClicked = new EventEmitter<string>();
+
+  notifyParent() {
+    this.heroClicked.emit(this.hero.name);
+  }
+}
+    </code></pre>
+
+    <h4>Explications :</h4>
+    <ul>
+        <li><strong>Property Binding via @Input() :</strong> La propriété <code>@Input() hero</code> permet au composant parent de transmettre les données du héros (nom, etc.) au composant enfant.</li>
+        <li><strong>Event Binding via @Output() :</strong> La propriété <code>@Output() heroClicked</code> est de type <code>EventEmitter</code>, et la méthode <code>notifyParent()</code> est déclenchée lorsque le bouton est cliqué.</li>
+    </ul>
+
+    <h3>Composant Parent : HeroParentComponent</h3>
+    <p>Le composant parent <code>HeroParentComponent</code> va contenir une liste de héros et passera ces données au composant enfant en utilisant le property binding.</p>
+
+    <h4>Fichier TypeScript du Composant Parent (hero-parent.component.ts) :</h4>
+    <pre><code class="typescript">
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-hero-parent',
+  template: `
+    &lt;h2&gt;Liste des Héros&lt;/h2&gt;
+    &lt;app-hero-child
+      *ngFor="let hero of heroes"
+      [hero]="hero"
+      (heroClicked)="onHeroClicked($event)"&gt;
+    &lt;/app-hero-child&gt;
+    &lt;p&gt;{{ notificationMessage }}&lt;/p&gt;
+  `
+})
+export class HeroParentComponent {
+  heroes = [
+    { name: 'Iron Man' },
+    { name: 'Spider-Man' },
+    { name: 'Thor' },
+    { name: 'Hulk' }
+  ];
+
+  notificationMessage = '';
+
+  onHeroClicked(heroName: string) {
+    this.notificationMessage = `${heroName} a été sélectionné !`;
+  }
+}
+    </code></pre>
+</div></div>
+<div class="module"><div>
+    <h2>Étape 2 : Illustration du Two-Way Binding</h2>
+    <p>Pour une illustration de la liaison bidirectionnelle, ajoutons un formulaire dans le composant parent qui permet de modifier directement le nom d'un héros.</p>
+
+    <h4>Modification du Template Parent (hero-parent.component.html) :</h4>
+    <pre><code class="html">
+&lt;h2&gt;Liste des Héros&lt;/h2&gt;
+&lt;app-hero-child
+  *ngFor="let hero of heroes"
+  [hero]="hero"
+  (heroClicked)="onHeroClicked($event)"&gt;
+&lt;/app-hero-child&gt;
+
+&lt;p&gt;{{ notificationMessage }}&lt;/p&gt;
+
+&lt;div *ngIf="selectedHero"&gt;
+  &lt;h3&gt;Modifier le Héros Sélectionné&lt;/h3&gt;
+  &lt;input [(ngModel)]="selectedHero.name"&gt;
+&lt;/div&gt;
+    </code ></pre>
+
+    <h4>Résumé des Techniques de Databinding Illustrées</h4>
+    <ul>
+        <li><strong>Interpolation ({{ }}) :</strong> Utilisé pour afficher dynamiquement le nom d'un héros dans le template enfant.</li>
+        <li><strong>Property Binding ([property]="expression") :</strong> Utilisé pour transmettre des informations d'un composant parent à un composant enfant (<code>[hero]="hero"</code>).</li>
+        <li><strong>Event Binding ((event)="expression") :</strong> Utilisé pour écouter un événement déclenché par l'enfant (<code>(heroClicked)="onHeroClicked($event)"</code>).</li>
+        <li><strong>Two-Way Binding ([(ngModel)]="property") :</strong> Utilisé pour modifier dynamiquement le nom du héros via un formulaire.</li>
+    </ul>
+
+    <p>Ces différentes techniques de databinding montrent à quel point Angular facilite la communication entre la vue et la logique de l'application, offrant une expérience utilisateur réactive et dynamique.</p>
+</div></div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+</footer>
+
+<script src="../js/menu.js" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      hljs.highlightAll();
+    });
+  </script>
+  
+</body>
+
+</html>

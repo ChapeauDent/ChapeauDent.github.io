@@ -13,5 +13,15 @@
         "title": "Angular - fiche 3 : Comprendre et Utiliser les Composants",
         "description": "Fiche pédagogique sur l'utilisation des composants dans Angular : structure, création, cycle de vie, et personnalisation.",
         "url": "Angular/03-AngularComprendreEtUtiliserLesComposants.html"
+    },
+    {
+        "title": "Angular - fiche 4 : Comprendre et Utiliser Le Databinding avec Angular",
+        "description": "Fiche pédagogique sur les différentes méthodes de liaison de données disponibles dans Angular, notamment l'interpolation, la liaison de propriété, la liaison d'événement, et la liaison bidirectionnelle. Elle explique également comment transmettre des données entre des composants enfants et parents en utilisant des annotations comme @Input() et @Output().",
+        "url": "Angular/04-AngularComprendreetUtiliserLeDatabinding.html"
+    },
+    {
+        "title": "Angular - fiche 5 : Illustrer le Databinding avec des Composants",
+        "description": "Fiche pédagogique illustrant l'utilisation du databinding avec des exemples concrets de composants Angular, y compris l'interpolation, la liaison de propriété, la liaison d'événement, et la liaison bidirectionnelle. Elle démontre également la transmission de données entre composants parents et enfants en utilisant @Input() et @Output().",
+        "url": "Angular/05-AngularIllustrationDuDatabinding.html"
     }
 ]

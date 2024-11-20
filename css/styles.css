@@ -113,7 +113,7 @@ button{
 }
 @media screen and (min-width:768px){
 
-	button{
+	.menutoggle{
 		display: none;
 	}
 	.menulink{
@@ -182,12 +182,13 @@ code {
     background-color: #f5f5f5;
     padding: 2px 4px;
     border-radius: 4px;
-    font-size: 0.9em;
+    font-size: 1.2em;
     color:#1d1d1d
 }
 pre{
     word-break:break-word;
     overflow: auto;
+
 }
 .container {
     padding: 3em;
