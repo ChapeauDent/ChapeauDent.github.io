@@ -20,8 +20,38 @@
         "url": "Angular/04-AngularComprendreetUtiliserLeDatabinding.html"
     },
     {
-        "title": "Angular - fiche 5 : Illustrer le Databinding avec des Composants",
-        "description": "Fiche pédagogique illustrant l'utilisation du databinding avec des exemples concrets de composants Angular, y compris l'interpolation, la liaison de propriété, la liaison d'événement, et la liaison bidirectionnelle. Elle démontre également la transmission de données entre composants parents et enfants en utilisant @Input() et @Output().",
+        "title": "Angular - fiche 5 : Illustration Du Databinding avec Angular",
+        "description": "Fiche pédagogique sur les différentes méthodes de liaison de données disponibles dans Angular, notamment l'interpolation, la liaison de propriété, la liaison d'événement, et la liaison bidirectionnelle. Elle explique également comment transmettre des données entre des composants enfants et parents en utilisant des annotations comme @Input() et @Output().",
         "url": "Angular/05-AngularIllustrationDuDatabinding.html"
+    },
+    {
+        "title": "Angular - fiche 6 : Directives et Pipes dans Angular",
+        "description": " Angular propose un outil puissant pour transformer ces valeurs avant l'affichage : les pipes. Les pipes sont des filtres utilisables directement dans les templates HTML pour transformer la présentation des données, sans affecter leur contenu d'origine.",
+        "url": "Angular/06-AngularDirectivesEtPipes.html"
+    },
+    {
+        "title": "Angular - fiche 7 : Comprendre les Services et l'Injection de Dépendance dans Angular",
+        "description": " Un service dans Angular permet de centraliser certaines parties de votre code et des données utilisées à différents endroits de l'application.",
+        "url": "Angular/07-AngularComprendrelesServicesEtInjectionDeDependance.html"
+    },
+    {
+        "title": "Angular - fiche 8 : Comprendre la Notion de Routeur dans Angular",
+        "description": " L'un des avantages majeurs d'Angular est la possibilité de créer des Single Page Applications (SPA). Plutôt que de charger une nouvelle page à chaque clic ou changement d'URL, Angular remplace le contenu de la page en modifiant les composants qui y sont affichés.",
+        "url": "Angular/08-AngularComprendreLaNotionDeRouteur.html"
+    },
+    {
+        "title": "Angular - fiche 9 : Comprendre les Formulaires dans Angular",
+        "description": "La capacité à récupérer des données de l'utilisateur est cruciale, souvent sous la forme de formulaires. Angular offre deux méthodes pour créer des formulaires : les formulaires basés sur un template et les formulaires réactifs",
+        "url": "Angular/09-AngularComprendreLesFormulaires.html"
+    },
+    {
+        "title": "Angular - fiche 10 : Comprendre RxJS et les Obersables dans Angular",
+        "description": "Angular utilise par défaut la bibliothèque RxJS (Reactive Extensions for JavaScript), qui est une bibliothèque de programmation réactive permettant de gérer des événements asynchrones à l'aide des observables.",
+        "url": "Angular/10-AngularComprendreRxJSEtLesObservables.html"
+    },
+    {
+        "title": "Angular - fiche 11 : Interaction avec un Serveur via Angular HttpClient",
+        "description": "Angular met à disposition un service puissant pour interagir avec des serveurs : HttpClient.",
+        "url": "Angular/11-AngularInteractionAvecUnServeurViaAngularHttpClient.html"
     }
 ]

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - fiche 9 : Comprendre les Formulaires dans Angular</title>
+    <meta name="description"
+        content="La capacité à récupérer des données de l'utilisateur est cruciale, souvent sous la forme de formulaires. Angular offre deux méthodes pour créer des formulaires : les formulaires basés sur un template et les formulaires réactifs">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+</head>
+
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+<main>
+    <div class="container">
+        <h1>Comprendre les Formulaires dans Angular</h1>
+        <div class="module"><div>
+        <h2>Introduction aux Formulaires dans Angular</h2>
+        <p>Dans de nombreuses applications, la capacité à récupérer des données de l'utilisateur est cruciale, souvent sous la forme de formulaires. Angular offre deux méthodes pour créer des formulaires : <strong>les formulaires basés sur un template</strong> et <strong>les formulaires réactifs</strong>.</p>
+    
+        <ul>
+            <li><strong>Formulaires basés sur un template</strong> : Ces formulaires utilisent la directive <code>ngModel</code> pour créer et manipuler le modèle d'objet sous-jacent. Ils sont adaptés pour des formulaires simples, comme un formulaire d'inscription, et peuvent être gérés directement dans le template HTML. Toutefois, ils ne sont pas aussi évolutifs et robustes que les formulaires réactifs.</li>
+            <li><strong>Formulaires réactifs</strong> : Contrairement aux formulaires basés sur un template, les formulaires réactifs fournissent un accès direct et explicite au modèle d'objet du formulaire sous-jacent. Ils sont plus robustes, réutilisables et testables, et sont idéaux lorsque les formulaires sont un élément clé de l'application.</li>
+        </ul>
+    </div></div>
+    <div class="module"><div>
+        <h2>Créer un Formulaire Basé sur un Template</h2>
+        <p>Pour créer un formulaire Angular basé sur un template, vous pouvez utiliser le module <code>FormsModule</code>. Voici un exemple de création d'un formulaire basé sur un template.</p>
+    
+        <h3>Exemple de Code HTML</h3>
+        <p>Voici un exemple de formulaire HTML simple qui utilise <code>ngModel</code> pour lier les champs du formulaire aux variables de notre composant TypeScript.</p>
+    
+        <pre><code class="html">
+    &lt;form (ngSubmit)="onSubmit(f)" #f="ngForm"&gt;
+      &lt;div&gt;
+        &lt;label for="title"&gt;Titre :&lt;/label&gt;
+        &lt;input type="text" id="title" name="title" ngModel required minlength="4"&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;label for="price"&gt;Prix :&lt;/label&gt;
+        &lt;input type="number" id="price" name="price" ngModel required&gt;
+      &lt;/div&gt;
+      &lt;button type="submit" [disabled]="f.invalid"&gt;Envoyer&lt;/button&gt;
+    &lt;/form&gt;
+        </code></pre>
+    
+        <h3>Lier les Variables avec <code>ngModel</code></h3>
+        <p>Dans le template ci-dessus, les champs de texte sont liés aux variables du composant grâce à <code>ngModel</code>. L'événement <code>(ngSubmit)</code> appelle la méthode <code>onSubmit()</code> lors de la soumission du formulaire, et le bouton d'envoi est désactivé tant que le formulaire n'est pas valide (<code>f.invalid</code>).</p>
+    
+        <h3>Valider et Gérer les Erreurs d'un Formulaire</h3>
+        <p>Pour valider un formulaire basé sur un template, nous pouvons ajouter des attributs comme <code>required</code>, <code>minlength</code>, et gérer l'affichage des messages d'erreur avec <code>ngIf</code>. Par exemple, nous pouvons indiquer que le champ <code>title</code> est obligatoire et doit avoir un minimum de quatre caractères.</p>
+    
+        <pre><code class="html">
+    &lt;div&gt;
+      &lt;label for="title"&gt;Titre :&lt;/label&gt;
+      &lt;input type="text" id="title" name="title" ngModel required minlength="4" #title="ngModel"&gt;
+      &lt;div *ngIf="title.invalid &amp;&amp; (title.dirty || title.touched)"&gt;
+        &lt;div *ngIf="title.errors?.required"&gt;Le titre est obligatoire.&lt;/div&gt;
+        &lt;div *ngIf="title.errors?.minlength"&gt;Le titre doit avoir un minimum de 4 caractères.&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+        </code></pre>
+    
+        <p>Dans ce code, nous utilisons la directive <code>ngIf</code> pour n'afficher les messages d'erreur que si le champ est invalide (<code>title.invalid</code>) et si l'utilisateur a modifié ou touché le champ (<code>title.dirty || title.touched</code>). De plus, nous utilisons <code>title.errors</code> pour vérifier les types d'erreurs (par exemple <code>required</code> ou <code>minlength</code>).</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Créer un Formulaire Réactif</h2>
+        <p>Pour les formulaires réactifs, nous devons utiliser <code>ReactiveFormsModule</code>. Ce module fournit des outils pour créer des formulaires de manière plus programmatique, permettant un contrôle plus poussé sur les données.</p>
+    
+        <h3>Importer <code>ReactiveFormsModule</code></h3>
+        <p>Tout d'abord, nous devons importer <code>ReactiveFormsModule</code> dans le module principal (<code>app.module.ts</code>) :</p>
+    
+        <pre><code class="typescript">
+    import { ReactiveFormsModule } from '@angular/forms';
+    
+    @NgModule({
+      imports: [
+        ReactiveFormsModule
+      ]
+    })
+    export class AppModule {}
+        </code></pre>
+    
+        <h3>Exemple de Formulaire Réactif</h3>
+        <p>Voici comment créer un formulaire réactif simple avec Angular.</p>
+    
+        <pre><code class="typescript">
+    import { Component } from '@angular/core';
+    import { FormControl, FormGroup, Validators } from '@angular/forms';
+    
+    @Component({
+      selector: 'app-ajouter',
+      templateUrl: './ajouter.component.html'
+    })
+    export class AjouterComponent {
+      formulaire = new FormGroup({
+        titleToAdd: new FormControl('', [Validators.required, Validators.minLength(4)]),
+        priceToAdd: new FormControl('', Validators.required)
+      });
+    
+      onSubmit() {
+        if (this.formulaire.valid) {
+          console.log(this.formulaire.value);
+        }
+      }
+    }
+        </code></pre>
+    
+        <p>Ici, nous créons une instance de <code>FormGroup</code> appelée <code>formulaire</code>, qui contient deux champs : <code>titleToAdd</code> et <code>priceToAdd</code>, définis avec <code>FormControl</code>. Chaque champ peut avoir une liste de validateurs, comme <code>Validators.required</code> et <code>Validators.minLength(4)</code>.</p>
+    
+        <h3>Exemple de Template HTML</h3>
+        <p>Voici le template HTML pour le formulaire réactif :</p>
+    
+        <pre><code class="html">
+    &lt;form [formGroup]="formulaire" (ngSubmit)="onSubmit()"&gt;
+      &lt;div&gt;
+        &lt;label for="titleToAdd"&gt;Titre :&lt;/label&gt;
+        &lt;input id="titleToAdd" type="text" formControlName="titleToAdd"&gt;
+        &lt;div *ngIf="formulaire.get('titleToAdd')?.invalid &amp;&amp; formulaire.get('titleToAdd')?.touched"&gt;
+          &lt;div *ngIf="formulaire.get('titleToAdd')?.errors?.['required']"&gt;Le titre est obligatoire.&lt;/div&gt;
+          &lt;div *ngIf="formulaire.get('titleToAdd')?.errors?.['minlength']"&gt;Le titre doit avoir un minimum de 4 caractères.&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    
+      &lt;div&gt;
+        &lt;label for="priceToAdd"&gt;Prix :&lt;/label&gt;
+        &lt;input id="priceToAdd" type="number" formControlName="priceToAdd"&gt;
+        &lt;div *ngIf="formulaire.get('priceToAdd')?.invalid &amp;&amp; formulaire.get('priceToAdd')?.touched"&gt;
+          &lt;div *ngIf="formulaire.get('priceToAdd')?.errors?.['required']"&gt;Le prix est obligatoire.&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    
+      &lt;button type="submit" [disabled]="formulaire.invalid"&gt;Envoyer&lt;/button&gt;
+    &lt;/form&gt;
+        </code></pre>
+    
+        <p>Dans ce template, nous utilisons l'attribut <code>[formGroup]</code> pour lier le formulaire HTML à notre <code>FormGroup</code> défini dans le composant. Chaque champ est lié via <code>formControlName</code>. Les messages d'erreur s'affichent uniquement si le contrôle est invalide et a été touché.</p>
+    </div></div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+</footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      hljs.highlightAll();
+    });
+  </script>
+  <script src="../js/menu.js" defer></script>
+<script src="../js/scripts.js" defer></script>
+</body>
+
+</html>

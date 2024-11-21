@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - fiche 8 : Comprendre la Notion de Routeur dans Angular</title>
+    <meta name="description"
+        content=" L'un des avantages majeurs d'Angular est la possibilité de créer des Single Page Applications (SPA). Plutôt que de charger une nouvelle page à chaque clic ou changement d'URL, Angular remplace le contenu de la page en modifiant les composants qui y sont affichés.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+</head>
+
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+<main>
+    <div class="container">
+        <h1>Comprendre la Notion de Routeur dans Angular</h1>
+        <div class="module"><div>
+        <h2>Qu'est-ce qu'un Routeur ?</h2>
+        <p>L'un des avantages majeurs d'Angular est la possibilité de créer des Single Page Applications (SPA). Ces applications sont très rapides sur le web, car elles ne nécessitent qu'un seul chargement de page au démarrage. Plutôt que de charger une nouvelle page à chaque clic ou changement d'URL, Angular remplace le contenu de la page en modifiant les composants qui y sont affichés. Tout ceci est rendu possible grâce au routeur. Un routeur gère plusieurs "routes" qui sont des instructions d'affichage. Selon l'URL demandée par le visiteur, il détermine quel composant doit être affiché et à quel endroit de la page.</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Créer des Routes</h2>
+        <p>Pour mettre en place une navigation dans une application Angular, nous devons créer des routes. Celles-ci sont configurées dans un fichier appelé <code>app-routing.module.ts</code>. Ce fichier est généré automatiquement lors de la création de l'application si l'option "routing" a été activée. Si ce n'est pas le cas, vous pouvez créer ce fichier manuellement.</p>
+    
+        <h3>Exemple de configuration de route dans <code>app-routing.module.ts</code> :</h3>
+        <pre><code class="typescript">
+    import { NgModule } from '@angular/core';
+    import { RouterModule, Routes } from '@angular/router';
+    import { ListeComponent } from './liste/liste.component';
+    
+    const routes: Routes = [
+      { path: 'liste', component: ListeComponent }
+    ];
+    
+    @NgModule({
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+    })
+    export class AppRoutingModule {}
+        </code></pre>
+    
+        <p>Dans cet exemple, nous créons une constante <code>routes</code> qui est un tableau d'objets. Chaque objet représente une route avec :</p>
+        <ul>
+            <li><strong>path</strong> : l'URL à accéder, ici <code>'liste'</code>.</li>
+            <li><strong>component</strong> : le composant à afficher, ici <code>ListeComponent</code>.</li>
+        </ul>
+        <p>Il est nécessaire d'importer chaque composant utilisé dans la configuration de route.</p>
+        <p>Pour que ces routes fonctionnent, il faut aussi définir un endroit spécifique dans le template principal où le contenu sera inséré. Ceci se fait avec une balise spéciale appelée <code>router-outlet</code>, qui est ajoutée dans le composant racine <code>app.component.html</code> :</p>
+    
+        <pre><code class="html">
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+        </code></pre>
+        <p>Cette balise indique où les composants spécifiés par les routes doivent s'afficher.</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Créer une Navigation avec RouterLinks</h2>
+        <p>Pour naviguer entre les différentes routes, Angular utilise des liens appelés <code>routerLink</code>. Ils permettent de déclencher une route sans recharger la page, offrant ainsi une navigation fluide.</p>
+    
+        <p>Par exemple, si nous voulons créer un lien dans le template <code>article.component.html</code> pour accéder à la page des détails d'un article, nous utiliserons <code>routerLink</code> comme ceci :</p>
+    
+        <pre><code class="html">
+    &lt;a [routerLink]="['/details']"&gt;Voir l'article&lt;/a&gt;
+        </code></pre>
+        <p>Ici, au lieu d'utiliser l'attribut <code>href</code> traditionnel, nous utilisons <code>[routerLink]</code> pour indiquer quelle route Angular doit charger.</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Créer des Routes avec des Paramètres</h2>
+        <p>Il est possible de définir des routes qui acceptent des paramètres. Par exemple, si nous avons plusieurs articles, nous pouvons vouloir accéder aux détails de chaque article via une URL spécifique comme <code>/details/1</code>, <code>/details/2</code>, etc. Pour cela, nous modifions la route de la manière suivante :</p>
+    
+        <pre><code class="typescript">
+    const routes: Routes = [
+      { path: 'details/:id', component: DetailsComponent }
+    ];
+        </code></pre>
+    
+        <p>Le <code>:id</code> dans le <code>path</code> indique que cette route prend un paramètre nommé <code>id</code>. Ce paramètre sera ensuite utilisé pour charger les informations spécifiques de l'article.</p>
+    
+        <p>Dans le composant <code>article.component.html</code>, nous pouvons personnaliser le <code>routerLink</code> pour inclure l'ID de l'article :</p>
+    
+        <pre><code class="html">
+    &lt;a [routerLink]="['/details', article.id]"&gt;Voir l'article&lt;/a&gt;
+        </code></pre>
+        <p>Ici, nous utilisons l'interpolation pour lier dynamiquement l'ID de l'article à l'URL.</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Récupérer les Paramètres d'une URL</h2>
+        <p>Pour récupérer le paramètre dans l'URL, nous devons utiliser le service <code>ActivatedRoute</code>. Voici un exemple d'utilisation dans le composant <code>details.component.ts</code> :</p>
+    
+        <pre><code class="typescript">
+    import { Component, OnInit } from '@angular/core';
+    import { ActivatedRoute } from '@angular/router';
+    import { DataService } from '../data.service';
+    
+    @Component({
+      selector: 'app-details',
+      templateUrl: './details.component.html',
+      styleUrls: ['./details.component.css']
+    })
+    export class DetailsComponent implements OnInit {
+      article: any;
+    
+      constructor(private route: ActivatedRoute, private dataService: DataService) {}
+    
+      ngOnInit(): void {
+        const id = this.route.snapshot.paramMap.get('id');
+        if (id) {
+          this.article = this.dataService.getArticleById(+id);
+        }
+      }
+    }
+        </code></pre>
+        <p>Ici, nous utilisons <code>ActivatedRoute</code> pour accéder au paramètre <code>id</code> dans l'URL via <code>snapshot.paramMap.get('id')</code>. Ensuite, nous utilisons ce <code>id</code> pour récupérer l'article correspondant depuis le service <code>dataService</code>.</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Créer des Redirections</h2>
+        <p>Il est parfois nécessaire de rediriger une URL vers une autre. Par exemple, si une route n'est plus utilisée mais que des utilisateurs essaient toujours d'y accéder, vous pouvez les rediriger vers une autre page.</p>
+    
+        <h3>Exemple pour rediriger l'ancienne URL <code>'liste'</code> vers la page d'accueil :</h3>
+        <pre><code class="typescript">
+    const routes: Routes = [
+      { path: 'liste', redirectTo: '', pathMatch: 'full' }
+    ];
+        </code></pre>
+        <p>Le <code>redirectTo</code> indique l'URL cible de la redirection, et <code>pathMatch: 'full'</code> précise que la correspondance doit être exacte.</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Gérer les Erreurs 404</h2>
+        <p>Pour gérer les erreurs 404, c'est-à-dire les URLs non reconnues, nous pouvons créer une route spéciale qui capte toutes les URL inconnues et affiche un composant dédié, par exemple <code>PageNotFoundComponent</code> :</p>
+    
+        <pre><code class="typescript">
+    const routes: Routes = [
+      { path: '**', component: PageNotFoundComponent }
+    ];
+        </code></pre>
+        <p>Le <code>**</code> est un joker qui correspond à toutes les URL non prises en charge par les autres routes. Cela permet de rediriger les utilisateurs vers une page personnalisée pour les erreurs 404.</p>
+    </div></div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+</footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      hljs.highlightAll();
+    });
+  </script>
+  <script src="../js/menu.js" defer></script>
+<script src="../js/scripts.js" defer></script>
+</body>
+
+</html>

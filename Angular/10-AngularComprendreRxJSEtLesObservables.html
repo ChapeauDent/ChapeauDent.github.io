@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - fiche 10 : Comprendre RxJS et les Obersables dans Angular</title>
+    <meta name="description"
+        content="Angular utilise par défaut la bibliothèque RxJS (Reactive Extensions for JavaScript), qui est une bibliothèque de programmation réactive permettant de gérer des événements asynchrones à l'aide des observables.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+</head>
+
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+<main>
+    <div class="container">
+        <h1>Comprendre RxJS et les Observables dans Angular</h1>
+        <div class="module"><div>
+        <h2>Introduction à RxJS et les Observables</h2>
+        <p>Angular utilise par défaut la bibliothèque <strong>RxJS</strong> (Reactive Extensions for JavaScript), qui est une bibliothèque de programmation réactive permettant de gérer des événements asynchrones à l'aide des <strong>observables</strong>. Pour réagir à des événements ou des données de manière asynchrone, nous disposons de plusieurs méthodes : les <strong>callbacks</strong>, les <strong>promesses</strong>, et <strong>les observables</strong>.</p>
+    
+        <p>Mais qu'est-ce qu'un <strong>observable</strong> ? Un observable est un objet qui émet des informations auxquelles on peut réagir. Cela peut être, par exemple, un champ de texte où un utilisateur entre des données. Les <strong>observers</strong> (observateurs) sont des blocs de code qui seront exécutés chaque fois que l'observable émettra une information.</p>
+    
+        <p>Un observable peut émettre trois types d'informations :</p>
+        <ul>
+            <li><strong>Des données</strong> : ce sont les valeurs émises par l'observable.</li>
+            <li><strong>Une erreur</strong> : si un problème survient pendant l'émission.</li>
+            <li><strong>Un message de complétion</strong> : lorsque l'observable a terminé l'émission de ses données.</li>
+        </ul>
+        <p>Les observables sont une fonctionnalité puissante pour créer des applications réactives. La liste complète des observables disponibles est accessible dans la documentation de <strong>RxJS</strong>.</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Utiliser les Observables</h2>
+        <p>Prenons un exemple simple pour illustrer l'utilisation des observables. Pour cela, nous allons utiliser l'observable <strong>interval</strong>. Cet observable permet d'émettre des informations à des intervalles de temps réguliers. C'est une fonction qui prend un nombre en paramètre, représentant des millisecondes, et émet une valeur chaque fois que l'intervalle spécifié est écoulé.</p>
+    
+        <h3>Exemple : Compteur avec Observable Interval</h3>
+        <pre><code class="typescript">
+    import { Component, OnInit } from '@angular/core';
+    import { interval } from 'rxjs';
+    
+    @Component({
+      selector: 'app-compteur',
+      template: '&lt;p&gt;Compteur : {{ secondes }}&lt;/p&gt;'
+    })
+    export class CompteurComponent implements OnInit {
+      secondes = 0;
+    
+      ngOnInit() {
+        const compteur = interval(1000); // Observable émettant toutes les 1000 ms (1 seconde)
+        compteur.subscribe({
+          next: (valeur) => this.secondes = valeur,
+          error: (erreur) => console.error('Erreur détectée : ', erreur),
+          complete: () => console.log('Observable complété')
+        });
+      }
+    }
+        </code></pre>
+        <p>Dans ce code :</p>
+        <ul>
+            <li>Nous importons l'observable <strong>interval</strong> depuis <strong>RxJS</strong>.</li>
+            <li>Nous créons un composant qui affiche le nombre de secondes écoulées.</li>
+            <li>Nous utilisons la méthode <strong>subscribe</strong> pour écouter les valeurs émises par l'observable et mettre à jour notre variable <code>secondes</code> à chaque émission.</li>
+            <li>Nous avons également défini une gestion des erreurs (<code>error</code>) et une action à exécuter lorsque l'observable est complété (<code>complete</code>).</li>
+        </ul>
+    </div></div>
+    <div class="module"><div>
+        <h2>Découvrir les Opérateurs</h2>
+        <p>Les <strong>opérateurs</strong> sont une partie essentielle de RxJS. Ce sont des fonctions qui se placent entre un observable et un observateur pour transformer, filtrer, ou modifier les données reçues.</p>
+    
+        <h3>Exemple : Utiliser les Opérateurs <code>map</code> et <code>filter</code></h3>
+        <p>Pour appliquer des opérateurs à un observable, nous devons utiliser la méthode <strong>pipe</strong>. Cela nous permet de chaîner plusieurs opérateurs sur un observable. Prenons l'exemple des opérateurs <code>map</code> et <code>filter</code>.</p>
+    
+        <ul>
+            <li><strong><code>map</code></strong> : permet de transformer les valeurs émises par l'observable (comme les multiplier, les convertir, etc.).</li>
+            <li><strong><code>filter</code></strong> : permet de filtrer les valeurs, par exemple pour n'accepter que certaines valeurs selon une condition donnée.</li>
+        </ul>
+    
+        <pre><code class="typescript">
+    import { Component, OnInit } from '@angular/core';
+    import { interval } from 'rxjs';
+    import { map, filter } from 'rxjs/operators';
+    
+    @Component({
+      selector: 'app-compteur-filtre',
+      template: '&lt;p&gt;Compteur filtré : {{ secondes }}&lt;/p&gt;'
+    })
+    export class CompteurFiltreComponent implements OnInit {
+      secondes = '';
+    
+      ngOnInit() {
+        const compteur = interval(1000).pipe(
+          filter(valeur => valeur % 2 === 0), // Filtre pour ne garder que les valeurs paires
+          map(valeur => `Valeur ${valeur} : ${valeur % 2 === 0 ? 'pair' : 'impair'}`) // Modifie l'affichage des valeurs
+        );
+    
+        compteur.subscribe({
+          next: (valeur) => this.secondes = valeur,
+          error: (erreur) => console.error('Erreur détectée : ', erreur),
+          complete: () => console.log('Observable complété')
+        });
+      }
+    }
+        </code></pre>
+        <p>Dans cet exemple :</p>
+        <ul>
+            <li>Nous utilisons <strong>pipe</strong> pour ajouter des opérateurs à notre observable <code>compteur</code>.</li>
+            <li><strong>filter</strong> : ne garde que les valeurs paires.</li>
+            <li><strong>map</strong> : transforme les valeurs en une chaîne de caractères qui indique si la valeur est paire ou impaire.</li>
+            <li>Le résultat est affiché dans le template, où seules les valeurs paires sont affichées avec un message spécifique.</li>
+        </ul>
+    </div></div>
+    <div class="module"><div>
+        <h2>Gérer la Souscription à un Observable</h2>
+        <p>Certains observables émettent des données de façon continue, et cela peut entraîner des fuites de mémoire si la souscription n'est pas correctement gérée. Pour éviter ce problème, il est recommandé de <strong>stocker l'observable dans un objet <code>Subscription</code></strong> et de le désabonner lorsque le composant est détruit.</p>
+    
+        <h3>Exemple : Gérer la Souscription avec <code>Subscription</code></h3>
+        <pre><code class="typescript">
+    import { Component, OnInit, OnDestroy } from '@angular/core';
+    import { interval, Subscription } from 'rxjs';
+    
+    @Component({
+      selector: 'app-compteur-desabonnement',
+      template: '&lt;p&gt;Compteur avec désabonnement : {{ secondes }}&lt;/p&gt;'
+    })
+    export class CompteurDesabonnementComponent implements OnInit, OnDestroy {
+      secondes = 0;
+      compteurSubscription: Subscription;
+    
+      ngOnInit() {
+        const compteur = interval(1000);
+        this.compteurSubscription = compteur.subscribe({
+          next: (valeur) => this.secondes = valeur
+        });
+      }
+    
+      ngOnDestroy() {
+        this.compteurSubscription.unsubscribe();
+        console.log('Désabonnement effectué pour éviter les fuites de mémoire.');
+      }
+    }
+        </code></pre>
+        <p>Dans ce code :</p>
+        <ul>
+            <li>Nous importons <code>Subscription</code> depuis RxJS.</li>
+            <li>Nous stockons notre souscription dans la variable <code>compteurSubscription</code>.</li>
+            <li>Nous implémentons l'interface <strong>OnDestroy</strong> et utilisons la méthode <code>ngOnDestroy</code> pour appeler <strong>unsubscribe()</strong> lorsque le composant est détruit, ce qui évite les fuites de mémoire.</li>
+        </ul></div></div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+</footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      hljs.highlightAll();
+    });
+  </script>
+  <script src="../js/menu.js" defer></script>
+<script src="../js/scripts.js" defer></script>
+</body>
+
+</html>

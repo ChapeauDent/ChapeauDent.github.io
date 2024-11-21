@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - fiche 7 : Comprendre les Services et l'Injection de Dépendance dans Angular</title>
+    <meta name="description"
+        content=" Un service dans Angular permet de centraliser certaines parties de votre code et des données utilisées à différents endroits de l'application.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="../js/scripts.js" defer></script>
+</head>
+
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+<main>
+    <div class="container">
+        <h1>Comprendre les Services et l'Injection de Dépendance dans Angular</h1>
+        <div class="module"><div>
+        <h2>Qu'est-ce qu'un Service ?</h2>
+        <p>Un service dans Angular permet de centraliser certaines parties de votre code et des données utilisées à différents endroits de l'application. L'utilisation des services est une bonne pratique pour éviter la duplication de code, facilitant ainsi la maintenance, la lisibilité, et la stabilité du projet. En centralisant les informations, chaque composant peut accéder aux mêmes données, réduisant ainsi les erreurs potentielles.</p>
+        </div></div>
+        <div class="module"><div>
+        <h2>Création d'un Service</h2>
+        <p>Pour créer un service, vous pouvez utiliser la ligne de commande Angular CLI. Par exemple, pour créer un service nommé "Data", vous pouvez utiliser la commande suivante :</p>
+    
+        <pre><code class="bash">ng generate service data</code></pre>
+    
+        <p>Cette commande génère deux fichiers : <code>data.service.ts</code> et <code>data.service.spec.ts</code>. Le fichier <code>.spec.ts</code> est réservé aux tests unitaires, que nous n'utiliserons pas dans ce contexte. Le fichier <code>data.service.ts</code> contient une classe appelée <code>DataService</code> dans laquelle vous pouvez écrire le code nécessaire pour interagir avec d'autres composants.</p>
+    
+        <h3>Exemple de fichier de service (<code>data.service.ts</code>) :</h3>
+        <pre><code class="typescript">
+    import { Injectable } from '@angular/core';
+    
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class DataService {
+      listeArticles = [
+        { titre: 'Angular pour les débutants', contenu: 'Introduction à Angular...' },
+        { titre: 'Services Angular', contenu: 'Comprendre l\'injection de dépendance...' }
+      ];
+    
+      getArticles() {
+        return this.listeArticles;
+      }
+    }
+        </code></pre>
+        <p>Dans cet exemple, <code>DataService</code> est une classe qui contient une propriété <code>listeArticles</code>. Cette propriété contient des articles qui peuvent être partagés entre différents composants de l'application. La méthode <code>getArticles()</code> permet de récupérer la liste des articles.</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Inscription du Service dans le Module</h2>
+        <p>Une fois que vous avez créé un service, il est nécessaire de le rendre accessible aux autres parties de l'application. Cela se fait en inscrivant le service dans le module Angular, typiquement dans <code>app.module.ts</code>.</p>
+    
+        <h3>Exemple :</h3>
+        <pre><code class="typescript">
+    import { NgModule } from '@angular/core';
+    import { BrowserModule } from '@angular/platform-browser';
+    import { AppComponent } from './app.component';
+    import { DataService } from './data.service';
+    
+    @NgModule({
+      declarations: [
+        AppComponent
+      ],
+      imports: [
+        BrowserModule
+      ],
+      providers: [DataService],
+      bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+        </code></pre>
+        <p>Dans ce fichier, nous importons <code>DataService</code> et l'ajoutons à la liste des <code>providers</code>. Cela rend <code>DataService</code> accessible à tous les composants de l'application.</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Utilisation d'un Service dans un Composant</h2>
+        <p>Une fois votre service créé et inscrit dans le module, il peut être injecté dans les composants qui en ont besoin. Imaginons que nous souhaitons centraliser un tableau de données pour qu'il soit accessible depuis l'ensemble de notre application.</p>
+    
+        <h3>Étapes pour Utiliser un Service</h3>
+        <ol>
+            <li><strong>Importer le Service dans le Composant</strong> :
+            <pre><code class="typescript">
+    import { Component, OnInit } from '@angular/core';
+    import { DataService } from './data.service';
+    
+    @Component({
+      selector: 'app-root',
+      templateUrl: './app.component.html',
+      styleUrls: ['./app.component.css']
+    })
+    export class AppComponent implements OnInit {
+      liste = [];
+    
+      constructor(private dataService: DataService) {}
+    
+      ngOnInit() {
+        this.liste = this.dataService.getArticles();
+      }
+    }
+            </code></pre>
+            <p>Dans ce fichier, nous commençons par importer <code>DataService</code>. Nous ajoutons ensuite un constructeur au composant, dans lequel nous injectons le service en utilisant <code>private dataService: DataService</code>. Cela signifie que <code>dataService</code> est une instance de <code>DataService</code>, accessible uniquement dans ce composant.</p>
+            </li>
+            <li><strong>Initialiser les Données avec <code>ngOnInit</code></strong> :
+            <p>Nous utilisons la méthode <code>ngOnInit</code> pour initialiser les données dès que le composant est chargé. Cette méthode est appelée automatiquement lors de l'initialisation du composant. Ici, nous affectons la valeur retournée par <code>dataService.getArticles()</code> à la propriété <code>liste</code> du composant.</p>
+            </li>
+        </ol>
+    
+        <h3>Exemple de Template Utilisant le Service</h3>
+        <p>Le code HTML du template du composant (<code>app.component.html</code>) pourrait ressembler à ceci :</p>
+        <pre><code class="html">
+    &lt;div *ngFor="let article of liste"&gt;
+      &lt;h3&gt;{{ article.titre }}&lt;/h3&gt;
+      &lt;p&gt;{{ article.contenu }}&lt;/p&gt;
+    &lt;/div&gt;
+        </code></pre>
+        <p>Ce template parcourt la liste des articles et affiche le titre et le contenu de chaque article.</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Injection de Dépendance (Dependency Injection)</h2>
+        <p>Angular utilise un système d'injection de dépendance pour gérer la création et le partage des services entre les différents composants. L'injection de dépendance est un mécanisme qui permet à Angular de gérer les instances des services, ce qui garantit que les mêmes données sont utilisées de manière cohérente dans toute l'application.</p>
+    
+        <p>Dans l'exemple précédent, l'injection de dépendance se fait via le constructeur du composant. Lorsque le composant est créé, Angular passe une instance de <code>DataService</code> au constructeur. Grâce à cela, le composant peut facilement accéder aux méthodes et propriétés du service.</p>
+    
+        <h2>Avantages des Services</h2>
+        <ul>
+            <li><strong>Réduction de la Duplication de Code</strong> : En utilisant les services, vous centralisez la logique qui est utilisée dans plusieurs endroits de l'application, ce qui évite la redondance du code.</li>
+            <li><strong>Centralisation des Données</strong> : Les services permettent de centraliser les données, offrant une seule source de vérité. Cela améliore la cohérence des données affichées dans l'application.</li>
+            <li><strong>Meilleure Maintenabilité</strong> : Lorsque la logique est centralisée dans un service, il est plus facile de faire des modifications. Les changements effectués dans le service seront immédiatement reflétés dans tous les composants qui l'utilisent.</li>
+        </ul>
+    </div></div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+</footer>
+
+<script src="../js/menu.js" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      hljs.highlightAll();
+    });
+  </script>
+  
+</body>
+
+</html>

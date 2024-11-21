@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - fiche 6 : Directives et Pipes dans Angular</title>
+    <meta name="description"
+        content=" Angular propose un outil puissant pour transformer ces valeurs avant l'affichage : les pipes. Les pipes sont des filtres utilisables directement dans les templates HTML pour transformer la présentation des données, sans affecter leur contenu d'origine.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="../js/scripts.js" defer></script>
+</head>
+
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+<main>
+    <div class="container">
+        <h1>Utilisation des Directives et des Pipes dans Angular</h1>
+        <div class="module"><div>
+        <h2>Introduction aux Pipes</h2>
+        <p>Dans une application Angular, il est fréquent de recevoir des données qui ne sont pas formatées de manière optimale pour être affichées directement à l'utilisateur. Heureusement, Angular propose un outil puissant pour transformer ces valeurs avant l'affichage : les pipes. Les pipes sont des filtres utilisables directement dans les templates HTML pour transformer la présentation des données, sans affecter leur contenu d'origine. Cela permet de mieux contrôler la manière dont les informations sont affichées.</p>
+    
+        <h3>Exemple d'utilisation des Pipes</h3>
+        <p>Prenons un exemple simple : supposons que nous souhaitons modifier l'affichage d'une variable intitulée <code>titreArticle</code> pour qu'elle soit affichée en majuscule. Pour ce faire, nous pouvons utiliser la pipe <code>uppercase</code>. Le fonctionnement est très simple : dans notre template, nous utilisons le caractère <code>|</code> suivi du nom de la pipe à appliquer.</p>
+    
+        <pre><code class="html">&lt;h2&gt;{{ titreArticle | uppercase }}&lt;/h2&gt;</code></pre>
+    
+        <p>Dans cet exemple, la pipe <code>uppercase</code> transforme toutes les lettres de la variable <code>titreArticle</code> en majuscules avant de les afficher dans la balise <code>&lt;h2&gt;</code>. Cela signifie que nous ne modifions pas la valeur d'origine de <code>titreArticle</code>, mais simplement son apparence lorsqu'elle est rendue dans le template.</p>
+    
+        <h3>Autres Types de Pipes</h3>
+        <p>Angular propose de nombreux autres pipes permettant de manipuler des données de différents types. Voici quelques pipes couramment utilisés :</p>
+        <ul>
+            <li><strong>Date Pipe (<code>date</code>)</strong> : Utilisée pour transformer l'affichage des dates. Par exemple, <code>{{ dateDeNaissance | date: 'medium' }}</code> permet d'afficher la date dans un format prédéfini comme "31 déc. 2023, 15:00".</li>
+            <li><strong>Currency Pipe (<code>currency</code>)</strong> : Utilisée pour formater des valeurs numériques en tant que montants monétaires. Par exemple, <code>{{ prix | currency: 'EUR' }}</code> affichera le prix en euros.</li>
+            <li><strong>Decimal Pipe (<code>number</code>)</strong> : Permet de formater des nombres décimaux. Par exemple, <code>{{ taux | number: '1.2-2' }}</code> affichera le nombre avec au moins une chiffre avant la virgule et deux chiffres après la virgule.</li>
+            <li><strong>Lowercase et Uppercase</strong> : Respectivement pour transformer un texte en minuscule (<code>lowercase</code>) ou en majuscule (<code>uppercase</code>).</li>
+        </ul>
+    
+        <h3>Utilisation des Pipes dans un Exemple Complet</h3>
+        <p>Imaginons un scénario où nous avons une liste d'articles et nous souhaitons appliquer plusieurs pipes différentes pour améliorer leur présentation. Voici à quoi pourrait ressembler notre code :</p>
+        
+        <pre><code class="html">
+    &lt;ul&gt;
+      &lt;li *ngFor="let article of articles"&gt;
+        &lt;h3&gt;{{ article.titre | uppercase }}&lt;/h3&gt;
+        &lt;p&gt;Date de publication : {{ article.datePublication | date: 'longDate' }}&lt;/p&gt;
+        &lt;p&gt;Prix : {{ article.prix | currency: 'EUR' }}&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+        </code></pre>
+        <p>Dans cet exemple, chaque titre est affiché en majuscule, la date est formatée en utilisant un format long (comme "31 décembre 2023"), et le prix est converti en euros.</p>
+    </div></div>
+    <div class="module"><div>
+        <h2>Les Directives Angular</h2>
+        <p>Les directives sont une autre fonctionnalité essentielle d'Angular. Elles permettent de manipuler le DOM en modifiant l'apparence et le comportement des éléments. Il existe trois types de directives principales :</p>
+        <ol>
+            <li><strong>Les Directives Composant</strong> : Les composants eux-mêmes sont des directives avec un template. En utilisant des composants, on peut créer des parties réutilisables de l'interface utilisateur.</li>
+            <li><strong>Les Directives Structurelles</strong> : Elles modifient la structure du DOM en ajoutant ou en supprimant des éléments. Les plus courantes sont <code>*ngIf</code>, <code>*ngFor</code>, et <code>*ngSwitch</code> :
+                <ul>
+                    <li><code>*ngIf</code> : Permet d'afficher ou de masquer un élément en fonction d'une condition.
+                    <pre><code class="html">
+    &lt;div *ngIf="isLoggedIn"&gt;
+      Bienvenue utilisateur connecté !
+    &lt;/div&gt;
+                    </code></pre>
+                    </li>
+                    <li><code>*ngFor</code> : Permet de parcourir un tableau et de générer un élément pour chaque élément du tableau.
+                    <pre><code class="html">
+    &lt;ul&gt;
+      &lt;li *ngFor="let item of items"&gt;{{ item }}&lt;/li&gt;
+    &lt;/ul&gt;
+                    </code></pre>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Les Directives d'Attributs</strong> : Elles modifient l'apparence ou le comportement des éléments existants. Par exemple, la directive <code>ngClass</code> permet d'appliquer dynamiquement des classes CSS en fonction des valeurs de l'application :
+                <pre><code class="html">
+    &lt;div [ngClass]="{ 'highlight': isHighlighted }"&gt;
+      Ceci est un texte qui peut être mis en évidence.
+    &lt;/div&gt;
+                </code></pre>
+            </li>
+        </ol>
+    
+        <h3>Exemple d'utilisation combinée des Directives et des Pipes</h3>
+        <p>Pour conclure, voici un exemple complet qui combine les directives et les pipes. Nous affichons une liste d'articles, mais seulement s'ils sont marqués comme publiés, et nous mettons en forme leur date de publication et leur prix.</p>
+        
+        <pre><code class="html">
+    &lt;ul&gt;
+      &lt;li *ngFor="let article of articles" *ngIf="article.publie"&gt;
+        &lt;h3 [ngClass]="{ 'titre-important': article.important }"&gt;{{ article.titre | uppercase }}&lt;/h3&gt;
+        &lt;p&gt;Date de publication : {{ article.datePublication | date: 'mediumDate' }}&lt;/p&gt;
+        &lt;p&gt;Prix : {{ article.prix | currency: 'EUR' }}&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+        </code></pre>
+        <p>Dans cet exemple :</p>
+        <ul>
+            <li><code>*ngFor</code> est utilisé pour générer chaque élément de la liste.</li>
+            <li><code>*ngIf</code> est utilisé pour s'assurer que seuls les articles publiés sont affichés.</li>
+            <li><code>[ngClass]</code> permet de mettre en évidence les titres importants avec une classe CSS.</li>
+            <li>Les pipes <code>uppercase</code>, <code>date</code>, et <code>currency</code> sont utilisés pour formater les données de façon précise.</li>
+        </ul>
+    </div></div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+</footer>
+
+<script src="../js/menu.js" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      hljs.highlightAll();
+    });
+  </script>
+  
+</body>
+
+</html>

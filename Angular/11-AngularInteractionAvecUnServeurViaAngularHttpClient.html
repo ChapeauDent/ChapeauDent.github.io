@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular - fiche 11 : Interaction avec un Serveur via Angular HttpClient</title>
+    <meta name="description"
+        content="Angular met à disposition un service puissant pour interagir avec des serveurs : HttpClient.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+</head>
+
+<body>
+    <header id="header-container"></header>
+    <nav id="nav-container"></nav>
+<main>
+    <div class="container">
+        <h1>Interaction avec un Serveur via Angular HttpClient</h1>
+        <div class="module"><div>
+    <h2>Introduction à Angular HttpClient</h2>
+    <p>Angular met à disposition un service puissant pour interagir avec des serveurs : <strong>HttpClient</strong>. Avant de nous plonger dans HttpClient, rappelons ce que signifie <strong>HTTP</strong> (Hyper Text Transfer Protocol). Il s'agit d'un protocole, c'est-à-dire un langage de communication, permettant la transmission de données entre un client et un serveur.</p>
+
+    <p>HTTP offre plusieurs méthodes pour communiquer avec un serveur :</p>
+    <ul>
+        <li><strong>GET</strong> : Récupérer des données.</li>
+        <li><strong>POST</strong> : Créer ou modifier des données.</li>
+        <li><strong>PUT</strong> : Modifier des données existantes.</li>
+        <li><strong>DELETE</strong> : Supprimer des données.</li>
+    </ul>
+
+    <p>Avec Angular <strong>HttpClient</strong>, nous pouvons créer des requêtes HTTP et communiquer avec des serveurs directement depuis notre application Angular.</p>
+
+    <h2>Configurer HttpClient dans Angular</h2>
+    <p>Pour utiliser HttpClient, vous devez l'importer dans votre module principal. Voici comment faire :</p>
+
+    <pre><code class="typescript">
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule // Importer HttpClientModule ici
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+    </code></pre>
+    <p>En ajoutant <code>HttpClientModule</code> dans la section <code>imports</code>, vous activez la fonctionnalité HttpClient dans votre application Angular.</p>
+</div></div>
+<div class="module"><div>
+    <h2>Exemple de Requête GET avec HttpClient</h2>
+    <p>Voyons comment utiliser HttpClient pour récupérer des données d'un serveur. Imaginons que nous souhaitons récupérer une liste d'articles depuis une base de données JSON hébergée sur Firebase.</p>
+
+    <h3>Service Angular pour Communiquer avec un Serveur</h3>
+    <p>Nous allons créer un service pour centraliser les interactions avec le serveur.</p>
+
+    <pre><code class="typescript">
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ArticleService {
+  private apiURL = 'https://votre-base-de-donnees.firebaseio.com/articles.json';
+
+  constructor(private http: HttpClient) { }
+
+  getArticles(): Observable<any> {
+    return this.http.get<any>(this.apiURL);
+  }
+}
+    </code></pre>
+    <p>Dans ce code :</p>
+    <ul>
+        <li>Nous importons <code>HttpClient</code> depuis <code>@angular/common/http</code> pour pouvoir créer des requêtes HTTP.</li>
+        <li>Nous définissons une URL <code>apiURL</code> qui pointe vers notre base de données.</li>
+        <li>La méthode <code>getArticles()</code> utilise <code>http.get()</code> pour récupérer les données sous forme d'<code>Observable</code>.</li>
+    </ul>
+
+    <h3>Utilisation du Service dans un Composant</h3>
+    <p>Maintenant que nous avons créé notre service, utilisons-le dans un composant Angular pour afficher la liste des articles.</p>
+
+    <pre><code class="typescript">
+import { Component, OnInit } from '@angular/core';
+import { ArticleService } from './article.service';
+
+@Component({
+  selector: 'app-liste-articles',
+  template: `
+    &lt;h2&gt;Liste des Articles&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li *ngFor="let article of articles"&gt;{{ article.titre }}&lt;/li&gt;
+    &lt;/ul&gt;
+  `
+})
+export class ListeArticlesComponent implements OnInit {
+  articles = [];
+
+  constructor(private articleService: ArticleService) { }
+
+  ngOnInit() {
+    this.articleService.getArticles().subscribe({
+      next: (data) => this.articles = data,
+      error: (erreur) => console.error('Erreur lors de la récupération des articles : ', erreur)
+    });
+  }
+}
+    </code></pre>
+    <p>Dans ce composant :</p>
+    <ul>
+        <li>Nous injectons <code>ArticleService</code> via le constructeur.</li>
+        <li>Dans <code>ngOnInit()</code>, nous appelons la méthode <code>getArticles()</code> de notre service pour récupérer les articles depuis le serveur.</li>
+        <li>Nous utilisons <code>subscribe()</code> pour récupérer les données, gérer les erreurs potentielles et les assigner à notre variable <code>articles</code>.</li>
+    </ul>
+</div></div>
+<div class="module"><div>
+    <h2>Exemples de Requêtes POST, PUT, DELETE</h2>
+    <p>En plus de la requête GET, nous pouvons également utiliser <strong>HttpClient</strong> pour créer, modifier et supprimer des ressources sur un serveur.</p>
+
+    <h3>Requête POST : Ajouter un Nouvel Article</h3>
+    <pre><code class="typescript">
+addArticle(article: any): Observable<any> {
+  return this.http.post<any>(this.apiURL, article);
+}
+    </code></pre>
+    <p>La méthode <code>post()</code> nous permet d'envoyer un nouvel objet au serveur.</p>
+
+    <h3>Requête PUT : Modifier un Article</h3>
+    <pre><code class="typescript">
+updateArticle(id: string, article: any): Observable<any> {
+  const url = `${this.apiURL}/${id}`;
+  return this.http.put<any>(url, article);
+}
+    </code></pre>
+    <p>La méthode <code>put()</code> est utilisée pour mettre à jour un article existant.</p>
+
+    <h3>Requête DELETE : Supprimer un Article</h3>
+    <pre><code class="typescript">
+deleteArticle(id: string): Observable<any> {
+  const url = `${this.apiURL}/${id}`;
+  return this.http.delete<any>(url);
+}
+    </code></pre>
+    <p>La méthode <code>delete()</code> supprime un article via son identifiant.</p>
+</div></div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Code Alchimie - Transformez les lignes de code en magie créative.</p>
+</footer>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      hljs.highlightAll();
+    });
+  </script>
+  <script src="../js/menu.js" defer></script>
+<script src="../js/scripts.js" defer></script>
+</body>
+
+</html>
