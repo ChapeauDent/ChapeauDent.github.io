@@ -25,9 +25,115 @@
       margin:auto;
       width:100%
     }
+    #rotate-screen {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      color: #333;
+      text-align: center;
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    #rotate-screen img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+    #content {
+      display: none;
+    }
   </style>
 </head>
 <body>
+  <div id="rotate-screen">
+    <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Design" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+<rect style="fill:#FFFFFF;" width="800" height="800"/>
+<g>
+	<g>
+		<g>
+			<g>
+				<g>
+					<g>
+						<path style="fill:#B0D3F0;" d="M682.992,359.64v299.69c0,2.93-2.37,5.31-5.31,5.31h-513.71V354.33h513.71
+							C680.622,354.33,682.992,356.7,682.992,359.64z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<path style="fill:#41767F;" d="M677.682,349.33h-513.71v10h513.71c0.17,0,0.31,0.14,0.31,0.31v299.69
+							c0,0.17-0.14,0.31-0.31,0.31h-513.71v10h513.71c5.69,0,10.31-4.63,10.31-10.31V359.64
+							C687.992,353.95,683.372,349.33,677.682,349.33z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path style="fill:#41767F;" d="M654.342,496.22c-7.32,0-13.27,5.95-13.27,13.26s5.95,13.26,13.27,13.26
+						c7.31,0,13.26-5.95,13.26-13.26S661.652,496.22,654.342,496.22z M654.342,517.74c-4.56,0-8.27-3.7-8.27-8.26
+						c0-4.55,3.71-8.26,8.27-8.26c4.55,0,8.26,3.71,8.26,8.26C662.602,514.04,658.892,517.74,654.342,517.74z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g>
+		<g>
+			<g>
+				<g>
+					<g>
+						<path style="fill:#B0D3F0;" d="M422.011,704.179H122.324c-2.934,0-5.313-2.379-5.313-5.313V101.134
+							c0-2.934,2.379-5.313,5.313-5.313h299.687c2.934,0,5.313,2.379,5.313,5.313v597.732
+							C427.324,701.8,424.946,704.179,422.011,704.179z"/>
+					</g>
+				</g>
+				<g>
+					<g>
+						<path style="fill:#41767F;" d="M422.008,90.82h-299.68c-5.69,0-10.32,4.63-10.32,10.31v597.74c0,5.68,4.63,10.31,10.32,10.31
+							h299.68c5.69,0,10.32-4.63,10.32-10.31V101.13C432.327,95.45,427.698,90.82,422.008,90.82z M422.327,698.87
+							c0,0.17-0.14,0.31-0.32,0.31h-299.68c-0.18,0-0.32-0.14-0.32-0.31V101.13c0-0.17,0.14-0.31,0.32-0.31h299.68
+							c0.18,0,0.32,0.14,0.32,0.31V698.87z"/>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path style="fill:#41767F;" d="M272.168,111.22c-7.31,0-13.26,5.95-13.26,13.26s5.95,13.26,13.26,13.26s13.26-5.95,13.26-13.26
+						S279.478,111.22,272.168,111.22z M272.168,132.74c-4.56,0-8.26-3.7-8.26-8.26c0-4.55,3.7-8.26,8.26-8.26s8.26,3.71,8.26,8.26
+						C280.428,129.04,276.728,132.74,272.168,132.74z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g>
+		<path style="fill:#CC66A1;" d="M684.331,248.965c-4.881-4.881-12.797-4.881-17.678,0l-13.493,13.493v-74.842
+			c0-34.15-27.78-61.93-61.93-61.93h-74.818l13.528-13.527c4.882-4.882,4.882-12.796,0-17.678c-4.882-4.881-12.796-4.881-17.678,0
+			l-34.901,34.9c-4.882,4.882-4.882,12.796,0,17.678l34.832,34.832c2.44,2.44,5.64,3.661,8.839,3.661s6.398-1.221,8.839-3.661
+			c4.882-4.882,4.882-12.796,0-17.678l-13.527-13.527h74.887c20.36,0,36.93,16.57,36.93,36.93v74.843l-13.562-13.562
+			c-4.881-4.881-12.797-4.881-17.678,0c-4.882,4.882-4.882,12.796,0,17.678l34.9,34.9c2.44,2.44,5.64,3.661,8.839,3.661
+			s6.398-1.221,8.839-3.661l34.832-34.832C689.213,261.761,689.213,253.847,684.331,248.965z"/>
+	</g>
+	<g>
+		<path style="fill:#F9EAB0;" d="M624.201,392.549L624.201,392.549h-21.677c-4.917,0-8.903,3.986-8.903,8.903
+			c0,4.917,3.986,8.903,8.903,8.903h12.774v12.774c0,4.917,3.986,8.903,8.903,8.903l0,0c4.917,0,8.903-3.986,8.903-8.903v-21.677
+			C633.104,396.535,629.118,392.549,624.201,392.549z"/>
+	</g>
+	<g>
+		<path style="fill:#F9EAB0;" d="M370.41,137.74h-21.677c-4.917,0-8.903,3.986-8.903,8.903c0,4.917,3.986,8.903,8.903,8.903h12.774
+			v12.774c0,4.917,3.986,8.903,8.903,8.903s8.903-3.986,8.903-8.903v-21.677C379.314,141.726,375.328,137.74,370.41,137.74z"/>
+	</g>
+</g>
+</svg>
+    <p>Please rotate your device to landscape mode.</p>
+  </div>
+  <div id="content">
+    <!-- Votre contenu principal ici -->
+    <h1>Architecture de solution</h1>
   <div id="tooltip" class="tooltip"></div>
 <?xml version="1.0" ?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="794" zoomAndPan="magnify" viewBox="0 0 595.5 595.499986" height="794" preserveAspectRatio="xMidYMid meet" version="1.0">
@@ -1239,6 +1345,7 @@
     </g>
   </g>
 </svg>
+</div>
 <script>
   // Mapping IDs to descriptions
   const descriptions = {
@@ -1296,6 +1403,27 @@ document.querySelectorAll("[clip-path]").forEach(element => {
   }
 });
 
+</script>
+<script>
+  // Détection de l'orientation
+  function checkOrientation() {
+    const rotateScreen = document.getElementById("rotate-screen");
+    const content = document.getElementById("content");
+
+    if (window.innerHeight > window.innerWidth) {
+      // Mode portrait : afficher le message
+      rotateScreen.style.display = "flex";
+      content.style.display = "none";
+    } else {
+      // Mode paysage : afficher le contenu
+      rotateScreen.style.display = "none";
+      content.style.display = "block";
+    }
+  }
+
+  // Vérifier l'orientation au chargement et au redimensionnement
+  window.addEventListener("load", checkOrientation);
+  window.addEventListener("resize", checkOrientation);
 </script>
 </body>
 </html>
