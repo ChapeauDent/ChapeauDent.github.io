@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 028</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°028</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Sérialiser et désérialiser JSON (JSON.stringify, JSON.parse)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à sérialiser et désérialiser des objets JSON en utilisant les méthodes <code>JSON.stringify</code> et <code>JSON.parse</code> en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>JSON (JavaScript Object Notation) est un format léger d'échange de données. Il est facile à lire et à écrire pour les humains, et facile à analyser et à générer pour les machines.</p>
+        <p>La méthode <code>JSON.stringify</code> convertit une valeur JavaScript en chaîne JSON. Par exemple :</p>
+        <pre><code>
+const obj = {{ name: "John", age: 30, city: "New York" }};
+const jsonString = JSON.stringify(obj);
+console.log(jsonString); // {"name":"John","age":30,"city":"New York"}
+        </code></pre>
+        <p>La méthode <code>JSON.parse</code> analyse une chaîne JSON et construit la valeur JavaScript ou l'objet décrit par cette chaîne. Par exemple :</p>
+        <pre><code>
+const jsonString = '{"name":"John","age":30,"city":"New York"}';
+const obj = JSON.parse(jsonString);
+console.log(obj.name); // John
+        </code></pre>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code qui sérialise et désérialise un objet JSON :</p>
+        <pre><code>
+// Sérialiser un objet JavaScript en chaîne JSON
+const user = {{ name: "Alice", email: "alice@example.com", isAdmin: true }};
+const userJson = JSON.stringify(user);
+console.log(userJson); // {"name":"Alice","email":"alice@example.com","isAdmin":true}
+
+// Désérialiser une chaîne JSON en objet JavaScript
+const userStr = '{"name":"Alice","email":"alice@example.com","isAdmin":true}';
+const userObj = JSON.parse(userStr);
+console.log(userObj.email); // alice@example.com
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">MDN Web Docs - JSON.stringify</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">MDN Web Docs - JSON.parse</a></li>
+        </ul>
+    </section>
+     <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

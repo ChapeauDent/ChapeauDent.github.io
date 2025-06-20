@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 018</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°018</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Appliquer des opérations simples aux tableaux</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre et appliquer des opérations simples aux tableaux en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les tableaux en JavaScript sont des objets utilisés pour stocker des collections de données. Voici quelques opérations simples que l'on peut effectuer sur les tableaux :</p>
+        <ul>
+            <li><strong>Création :</strong> Utilisez la syntaxe <code>[]</code> pour créer un tableau.</li>
+            <li><strong>Accès :</strong> Utilisez l'index pour accéder à un élément du tableau, par exemple <code>array[0]</code>.</li>
+            <li><strong>Ajout :</strong> Utilisez <code>array.push(element)</code> pour ajouter un élément à la fin du tableau.</li>
+            <li><strong>Suppression :</strong> Utilisez <code>array.pop()</code> pour supprimer le dernier élément du tableau.</li>
+            <li><strong>Longueur :</strong> Utilisez <code>array.length</code> pour obtenir la longueur du tableau.</li>
+            <li><strong>Itération :</strong> Utilisez une boucle <code>for</code> ou <code>forEach</code> pour parcourir les éléments du tableau.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <pre><code>
+// Création d'un tableau
+let fruits = ["pomme", "banane", "orange"];
+
+// Accès au premier élément
+console.log(fruits[0]); // Affiche "pomme"
+
+// Ajout d'un élément
+fruits.push("mangue");
+console.log(fruits); // Affiche ["pomme", "banane", "orange", "mangue"]
+
+// Suppression du dernier élément
+fruits.pop();
+console.log(fruits); // Affiche ["pomme", "banane", "orange"]
+
+// Longueur du tableau
+console.log(fruits.length); // Affiche 3
+
+// Itération sur les éléments du tableau
+fruits.forEach(function(fruit) {
+    console.log(fruit);
+});
+// Affiche "pomme", "banane", "orange"
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array">MDN Web Docs - Array</a></li>
+            <li><a href="https://www.w3schools.com/js/js_arrays.asp">W3Schools - JavaScript Arrays</a></li>
+        </ul>
+    </section>
+            <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

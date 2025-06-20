@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 034</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°034</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Manipuler les propriétés d’un objet</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à manipuler les propriétés d’un objet en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>En JavaScript, les objets sont des collections de paires clé-valeur. Chaque clé est une chaîne de caractères (ou symbole) et chaque valeur peut être de n'importe quel type de données.</p>
+        <p>Pour manipuler les propriétés d'un objet, vous pouvez utiliser les méthodes suivantes :</p>
+        <ul>
+            <li><code>obj.property</code> ou <code>obj["property"]</code> : Accéder à la valeur de la propriété <code>property</code> de l'objet <code>obj</code>.</li>
+            <li><code>obj.property = value</code> ou <code>obj["property"] = value</code> : Définir la valeur de la propriété <code>property</code> de l'objet <code>obj</code> à <code>value</code>.</li>
+            <li><code>delete obj.property</code> ou <code>delete obj["property"]</code> : Supprimer la propriété <code>property</code> de l'objet <code>obj</code>.</li>
+            <li><code>Object.keys(obj)</code> : Obtenir un tableau contenant toutes les clés de l'objet <code>obj</code>.</li>
+            <li><code>Object.values(obj)</code> : Obtenir un tableau contenant toutes les valeurs de l'objet <code>obj</code>.</li>
+            <li><code>Object.entries(obj)</code> : Obtenir un tableau contenant toutes les paires clé-valeur de l'objet <code>obj</code>.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code qui manipule les propriétés d'un objet :</p>
+        <pre><code>
+// Crée un nouvel objet
+var person = {
+    name: "John",
+    age: 30,
+    city: "New York"
+};
+
+// Accéder à une propriété
+console.log(person.name); // "John"
+
+// Modifier une propriété
+person.age = 35;
+
+// Ajouter une nouvelle propriété
+person.country = "USA";
+
+// Supprimer une propriété
+delete person.city;
+
+// Obtenir toutes les clés de l'objet
+console.log(Object.keys(person)); // ["name", "age", "country"]
+
+// Obtenir toutes les valeurs de l'objet
+console.log(Object.values(person)); // ["John", 35, "USA"]
+
+// Obtenir toutes les paires clé-valeur de l'objet
+console.log(Object.entries(person)); // [["name", "John"], ["age", 35], ["country", "USA"]]
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Object">MDN Web Docs - Object</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Working_with_Objects">MDN Web Docs - Working with Objects</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

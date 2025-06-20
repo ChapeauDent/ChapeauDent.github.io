@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°024</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Configurer des décisions conditionnelles complexes dans un workflow</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à configurer des décisions conditionnelles complexes dans un workflow en utilisant JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les décisions conditionnelles complexes permettent de gérer des cas où plusieurs conditions doivent être vérifiées avant de prendre une décision. En JavaScript, cela peut être réalisé en combinant des structures conditionnelles telles que <code>if</code>, <code>else if</code>, <code>else</code> et <code>switch</code> avec des opérateurs logiques (<code>&&</code>, <code>||</code>).</p>
+        <p>Voici quelques concepts clés :</p>
+        <ul>
+            <li><strong>Opérateurs logiques :</strong> Utilisés pour combiner plusieurs conditions. <code>&&</code> (ET logique) et <code>||</code> (OU logique).</li>
+            <li><strong>Imbrication des conditions :</strong> Les conditions peuvent être imbriquées pour vérifier plusieurs niveaux de critères.</li>
+            <li><strong>Utilisation de <code>switch</code> :</strong> Utile pour gérer des décisions basées sur la valeur d'une variable unique.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <pre>
+<code>
+// Exemple de décision conditionnelle complexe
+let age = 25;
+let hasDrivingLicense = true;
+let isEmployed = false;
+
+if (age >= 18 && hasDrivingLicense) {
+    if (isEmployed) {
+        console.log("Vous pouvez louer une voiture.");
+    } else {
+        console.log("Vous devez avoir un emploi pour louer une voiture.");
+    }
+} else {
+    console.log("Vous ne remplissez pas les critères pour louer une voiture.");
+}
+
+// Utilisation de switch pour une décision complexe
+let day = "Lundi";
+
+switch (day) {
+    case "Lundi":
+    case "Mardi":
+    case "Mercredi":
+    case "Jeudi":
+    case "Vendredi":
+        console.log("C'est un jour de semaine.");
+        break;
+    case "Samedi":
+    case "Dimanche":
+        console.log("C'est le week-end.");
+        break;
+    default:
+        console.log("Jour inconnu.");
+}
+        </code>
+        </pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/if...else">MDN Web Docs - if...else</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/switch">MDN Web Docs - switch</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Logical_Operators">MDN Web Docs - Opérateurs Logiques</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

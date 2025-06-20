@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 038</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°038</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Utilisation de setTimeout et setInterval</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à utiliser les fonctions <code>setTimeout</code> et <code>setInterval</code> pour gérer les délais et les intervalles en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les fonctions <code>setTimeout</code> et <code>setInterval</code> sont utilisées pour exécuter du code après un certain délai ou à intervalles réguliers.</p>
+        <p><code>setTimeout</code> permet d'exécuter une fonction une seule fois après un délai spécifié (en millisecondes).</p>
+        <p><code>setInterval</code> permet d'exécuter une fonction à intervalles réguliers spécifiés (en millisecondes).</p>
+        <p>Syntaxe :</p>
+        <ul>
+            <li><code>setTimeout(function, delay)</code></li>
+            <li><code>setInterval(function, interval)</code></li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code utilisant <code>setTimeout</code> et <code>setInterval</code> :</p>
+        <pre><code>
+// Exemple de setTimeout
+setTimeout(function() {
+    console.log("Ce message s'affiche après 3 secondes.");
+}, 3000);
+
+// Exemple de setInterval
+setInterval(function() {
+    console.log("Ce message s'affiche toutes les 2 secondes.");
+}, 2000);
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout">MDN Web Docs - setTimeout</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/WindowOrWorkerGlobalScope/setInterval">MDN Web Docs - setInterval</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

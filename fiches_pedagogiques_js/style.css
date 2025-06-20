@@ -1,0 +1,157 @@
+
+:root {
+    --js-yellow: #F0DB4F;
+    --js-dark: #323330;
+    --gold: #FFD700;
+}
+/* 8px Design System Variables */
+:root {
+    --space-8: 0.5rem;   /* 8px */
+    --space-16: 1rem;     /* 16px */
+    --space-24: 1.5rem;   /* 24px */
+    --space-32: 2rem;     /* 32px */
+    --space-40: 2.5rem;   /* 40px */
+
+    --space-48: 3rem;     /* 48px */
+    --radius-8: 0.5rem;  /* 8px */
+    --radius-16: 1rem;    /* 16px */
+
+    --font-size-16: 1rem;     /* 16px */
+    --font-size-24: 1.5rem;   /* 24px */
+    --font-size-32: 2rem;     /* 32px */
+}
+*{margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif;}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color:var(--js-dark);
+    background-size:16px 16px;
+    color: #fff;
+    padding: var(--space-24);
+    border-bottom: var(--gold) 3px solid;
+}
+
+header P:nth-of-type(2){
+    font-size: var(--font-size-24);
+    margin: var(--space-16) 0;
+    color: var(--js-yellow);
+}
+header h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Section */
+section {
+    padding: var(--space-24);
+    background: #fff;
+    margin-bottom:var(--space-16);
+    border-radius: var(--radius-16);
+    width:70%;
+    place-self: center;
+}
+
+/* Section titles */
+section h2 {
+    color: var(--js-dark);
+    border-bottom: 2px solid var(--js-dark);
+    padding-bottom: var(--space-16);
+}
+
+/* Footer */
+footer {
+    display: grid;
+    color: #fff;
+    place-items: center;
+    padding: var(--space-24) 0;
+    background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color:var(--js-dark);
+    background-size:16px 16px;
+}
+#precedent{
+    grid-column: 1;
+}
+
+#suivant{
+    grid-column: 3;
+}
+
+#accueil{
+    grid-column: 2;
+}
+footer div{
+    display:grid;
+    grid-template-columns: repeat(3, 10em);
+    padding: 0 var(--space-24);
+    gap: var(--space-16);
+  
+}
+
+footer button{
+    background-color: var(--js-yellow);
+   color: var(--js-dark);
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+}
+
+footer button:hover {
+    background-color: var(--gold);
+}
+footer button a{
+    text-decoration: none;
+    color: var(--js-dark);
+}
+p, li, ul{line-height: calc(2.5 * var(--font-size-16));}
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}
+/* Code and Preformatted Text */
+pre, code {
+    font-family: 'Fira Mono', 'Consolas', 'Monaco', monospace;
+    background: #23272e;
+    color: #e6e6e6;
+    border-radius: 4px;
+}
+
+pre {
+    padding: 16px;
+    overflow-x: auto;
+    margin: 16px 0;
+    font-size: 15px;
+}
+
+code {
+    padding: var(--space-8) var(--space-16);
+    font-size: var(--font-size-16);
+    background-color: var(--js-dark);
+    color: var(--js-yellow);
+}
+
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+}
+.none{display: none;}

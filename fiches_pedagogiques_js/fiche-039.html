@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 039</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°039</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Maîtriser les opérations arithmétiques s’appliquant sur différents types</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à maîtriser les opérations arithmétiques s’appliquant sur différents types en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>En JavaScript, les opérations arithmétiques peuvent être appliquées à différents types de données, notamment les nombres, les chaînes de caractères et les objets. Voici quelques points clés :</p>
+        <ul>
+            <li><strong>Opérations sur les nombres :</strong> Les opérations arithmétiques de base (addition, soustraction, multiplication, division) peuvent être effectuées directement sur les nombres.</li>
+            <li><strong>Opérations sur les chaînes de caractères :</strong> L'opérateur <code>+</code> peut être utilisé pour concaténer des chaînes de caractères. Cependant, les autres opérations arithmétiques ne sont pas applicables aux chaînes de caractères.</li>
+            <li><strong>Conversion de types :</strong> JavaScript effectue automatiquement la conversion de types dans certaines opérations. Par exemple, <code>"5" * 2</code> donnera <code>10</code> car la chaîne de caractères "5" est convertie en nombre.</li>
+            <li><strong>Opérations sur les objets :</strong> Les objets ne peuvent pas être directement utilisés dans les opérations arithmétiques. Cependant, vous pouvez définir des méthodes pour effectuer des opérations spécifiques sur les objets.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici quelques exemples de code illustrant les opérations arithmétiques sur différents types :</p>
+        <pre><code>
+// Opérations sur les nombres
+let a = 10;
+let b = 5;
+console.log(a + b); // 15
+console.log(a - b); // 5
+console.log(a * b); // 50
+console.log(a / b); // 2
+
+// Opérations sur les chaînes de caractères
+let str1 = "Hello";
+let str2 = "World";
+console.log(str1 + " " + str2); // "Hello World"
+
+// Conversion de types
+let num = "5";
+let result = num * 2;
+console.log(result); // 10
+
+// Opérations sur les objets
+let obj1 = { value: 10 };
+let obj2 = { value: 5 };
+let sum = obj1.value + obj2.value;
+console.log(sum); // 15
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_et_Op%C3%A9rateurs">MDN Web Docs - Expressions et Opérateurs</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators">MDN Web Docs - Arithmetic Operators</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Object">MDN Web Docs - Object</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

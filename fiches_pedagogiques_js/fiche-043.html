@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 043</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°043</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Comprendre le this contextuel</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à comprendre et à utiliser le mot-clé <code>this</code> en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>En JavaScript, le mot-clé <code>this</code> fait référence à l'objet auquel il appartient. Sa valeur dépend du contexte dans lequel il est utilisé :</p>
+        <ul>
+            <li>Dans une fonction globale, <code>this</code> fait référence à l'objet global (window dans un navigateur).</li>
+            <li>Dans une fonction d'objet, <code>this</code> fait référence à l'objet auquel la fonction appartient.</li>
+            <li>Dans une fonction de constructeur, <code>this</code> fait référence à l'objet nouvellement créé.</li>
+        </ul>
+        <p>Il est important de comprendre le contexte d'exécution pour utiliser correctement <code>this</code>.</p>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code illustrant l'utilisation de <code>this</code> :</p>
+        <pre><code>
+// Exemple dans une fonction globale
+function globalFunction() {
+    console.log(this); // Fait référence à l'objet global (window)
+}
+globalFunction();
+
+// Exemple dans une méthode d'objet
+const obj = {
+    name: "Objet",
+    method: function() {
+        console.log(this); // Fait référence à l'objet obj
+    }
+};
+obj.method();
+
+// Exemple dans un constructeur
+function ConstructorFunction() {
+    this.name = "Nouvel Objet";
+    console.log(this); // Fait référence à l'objet nouvellement créé
+}
+const newObj = new ConstructorFunction();
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/this">MDN Web Docs - this</a></li>
+            <li><a href="https://javascript.info/object-methods#method-this">JavaScript.info - Method this</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

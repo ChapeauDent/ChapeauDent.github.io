@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 013</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°013</h1>
+        <p>Auteur: Raymond Nicolas</p>
+        <p>Compétence: Créer un workflow conditionnel (if, else, switch)</p>
+        <p>Date: 20/06/2025</p>
+        <p>Version: v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre et savoir utiliser les structures conditionnelles en JavaScript pour créer des workflows logiques.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les structures conditionnelles permettent d'exécuter différentes parties de code en fonction de certaines conditions. En JavaScript, les principales structures conditionnelles sont <code>if</code>, <code>else</code> et <code>switch</code>.</p>
+        <h3>if</h3>
+        <p>La structure <code>if</code> permet d'exécuter un bloc de code si une condition est vraie.</p>
+        <pre><code>if (condition) {
+    // code à exécuter si la condition est vraie
+}</code></pre>
+        <h3>else</h3>
+        <p>La structure <code>else</code> permet d'exécuter un bloc de code si la condition dans le <code>if</code> est fausse.</p>
+        <pre><code>if (condition) {
+    // code à exécuter si la condition est vraie
+} else {
+    // code à exécuter si la condition est fausse
+}</code></pre>
+        <h3>else if</h3>
+        <p>La structure <code>else if</code> permet de tester plusieurs conditions.</p>
+        <pre><code>if (condition1) {
+    // code à exécuter si condition1 est vraie
+} else if (condition2) {
+    // code à exécuter si condition2 est vraie
+} else {
+    // code à exécuter si aucune des conditions n'est vraie
+}</code></pre>
+        <h3>switch</h3>
+        <p>La structure <code>switch</code> permet de tester une variable contre plusieurs valeurs possibles et d'exécuter des blocs de code différents en fonction de la valeur.</p>
+        <pre><code>switch (expression) {
+    case valeur1:
+        // code à exécuter si expression vaut valeur1
+        break;
+    case valeur2:
+        // code à exécuter si expression vaut valeur2
+        break;
+    default:
+        // code à exécuter si expression ne vaut aucune des valeurs précédentes
+}</code></pre>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de workflow conditionnel utilisant <code>if</code>, <code>else if</code> et <code>else</code> :</p>
+        <pre><code>let age = 25;
+
+if (age < 18) {
+    console.log("Vous êtes mineur.");
+} else if (age >= 18 && age < 65) {
+    console.log("Vous êtes adulte.");
+} else {
+    console.log("Vous êtes senior.");
+}</code></pre>
+        <p>Et un exemple utilisant <code>switch</code> :</p>
+        <pre><code>let fruit = "pomme";
+
+switch (fruit) {
+    case "pomme":
+        console.log("C'est une pomme.");
+        break;
+    case "banane":
+        console.log("C'est une banane.");
+        break;
+    default:
+        console.log("Fruit inconnu.");
+}</code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/if...else">MDN Web Docs - if...else</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/switch">MDN Web Docs - switch</a></li>
+        </ul>
+    </section>
+            <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

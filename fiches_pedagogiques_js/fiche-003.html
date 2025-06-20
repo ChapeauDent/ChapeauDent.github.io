@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 003</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°003</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Différencier let, const et var</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre les différences entre les mots-clés <code>let</code>, <code>const</code> et <code>var</code> en JavaScript et savoir quand les utiliser.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>En JavaScript, les variables peuvent être déclarées à l'aide des mots-clés <code>var</code>, <code>let</code> et <code>const</code>. Chacun de ces mots-clés a des caractéristiques spécifiques :</p>
+        <ul>
+            <li><code>var</code> : Déclare une variable avec une portée fonctionnelle ou globale. Les variables déclarées avec <code>var</code> peuvent être redéclarées et réaffectées.</li>
+            <li><code>let</code> : Déclare une variable avec une portée de bloc. Les variables déclarées avec <code>let</code> peuvent être réaffectées mais pas redéclarées dans le même bloc.</li>
+            <li><code>const</code> : Déclare une constante avec une portée de bloc. Les constantes déclarées avec <code>const</code> ne peuvent ni être redéclarées ni réaffectées.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <pre>
+<code>
+// Exemple de var
+var x = 10;
+console.log(x); // 10
+x = 20;
+console.log(x); // 20
+
+// Exemple de let
+let y = 10;
+console.log(y); // 10
+y = 20;
+console.log(y); // 20
+
+// Exemple de const
+const z = 10;
+console.log(z); // 10
+// z = 20; // Erreur : Assignment to constant variable.
+</code>
+        </pre>
+    </section>
+    <section>
+        <h2>Sources web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/var">MDN Web Docs - var</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/let">MDN Web Docs - let</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/const">MDN Web Docs - const</a></li>
+        </ul>
+    </section>
+        <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

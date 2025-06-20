@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 031</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°031</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Créer des boucles avancées (for...in, for...of)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à créer et utiliser des boucles avancées en JavaScript, notamment les boucles <code>for...in</code> et <code>for...of</code>.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les boucles <code>for...in</code> et <code>for...of</code> sont des structures de contrôle en JavaScript qui permettent de parcourir des collections d'éléments.</p>
+        <p><strong>La boucle <code>for...in</code></strong> permet de parcourir les propriétés énumérables d'un objet. Elle est principalement utilisée pour itérer sur les clés d'un objet.</p>
+        <p><strong>La boucle <code>for...of</code></strong> permet de parcourir les valeurs d'un objet itérable (comme un tableau, une chaîne de caractères, etc.). Elle est principalement utilisée pour itérer sur les valeurs des éléments d'un tableau.</p>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code utilisant les boucles <code>for...in</code> et <code>for...of</code> :</p>
+        <pre><code>
+// Exemple de boucle for...in
+const objet = {{ a: 1, b: 2, c: 3 }};
+for (const clé in objet) {{
+    console.log(`Clé : ${clé}, Valeur : ${objet[clé]}`);
+}}
+
+// Exemple de boucle for...of
+const tableau = [1, 2, 3, 4, 5];
+for (const valeur of tableau) {{
+    console.log(`Valeur : ${valeur}`);
+}}
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/for...in">MDN Web Docs - for...in</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/for...of">MDN Web Docs - for...of</a></li>
+        </ul>
+    </section>
+       <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

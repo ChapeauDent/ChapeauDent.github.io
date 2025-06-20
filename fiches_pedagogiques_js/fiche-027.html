@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 027</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°027</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Manipuler le DOM avec classList (ajouter/supprimer des classes)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à manipuler les classes CSS des éléments du DOM en utilisant JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>La propriété <code>classList</code> permet de manipuler les classes CSS des éléments du DOM. Elle fournit plusieurs méthodes utiles :</p>
+        <ul>
+            <li><code>element.classList.add(className)</code> : Ajoute la classe spécifiée à l'élément.</li>
+            <li><code>element.classList.remove(className)</code> : Supprime la classe spécifiée de l'élément.</li>
+            <li><code>element.classList.toggle(className)</code> : Ajoute la classe si elle n'est pas présente, sinon la supprime.</li>
+            <li><code>element.classList.contains(className)</code> : Vérifie si l'élément possède la classe spécifiée.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code qui manipule les classes CSS d'un élément du DOM :</p>
+        <pre><code>
+// Sélectionne l'élément avec l'ID "myElement"
+var myElement = document.getElementById("myElement");
+
+// Ajoute la classe "active" à l'élément
+myElement.classList.add("active");
+
+// Supprime la classe "hidden" de l'élément
+myElement.classList.remove("hidden");
+
+// Bascule la classe "highlight" sur l'élément
+myElement.classList.toggle("highlight");
+
+// Vérifie si l'élément possède la classe "active"
+if (myElement.classList.contains("active")) {
+    console.log("L'élément est actif.");
+}
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Element/classList">MDN Web Docs - Element.classList</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/DOMTokenList">MDN Web Docs - DOMTokenList</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

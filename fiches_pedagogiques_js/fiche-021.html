@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°021</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°021</h1>
+        <p>Auteur: Raymond Nicolas</p>
+        <p>Compétence: Utiliser console.table() pour afficher des tableaux/objets</p>
+        <p>Date: 20/06/2025</p>
+        <p>Version: v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à utiliser la méthode <code>console.table()</code> pour afficher des tableaux et des objets de manière tabulaire dans la console JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>La méthode <code>console.table()</code> est une fonctionnalité de la console JavaScript qui permet d'afficher des données tabulaires de manière lisible. Elle est particulièrement utile pour visualiser des tableaux et des objets complexes.</p>
+        <p>Voici quelques points clés :</p>
+        <ul>
+            <li><code>console.table()</code> accepte un tableau ou un objet en argument.</li>
+            <li>Les propriétés des objets ou les indices des tableaux sont affichés en colonnes.</li>
+            <li>Les valeurs des propriétés ou des éléments du tableau sont affichées en lignes.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple d'utilisation de <code>console.table()</code> :</p>
+        <pre><code>
+// Exemple avec un tableau d'objets
+const utilisateurs = [
+    { nom: 'Alice', age: 25, ville: 'Paris' },
+    { nom: 'Bob', age: 30, ville: 'Lyon' },
+    { nom: 'Charlie', age: 35, ville: 'Marseille' }
+];
+console.table(utilisateurs);
+
+// Exemple avec un objet
+const produit = {
+    id: 1,
+    nom: 'Ordinateur Portable',
+    prix: 899.99,
+    stock: 50
+};
+console.table(produit);
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/console/table">Documentation MDN sur console.table()</a></li>
+            <li><a href="https://www.w3schools.com/jsref/met_console_table.asp">Documentation W3Schools sur console.table()</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 019</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°019</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Réagir à des événements DOM de base (click, input)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment réagir à des événements DOM de base tels que les événements de clic et d'entrée utilisateur en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les événements DOM (Document Object Model) permettent d'interagir avec les éléments HTML en réponse aux actions de l'utilisateur. Les événements les plus courants incluent les clics de souris et les entrées de formulaire.</p>
+        <p>Pour écouter un événement, on utilise la méthode <code>addEventListener</code> qui attache une fonction de rappel (callback) à un élément HTML. Cette fonction sera exécutée lorsque l'événement spécifié se produit.</p>
+        <p>Exemples d'événements courants :</p>
+        <ul>
+            <li><code>click</code> : se produit lorsqu'un élément est cliqué.</li>
+            <li><code>input</code> : se produit lorsqu'une entrée utilisateur est détectée dans un champ de formulaire.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code qui montre comment réagir à un événement de clic et à un événement d'entrée utilisateur :</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exemple d'événements DOM&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;button id="myButton"&gt;Cliquez-moi&lt;/button&gt;
+    &lt;input type="text" id="myInput" placeholder="Tapez quelque chose..."&gt;
+
+    &lt;script&gt;
+        // Réagir à l'événement de clic
+        document.getElementById('myButton').addEventListener('click', function() {
+            alert('Bouton cliqué !');
+        });
+
+        // Réagir à l'événement d'entrée utilisateur
+        document.getElementById('myInput').addEventListener('input', function(event) {
+            console.log('Vous avez tapé : ' + event.target.value);
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener">MDN Web Docs - addEventListener</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/Events">MDN Web Docs - Événements</a></li>
+        </ul>
+    </section>
+            <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

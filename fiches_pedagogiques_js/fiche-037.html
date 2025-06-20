@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 037</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°037</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Manipulation avancée des tableaux (map, filter, reduce)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à utiliser les méthodes avancées de manipulation des tableaux en JavaScript, telles que <code>map</code>, <code>filter</code> et <code>reduce</code>.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les méthodes <code>map</code>, <code>filter</code> et <code>reduce</code> sont des outils puissants pour manipuler les tableaux en JavaScript.</p>
+        <ul>
+            <li><code>map</code> : Cette méthode crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant.</li>
+            <li><code>filter</code> : Cette méthode crée un nouveau tableau avec tous les éléments qui passent le test implémenté par la fonction fournie.</li>
+            <li><code>reduce</code> : Cette méthode applique une fonction à un accumulateur et à chaque valeur du tableau (de gauche à droite) pour le réduire à une seule valeur.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code utilisant les méthodes <code>map</code>, <code>filter</code> et <code>reduce</code> :</p>
+        <pre><code>
+// Exemple de tableau
+const numbers = [1, 2, 3, 4, 5];
+
+// Utilisation de la méthode map pour doubler chaque élément
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6, 8, 10]
+
+// Utilisation de la méthode filter pour obtenir les éléments pairs
+const evens = numbers.filter(num => num % 2 === 0);
+console.log(evens); // [2, 4]
+
+// Utilisation de la méthode reduce pour obtenir la somme des éléments
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // 15
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map">MDN Web Docs - Array.prototype.map</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/filter">MDN Web Docs - Array.prototype.filter</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/reduce">MDN Web Docs - Array.prototype.reduce</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

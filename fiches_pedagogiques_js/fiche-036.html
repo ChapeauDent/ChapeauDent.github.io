@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 036</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°036</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Fonctions anonymes et callbacks</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre et utiliser les fonctions anonymes et les callbacks en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les fonctions anonymes sont des fonctions qui n'ont pas de nom. Elles sont souvent utilisées comme arguments pour d'autres fonctions ou comme fonctions de rappel (callbacks).</p>
+        <p>Un callback est une fonction passée dans une autre fonction en tant qu'argument, qui est ensuite invoquée à l'intérieur de la fonction externe pour accomplir une sorte de routine ou d'action.</p>
+        <p>Voici un exemple de fonction anonyme :</p>
+        <pre><code>
+const add = function(a, b) {
+    return a + b;
+};
+console.log(add(2, 3)); // Affiche 5
+        </code></pre>
+        <p>Et voici un exemple de callback :</p>
+        <pre><code>
+function greeting(name) {
+    console.log('Bonjour ' + name);
+}
+
+function processUserInput(callback) {
+    const name = prompt('Veuillez entrer votre nom.');
+    callback(name);
+}
+
+processUserInput(greeting);
+        </code></pre>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code utilisant une fonction anonyme comme callback :</p>
+        <pre><code>
+setTimeout(function() {
+    console.log('Ce message est affiché après 2 secondes');
+}, 2000);
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Anonymous_functions">MDN Web Docs - Fonctions anonymes</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Glossary/Callback_function">MDN Web Docs - Callback function</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout">MDN Web Docs - setTimeout</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°026</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Ajouter un élément au DOM</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à ajouter dynamiquement des éléments au DOM en utilisant JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Le DOM (Document Object Model) est une interface de programmation pour les documents HTML et XML. Il représente la structure du document sous forme d'arbre, où chaque nœud est un objet représentant une partie du document.</p>
+        <p>Pour ajouter un élément au DOM, vous pouvez utiliser les méthodes suivantes :</p>
+        <ul>
+            <li><code>document.createElement(tagName)</code> : Crée un nouvel élément du type spécifié par <code>tagName</code>.</li>
+            <li><code>element.appendChild(newElement)</code> : Ajoute <code>newElement</code> comme dernier enfant de <code>element</code>.</li>
+            <li><code>element.insertBefore(newElement, referenceElement)</code> : Insère <code>newElement</code> avant <code>referenceElement</code>.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code qui ajoute un nouvel élément paragraphe au DOM :</p>
+        <pre><code>
+// Crée un nouvel élément paragraphe
+var newParagraph = document.createElement("p");
+
+// Ajoute du texte au paragraphe
+newParagraph.textContent = "Ceci est un nouveau paragraphe ajouté au DOM.";
+
+// Ajoute le paragraphe au body du document
+document.body.appendChild(newParagraph);
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Document/createElement">MDN Web Docs - Document.createElement</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Node/appendChild">MDN Web Docs - Node.appendChild</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Node/insertBefore">MDN Web Docs - Node.insertBefore</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

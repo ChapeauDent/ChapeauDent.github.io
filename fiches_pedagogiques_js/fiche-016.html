@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°016</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°016</h1>
+        <p>Auteur: Raymond Nicolas</p>
+        <p>Compétence: Utiliser des fonctions fléchées (=>)</p>
+        <p>Date: 20/06/2025</p>
+        <p>Version: v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre et utiliser les fonctions fléchées en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les fonctions fléchées, introduites dans ECMAScript 6, offrent une syntaxe plus concise pour écrire des fonctions en JavaScript. Elles sont particulièrement utiles pour les fonctions anonymes et les callbacks.</p>
+        <p>Syntaxe de base :</p>
+        <pre><code>const maFonction = (param1, param2) => {
+    // Corps de la fonction
+    return param1 + param2;
+};</code></pre>
+        <p>Les fonctions fléchées ont des caractéristiques spécifiques :</p>
+        <ul>
+            <li>Pas de liaison propre de <code>this</code>, elles héritent du <code>this</code> du contexte englobant.</li>
+            <li>Syntaxe plus courte et plus lisible.</li>
+            <li>Pas de <code>prototype</code>.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <pre><code>// Fonction classique
+function addition(a, b) {
+    return a + b;
+}
+
+// Fonction fléchée équivalente
+const addition = (a, b) => a + b;
+
+console.log(addition(5, 3)); // Affiche 8</code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions">MDN Web Docs - Fonctions fléchées</a></li>
+            <li><a href="https://javascript.info/arrow-functions-basics">JavaScript.info - Arrow Functions</a></li>
+        </ul>
+    </section>
+            <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

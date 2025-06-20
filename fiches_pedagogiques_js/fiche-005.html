@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 005</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°005</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Utiliser typeof pour identifier le type d'une variable</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment utiliser l'opérateur <code>typeof</code> en JavaScript pour identifier le type d'une variable.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>L'opérateur <code>typeof</code> en JavaScript est utilisé pour obtenir le type d'une variable. Il renvoie une chaîne de caractères indiquant le type de la variable. Voici les types de données que <code>typeof</code> peut identifier :</p>
+        <ul>
+            <li><code>undefined</code> : si la variable est indéfinie</li>
+            <li><code>boolean</code> : si la variable est un booléen</li>
+            <li><code>number</code> : si la variable est un nombre</li>
+            <li><code>string</code> : si la variable est une chaîne de caractères</li>
+            <li><code>object</code> : si la variable est un objet (y compris les tableaux et <code>null</code>)</li>
+            <li><code>function</code> : si la variable est une fonction</li>
+        </ul>
+        <p>Il est important de noter que <code>typeof null</code> renvoie <code>"object"</code> en raison d'un bug historique dans JavaScript.</p>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <pre><code>
+// Déclaration des variables
+let indéfini;
+let booléen = true;
+let nombre = 42;
+let chaîne = "Bonjour";
+let objet = { nom: "Raymond" };
+let tableau = [1, 2, 3];
+let fonction = function() { return "Hello"; };
+let nul = null;
+
+// Utilisation de typeof
+console.log(typeof indéfini); // "undefined"
+console.log(typeof booléen); // "boolean"
+console.log(typeof nombre); // "number"
+console.log(typeof chaîne); // "string"
+console.log(typeof objet); // "object"
+console.log(typeof tableau); // "object"
+console.log(typeof fonction); // "function"
+console.log(typeof nul); // "object"
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/typeof">MDN Web Docs - typeof</a></li>
+            <li><a href="https://www.w3schools.com/jsref/jsref_typeof.asp">W3Schools - typeof</a></li>
+        </ul>
+    </section>
+        <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

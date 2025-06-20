@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 011</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°011</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Rechercher un élément dans le DOM (getElementById, querySelector)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment rechercher et manipuler des éléments dans le DOM en utilisant les méthodes <code>getElementById</code> et <code>querySelector</code>.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Le DOM (Document Object Model) est une interface de programmation pour les documents HTML et XML. Il représente la structure du document sous forme d'arbre, où chaque nœud est un objet représentant une partie du document.</p>
+        <p>Pour rechercher des éléments dans le DOM, JavaScript fournit plusieurs méthodes, dont <code>getElementById</code> et <code>querySelector</code> :</p>
+        <ul>
+            <li><code>getElementById</code> : Cette méthode renvoie l'élément qui a l'ID spécifié. Si aucun élément avec cet ID n'existe, elle renvoie <code>null</code>.</li>
+            <li><code>querySelector</code> : Cette méthode renvoie le premier élément qui correspond au sélecteur CSS spécifié. Si aucun élément ne correspond, elle renvoie <code>null</code>.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code qui montre comment utiliser <code>getElementById</code> et <code>querySelector</code> :</p>
+        <pre><code>
+// HTML
+// &lt;div id="myDiv"&gt;Hello World!&lt;/div&gt;
+// &lt;p class="myClass"&gt;This is a paragraph.&lt;/p&gt;
+
+// JavaScript
+// Rechercher un élément par ID
+var myDiv = document.getElementById("myDiv");
+console.log(myDiv.textContent); // Affiche "Hello World!"
+
+// Rechercher un élément par sélecteur CSS
+var myParagraph = document.querySelector(".myClass");
+console.log(myParagraph.textContent); // Affiche "This is a paragraph."
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Document/getElementById">MDN Web Docs - getElementById</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector">MDN Web Docs - querySelector</a></li>
+        </ul>
+    </section>
+        <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

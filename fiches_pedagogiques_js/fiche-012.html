@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 012</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°012</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Utiliser des opérateurs arithmétiques booléens</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre et utiliser les opérateurs arithmétiques booléens en JavaScript pour effectuer des comparaisons logiques et des opérations conditionnelles.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les opérateurs arithmétiques booléens en JavaScript permettent de réaliser des opérations logiques sur des valeurs booléennes (true ou false). Ils sont essentiels pour les conditions, les boucles et d'autres structures de contrôle. Voici les principaux opérateurs :</p>
+        <ul>
+            <li><strong>ET logique (&&)</strong> : Retourne true si les deux opérandes sont vrais.</li>
+            <li><strong>OU logique (||)</strong> : Retourne true si au moins un des opérandes est vrai.</li>
+            <li><strong>NON logique (!)</strong> : Inverse la valeur booléenne de l'opérande.</li>
+        </ul>
+        <p>Ces opérateurs sont utilisés pour combiner des expressions booléennes et contrôler le flux d'exécution du code.</p>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <pre><code>
+// Exemple d'utilisation des opérateurs booléens
+let a = true;
+let b = false;
+
+console.log(a && b); // false
+console.log(a || b); // true
+console.log(!a);     // false
+
+// Utilisation dans une condition
+if (a && !b) {
+    console.log("a est vrai et b est faux");
+}
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Logical_Operators">MDN Web Docs : Opérateurs logiques</a></li>
+            <li><a href="https://www.w3schools.com/js/js_comparisons.asp">W3Schools : JavaScript Comparisons</a></li>
+        </ul>
+    </section>
+            <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 044</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°044</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Closures et portée lexicale</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre les closures et la portée lexicale en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les closures sont une fonctionnalité puissante de JavaScript qui permet à une fonction de se souvenir de l'environnement dans lequel elle a été créée. Cela signifie que même après que la fonction externe ait terminé son exécution, la fonction interne peut toujours accéder aux variables de la fonction externe.</p>
+        <p>La portée lexicale fait référence à la manière dont les variables sont résolues dans les fonctions imbriquées. En JavaScript, les fonctions internes ont accès aux variables définies dans leurs fonctions parentes, même après que les fonctions parentes aient terminé leur exécution.</p>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code illustrant les closures et la portée lexicale :</p>
+        <pre><code>
+// Fonction externe
+function externe() {
+    var message = "Bonjour";
+
+    // Fonction interne
+    function interne() {
+        console.log(message); // Accède à la variable de la fonction externe
+    }
+
+    return interne;
+}
+
+// Crée une closure
+var maClosure = externe();
+maClosure(); // Affiche "Bonjour"
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Closures">MDN Web Docs - Closures</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Scope">MDN Web Docs - Scope</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

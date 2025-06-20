@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 017</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°017</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Appliquer des opérations simples aux chaînes de caractères</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre et appliquer des opérations simples aux chaînes de caractères en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les chaînes de caractères (ou strings) sont des séquences de caractères utilisées pour représenter du texte en JavaScript. Voici quelques opérations simples que l'on peut effectuer sur les chaînes de caractères :</p>
+        <ul>
+            <li><strong>Concaténation :</strong> On peut joindre deux chaînes de caractères en utilisant l'opérateur <code>+</code> ou la méthode <code>concat()</code>.</li>
+            <li><strong>Longueur :</strong> La propriété <code>length</code> permet de connaître la longueur d'une chaîne.</li>
+            <li><strong>Accès aux caractères :</strong> On peut accéder à un caractère d'une chaîne en utilisant la notation par crochets <code>[]</code> ou la méthode <code>charAt()</code>.</li>
+            <li><strong>Extraction de sous-chaînes :</strong> Les méthodes <code>substring()</code>, <code>substr()</code> et <code>slice()</code> permettent d'extraire des parties de chaînes.</li>
+            <li><strong>Recherche :</strong> Les méthodes <code>indexOf()</code> et <code>includes()</code> permettent de rechercher des sous-chaînes.</li>
+            <li><strong>Remplacement :</strong> La méthode <code>replace()</code> permet de remplacer des parties de chaînes.</li>
+            <li><strong>Conversion de casse :</strong> Les méthodes <code>toUpperCase()</code> et <code>toLowerCase()</code> permettent de convertir les chaînes en majuscules ou minuscules.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <pre><code>
+// Exemple de quelques opérations sur les chaînes de caractères
+let str = "Bonjour, monde!";
+let str2 = " Comment ça va?";
+
+// Concaténation
+let concatenated = str + str2;
+console.log(concatenated); // "Bonjour, monde! Comment ça va?"
+
+// Longueur
+console.log(str.length); // 14
+
+// Accès aux caractères
+console.log(str[0]); // "B"
+console.log(str.charAt(1)); // "o"
+
+// Extraction de sous-chaînes
+console.log(str.substring(0, 7)); // "Bonjour"
+console.log(str.slice(-6)); // "monde!"
+
+// Recherche
+console.log(str.indexOf("monde")); // 8
+console.log(str.includes("Bonjour")); // true
+
+// Remplacement
+let newStr = str.replace("monde", "tout le monde");
+console.log(newStr); // "Bonjour, tout le monde!"
+
+// Conversion de casse
+console.log(str.toUpperCase()); // "BONJOUR, MONDE!"
+console.log(str.toLowerCase()); // "bonjour, monde!"
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String">MDN Web Docs - String</a></li>
+            <li><a href="https://www.w3schools.com/js/js_string_methods.asp">W3Schools - JavaScript String Methods</a></li>
+        </ul>
+    </section>
+            <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 032</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°032</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Utiliser des variables spéciales (this, arguments)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Apprendre à utiliser les variables spéciales <code>this</code> et <code>arguments</code> en JavaScript.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>En JavaScript, <code>this</code> est une variable spéciale qui fait référence à l'objet courant dans lequel le code est exécuté. Sa valeur dépend du contexte d'exécution.</p>
+        <p>La variable <code>arguments</code> est un objet array-like accessible dans les fonctions, qui contient les arguments passés à la fonction.</p>
+        <p>Voici quelques points importants à noter :</p>
+        <ul>
+            <li><code>this</code> dans une méthode d'objet fait référence à l'objet.</li>
+            <li><code>this</code> dans une fonction globale fait référence à l'objet global (window en navigateur).</li>
+            <li><code>this</code> dans une fonction fléchée fait référence au contexte lexical.</li>
+            <li><code>arguments</code> contient tous les arguments passés à une fonction.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code utilisant <code>this</code> et <code>arguments</code> :</p>
+        <pre><code>
+// Exemple avec this
+var obj = {
+    name: "Raymond",
+    greet: function() {
+        console.log("Bonjour, " + this.name);
+    }
+};
+obj.greet(); // Bonjour, Raymond
+
+// Exemple avec arguments
+function sum() {
+    var total = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        total += arguments[i];
+    }
+    return total;
+}
+console.log(sum(1, 2, 3, 4)); // 10
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/this">MDN Web Docs - this</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/arguments">MDN Web Docs - arguments</a></li>
+        </ul>
+    </section>
+       <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>
