@@ -19,11 +19,14 @@ nav > ul > li {
     transition: all 0.3s ease;
     cursor: pointer;
     width:10rem;
-    height: 3rem;}
+    height: 3rem;
+    border-radius: var(--space-16) var(--space-16) 0 0 ;
+}
 
 nav > ul > li:hover{
     background-color: #f4f4f4;
     transition: all 0.3s ease;
+    
 }
 nav > ul > li:hover > a {
     color: var(--html-dark);
@@ -35,7 +38,6 @@ nav ul li.focused a {
 }
 nav ul li.focused{
     background-color: #f4f4f4;
-      border-radius: var(--space-16) var(--space-16) 0 0 ;
 }
 
 .menu-toggle {
@@ -58,7 +60,10 @@ nav ul li.focused{
 
 
 @media (max-width: 768px) {
-  .menu-toggle {
+    #header {
+        padding:  var(--space-16);
+    }
+    .menu-toggle {
     display: block;
   }
   
@@ -75,6 +80,9 @@ nav ul li.focused{
     margin-right: var(--space-16);
   }
   nav ul li.focused{
+    border-radius: 0 var(--space-16) var(--space-16)  0 ;
+  }
+  nav ul li:hover{
     border-radius: 0 var(--space-16) var(--space-16)  0 ;
   }
 
