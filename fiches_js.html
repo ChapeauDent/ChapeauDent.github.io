@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fiches Pédagogiques JavaScript</title>
+    <link rel="stylesheet" href="main.css" />
+  </style>
+</head>
+<body>
+    <header id="header"></header>
+  <h1>Fiches Pédagogiques JavaScript</h1>
+  <main>
+  <div class="container" id="cards-container"></div>
+    </main>
+
+  <script>
+    fetch('bdd/fiches_js.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('cards-container');
+
+        data.forEach(fiche => {
+          const card = document.createElement('div');
+          card.className = 'card';
+
+          card.innerHTML = `
+            <p>${fiche.fichier}</p>
+            <h2>${fiche.competence}</h2>
+            <section class="js">
+              ${fiche.objectif}
+            </section>
+            <section class="js">
+              ${fiche.theorie}
+            </section>
+            <section class="js">
+              ${fiche.exemple}
+            </section>
+            <section class="js">
+              ${fiche.sources}
+            </section>
+            <section class="js">
+              ${fiche.infos_supplementaires || ''}
+            </section>
+          `;
+
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error('Erreur lors du chargement des fiches :', error);
+      });
+  </script>
+</body>
+<script src="composants/header.js"></script>
+</html>
