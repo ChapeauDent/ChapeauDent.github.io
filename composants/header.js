@@ -16,9 +16,20 @@ fetch('/composants/header.html')
     document.querySelectorAll('nav ul li a').forEach(link => {
       const linkUrl = new URL(link.href);
       if (linkUrl.pathname === currentUrl) {
-        link.parentElement.classList.add('active');
+        link.parentElement.classList.add('focused');
       }
     });
+
+    document.addEventListener('click', (e) => {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.menu');
+
+      if (toggle && toggle.contains(e.target)) {
+        menu.classList.toggle('active');
+        toggle.classList.toggle('active');
+      }
+    });
+
   })
   .catch(error => {
     console.error('Erreur :', error);
