@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°045</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°045</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Choisir le bon formulaire selon le contexte</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment choisir le bon formulaire HTML selon le contexte d'utilisation.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les formulaires HTML sont utilisés pour collecter des données auprès des utilisateurs. Le choix du bon formulaire dépend du type de données à collecter et du contexte d'utilisation. Voici quelques exemples :</p>
+        <ul>
+            <li>Formulaire de contact : Utilisé pour permettre aux utilisateurs de vous envoyer des messages. Il inclut généralement des champs pour le nom, l'adresse e-mail, et le message.</li>
+            <li>Formulaire d'inscription : Utilisé pour enregistrer les utilisateurs sur un site web. Il inclut des champs pour le nom, l'adresse e-mail, le mot de passe, et parfois des informations supplémentaires comme l'adresse.</li>
+            <li>Formulaire de recherche : Utilisé pour permettre aux utilisateurs de rechercher des informations sur un site web. Il inclut généralement un champ de texte pour la requête de recherche.</li>
+            <li>Formulaire de commande : Utilisé pour collecter des informations de commande auprès des utilisateurs. Il inclut des champs pour les informations de livraison, les détails de paiement, et les articles commandés.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de formulaire de contact :</p>
+        <pre><code>
+&lt;form action="/submit_contact" method="post"&gt;
+    &lt;label for="name"&gt;Nom&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+    &lt;br&gt;
+    &lt;label for="email"&gt;Email&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    &lt;br&gt;
+    &lt;label for="message"&gt;Message&lt;/label&gt;
+    &lt;textarea id="message" name="message" required&gt;&lt;/textarea&gt;
+    &lt;br&gt;
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+&lt;/form&gt;
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/form">Guide des formulaires HTML de MDN</a></li>
+            <li><a href="https://www.w3schools.com/html/html_forms.asp">Tutoriels sur les formulaires HTML de W3Schools</a></li>
+            <li><a href="https://html.com/forms/">HTML.com - Forms</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

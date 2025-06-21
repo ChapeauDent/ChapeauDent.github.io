@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°054</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°054</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Intégrer HTML avec JavaScript pour manipuler le DOM</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment intégrer HTML avec JavaScript pour manipuler le DOM.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Le Document Object Model (DOM) est une interface de programmation pour les documents HTML et XML. Il représente la structure de la page sous forme d'un arbre, où chaque nœud est un objet représentant une partie du document.</p>
+        <p>JavaScript peut être utilisé pour manipuler le DOM afin de modifier dynamiquement le contenu, la structure et le style des pages web. Voici quelques opérations courantes :</p>
+        <ul>
+            <li>Accéder aux éléments du DOM en utilisant des méthodes telles que <code>getElementById</code>, <code>getElementsByClassName</code>, et <code>querySelector</code>.</li>
+            <li>Modifier le contenu des éléments en utilisant la propriété <code>innerHTML</code> ou <code>textContent</code>.</li>
+            <li>Changer les attributs des éléments en utilisant la méthode <code>setAttribute</code>.</li>
+            <li>Ajouter ou supprimer des éléments en utilisant les méthodes <code>appendChild</code> et <code>removeChild</code>.</li>
+            <li>Appliquer des styles en modifiant la propriété <code>style</code> des éléments.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple simple de code JavaScript qui change le texte d'un paragraphe lorsque l'utilisateur clique sur un bouton :</p>
+        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exemple DOM&lt;/title&gt;
+    &lt;script&gt;
+        function changeText() {
+            document.getElementById("myParagraph").textContent = "Le texte a été changé!";
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p id="myParagraph"&gt;Ceci est un paragraphe.&lt;/p&gt;
+    &lt;button onclick="changeText()"&gt;Cliquez-moi&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model/Introduction">Introduction au DOM - MDN</a></li>
+            <li><a href="https://www.w3schools.com/js/js_htmldom.asp">W3Schools - HTML DOM</a></li>
+            <li><a href="https://javascript.info/dom-nodes">JavaScript.info - DOM Nodes</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

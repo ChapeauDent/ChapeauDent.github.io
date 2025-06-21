@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°044</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°044</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Choisir le type d’entrée pertinent (type="email", type="date", etc.)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment choisir le type d’entrée pertinent dans les formulaires HTML.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les formulaires HTML permettent de collecter des données utilisateur. Pour améliorer l'expérience utilisateur et la validation des données, il est important de choisir le type d'entrée approprié pour chaque champ de formulaire. Voici quelques types d'entrées courants :</p>
+        <ul>
+            <li><code>type="text"</code> : Champ de texte simple.</li>
+            <li><code>type="email"</code> : Champ pour saisir une adresse e-mail. Valide automatiquement le format de l'e-mail.</li>
+            <li><code>type="date"</code> : Champ pour sélectionner une date. Affiche un sélecteur de date.</li>
+            <li><code>type="number"</code> : Champ pour saisir un nombre. Permet de définir des valeurs minimales et maximales.</li>
+            <li><code>type="password"</code> : Champ pour saisir un mot de passe. Masque les caractères saisis.</li>
+            <li><code>type="url"</code> : Champ pour saisir une URL. Valide automatiquement le format de l'URL.</li>
+            <li><code>type="tel"</code> : Champ pour saisir un numéro de téléphone. Peut appliquer un masque de saisie.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de formulaire HTML utilisant différents types d'entrées :</p>
+        <pre><code>&lt;form&gt;
+    &lt;label for="email"&gt;Email :&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    &lt;br&gt;
+    &lt;label for="date"&gt;Date de naissance :&lt;/label&gt;
+    &lt;input type="date" id="date" name="date" required&gt;
+    &lt;br&gt;
+    &lt;label for="number"&gt;Nombre d'enfants :&lt;/label&gt;
+    &lt;input type="number" id="number" name="number" min="0" max="10"&gt;
+    &lt;br&gt;
+    &lt;label for="password"&gt;Mot de passe :&lt;/label&gt;
+    &lt;input type="password" id="password" name="password" required&gt;
+    &lt;br&gt;
+    &lt;label for="url"&gt;Site web :&lt;/label&gt;
+    &lt;input type="url" id="url" name="url"&gt;
+    &lt;br&gt;
+    &lt;label for="tel"&gt;Téléphone :&lt;/label&gt;
+    &lt;input type="tel" id="tel" name="tel"&gt;
+    &lt;br&gt;
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/input">MDN Web Docs - &lt;input&gt;</a></li>
+            <li><a href="https://www.w3schools.com/html/html_form_input_types.asp">W3Schools - HTML Input Types</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°042</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°042</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Regrouper les cellules d’un tableau (&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment regrouper les cellules d’un tableau HTML en utilisant les balises &lt;thead&gt;, &lt;tbody&gt; et &lt;tfoot&gt;.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les balises &lt;thead&gt;, &lt;tbody&gt; et &lt;tfoot&gt; sont utilisées pour regrouper les cellules d’un tableau HTML en différentes sections :</p>
+        <ul>
+            <li>&lt;thead&gt; : Définit l’en-tête du tableau.</li>
+            <li>&lt;tbody&gt; : Définit le corps principal du tableau.</li>
+            <li>&lt;tfoot&gt; : Définit le pied de tableau.</li>
+        </ul>
+        <p>Ces balises permettent de structurer le tableau de manière sémantique et d’améliorer l’accessibilité et la lisibilité du code HTML.</p>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Nom&lt;/th&gt;
+            &lt;th&gt;Âge&lt;/th&gt;
+            &lt;th&gt;Ville&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Alice&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+            &lt;td&gt;Paris&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bob&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;Lyon&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;Fin du tableau&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/thead">MDN Web Docs - &lt;thead&gt;</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/tbody">MDN Web Docs - &lt;tbody&gt;</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/tfoot">MDN Web Docs - &lt;tfoot&gt;</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

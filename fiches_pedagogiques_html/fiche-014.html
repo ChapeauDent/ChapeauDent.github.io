@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique 014</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°014</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Utiliser des éléments imbriqués</p>
+        <p>Date : 21/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment utiliser des éléments HTML imbriqués pour structurer le contenu de manière sémantique et logique.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les éléments HTML imbriqués permettent de structurer le contenu de manière hiérarchique et sémantique. L'imbrication consiste à placer un élément HTML à l'intérieur d'un autre élément HTML. Cela permet de créer des relations parent-enfant entre les éléments, ce qui est essentiel pour une bonne structuration du document.</p>
+        <p>Voici quelques exemples d'éléments imbriqués :</p>
+        <ul>
+            <li>Les listes imbriquées : une liste à puces (<code>&lt;ul&gt;</code>) contenant des éléments de liste (<code>&lt;li&gt;</code>), qui eux-mêmes peuvent contenir des listes imbriquées.</li>
+            <li>Les sections imbriquées : une section (<code>&lt;section&gt;</code>) contenant des articles (<code>&lt;article&gt;</code>), qui eux-mêmes peuvent contenir des sections.</li>
+            <li>Les éléments de formulaire imbriqués : un formulaire (<code>&lt;form&gt;</code>) contenant des groupes de champs (<code>&lt;fieldset&gt;</code>) et des légendes (<code>&lt;legend&gt;</code>).</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code HTML utilisant des éléments imbriqués :</p>
+        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exemple d'éléments imbriqués&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section&gt;
+        &lt;h1&gt;Titre de la section&lt;/h1&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Titre de l'article&lt;/h2&gt;
+            &lt;p&gt;Paragraphe de l'article.&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Élément de liste&lt;/li&gt;
+                &lt;li&gt;Élément de liste imbriqué
+                    &lt;ul&gt;
+                        &lt;li&gt;Sous-élément de liste&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML">Guide HTML de MDN</a></li>
+            <li><a href="https://www.w3schools.com/html/">Tutoriels HTML de W3Schools</a></li>
+            <li><a href="https://html.com/">HTML.com</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

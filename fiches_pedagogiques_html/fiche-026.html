@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°026</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Créer des liens vers des ancres internes</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment créer des liens vers des ancres internes dans une page HTML.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les ancres internes permettent de créer des liens qui mènent à une section spécifique de la même page. Cela est particulièrement utile pour les longues pages avec beaucoup de contenu. Pour créer une ancre interne, vous devez :</p>
+        <ul>
+            <li>Définir une cible d'ancre en utilisant l'attribut <code>id</code> sur un élément HTML.</li>
+            <li>Créer un lien qui pointe vers cette cible en utilisant l'attribut <code>href</code> avec le symbole <code>#</code> suivi de l'identifiant de la cible.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code HTML qui montre comment créer des liens vers des ancres internes :</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exemple d'ancres internes&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id="section1"&gt;Section 1&lt;/h1&gt;
+    &lt;p&gt;Ceci est la section 1.&lt;/p&gt;
+    &lt;a href="#section2"&gt;Aller à la section 2&lt;/a&gt;
+
+    &lt;h1 id="section2"&gt;Section 2&lt;/h1&gt;
+    &lt;p&gt;Ceci est la section 2.&lt;/p&gt;
+    &lt;a href="#section1"&gt;Retour à la section 1&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/a">Guide des ancres internes de MDN</a></li>
+            <li><a href="https://www.w3schools.com/html/html_links.asp">Tutoriels sur les liens HTML de W3Schools</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

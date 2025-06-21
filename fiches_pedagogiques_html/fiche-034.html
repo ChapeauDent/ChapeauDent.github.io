@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°034</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°034</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Ajouter des intitulés aux champs de formulaire</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment ajouter des intitulés aux champs de formulaire en HTML avec la balise <code>&lt;label&gt;</code>.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>La balise <code>&lt;label&gt;</code> en HTML est utilisée pour associer un intitulé à un champ de formulaire. Cela permet de rendre les formulaires plus accessibles et plus faciles à utiliser. En associant un <code>&lt;label&gt;</code> à un champ de formulaire, les utilisateurs peuvent cliquer sur l'intitulé pour activer le champ correspondant.</p>
+        <p>Pour associer un <code>&lt;label&gt;</code> à un champ de formulaire, il suffit de définir l'attribut <code>for</code> du <code>&lt;label&gt;</code> avec l'identifiant (<code>id</code>) du champ de formulaire correspondant.</p>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exemple de Formulaire&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        &lt;label for="nom"&gt;Nom :&lt;/label&gt;
+        &lt;input type="text" id="nom" name="nom"&gt;
+        &lt;br&gt;
+        &lt;label for="email"&gt;Email :&lt;/label&gt;
+        &lt;input type="email" id="email" name="email"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/label">Guide HTML de MDN</a></li>
+            <li><a href="https://www.w3schools.com/tags/tag_label.asp">Tutoriels HTML de W3Schools</a></li>
+            <li><a href="https://html.com/tags/label/">HTML.com</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

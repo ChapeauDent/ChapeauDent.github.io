@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°038</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°038</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Gérer les erreurs de saisie avec les attributs HTML (required, pattern, etc.)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment gérer les erreurs de saisie dans les formulaires HTML à l'aide des attributs comme required, pattern, etc.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les formulaires HTML permettent de collecter des données auprès des utilisateurs. Pour garantir la qualité et la validité des données saisies, il est essentiel de gérer les erreurs de saisie. HTML offre plusieurs attributs pour ce faire :</p>
+        <ul>
+            <li><code>required</code> : Cet attribut indique que le champ doit être rempli avant la soumission du formulaire.</li>
+            <li><code>pattern</code> : Cet attribut permet de définir une expression régulière que la valeur du champ doit respecter.</li>
+            <li><code>min</code> et <code>max</code> : Ces attributs définissent les valeurs minimales et maximales pour les champs de type numérique.</li>
+            <li><code>maxlength</code> : Cet attribut définit le nombre maximal de caractères que le champ peut contenir.</li>
+            <li><code>type</code> : Cet attribut permet de spécifier le type de données attendu (email, url, number, etc.).</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de formulaire HTML utilisant les attributs de validation :</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exemple de Formulaire&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        &lt;label for="nom"&gt;Nom :&lt;/label&gt;
+        &lt;input type="text" id="nom" name="nom" required maxlength="50"&gt;
+        &lt;br&gt;
+        &lt;label for="email"&gt;Email :&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+        &lt;br&gt;
+        &lt;label for="age"&gt;Âge :&lt;/label&gt;
+        &lt;input type="number" id="age" name="age" min="18" max="99" required&gt;
+        &lt;br&gt;
+        &lt;label for="site"&gt;Site Web :&lt;/label&gt;
+        &lt;input type="url" id="site" name="site"&gt;
+        &lt;br&gt;
+        &lt;label for="motdepasse"&gt;Mot de passe :&lt;/label&gt;
+        &lt;input type="password" id="motdepasse" name="motdepasse" required pattern=".{8,}"&gt;
+        &lt;br&gt;
+        &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input">Guide des éléments de formulaire HTML de MDN</a></li>
+            <li><a href="https://www.w3schools.com/html/html_form_attributes.asp">Tutoriels sur les attributs de formulaire HTML de W3Schools</a></li>
+            <li><a href="https://html.spec.whatwg.org/multipage/forms.html">Spécifications HTML sur les formulaires</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

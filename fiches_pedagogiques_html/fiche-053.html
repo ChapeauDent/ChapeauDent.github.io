@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°053</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°053</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Utiliser les balises &lt;template&gt; et &lt;slot&gt; (préparation à l’usage de Web Components)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre l'utilisation des balises &lt;template&gt; et &lt;slot&gt; en HTML dans le contexte de la préparation à l’usage des Web Components.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les balises &lt;template&gt; et &lt;slot&gt; sont des éléments clés pour la création de Web Components en HTML. Elles permettent de définir des structures HTML réutilisables et de les insérer dynamiquement dans le DOM.</p>
+        <p>La balise &lt;template&gt; est utilisée pour déclarer des fragments de code HTML qui ne sont pas rendus immédiatement. Ces fragments peuvent être clonés et insérés dans le DOM à la demande.</p>
+        <p>La balise &lt;slot&gt; est utilisée pour définir des emplacements où le contenu peut être inséré dans un Web Component. Elle permet de créer des composants réutilisables avec des zones de contenu personnalisables.</p>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple simple de code HTML utilisant les balises &lt;template&gt; et &lt;slot&gt; :</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exemple Web Component&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;template id="my-template"&gt;
+    &lt;div&gt;
+        &lt;h2&gt;Titre du composant&lt;/h2&gt;
+        &lt;slot name="content"&gt;Contenu par défaut&lt;/slot&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    class MyComponent extends HTMLElement {
+        constructor() {
+            super();
+            const template = document.getElementById('my-template').content.cloneNode(true);
+            this.attachShadow({ mode: 'open' }).appendChild(template);
+        }
+    }
+
+    customElements.define('my-component', MyComponent);
+&lt;/script&gt;
+
+&lt;my-component&gt;
+    &lt;div slot="content"&gt;Contenu personnalisé&lt;/div&gt;
+&lt;/my-component&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/template">MDN Web Docs - &lt;template&gt;</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/slot">MDN Web Docs - &lt;slot&gt;</a></li>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/Web_Components">MDN Web Docs - Web Components</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

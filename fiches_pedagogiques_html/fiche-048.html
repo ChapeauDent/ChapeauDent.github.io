@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°048</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°048</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Créer des tableaux accessibles</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre comment créer des tableaux accessibles en HTML.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les tableaux accessibles sont essentiels pour garantir que tous les utilisateurs, y compris ceux utilisant des technologies d'assistance, puissent comprendre et naviguer dans les données tabulaires. Voici quelques pratiques pour rendre les tableaux accessibles :</p>
+        <ul>
+            <li>Utiliser la balise <code>&lt;caption&gt;</code> pour fournir un titre au tableau.</li>
+            <li>Utiliser la balise <code>&lt;th&gt;</code> pour les cellules d'en-tête et l'attribut <code>scope</code> pour indiquer la portée des en-têtes.</li>
+            <li>Utiliser les attributs <code>aria-describedby</code> et <code>aria-labelledby</code> pour fournir des descriptions supplémentaires.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <pre><code>
+&lt;table&gt;
+    &lt;caption&gt;Exemple de tableau accessible&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Nom&lt;/th&gt;
+            &lt;th scope="col"&gt;Âge&lt;/th&gt;
+            &lt;th scope="col"&gt;Ville&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Alice&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+            &lt;td&gt;Paris&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bob&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;Lyon&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;Fin du tableau&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+        </code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/table">Guide des tableaux HTML de MDN</a></li>
+            <li><a href="https://www.w3.org/WAI/tutorials/tables/">Tutoriels sur l'accessibilité des tableaux de W3C</a></li>
+            <li><a href="https://webaim.org/techniques/tables/">Techniques d'accessibilité des tableaux de WebAIM</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

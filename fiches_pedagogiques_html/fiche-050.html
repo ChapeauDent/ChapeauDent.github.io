@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°050</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°050</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Ajouter des attributs complexes (data-*)</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre l'utilisation des attributs complexes <code>data-*</code> en HTML.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>Les attributs <code>data-*</code> permettent de stocker des données personnalisées dans les éléments HTML. Ils sont utilisés pour ajouter des informations supplémentaires qui peuvent être utilisées par JavaScript pour manipuler le DOM ou pour des fonctionnalités spécifiques.</p>
+        <p>Les attributs <code>data-*</code> suivent la syntaxe <code>data-nom</code>, où <code>nom</code> est le nom de l'attribut. Par exemple, <code>data-id</code>, <code>data-role</code>, etc.</p>
+        <p>Voici quelques utilisations courantes des attributs <code>data-*</code> :</p>
+        <ul>
+            <li>Stocker des identifiants uniques pour les éléments.</li>
+            <li>Ajouter des rôles ou des types spécifiques aux éléments.</li>
+            <li>Stocker des informations de configuration ou des paramètres.</li>
+            <li>Ajouter des données contextuelles pour les scripts JavaScript.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code HTML utilisant les attributs <code>data-*</code> :</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Exemple data-* en HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div data-id="123" data-role="admin"&gt;
+        &lt;p&gt;Utilisateur : Admin&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const div = document.querySelector('div');
+        console.log(div.dataset.id); // Affiche "123"
+        console.log(div.dataset.role); // Affiche "admin"
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/data-*">Guide des attributs data-* de MDN</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_global_data.asp">Tutoriels sur les attributs data-* de W3Schools</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

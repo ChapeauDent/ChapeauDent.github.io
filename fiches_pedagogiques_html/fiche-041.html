@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Pédagogique n°041</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fiche Pédagogique n°041</h1>
+        <p>Auteur : Raymond Nicolas</p>
+        <p>Compétence : Utiliser l’attribut target dans un lien</p>
+        <p>Date : 20/06/2025</p>
+        <p>Version : v1.0</p>
+    </header>
+    <section>
+        <h2>Objectif</h2>
+        <p>Comprendre l'utilisation de l'attribut target dans un lien HTML.</p>
+    </section>
+    <section>
+        <h2>Théorie</h2>
+        <p>L'attribut <code>target</code> dans un lien HTML permet de spécifier où le document lié doit s'ouvrir. Les valeurs courantes de l'attribut <code>target</code> incluent :</p>
+        <ul>
+            <li><code>_self</code> : Ouvre le lien dans la même fenêtre ou onglet (valeur par défaut).</li>
+            <li><code>_blank</code> : Ouvre le lien dans une nouvelle fenêtre ou onglet.</li>
+            <li><code>_parent</code> : Ouvre le lien dans la fenêtre parent.</li>
+            <li><code>_top</code> : Ouvre le lien dans la fenêtre la plus haute (utile pour les frames).</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Exemple</h2>
+        <p>Voici un exemple de code HTML utilisant l'attribut <code>target</code> :</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Exemple target&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a href="https://www.example.com" target="_blank"&gt;Ouvrir dans un nouvel onglet&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    </section>
+    <section>
+        <h2>Sources Web</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/a" target="_blank">Guide HTML de MDN</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_a_target.asp" target="_blank">Tutoriels HTML de W3Schools</a></li>
+        </ul>
+    </section>
+    <footer id="footer"></footer>
+    <script src="script.js"></script>
+</body>
+</html>
