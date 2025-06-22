@@ -1,14 +1,3 @@
-<style>
-   .hamburger.open .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.open .bar:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.open .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-    </style>
 <nav class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -57,6 +46,15 @@
             </svg>
         </button>
     </form>
+    <!-- Barre de chargement avec Tailwind -->
+    <!-- Barre de progression -->
+    <div class="relative w-full h-1 bg-gray-200 mt-6 overflow-hidden">
+        <div id="scroll-progress" class="absolute top-0 left-0 h-full bg-blue-500 w-0 transition-all duration-75"></div>
+        <div id="scroll-markers" class="absolute top-0 left-0 h-full w-full pointer-events-none"></div>
+
+    </div>
+
+
     <script src="../script-recherche.js"></script>
     <script src="../composants/header.js"></script>
 </nav>

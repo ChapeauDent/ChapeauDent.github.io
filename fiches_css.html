@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Fiches Pédagogiques CSS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="main.css" />
-  </head>
-  <body class="bg-gray-100 font-sans">
-    <header id="header" class="sticky top-0 bg-white shadow-md z-50 mb-6"></header>
 
-    <main class="max-w-7xl mx-auto px-4 py-6">
-      <h1 class="text-3xl font-bold text-center text-blue-700 mb-8">Fiches Pédagogiques CSS</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiches Pédagogiques CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-      <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    </main>
+  <link rel="stylesheet" href="main.css" />
+</head>
 
-    <script>
+<body class="bg-gray-100 font-sans">
+  <header id="header" class="sticky top-0 bg-white shadow-md z-50 mb-6"></header>
+
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <h1 class="text-3xl font-bold text-center text-blue-700 mb-8">Fiches Pédagogiques CSS</h1>
+
+    <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </main>
+
+  <script>
+    let toutesLesFiches = []; // déclaration globale
     fetch('bdd/fiches_css.json')
       .then(response => response.json())
       .then(data => {
+        toutesLesFiches = data; // on stocke les fiches pour pouvoir les compter
         const container = document.getElementById('cards-container');
 
         data.forEach(fiche => {
@@ -60,12 +65,45 @@
           );
           link.setAttribute('target', '_blank'); // optionnel : ouvre dans un nouvel onglet
         });
+        // 1. Nombre total de fiches
+
+        window.addEventListener('DOMContentLoaded', async () => {
+          // 1. Nombre total de fiches
+          const total = toutesLesFiches.length;
+          console.log('Total fiches:', total); // pour vérifier
+
+          // Vérifier que le conteneur des repères existe
+          const markerContainer = document.getElementById('scroll-markers');
+          if (!markerContainer) {
+            console.error('Le conteneur #scroll-markers est introuvable dans le DOM.');
+          } else {
+            // Vider le conteneur au cas où
+            markerContainer.innerHTML = '';
+
+            // Seulement si on a plus d'une fiche
+            if (total > 1) {
+              for (let i = 1; i < total; i++) {
+                const marker = document.createElement('div');
+                marker.className = 'w-1 h-full bg-green-300 opacity-60';
+                marker.style.position = 'absolute';
+                marker.style.zIndex = '100'; // Assure que le marqueur est au-dessus
+                // Placer le marqueur en fonction de sa position relative
+                marker.style.left = `${(i / total) * 100}%`;
+
+                markerContainer.appendChild(marker);
+              }
+            } else {
+              console.log('Pas suffisamment de fiches pour afficher des repères.');
+            }
+          }
+        });
       })
       .catch(error => {
         console.error('Erreur lors du chargement des fiches :', error);
       });
 
   </script>
-    <script src="composants/header.js"></script>
-  </body>
+  <script src="composants/header.js"></script>
+</body>
+
 </html>

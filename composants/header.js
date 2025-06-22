@@ -39,4 +39,14 @@ fetch('/composants/header.html')
     console.error('Erreur :', error);
   });
 
-  
+
+window.addEventListener('DOMContentLoaded', async () => {
+  // Barre de progression du scroll
+window.addEventListener('scroll', () => {
+  const progress = document.getElementById('scroll-progress');
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  progress.style.width = `${scrollPercent}%`;
+});
+});
