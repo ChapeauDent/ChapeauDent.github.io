@@ -1,19 +1,62 @@
-        
-<nav class="navbar">
-    <button class="menu-toggle" aria-label="Ouvrir le menu">
-        <div></div>
-        <div></div>
-        <div></div>
-    </button>
-    <ul class="menu">
-        <li><a href="../index.html">Accueil</a></li>
-        <li><a href="../fiches_html.html">Fiches HTML</a></li>
-        <li><a href="../fiches_css.html">Fiches CSS</a></li>
-        <li><a href="../fiches_js.html">Fiches JavaScript</a></li>
-        <li><a href="../fiches_integration.html">Fiches Intégration Web</a></li>
-        
-    </ul>
-        <button id="search"><a href="../recherche.html">Recherche <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-  <path d="M10 2a8 8 0 1 0 5.3 14.3l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z"/>
-</svg></a></button>
+<style>
+   .hamburger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+    </style>
+<nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <span class="text-xl font-bold text-blue-600">ChapeauDent@github.io</span>
+            </div>
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="../index.html" class="text-gray-700 hover:text-blue-600">Accueil</a>
+                <a href="../fiches_html.html" class="text-gray-700 hover:text-blue-600">Fiches HTML</a>
+                <a href="../fiches_css.html" class="text-gray-700 hover:text-blue-600">Fiches CSS</a>
+                <a href="../fiches_js.html" class="text-gray-700 hover:text-blue-600">Fiches JavaScrip</a>
+                <a href="../fiches_integration.html" class="text-gray-700 hover:text-blue-600">Fiches Intégration
+                    Web</a>
+            </div>
+            <!-- BOUTON HAMBURGER / CROIX -->
+            <div class="md:hidden flex items-center">
+                <button id="menu-btn" class="hamburger w-8 h-8 relative focus:outline-none">
+                    <span
+                        class="bar absolute w-8 h-0.5 bg-gray-800 left-0 top-2 transition-transform duration-300"></span>
+                    <span
+                        class="bar absolute w-8 h-0.5 bg-gray-800 left-0 top-4 transition-opacity duration-300"></span>
+                    <span
+                        class="bar absolute w-8 h-0.5 bg-gray-800 left-0 top-6 transition-transform duration-300"></span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden px-4 pt-2 pb-4 md:hidden grid grid-cols-1 gap-5">
+        <a href="../index.html" class="text-gray-700 hover:text-blue-600">Accueil</a>
+        <a href="../fiches_html.html" class="text-gray-700 hover:text-blue-600">Fiches HTML</a>
+        <a href="../fiches_css.html" class="text-gray-700 hover:text-blue-600">Fiches CSS</a>
+        <a href="../fiches_js.html" class="text-gray-700 hover:text-blue-600">Fiches JavaScrip</a>
+        <a href="../fiches_integration.html" class="text-gray-700 hover:text-blue-600">Fiches Intégration Web</a>
+    </div>
+    <!-- Barre de recherche HTML -->
+    <form id="search-form" class="flex items-center max-w-md mx-auto mt-10">
+        <input type="text" id="search-input" placeholder="Rechercher..."
+            class="w-full border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required />
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M10 2a8 8 0 1 0 5.3 14.3l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12z">
+                </path>
+            </svg>
+        </button>
+    </form>
+    <script src="../script-recherche.js"></script>
+    <script src="../composants/header.js"></script>
 </nav>

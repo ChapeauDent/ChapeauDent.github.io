@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fiches Pédagogiques HTML</title>
-  <link rel="stylesheet" href="main.css" />
-  
-</head>
-<body>
-  <header id="header"></header>
-  <h1>Fiches Pédagogiques HTML</h1>
-  <main>
-  <div class="container" id="cards-container"></div>
-</main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Fiches Pédagogiques HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <header id="header" class="sticky top-0 bg-white shadow z-50 mb-6"></header>
 
-  <script>
-    fetch('bdd/fiches_html.json')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('cards-container');
+    <main class="max-w-6xl mx-auto px-4 py-6">
+      <h1 class="text-3xl md:text-4xl font-bold text-center text-orange-600 mb-10">
+        Fiches Pédagogiques HTML
+      </h1>
 
-        data.forEach(fiche => {
-          const card = document.createElement('div');
-          card.className = 'card';
+      <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Les fiches seront injectées ici -->
+      </div>
+    </main>
 
-          card.innerHTML = `
-            <p class="html">${fiche.fichier}</p>
-            <h2 class="html">${fiche.competence}</h2>
-            <section class="html">
-              ${fiche.objectif}
-            </section>
-            <section class="html">
-              ${fiche.theorie}
-            </section>
-            <section >
-              ${fiche.exemple}
-            </section>
-            <section class="html">
-              ${fiche.sources}
-            </section>
-            <section class="html">
-              ${fiche.infos_supplementaires || ''}
-            </section>
-          `;
+    <script>
+      fetch('bdd/fiches_html.json')
+        .then(response => response.json())
+        .then(data => {
+          const container = document.getElementById('cards-container');
 
-          container.appendChild(card);
+          data.forEach(fiche => {
+            const card = document.createElement('div');
+            card.className =
+              'bg-white shadow-md rounded-lg p-5 hover:shadow-xl transition duration-300 ease-in-out';
+
+            card.innerHTML = `
+              <p class="text-sm text-gray-500 mb-1">${fiche.fichier}</p>
+              <h2 class="text-lg font-semibold text-orange-600 mb-2">${fiche.competence}</h2>
+              <section class="text-sm text-gray-700 space-y-2">
+                <div><span class="font-medium text-gray-800">Objectif :</span><br>${fiche.objectif}</div>
+                <div><span class="font-medium text-gray-800">Théorie :</span><br>${fiche.theorie}</div>
+                <div><span class="font-medium text-gray-800">Exemple :</span><br>${fiche.exemple}</div>
+                <div><span class="font-medium text-gray-800">Sources :</span><br>${fiche.sources}</div>
+                <div><span class="font-medium text-gray-800">Infos supp. :</span><br>${fiche.infos_supplementaires || ''}</div>
+              </section>
+            `;
+
+            container.appendChild(card);
+          });
+        })
+        .catch(error => {
+          console.error('Erreur lors du chargement des fiches :', error);
         });
-      })
-      .catch(error => {
-        console.error('Erreur lors du chargement des fiches :', error);
-      });
-  </script>
-  <script src="composants/header.js"></script>
-</body>
+    </script>
 
+    <script src="composants/header.js"></script>
+  </body>
 </html>

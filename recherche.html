@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recherche</title>
     <link rel="stylesheet" href="main.css" />
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -21,77 +21,9 @@
         <input type="text" id="search-input" placeholder="Rechercher une compétence..." />
     </main>
 
-    
+
     <div class="container" id="cards-container"></div>
-    <script>
-        const fichiers = [
-            'bdd/fiches_integration.json',
-            'bdd/fiches_css.json',
-            'bdd/fiches_html.json',
-            'bdd/fiches_js.json'
-        ];
-
-        let toutesLesFiches = [];
-
-        // Fonction pour charger toutes les fiches depuis les fichiers JSON
-        async function chargerToutesLesFiches() {
-            const promesses = fichiers.map(fichier =>
-                fetch(fichier).then(res => res.json())
-            );
-
-            try {
-                const resultats = await Promise.all(promesses);
-                toutesLesFiches = resultats.flat(); // Fusionner tous les tableaux
-            } catch (error) {
-                console.error('Erreur lors du chargement des fichiers JSON :', error);
-            }
-        }
-
-        // Fonction pour afficher les fiches filtrées
-        function afficherFiches(fiches) {
-            const container = document.getElementById('cards-container');
-            container.innerHTML = '';
-
-            fiches.forEach(fiche => {
-                const card = document.createElement('div');
-                card.className = 'card';
-
-                card.innerHTML = `
-        <p >${fiche.fichier}</p>
-        <h2 >${fiche.competence}</h2>
-        <section >${fiche.objectif}</section>
-        <section >${fiche.theorie}</section>
-        <section>${fiche.exemple}</section>
-        <section >${fiche.sources}</section>
-        <section >${fiche.infos_supplementaires || ''}</section>
-      `;
-
-                container.appendChild(card);
-            });
-        }
-
-        // Écouteur de recherche
-        document.getElementById('search-input').addEventListener('input', async function () {
-            const query = this.value.toLowerCase();
-
-            if (toutesLesFiches.length === 0) {
-                await chargerToutesLesFiches();
-            }
-
-            const resultatsFiltres = toutesLesFiches.filter(fiche =>
-                Object.values(fiche).some(val =>
-                    typeof val === 'string' && val.toLowerCase().includes(query)
-                )
-            );
-
-            afficherFiches(resultatsFiltres);
-        });
-    </script>
-
-
-
-
 </body>
 <script src="composants/header.js"></script>
-
+<script src="script-recherche.js"></script>
 </html>

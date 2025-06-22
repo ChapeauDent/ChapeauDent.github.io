@@ -10,23 +10,27 @@ fetch('/composants/header.html')
   .then(data => {
     header.innerHTML = data;
 
-    // ✅ Code exécuté après que le header soit injecté
-    const currentUrl = window.location.pathname;
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
 
-    document.querySelectorAll('nav ul li a').forEach(link => {
-      const linkUrl = new URL(link.href);
-      if (linkUrl.pathname === currentUrl) {
-        link.parentElement.classList.add('focused');
-      }
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('open');
+      menu.classList.toggle('hidden');
     });
+    // JavaScript : redirection + exécution d’un script
+    document.getElementById("search-form").addEventListener("submit", function (e) {
+      e.preventDefault(); // Empêche le rechargement
+      const query = document.getElementById("search-input").value.trim();
 
-    document.addEventListener('click', (e) => {
-      const toggle = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.menu');
+      if (query) {
+        // Tu peux personnaliser cette URL comme tu veux
+        const redirectUrl = `../recherche.html?q=${encodeURIComponent(query)}`;
 
-      if (toggle && toggle.contains(e.target)) {
-        menu.classList.toggle('active');
-        toggle.classList.toggle('active');
+        // 💥 Exemple de script personnalisé
+        console.log("Recherche lancée pour :", query);
+
+        // 🔀 Redirection vers la page de résultats
+        window.location.href = redirectUrl;
       }
     });
 
@@ -34,3 +38,5 @@ fetch('/composants/header.html')
   .catch(error => {
     console.error('Erreur :', error);
   });
+
+  
