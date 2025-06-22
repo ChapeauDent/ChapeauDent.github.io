@@ -144,5 +144,29 @@ main {
       font-family: monospace;
       color: #f4f4f4;
     }
-    
-    
+    /*************************************************************acceuil**********************************************/
+        section#demos-codepen {
+      margin-top: 30px;
+    }
+    section#demos-codepen h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .demos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .demo {
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #555;
+    }
