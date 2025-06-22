@@ -40,6 +40,10 @@
     padding:  var(--space-16) var(--space-16) 0 var(--space-16);
     min-height: 3rem;
 }
+@media (max-width: 1200px) {
+    #header {
+        padding:  var(--space-16);
+    }}
 body {
     background: #f4f4f4;
 }

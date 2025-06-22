@@ -1,7 +1,27 @@
+:root {
+    --html-orange: #E34F26;
+    --html-light-orange: #EF652A;
+    --html-white: #FFFFFF;
+    --html-dark: #222222;
+    --js-yellow: #F7DF1E;
+    --js-dark: #323330;
+    --gold: #FFD700;
+    --css-blue: #264DE4;
+    --css-light-blue: #2965F1;
+    --css-white: #FFFFFF;
+    --css-dark: #1A1A1A;
+}
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--html-dark);
+}
 nav > ul{
     display: flex;
     justify-content: space-around;
     list-style: none;
+    gap: var(--space-16);
 }
 
 nav > ul > li > a {
@@ -56,10 +76,37 @@ nav ul li.focused{
   transition: all 0.3s ease;
 }
 
+#search{
+    background-color: var(--html-light-orange);
+    border: var(--html-orange) 2px solid;
+    padding: var(--space-8) var(--space-24);
+    border-radius: var(--space-16);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+}
+#search:hover{
+    background-color: var(--html-orange);
+    transition: all 0.3s ease;
+}
+#search:active{
+    background-color: var(--html-orange);
+    transition: all 0.3s ease;
+}
+
+#search a{
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.25em;
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
 
 
-
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     #header {
         padding:  var(--space-16);
     }
