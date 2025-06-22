@@ -5,25 +5,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recherche</title>
-    <link rel="stylesheet" href="main.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="main.css" />
 </head>
 
-<body>
-    <header id="header"></header>
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <header id="header" class="sticky top-0 bg-white shadow z-50 mb-6"></header>
 
-    <main class="main-content">
-        <div>
-            <h1>Bienvenue sur votre espace d’apprentissage Front-End</h1>
-            <p>Recherchez et explorez des fiches pédagogiques claires et structurées pour progresser dans les
-                technologies du développement web : HTML, CSS, JavaScript et intégration.</p>
+    <main class="max-w-6xl mx-auto px-4 py-6">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-purple-700 mb-4">
+                Bienvenue sur votre espace d’apprentissage Front-End
+            </h1>
+            <p class="text-lg">
+                Recherchez et explorez des fiches pédagogiques claires et structurées pour progresser en HTML, CSS,
+                JavaScript et intégration.
+            </p>
         </div>
-        <input type="text" id="search-input" placeholder="Rechercher une compétence..." />
+
+        <div class="flex justify-center mb-10">
+            <input type="text" id="search-input" placeholder="Rechercher une compétence..."
+                class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500" />
+        </div>
+
+        <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Les cartes dynamiques s’ajouteront ici -->
+        </div>
     </main>
+    <script>
+        const fichiers = [
+            'bdd/fiches_integration.json',
+            'bdd/fiches_css.json',
+            'bdd/fiches_html.json',
+            'bdd/fiches_js.json'
+        ];
 
+        let toutesLesFiches = [];
 
-    <div class="container" id="cards-container"></div>
+        // Fonction pour charger tous les fichiers JSON
+        async function chargerToutesLesFiches() {
+            const promesses = fichiers.map(fichier =>
+                fetch(fichier).then(res => res.json())
+            );
+
+            try {
+                const resultats = await Promise.all(promesses);
+                toutesLesFiches = resultats.flat();
+            } catch (error) {
+                console.error('Erreur lors du chargement des fichiers JSON :', error);
+            }
+        }
+
+        // Fonction pour afficher les fiches dans le DOM
+        function afficherFiches(fiches) {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = '';
+
+            fiches.forEach(fiche => {
+                const card = document.createElement('div');
+                card.className =
+                    'bg-white shadow-md rounded-lg p-5 hover:shadow-xl transition duration-300 ease-in-out';
+
+                card.innerHTML = `
+              <p class="text-sm text-gray-500 mb-1">${fiche.fichier}</p>
+              <h2 class="text-lg font-semibold text-purple-700 mb-2">${fiche.competence}</h2>
+              <section class="text-sm text-gray-700 space-y-2">
+                <div><span class="font-medium text-gray-800">Objectif :</span><br>${fiche.objectif}</div>
+                <div><span class="font-medium text-gray-800">Théorie :</span><br>${fiche.theorie}</div>
+                <div><span class="font-medium text-gray-800">Exemple :</span><br>${fiche.exemple}</div>
+                <div><span class="font-medium text-gray-800">Sources :</span><br>${fiche.sources}</div>
+                <div><span class="font-medium text-gray-800">Infos supp. :</span><br>${fiche.infos_supplementaires || ''}</div>
+              </section>
+            `;
+
+                container.appendChild(card);
+            });
+        }
+    </script>
+    <script src="composants/header.js"></script>
+    <script src="script-recherche.js"></script>
 </body>
-<script src="composants/header.js"></script>
-<script src="script-recherche.js"></script>
+
 </html>
