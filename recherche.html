@@ -70,15 +70,34 @@
               <p class="text-sm text-gray-500 mb-1">${fiche.fichier}</p>
               <h2 class="text-lg font-semibold text-purple-700 mb-2">${fiche.competence}</h2>
               <section class="text-sm text-gray-700 space-y-2">
-                <div><span class="font-medium text-gray-800">Objectif :</span><br>${fiche.objectif}</div>
-                <div><span class="font-medium text-gray-800">Théorie :</span><br>${fiche.theorie}</div>
-                <div><span class="font-medium text-gray-800">Exemple :</span><br>${fiche.exemple}</div>
-                <div><span class="font-medium text-gray-800">Sources :</span><br>${fiche.sources}</div>
-                <div><span class="font-medium text-gray-800">Infos supp. :</span><br>${fiche.infos_supplementaires || ''}</div>
+                <div><span class="font-medium text-gray-800"></span><br>${fiche.objectif}</div>
+                <div><span class="font-medium text-gray-800"></span><br>${fiche.theorie}</div>
+                <div><span class="font-medium text-gray-800"></span><br>${fiche.exemple}</div>
+                <div><span class="font-medium text-gray-800"></span><br>${fiche.sources}</div>
+                <div><span class="font-medium text-gray-800"></span><br>${fiche.infos_supplementaires || ''}</div>
               </section>
             `;
 
                 container.appendChild(card);
+            });
+            document.querySelectorAll("#cards-container h3").forEach(h3 => {
+                h3.classList.add(
+                    'text-lg',           // taille de police
+                    'font-semibold',     // graisse
+                    'text-gray-800',     // couleur
+                    'mb-2',              // marge bas
+                    'mt-4'               // marge haut
+                );
+            });
+            document.querySelectorAll('#cards-container a').forEach(link => {
+                link.classList.add(
+                    'text-blue-600',
+                    'hover:underline',
+                    'hover:text-blue-800',
+                    'transition-colors',
+                    'duration-200'
+                );
+                link.setAttribute('target', '_blank'); // optionnel : ouvre dans un nouvel onglet
             });
         }
     </script>
