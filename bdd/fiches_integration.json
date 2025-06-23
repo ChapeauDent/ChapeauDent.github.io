@@ -299,6 +299,16 @@
   "sources": "<h3>Sources Web</h3>\n<ul>\n<li><a href=\"https://git-scm.com/docs\">Git – Documentation officielle</a></li>\n<li><a href=\"https://learngitbranching.js.org/\">Learn Git Branching – Tutoriel visuel</a></li>\n</ul>",
   "infos_supplementaires": "<h3>Bonnes pratiques</h3>\n<ul>\n<li>Commiter souvent avec des messages clairs et descriptifs.</li>\n<li>Utiliser des branches pour isoler les évolutions ou correctifs.</li>\n<li>Ne jamais modifier l’historique d’une branche partagée (éviter <code>git push --force</code>).</li>\n</ul>",
   "niveau":"Expert"
+},
+{
+  "fichier": "fiche-031",
+  "competence": "Compétence Intégration : Mettre à jour un projet sur GitHub avec Git",
+  "objectif": "<h3>Objectif</h3>\n<p>Comprendre et utiliser les commandes essentielles pour initialiser un projet Git, configurer son identité, suivre ses changements et publier son code sur GitHub.</p>",
+  "theorie": "<h3>Théorie</h3>\n<p>Pour versionner un projet local et l’envoyer sur GitHub, voici les étapes fondamentales :</p>\n<ul>\n<li><strong>git init</strong> initialise le suivi de version dans le dossier courant.</li>\n<li><strong>git config</strong> permet de définir le nom et l’email de l’utilisateur (obligatoire pour les commits).</li>\n<li><strong>git add</strong> sélectionne les fichiers à suivre (en staging).</li>\n<li><strong>git commit</strong> enregistre une version du projet avec un message descriptif.</li>\n<li><strong>git remote add</strong> lie le dépôt local à un dépôt distant (ex. GitHub).</li>\n<li><strong>git push</strong> envoie les commits vers le dépôt distant.</li>\n</ul>\n<p>Ces actions permettent de suivre l’évolution du projet et de collaborer efficacement à distance.</p>",
+  "exemple": "<h3>Exemple</h3>\n<pre><code># Initialiser Git\ngit init\n\n# Configurer son identité\ngit config user.name \"TonNom\"\ngit config user.email \"ton@email.com\"\n\n# Suivre tous les fichiers\ngit add .\n\n# Enregistrer un commit\ngit commit -m \"Premier commit du projet\"\n\n# Associer au dépôt GitHub\ngit remote add origin https://github.com/ton-utilisateur/mon-projet.git\n\n# Envoyer le code sur la branche principale\ngit push -u origin main</code></pre>",
+  "sources": "<h3>Sources Web</h3>\n<ul>\n<li><a href=\"https://docs.github.com/fr/get-started/quickstart\">GitHub – Démarrage rapide</a></li>\n<li><a href=\"https://git-scm.com/docs\">Git – Documentation officielle</a></li>\n</ul>",
+  "infos_supplementaires": "<h3>Bonnes pratiques</h3>\n<ul>\n<li>Faire un <code>git status</code> régulièrement pour vérifier les changements en cours.</li>\n<li>Créer un fichier <code>.gitignore</code> pour exclure les fichiers sensibles (ex : <code>node_modules</code>).</li>\n<li>Utiliser <code>git pull</code> avant un push pour éviter les conflits avec la version distante.</li>\n<li>Ne jamais oublier de <code>git commit</code> avant de <code>git push</code>.</li>\n</ul>",
+  "niveau": "Expert"
 }
 
 
