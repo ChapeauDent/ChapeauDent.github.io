@@ -18,7 +18,7 @@
     </h1>
         <div class="mb-6 flex flex-wrap justify-center gap-2">
       <button data-niveau="Tous"
-        class="filtre-niveau px-4 py-2 rounded bg-blue-100 text-blue-700 font-medium hover:bg-blue-200">Tous</button>
+        class="filtre-niveau px-4 py-2 rounded bg-purple-100 text-purple-700 font-medium hover:bg-purple-200">Tous</button>
       <button data-niveau="Initial"
         class="filtre-niveau px-4 py-2 rounded bg-gray-100 hover:bg-gray-200">Initial</button>
       <button data-niveau="Basique"
@@ -47,7 +47,7 @@ function afficherFiches(fiches) {
 
     card.innerHTML = `
       <p class="text-sm text-gray-500 mb-1">${fiche.fichier} — <span class="italic">${fiche.niveau}</span></p>
-      <h2 class="text-lg font-semibold text-blue-700 mb-2">${fiche.competence}</h2>
+      <h2 class="text-lg font-semibold text-purple-700 mb-2">${fiche.competence}</h2>
       <section class="text-sm text-gray-700 space-y-2">
         <div>${fiche.objectif}</div>
         <div>${fiche.theorie}</div>
@@ -66,7 +66,7 @@ function afficherFiches(fiches) {
 
   // Styliser les liens
   document.querySelectorAll('#cards-container a').forEach(link => {
-    link.classList.add('text-blue-600', 'hover:underline', 'hover:text-blue-800', 'transition-colors', 'duration-200');
+    link.classList.add('text-purple-600', 'hover:underline', 'hover:text-purple-800', 'transition-colors', 'duration-200');
     link.setAttribute('target', '_blank');
   });
 }
@@ -85,8 +85,8 @@ fetch('bdd/fiches_integration.json')
         const niveau = btn.dataset.niveau;
 
         // Met à jour l'apparence active
-        filtres.forEach(b => b.classList.remove('bg-blue-100', 'text-blue-700'));
-        btn.classList.add('bg-blue-100', 'text-blue-700');
+        filtres.forEach(b => b.classList.remove('bg-purple-100', 'text-purple-700'));
+        btn.classList.add('bg-purple-100', 'text-purple-700');
 
         if (niveau === 'Tous') {
           afficherFiches(toutesLesFiches);
