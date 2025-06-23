@@ -1,7 +1,7 @@
 [
   {
   "fichier": "fiche-001",
-  "competence": "Compétence : Ajouter du code CSS à un élément HTML",
+  "competence": "Compétence Intégration : Ajouter du code CSS à un élément HTML",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir appliquer des styles CSS directement à un élément HTML pour en modifier l’apparence.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Le CSS (Cascading Style Sheets) permet de styliser les éléments HTML. Il existe trois façons principales d’ajouter du CSS :</p>\n<ul>\n<li><strong>En ligne (inline)</strong> : directement dans la balise HTML via l’attribut <code>style</code>.</li>\n<li><strong>Interne</strong> : dans une balise <code>&lt;style&gt;</code> dans le <code>&lt;head&gt;</code> du document HTML.</li>\n<li><strong>Externe</strong> : via un fichier CSS séparé lié avec <code>&lt;link&gt;</code>.</li>\n</ul>\n<p>L’ajout en ligne est utile pour des tests rapides ou des styles très spécifiques, mais il est déconseillé pour des projets à grande échelle.</p>",
   "exemple": "<h3>Exemple</h3>\n<p>Voici un exemple d’ajout de CSS en ligne :</p>\n<pre><code>&lt;p style=\"color: blue; font-size: 18px;\"&gt;Texte en bleu avec une taille de 18 pixels&lt;/p&gt;</code></pre>\n<p>Et un exemple avec une balise <code>&lt;style&gt;</code> :</p>\n<pre><code>&lt;style&gt;\np {\n  color: green;\n  font-weight: bold;\n}\n&lt;/style&gt;\n&lt;p&gt;Texte en vert et en gras&lt;/p&gt;</code></pre>",
@@ -11,7 +11,7 @@
 },
 {
   "fichier": "fiche-002",
-  "competence": "Compétence : Ajouter du JavaScript et CSS dans un document HTML",
+  "competence": "Compétence Intégration : Ajouter du JavaScript et CSS dans un document HTML",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir intégrer du code CSS et JavaScript dans une page HTML pour styliser et rendre la page interactive.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Une page HTML peut contenir du CSS et du JavaScript de plusieurs façons :</p>\n<ul>\n<li><strong>CSS</strong> :\n  <ul>\n    <li><em>En ligne</em> : via l’attribut <code>style</code> dans une balise HTML.</li>\n    <li><em>Interne</em> : dans une balise <code>&lt;style&gt;</code> dans le <code>&lt;head&gt;</code>.</li>\n    <li><em>Externe</em> : via un fichier .css lié avec <code>&lt;link&gt;</code>.</li>\n  </ul>\n</li>\n<li><strong>JavaScript</strong> :\n  <ul>\n    <li><em>Interne</em> : dans une balise <code>&lt;script&gt;</code> (souvent en bas du <code>&lt;body&gt;</code>).</li>\n    <li><em>Externe</em> : via un fichier .js lié avec <code>&lt;script src=\"...\"&gt;</code>.</li>\n  </ul>\n</li>\n</ul>\n<p>Il est recommandé de séparer le HTML, le CSS et le JavaScript pour une meilleure lisibilité et maintenance.</p>",
   "exemple": "<h3>Exemple</h3>\n<p>Voici un exemple de document HTML intégrant du CSS et du JavaScript :</p>\n<pre><code>&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n  &lt;title&gt;Exemple&lt;/title&gt;\n  &lt;style&gt;\n    body {\n      background-color: #f0f0f0;\n      font-family: Arial;\n    }\n  &lt;/style&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1&gt;Cliquez sur le bouton&lt;/h1&gt;\n  &lt;button onclick=\"changerTexte()\"&gt;Changer le texte&lt;/button&gt;\n  &lt;p id=\"demo\"&gt;Texte original&lt;/p&gt;\n\n  &lt;script&gt;\n    function changerTexte() {\n      document.getElementById(\"demo\").innerText = \"Texte modifié !\";\n    }\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;</code></pre>",
@@ -21,7 +21,7 @@
 },
 {
   "fichier": "fiche-003",
-  "competence": "Compétence : Lire une valeur du DOM, la traiter, et afficher le résultat dans la console",
+  "competence": "Compétence Intégration : Lire une valeur du DOM, la traiter, et afficher le résultat dans la console",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir récupérer une valeur depuis le DOM, la manipuler avec JavaScript, puis afficher le résultat dans la console du navigateur.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Le DOM (Document Object Model) représente la structure d'une page HTML sous forme d'objet manipulable avec JavaScript. Pour interagir avec un élément du DOM, on utilise des méthodes comme :</p>\n<ul>\n<li><code>document.getElementById()</code></li>\n<li><code>document.querySelector()</code></li>\n<li><code>element.value</code> pour les champs de formulaire</li>\n</ul>\n<p>Une fois la valeur récupérée, on peut la traiter (ex. : calcul, transformation de texte) puis utiliser <code>console.log()</code> pour afficher le résultat dans la console du navigateur.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;input type=\"text\" id=\"nom\" placeholder=\"Entrez votre nom\"&gt;\n&lt;button onclick=\"afficherNom()\"&gt;Afficher&lt;/button&gt;\n\n&lt;script&gt;\n  function afficherNom() {\n    const nom = document.getElementById(\"nom\").value;\n    const message = \"Bonjour, \" + nom + \" !\";\n    console.log(message);\n  }\n&lt;/script&gt;</code></pre>",
@@ -31,7 +31,7 @@
 },
 {
   "fichier": "fiche-004",
-  "competence": "Compétence : Comprendre la structure HTML de base et les balises sémantiques simples",
+  "competence": "Compétence Intégration : Comprendre la structure HTML de base et les balises sémantiques simples",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir identifier et utiliser les balises HTML de base pour structurer correctement une page web.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>HTML (HyperText Markup Language) permet de structurer le contenu d’une page web. Une structure HTML de base comprend :</p>\n<ul>\n<li><code>&lt;!DOCTYPE html&gt;</code> : indique le type de document.</li>\n<li><code>&lt;html&gt;</code> : racine du document HTML.</li>\n<li><code>&lt;head&gt;</code> : contient les métadonnées (titre, liens CSS, encodage, etc.).</li>\n<li><code>&lt;body&gt;</code> : contient le contenu visible de la page.</li>\n</ul>\n<p>Les balises sémantiques simples permettent de donner du sens au contenu :</p>\n<ul>\n<li><code>&lt;h1&gt; à &lt;h6&gt;</code> : titres hiérarchisés</li>\n<li><code>&lt;p&gt;</code> : paragraphe</li>\n<li><code>&lt;div&gt;</code> : conteneur générique</li>\n<li><code>&lt;span&gt;</code> : conteneur en ligne</li>\n<li><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> : balises sémantiques pour structurer le contenu</li>\n</ul>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"fr\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;Ma première page&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;header&gt;\n    &lt;h1&gt;Bienvenue&lt;/h1&gt;\n  &lt;/header&gt;\n  &lt;main&gt;\n    &lt;section&gt;\n      &lt;h2&gt;Présentation&lt;/h2&gt;\n      &lt;p&gt;Ceci est un paragraphe d’introduction.&lt;/p&gt;\n    &lt;/section&gt;\n  &lt;/main&gt;\n  &lt;footer&gt;\n    &lt;p&gt;© 2025 Mon site&lt;/p&gt;\n  &lt;/footer&gt;\n&lt;/body&gt;\n&lt;/html&gt;</code></pre>",
@@ -41,7 +41,7 @@
 },
 {
   "fichier": "fiche-005",
-  "competence": "Compétence : Importer un fichier CSS ou JS externe dans un document HTML",
+  "competence": "Compétence Intégration : Importer un fichier CSS ou JS externe dans un document HTML",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir lier un fichier CSS ou JavaScript externe à une page HTML pour séparer le code et améliorer la maintenance.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Pour une meilleure organisation du code, il est recommandé de séparer le HTML, le CSS et le JavaScript dans des fichiers distincts. On peut les importer dans le document HTML de la manière suivante :</p>\n<ul>\n<li><strong>CSS externe</strong> : dans le <code>&lt;head&gt;</code> avec la balise <code>&lt;link&gt;</code><br><code>&lt;link rel=\"stylesheet\" href=\"styles.css\"&gt;</code></li>\n<li><strong>JavaScript externe</strong> : généralement avant la fermeture de la balise <code>&lt;/body&gt;</code> avec la balise <code>&lt;script&gt;</code><br><code>&lt;script src=\"script.js\"&gt;&lt;/script&gt;</code></li>\n</ul>\n<p>Cela permet de réutiliser les fichiers dans plusieurs pages et de faciliter la maintenance du code.</p>",
   "exemple": "<h3>Exemple</h3>\n<p>Structure de fichiers :</p>\n<ul>\n<li><code>index.html</code></li>\n<li><code>styles.css</code></li>\n<li><code>script.js</code></li>\n</ul>\n<p>Contenu de <code>index.html</code> :</p>\n<pre><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"fr\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;Page avec fichiers externes&lt;/title&gt;\n  &lt;link rel=\"stylesheet\" href=\"styles.css\"&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1&gt;Bonjour&lt;/h1&gt;\n  &lt;button onclick=\"direBonjour()\"&gt;Cliquez-moi&lt;/button&gt;\n  &lt;script src=\"script.js\"&gt;&lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;</code></pre>",
@@ -51,7 +51,7 @@
 },
 {
   "fichier": "fiche-006",
-  "competence": "Compétence : Modifier dynamiquement un élément du DOM avec JavaScript",
+  "competence": "Compétence Intégration : Modifier dynamiquement un élément du DOM avec JavaScript",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir sélectionner un élément HTML avec JavaScript et modifier son contenu ou ses styles de manière dynamique.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Le DOM (Document Object Model) permet à JavaScript d’interagir avec les éléments HTML d’une page. Pour modifier dynamiquement un élément, on suit généralement ces étapes :</p>\n<ul>\n<li>Sélectionner l’élément avec <code>document.getElementById()</code>, <code>document.querySelector()</code>, etc.</li>\n<li>Modifier son contenu avec <code>innerText</code>, <code>innerHTML</code> ou ses attributs avec <code>setAttribute()</code>.</li>\n<li>Changer son style avec <code>element.style</code>.</li>\n</ul>\n<p>Ces manipulations permettent de rendre la page interactive sans la recharger.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;p id=\"texte\"&gt;Texte original&lt;/p&gt;\n&lt;button onclick=\"changerTexte()\"&gt;Changer le texte&lt;/button&gt;\n\n&lt;script&gt;\n  function changerTexte() {\n    const element = document.getElementById(\"texte\");\n    element.innerText = \"Texte modifié dynamiquement !\";\n    element.style.color = \"red\";\n    element.style.fontWeight = \"bold\";\n  }\n&lt;/script&gt;</code></pre>",
@@ -61,7 +61,7 @@
 },
 {
   "fichier": "fiche-007",
-  "competence": "Compétence : Détecter une erreur simple dans une portion de code",
+  "competence": "Compétence Intégration : Détecter une erreur simple dans une portion de code",
   "objectif": "<h3>Objectif</h3>\n<p>Être capable d’identifier une erreur courante dans un code HTML, CSS ou JavaScript et comprendre comment la corriger.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Les erreurs simples dans le code peuvent être :</p>\n<ul>\n<li><strong>Syntaxiques</strong> : fautes de frappe, balises non fermées, parenthèses manquantes.</li>\n<li><strong>Logiques</strong> : mauvaise utilisation d’une variable, d’une condition ou d’un sélecteur.</li>\n<li><strong>De référence</strong> : appel à un élément ou une fonction qui n’existe pas.</li>\n</ul>\n<p>Pour les détecter, on peut :</p>\n<ul>\n<li>Lire attentivement le code ligne par ligne.</li>\n<li>Utiliser la console du navigateur pour repérer les erreurs JavaScript.</li>\n<li>Valider le HTML/CSS avec des outils comme le validateur W3C.</li>\n</ul>",
   "exemple": "<h3>Exemple</h3>\n<p>Erreur JavaScript :</p>\n<pre><code>&lt;script&gt;\n  function direBonjour() {\n    console.log(\"Bonjour\");\n  }\n  direBonjou(); // Erreur : fonction mal orthographiée\n&lt;/script&gt;</code></pre>\n<p>Correction :</p>\n<pre><code>&lt;script&gt;\n  function direBonjour() {\n    console.log(\"Bonjour\");\n  }\n  direBonjour();\n&lt;/script&gt;</code></pre>",
@@ -71,7 +71,7 @@
 },
 {
   "fichier": "fiche-008",
-  "competence": "Compétence : Utiliser les outils de développement du navigateur (console, inspecteur)",
+  "competence": "Compétence Intégration : Utiliser les outils de développement du navigateur (console, inspecteur)",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir utiliser les outils intégrés aux navigateurs pour inspecter, tester et déboguer une page web.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Les navigateurs modernes (Chrome, Firefox, Edge, etc.) intègrent des outils de développement accessibles via la touche <code>F12</code> ou clic droit → \"Inspecter\". Ces outils permettent :</p>\n<ul>\n<li><strong>Inspecteur</strong> : visualiser et modifier le HTML et le CSS en temps réel.</li>\n<li><strong>Console</strong> : afficher des messages, erreurs et exécuter du code JavaScript.</li>\n<li><strong>Réseau</strong> : analyser les requêtes HTTP et le temps de chargement.</li>\n<li><strong>Sources</strong> : consulter les fichiers JS/CSS et poser des points d’arrêt pour le débogage.</li>\n<li><strong>Accessibilité</strong> : vérifier les rôles, contrastes et navigation clavier.</li>\n</ul>",
   "exemple": "<h3>Exemple</h3>\n<ol>\n<li>Ouvrir une page web dans le navigateur.</li>\n<li>Appuyer sur <code>F12</code> ou clic droit → \"Inspecter\".</li>\n<li>Dans l’onglet \"Éléments\" (ou \"Inspector\"), survoler un élément pour voir son style.</li>\n<li>Dans l’onglet \"Console\", taper : <code>console.log(\"Test de la console\")</code></li>\n<li>Modifier un style CSS directement dans l’inspecteur pour tester un rendu.</li>\n</ol>",
@@ -81,7 +81,7 @@
 },
 {
   "fichier": "fiche-009",
-  "competence": "Compétence : Appliquer des sélecteurs CSS avancés (:hover, nth-child, etc.)",
+  "competence": "Compétence Intégration : Appliquer des sélecteurs CSS avancés (:hover, nth-child, etc.)",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir utiliser des sélecteurs CSS avancés pour cibler précisément des éléments HTML et appliquer des styles dynamiques ou conditionnels.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Les sélecteurs CSS permettent de cibler des éléments HTML pour leur appliquer des styles. En plus des sélecteurs simples (par balise, classe, ID), il existe des sélecteurs avancés :</p>\n<ul>\n<li><code>:hover</code> : applique un style lorsqu’un élément est survolé par la souris.</li>\n<li><code>:nth-child(n)</code> : cible le nième enfant d’un parent.</li>\n<li><code>:first-child</code>, <code>:last-child</code> : ciblent le premier ou dernier enfant.</li>\n<li><code>:not(selector)</code> : exclut un élément correspondant au sélecteur donné.</li>\n<li><code>[attribute]</code> : cible les éléments possédant un attribut spécifique.</li>\n</ul>\n<p>Ces sélecteurs permettent de styliser des éléments sans ajouter de classes supplémentaires dans le HTML.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;style&gt;\n  li:nth-child(odd) {\n    background-color: #f0f0f0;\n  }\n  a:hover {\n    color: red;\n    text-decoration: underline;\n  }\n  p:not(.important) {\n    color: gray;\n  }\n&lt;/style&gt;\n\n&lt;ul&gt;\n  &lt;li&gt;Élément 1&lt;/li&gt;\n  &lt;li&gt;Élément 2&lt;/li&gt;\n  &lt;li&gt;Élément 3&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;a href=\"#\"&gt;Lien&lt;/a&gt;\n&lt;p&gt;Texte normal&lt;/p&gt;\n&lt;p class=\"important\"&gt;Texte important&lt;/p&gt;</code></pre>",
@@ -91,7 +91,7 @@
 },
 {
   "fichier": "fiche-010",
-  "competence": "Compétence : Comprendre le modèle de boîte CSS (box model)",
+  "competence": "Compétence Intégration : Comprendre le modèle de boîte CSS (box model)",
   "objectif": "<h3>Objectif</h3>\n<p>Comprendre comment les éléments HTML sont modélisés en boîtes et comment les propriétés CSS influencent leur taille et leur position.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>En CSS, chaque élément HTML est représenté comme une boîte rectangulaire selon le modèle de boîte (box model). Cette boîte est composée de plusieurs couches :</p>\n<ul>\n<li><strong>Content</strong> : le contenu réel (texte, image, etc.).</li>\n<li><strong>Padding</strong> : l’espace entre le contenu et la bordure.</li>\n<li><strong>Border</strong> : la bordure entourant le padding.</li>\n<li><strong>Margin</strong> : l’espace entre la bordure et les éléments voisins.</li>\n</ul>\n<p>La propriété <code>box-sizing</code> permet de contrôler si la largeur/hauteur inclut le padding et la bordure (<code>border-box</code>) ou non (<code>content-box</code>, valeur par défaut).</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;style&gt;\n  .boite {\n    width: 200px;\n    padding: 20px;\n    border: 5px solid black;\n    margin: 10px;\n    box-sizing: border-box;\n    background-color: lightblue;\n  }\n&lt;/style&gt;\n\n&lt;div class=\"boite\"&gt;Contenu de la boîte&lt;/div&gt;</code></pre>",
@@ -101,7 +101,7 @@
 },
 {
   "fichier": "fiche-011",
-  "competence": "Compétence : Implémenter une mise en page CSS (ex. : jeu de cartes) à partir d’un HTML donné",
+  "competence": "Compétence Intégration : Implémenter une mise en page CSS (ex. : jeu de cartes) à partir d’un HTML donné",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir utiliser le CSS pour organiser visuellement des éléments HTML selon une maquette ou une structure donnée (ex. : grille de cartes).</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Pour créer une mise en page de type \"jeu de cartes\", on utilise souvent les techniques suivantes :</p>\n<ul>\n<li><strong>Flexbox</strong> : pour aligner les cartes en ligne ou en colonne avec des espacements dynamiques.</li>\n<li><strong>Grid</strong> : pour créer une grille régulière avec un nombre fixe de colonnes ou de lignes.</li>\n<li><strong>Boîte CSS</strong> : pour gérer les marges, paddings, bordures et dimensions des cartes.</li>\n</ul>\n<p>Chaque carte peut être stylisée avec une classe CSS commune, et contenir des éléments comme un titre, une image, une description, etc.</p>",
   "exemple": "<h3>Exemple</h3>\n<p>HTML :</p>\n<pre><code>&lt;div class=\"cartes\"&gt;\n  &lt;div class=\"carte\"&gt;\n    &lt;h3&gt;Carte 1&lt;/h3&gt;\n    &lt;p&gt;Description&lt;/p&gt;\n  &lt;/div&gt;\n  &lt;div class=\"carte\"&gt;\n    &lt;h3&gt;Carte 2&lt;/h3&gt;\n    &lt;p&gt;Description&lt;/p&gt;\n  &lt;/div&gt;\n&lt;/div&gt;</code></pre>\n<p>CSS :</p>\n<pre><code>&lt;style&gt;\n  .cartes {\n    display: flex;\n    gap: 20px;\n    flex-wrap: wrap;\n  }\n  .carte {\n    width: 200px;\n    padding: 15px;\n    border: 1px solid #ccc;\n    border-radius: 8px;\n    background-color: #f9f9f9;\n    box-shadow: 0 2px 5px rgba(0,0,0,0.1);\n  }\n&lt;/style&gt;</code></pre>",
@@ -111,7 +111,7 @@
 },
 {
   "fichier": "fiche-012",
-  "competence": "Compétence : Utiliser Flexbox et Grid Layout pour structurer une page",
+  "competence": "Compétence Intégration : Utiliser Flexbox et Grid Layout pour structurer une page",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir utiliser les modules CSS Flexbox et Grid pour organiser les éléments d’une page web de manière flexible et responsive.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Flexbox et Grid sont deux systèmes de mise en page modernes en CSS :</p>\n<ul>\n<li><strong>Flexbox</strong> : idéal pour les alignements en ligne ou en colonne. Il permet de distribuer l’espace entre les éléments et de les aligner facilement.</li>\n<li><strong>Grid</strong> : conçu pour les mises en page bidimensionnelles (lignes et colonnes). Il permet de créer des grilles complexes avec un contrôle précis.</li>\n</ul>\n<p>Ces deux systèmes utilisent des propriétés spécifiques comme <code>display: flex</code>, <code>justify-content</code>, <code>align-items</code> pour Flexbox, et <code>display: grid</code>, <code>grid-template-columns</code>, <code>grid-gap</code> pour Grid.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;style&gt;\n  .flex-container {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n  }\n  .grid-container {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 20px;\n  }\n  .item {\n    background-color: #ddd;\n    padding: 20px;\n    text-align: center;\n  }\n&lt;/style&gt;\n\n&lt;div class=\"flex-container\"&gt;\n  &lt;div class=\"item\"&gt;Flex 1&lt;/div&gt;\n  &lt;div class=\"item\"&gt;Flex 2&lt;/div&gt;\n  &lt;div class=\"item\"&gt;Flex 3&lt;/div&gt;\n&lt;/div&gt;\n\n&lt;div class=\"grid-container\"&gt;\n  &lt;div class=\"item\"&gt;Grid 1&lt;/div&gt;\n  &lt;div class=\"item\"&gt;Grid 2&lt;/div&gt;\n  &lt;div class=\"item\"&gt;Grid 3&lt;/div&gt;\n&lt;/div&gt;</code></pre>",
@@ -121,7 +121,7 @@
 },
 {
   "fichier": "fiche-013",
-  "competence": "Compétence : Intégrer une maquette responsive avec media queries",
+  "competence": "Compétence Intégration : Intégrer une maquette responsive avec media queries",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir adapter une mise en page HTML/CSS pour qu’elle s’affiche correctement sur différents types d’écrans (mobile, tablette, desktop).</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Le responsive design permet à une page web de s’adapter à la taille de l’écran de l’utilisateur. Cela se fait principalement avec les <strong>media queries</strong> en CSS. Une media query applique des styles spécifiques selon certaines conditions (largeur d’écran, orientation, résolution, etc.).</p>\n<p>Syntaxe de base :</p>\n<pre><code>@media (max-width: 768px) {\n  /* styles pour les petits écrans */\n}</code></pre>\n<p>On utilise souvent une approche <strong>mobile-first</strong>, où les styles de base sont conçus pour les petits écrans, puis adaptés pour les écrans plus larges.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;style&gt;\n  .conteneur {\n    display: flex;\n    flex-direction: row;\n  }\n  @media (max-width: 768px) {\n    .conteneur {\n      flex-direction: column;\n    }\n  }\n&lt;/style&gt;\n\n&lt;div class=\"conteneur\"&gt;\n  &lt;div&gt;Bloc 1&lt;/div&gt;\n  &lt;div&gt;Bloc 2&lt;/div&gt;\n&lt;/div&gt;</code></pre>\n<p>Ce code affiche les blocs côte à côte sur grand écran, et les empile verticalement sur mobile.</p>",
@@ -131,7 +131,7 @@
 },
 {
   "fichier": "fiche-014",
-  "competence": "Compétence : Utiliser des unités relatives (em, rem, %, vh, vw)",
+  "competence": "Compétence Intégration : Utiliser des unités relatives (em, rem, %, vh, vw)",
   "objectif": "<h3>Objectif</h3>\n<p>Comprendre et utiliser les unités relatives en CSS pour créer des mises en page flexibles et adaptables.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Les unités relatives permettent de dimensionner les éléments en fonction de leur contexte, ce qui favorise la responsivité :</p>\n<ul>\n<li><code>em</code> : relatif à la taille de police de l’élément parent.</li>\n<li><code>rem</code> : relatif à la taille de police de l’élément racine (<code>html</code>).</li>\n<li><code>%</code> : relatif à la taille de l’élément parent (largeur, hauteur, padding, etc.).</li>\n<li><code>vh</code> : 1% de la hauteur de la fenêtre (viewport height).</li>\n<li><code>vw</code> : 1% de la largeur de la fenêtre (viewport width).</li>\n</ul>\n<p>Ces unités sont préférées aux unités fixes (comme <code>px</code>) pour créer des interfaces adaptatives.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;style&gt;\n  html {\n    font-size: 16px;\n  }\n  .texte {\n    font-size: 1.5rem; /* 24px */\n    padding: 2em; /* 2x la taille de police du parent */\n    width: 80%;\n    height: 50vh;\n    background-color: #eef;\n  }\n&lt;/style&gt;\n\n&lt;div class=\"texte\"&gt;Texte avec unités relatives&lt;/div&gt;</code></pre>",
@@ -141,7 +141,7 @@
 },
 {
   "fichier": "fiche-015",
-  "competence": "Compétence : Gérer les images adaptatives (srcset, object-fit)",
+  "competence": "Compétence Intégration : Gérer les images adaptatives (srcset, object-fit)",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir adapter les images à différents écrans et contextes d’affichage pour améliorer l’expérience utilisateur et les performances.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Pour rendre les images adaptatives, on utilise deux techniques principales :</p>\n<ul>\n<li><strong><code>srcset</code></strong> : permet de spécifier plusieurs versions d’une image pour différents écrans (résolution, taille). Utilisé avec <code>&lt;img&gt;</code> ou <code>&lt;picture&gt;</code>.</li>\n<li><strong><code>object-fit</code></strong> : contrôle la façon dont une image est redimensionnée pour remplir son conteneur (utile pour les images de fond ou les miniatures).</li>\n</ul>\n<p>Ces techniques permettent d’optimiser le chargement et l’affichage des images sur tous types de périphériques.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;img \n  src=\"image-small.jpg\" \n  srcset=\"image-small.jpg 480w, image-medium.jpg 800w, image-large.jpg 1200w\" \n  sizes=\"(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px\" \n  alt=\"Exemple d’image responsive\"&gt;\n\n&lt;style&gt;\n  .image-cadre {\n    width: 300px;\n    height: 200px;\n    object-fit: cover;\n  }\n&lt;/style&gt;\n\n&lt;img src=\"photo.jpg\" class=\"image-cadre\" alt=\"Image recadrée\"&gt;</code></pre>",
@@ -151,7 +151,7 @@
 },
 {
   "fichier": "fiche-016",
-  "competence": "Compétence : Respecter une hiérarchie sémantique (header, main, section, etc.)",
+  "competence": "Compétence Intégration : Respecter une hiérarchie sémantique (header, main, section, etc.)",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir structurer une page HTML avec des balises sémantiques pour améliorer la lisibilité, l’accessibilité et le référencement.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Les balises sémantiques HTML donnent du sens au contenu d’une page. Elles permettent aux navigateurs, moteurs de recherche et technologies d’assistance de mieux comprendre la structure du document. Voici les principales balises sémantiques :</p>\n<ul>\n<li><code>&lt;header&gt;</code> : en-tête de page ou de section.</li>\n<li><code>&lt;main&gt;</code> : contenu principal de la page (unique).</li>\n<li><code>&lt;section&gt;</code> : regroupe un ensemble cohérent de contenu.</li>\n<li><code>&lt;article&gt;</code> : contenu autonome (ex. : article de blog).</li>\n<li><code>&lt;aside&gt;</code> : contenu secondaire (ex. : barre latérale).</li>\n<li><code>&lt;footer&gt;</code> : pied de page ou de section.</li>\n</ul>\n<p>Une bonne hiérarchie sémantique améliore l’accessibilité et le SEO.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"fr\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;Exemple sémantique&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;header&gt;\n    &lt;h1&gt;Mon site&lt;/h1&gt;\n  &lt;/header&gt;\n  &lt;main&gt;\n    &lt;section&gt;\n      &lt;h2&gt;Présentation&lt;/h2&gt;\n      &lt;p&gt;Bienvenue sur mon site web.&lt;/p&gt;\n    &lt;/section&gt;\n    &lt;article&gt;\n      &lt;h2&gt;Article du jour&lt;/h2&gt;\n      &lt;p&gt;Voici un contenu autonome.&lt;/p&gt;\n    &lt;/article&gt;\n  &lt;/main&gt;\n  &lt;footer&gt;\n    &lt;p&gt;© 2025 Mon site&lt;/p&gt;\n  &lt;/footer&gt;\n&lt;/body&gt;\n&lt;/html&gt;</code></pre>",
@@ -161,7 +161,7 @@
 },
 {
   "fichier": "fiche-017",
-  "competence": "Compétence : Créer un formulaire HTML, appliquer des styles CSS, et le valider avec JavaScript",
+  "competence": "Compétence Intégration : Créer un formulaire HTML, appliquer des styles CSS, et le valider avec JavaScript",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir créer un formulaire fonctionnel, le styliser avec CSS, et vérifier les données saisies côté client avec JavaScript.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Un formulaire HTML permet de collecter des données utilisateur via des champs comme <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, etc. Le CSS permet de personnaliser l’apparence du formulaire. Le JavaScript permet de valider les données avant l’envoi (ex. : vérifier qu’un champ n’est pas vide ou qu’un email est valide).</p>\n<p>Étapes typiques :</p>\n<ul>\n<li>Créer les champs avec les balises HTML appropriées.</li>\n<li>Appliquer des styles CSS pour améliorer l’ergonomie.</li>\n<li>Ajouter un gestionnaire d’événement <code>submit</code> pour intercepter l’envoi et effectuer les vérifications.</li>\n</ul>",
   "exemple": "<h3>Exemple</h3>\n<p>HTML :</p>\n<pre><code>&lt;form id=\"contact\"&gt;\n  &lt;label for=\"email\"&gt;Email :&lt;/label&gt;\n  &lt;input type=\"email\" id=\"email\" required&gt;\n  &lt;button type=\"submit\"&gt;Envoyer&lt;/button&gt;\n&lt;/form&gt;</code></pre>\n<p>CSS :</p>\n<pre><code>&lt;style&gt;\n  form {\n    max-width: 400px;\n    margin: auto;\n    padding: 20px;\n    border: 1px solid #ccc;\n    border-radius: 5px;\n  }\n  input {\n    width: 100%;\n    padding: 10px;\n    margin-bottom: 10px;\n  }\n&lt;/style&gt;</code></pre>\n<p>JavaScript :</p>\n<pre><code>&lt;script&gt;\n  document.getElementById(\"contact\").addEventListener(\"submit\", function(e) {\n    const email = document.getElementById(\"email\").value;\n    if (!email.includes(\"@\")) {\n      alert(\"Veuillez entrer un email valide.\");\n      e.preventDefault();\n    }\n  });\n&lt;/script&gt;</code></pre>",
@@ -171,7 +171,7 @@
 },
 {
   "fichier": "fiche-018",
-  "competence": "Compétence : Identifier l’origine d’une erreur via la trace de pile dans la console",
+  "competence": "Compétence Intégration : Identifier l’origine d’une erreur via la trace de pile dans la console",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir lire et interpréter une trace d’erreur JavaScript dans la console du navigateur pour localiser et corriger une erreur dans le code.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Lorsqu’une erreur JavaScript se produit, le navigateur affiche une trace de pile (stack trace) dans la console. Cette trace indique :</p>\n<ul>\n<li>Le type d’erreur (ex. : <code>ReferenceError</code>, <code>TypeError</code>).</li>\n<li>Le message d’erreur (ex. : <code>myFunction is not defined</code>).</li>\n<li>Le fichier et la ligne où l’erreur s’est produite.</li>\n<li>La chaîne d’appels de fonctions ayant mené à l’erreur.</li>\n</ul>\n<p>En analysant cette trace, on peut remonter à la source du problème et comprendre le contexte dans lequel il s’est produit.</p>",
   "exemple": "<h3>Exemple</h3>\n<p>Code JavaScript :</p>\n<pre><code>&lt;script&gt;\n  function calculer() {\n    afficherResultat(); // Erreur : fonction non définie\n  }\n  calculer();\n&lt;/script&gt;</code></pre>\n<p>Console :</p>\n<pre><code>Uncaught ReferenceError: afficherResultat is not defined\n    at calculer (script.js:2)\n    at script.js:4</code></pre>\n<p>Cette trace indique que l’erreur se produit à la ligne 2 dans la fonction <code>calculer()</code>.</p>",
@@ -181,7 +181,7 @@
 },
 {
   "fichier": "fiche-019",
-  "competence": "Compétence : Ajouter des attributs ARIA pour l’accessibilité",
+  "competence": "Compétence Intégration : Ajouter des attributs ARIA pour l’accessibilité",
   "objectif": "<h3>Objectif</h3>\n<p>Comprendre l’utilité des attributs ARIA et savoir les utiliser pour améliorer l’accessibilité d’une page web pour les technologies d’assistance.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>ARIA (Accessible Rich Internet Applications) est un ensemble d’attributs HTML qui améliorent l’accessibilité des interfaces web, notamment pour les utilisateurs de lecteurs d’écran. Ces attributs permettent de :</p>\n<ul>\n<li>Décrire le rôle d’un élément (<code>role</code>).</li>\n<li>Fournir des états ou propriétés (<code>aria-checked</code>, <code>aria-expanded</code>, etc.).</li>\n<li>Établir des relations entre les éléments (<code>aria-labelledby</code>, <code>aria-describedby</code>).</li>\n</ul>\n<p>Les attributs ARIA ne modifient pas l’apparence visuelle, mais enrichissent l’information transmise aux technologies d’assistance.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;button aria-expanded=\"false\" aria-controls=\"menu\" onclick=\"toggleMenu()\"&gt;Menu&lt;/button&gt;\n&lt;ul id=\"menu\" hidden&gt;\n  &lt;li&gt;&lt;a href=\"#\"&gt;Accueil&lt;/a&gt;&lt;/li&gt;\n  &lt;li&gt;&lt;a href=\"#\"&gt;Contact&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;script&gt;\n  function toggleMenu() {\n    const menu = document.getElementById(\"menu\");\n    const button = document.querySelector(\"button\");\n    const isOpen = !menu.hasAttribute(\"hidden\");\n    menu.hidden = isOpen;\n    button.setAttribute(\"aria-expanded\", !isOpen);\n  }\n&lt;/script&gt;</code></pre>",
@@ -191,7 +191,7 @@
 },
 {
   "fichier": "fiche-020",
-  "competence": "Compétence : Vérifier la navigation clavier et les contrastes",
+  "competence": "Compétence Intégration : Vérifier la navigation clavier et les contrastes",
   "objectif": "<h3>Objectif</h3>\n<p>S’assurer qu’une page web est accessible aux utilisateurs naviguant au clavier et que les contrastes de couleurs respectent les normes d’accessibilité.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>L’accessibilité web implique que tous les utilisateurs, y compris ceux en situation de handicap, puissent naviguer efficacement. Deux aspects essentiels sont :</p>\n<ul>\n<li><strong>Navigation clavier</strong> : tous les éléments interactifs (liens, boutons, champs de formulaire) doivent être accessibles avec la touche <code>Tab</code> et activables avec <code>Entrée</code> ou <code>Espace</code>.</li>\n<li><strong>Contraste</strong> : le contraste entre le texte et l’arrière-plan doit être suffisant pour garantir la lisibilité. Le WCAG recommande un ratio de contraste minimum de 4.5:1 pour le texte normal.</li>\n</ul>\n<p>Des outils permettent de tester ces critères automatiquement ou manuellement.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;button&gt;Valider&lt;/button&gt;\n&lt;a href=\"#\"&gt;Lien&lt;/a&gt;\n&lt;input type=\"text\" placeholder=\"Nom\"&gt;</code></pre>\n<p>Ces éléments doivent pouvoir être atteints avec la touche <code>Tab</code> dans l’ordre logique du document.</p>\n<p>Pour le contraste :</p>\n<pre><code>&lt;style&gt;\n  .texte {\n    color: #000;\n    background-color: #fff;\n  }\n&lt;/style&gt;</code></pre>\n<p>Ce style garantit un contraste élevé (21:1).</p>",
@@ -202,7 +202,7 @@
 
 {
   "fichier": "fiche-021",
-  "competence": "Compétence : Utiliser un préprocesseur CSS (comme Sass)",
+  "competence": "Compétence Intégration : Utiliser un préprocesseur CSS (comme Sass)",
   "objectif": "<h3>Objectif</h3>\n<p>Comprendre le rôle d’un préprocesseur CSS et savoir utiliser Sass pour écrire du CSS plus structuré, maintenable et réutilisable.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Un préprocesseur CSS comme Sass (Syntactically Awesome Stylesheets) permet d’écrire du CSS avec des fonctionnalités avancées qui ne sont pas disponibles en CSS natif :</p>\n<ul>\n<li><strong>Variables</strong> : stocker des valeurs réutilisables (couleurs, tailles, etc.).</li>\n<li><strong>Nesting</strong> : imbriquer les sélecteurs pour refléter la structure HTML.</li>\n<li><strong>Mixins</strong> : blocs de code réutilisables avec ou sans paramètres.</li>\n<li><strong>Partials et imports</strong> : découper le code en fichiers modulaires.</li>\n</ul>\n<p>Sass doit être compilé en CSS standard à l’aide d’un outil comme Dart Sass, Webpack ou Vite.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>$couleur-primaire: #3498db;\n\n.bouton {\n  background-color: $couleur-primaire;\n  color: white;\n  padding: 10px 20px;\n  border-radius: 5px;\n  &:hover {\n    background-color: darken($couleur-primaire, 10%);\n  }\n}</code></pre>\n<p>Compilation :</p>\n<pre><code>sass style.scss style.css</code></pre>",
@@ -212,7 +212,7 @@
 },
 {
   "fichier": "fiche-022",
-  "competence": "Compétence : Utiliser un gestionnaire de paquets (npm, yarn)",
+  "competence": "Compétence Intégration : Utiliser un gestionnaire de paquets (npm, yarn)",
   "objectif": "<h3>Objectif</h3>\n<p>Comprendre le rôle d’un gestionnaire de paquets et savoir utiliser <code>npm</code> ou <code>yarn</code> pour installer, mettre à jour et gérer les dépendances d’un projet web.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Un gestionnaire de paquets permet de :</p>\n<ul>\n<li>Installer des bibliothèques (ex. : React, Bootstrap, Lodash).</li>\n<li>Gérer les versions des dépendances dans un fichier <code>package.json</code>.</li>\n<li>Exécuter des scripts (ex. : <code>npm run build</code>, <code>npm start</code>).</li>\n</ul>\n<p><strong>npm</strong> (Node Package Manager) est le gestionnaire par défaut de Node.js. <strong>yarn</strong> est une alternative développée par Meta, souvent plus rapide et avec une gestion de cache optimisée.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code># Initialiser un projet\nnpm init -y\n\n# Installer une bibliothèque\nnpm install bootstrap\n\n# Installer une dépendance de développement\nnpm install --save-dev sass\n\n# Lancer un script défini dans package.json\nnpm run build</code></pre>\n<p>Fichier <code>package.json</code> généré :</p>\n<pre><code>{\n  \"name\": \"mon-projet\",\n  \"version\": \"1.0.0\",\n  \"scripts\": {\n    \"build\": \"sass style.scss style.css\"\n  },\n  \"dependencies\": {\n    \"bootstrap\": \"^5.3.0\"\n  },\n  \"devDependencies\": {\n    \"sass\": \"^1.65.0\"\n  }\n}</code></pre>",
@@ -222,7 +222,7 @@
 },
 {
   "fichier": "fiche-023",
-  "competence": "Compétence : Intégrer un design system ou une bibliothèque CSS (Bootstrap, Tailwind)",
+  "competence": "Compétence Intégration : Intégrer un design system ou une bibliothèque CSS (Bootstrap, Tailwind)",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir utiliser une bibliothèque CSS comme Bootstrap ou Tailwind pour accélérer le développement d’interfaces cohérentes et responsives.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Un design system ou une bibliothèque CSS fournit un ensemble de composants et de styles prêts à l’emploi :</p>\n<ul>\n<li><strong>Bootstrap</strong> : propose des classes CSS prédéfinies, des composants interactifs (modals, carrousels, etc.) et un système de grille responsive.</li>\n<li><strong>Tailwind CSS</strong> : approche utilitaire, chaque classe correspond à une propriété CSS (ex. : <code>bg-blue-500</code>, <code>text-center</code>).</li>\n</ul>\n<p>Ces outils permettent de gagner du temps, d’assurer une cohérence visuelle et de respecter les bonnes pratiques d’accessibilité et de responsivité.</p>",
   "exemple": "<h3>Exemple</h3>\n<p>Avec <strong>Bootstrap</strong> :</p>\n<pre><code>&lt;link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\"&gt;\n\n&lt;div class=\"container mt-4\"&gt;\n  &lt;button class=\"btn btn-primary\"&gt;Bouton Bootstrap&lt;/button&gt;\n&lt;/div&gt;</code></pre>\n<p>Avec <strong>Tailwind</strong> :</p>\n<pre><code>&lt;script src=\"https://cdn.tailwindcss.com\"&gt;&lt;/script&gt;\n\n&lt;div class=\"p-4 bg-gray-100 text-center\"&gt;\n  &lt;button class=\"bg-blue-500 text-white px-4 py-2 rounded\"&gt;Bouton Tailwind&lt;/button&gt;\n&lt;/div&gt;</code></pre>",
@@ -232,7 +232,7 @@
 },
 {
   "fichier": "fiche-024",
-  "competence": "Compétence : Créer dynamiquement un élément DOM et y ajouter un événement personnalisé",
+  "competence": "Compétence Intégration : Créer dynamiquement un élément DOM et y ajouter un événement personnalisé",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir générer un élément HTML avec JavaScript, l’insérer dans le DOM, et lui associer un comportement interactif via un événement personnalisé.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>JavaScript permet de créer des éléments HTML à la volée avec <code>document.createElement()</code>, puis de les insérer dans le DOM avec <code>appendChild()</code>, <code>append()</code> ou <code>insertBefore()</code>. On peut ensuite leur associer un événement avec <code>addEventListener()</code>.</p>\n<p>Cette technique est utile pour générer du contenu dynamique (ex. : notifications, cartes, messages, etc.).</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;button id=\"ajouter\"&gt;Ajouter un paragraphe&lt;/button&gt;\n&lt;div id=\"conteneur\"&gt;&lt;/div&gt;\n\n&lt;script&gt;\n  document.getElementById(\"ajouter\").addEventListener(\"click\", function() {\n    const p = document.createElement(\"p\");\n    p.innerText = \"Paragraphe ajouté dynamiquement.\";\n    p.style.color = \"blue\";\n    p.addEventListener(\"click\", () => alert(\"Paragraphe cliqué !\"));\n    document.getElementById(\"conteneur\").appendChild(p);\n  });\n&lt;/script&gt;</code></pre>",
@@ -242,7 +242,7 @@
 },
 {
   "fichier": "fiche-025",
-  "competence": "Compétence : Détecter plusieurs erreurs dans un code complexe",
+  "competence": "Compétence Intégration : Détecter plusieurs erreurs dans un code complexe",
   "objectif": "<h3>Objectif</h3>\n<p>Être capable d’analyser un code HTML/CSS/JavaScript complexe pour y repérer plusieurs erreurs (syntaxe, logique, accessibilité, etc.) et proposer des corrections.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Dans un code complexe, les erreurs peuvent être multiples et de nature variée :</p>\n<ul>\n<li><strong>Syntaxiques</strong> : balises non fermées, parenthèses manquantes, fautes de frappe.</li>\n<li><strong>Logiques</strong> : conditions incorrectes, mauvaise portée des variables, erreurs de calcul.</li>\n<li><strong>Fonctionnelles</strong> : événements non déclenchés, sélecteurs erronés, fonctions absentes.</li>\n<li><strong>Accessibilité</strong> : absence d’attributs ARIA, navigation clavier impossible, contraste insuffisant.</li>\n</ul>\n<p>Une lecture attentive, l’utilisation des outils de développement et des tests progressifs permettent de repérer ces erreurs efficacement.</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;button onclick=\"envoyerFormulaire\"&gt;Envoyer&lt;/button&gt;\n&lt;script&gt;\n  function envoyerformulaire() {\n    const nom = document.getElementByID(\"nom\").value;\n    if (nom = \"\") {\n      alert(\"Nom requis\");\n    }\n  }\n&lt;/script&gt;</code></pre>\n<p><strong>Erreurs détectées :</strong></p>\n<ul>\n<li>La fonction appelée dans <code>onclick</code> n’est pas définie (majuscule/minuscule).</li>\n<li><code>getElementByID</code> → doit être <code>getElementById</code>.</li>\n<li><code>if (nom = \"\")</code> → affectation au lieu de comparaison (<code>==</code> ou <code>===</code>).</li>\n</ul>\n<p><strong>Correction :</strong></p>\n<pre><code>&lt;button onclick=\"envoyerformulaire()\"&gt;Envoyer&lt;/button&gt;\n&lt;script&gt;\n  function envoyerformulaire() {\n    const nom = document.getElementById(\"nom\").value;\n    if (nom === \"\") {\n      alert(\"Nom requis\");\n    }\n  }\n&lt;/script&gt;</code></pre>",
@@ -252,7 +252,7 @@
 },
 {
   "fichier": "fiche-026",
-  "competence": "Compétence : Rechercher efficacement dans la documentation d’une bibliothèque tierce",
+  "competence": "Compétence Intégration : Rechercher efficacement dans la documentation d’une bibliothèque tierce",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir naviguer dans la documentation officielle d’une bibliothèque (ex. : React, Bootstrap, Chart.js) pour trouver rapidement les informations nécessaires à l’implémentation ou au débogage.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>La documentation d’une bibliothèque est la source la plus fiable pour comprendre son fonctionnement. Elle contient généralement :</p>\n<ul>\n<li>Un guide de démarrage rapide (installation, configuration).</li>\n<li>Une API détaillée avec les fonctions, composants ou classes disponibles.</li>\n<li>Des exemples de code et cas d’usage.</li>\n<li>Une section FAQ ou Troubleshooting.</li>\n</ul>\n<p>Pour rechercher efficacement :</p>\n<ul>\n<li>Utiliser la barre de recherche intégrée ou Google avec <code>site:nomdusite.com</code>.</li>\n<li>Identifier les mots-clés pertinents (ex. : “props”, “event listener”, “responsive grid”).</li>\n<li>Consulter les exemples de code pour comprendre l’usage réel.</li>\n</ul>",
   "exemple": "<h3>Exemple</h3>\n<p>Recherche d’un composant bouton dans la documentation de Bootstrap :</p>\n<ol>\n<li>Aller sur <a href=\"https://getbootstrap.com\">getbootstrap.com</a></li>\n<li>Utiliser la barre de recherche avec le mot-clé “button”.</li>\n<li>Lire la page <em>Buttons</em> pour voir les classes disponibles (<code>btn</code>, <code>btn-primary</code>, etc.).</li>\n<li>Tester les exemples dans un bac à sable (CodePen, JSFiddle, etc.).</li>\n</ol>",
@@ -262,7 +262,7 @@
 },
 {
   "fichier": "fiche-027",
-  "competence": "Compétence : Optimiser le chargement des ressources (lazy loading, defer, minification)",
+  "competence": "Compétence Intégration : Optimiser le chargement des ressources (lazy loading, defer, minification)",
   "objectif": "<h3>Objectif</h3>\n<p>Améliorer les performances du site en optimisant le chargement des images, scripts et feuilles de style.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Pour accélérer le chargement d’une page web, on peut utiliser plusieurs techniques :</p>\n<ul>\n<li><strong>Lazy loading</strong> : charger les images/vidéos uniquement lorsque l’utilisateur les approche dans la page (attribut <code>loading=\"lazy\"</code>).</li>\n<li><strong>Defer</strong> : différer l’exécution des scripts jusqu’à ce que le HTML soit entièrement analysé (<code>&lt;script src=\"...\" defer&gt;</code>).</li>\n<li><strong>Minification</strong> : supprimer les espaces, commentaires et raccourcir les noms dans les fichiers CSS/JS pour réduire leur poids.</li>\n</ul>\n<p>Ces optimisations réduisent le temps de chargement initial, ce qui améliore l’expérience utilisateur et le référencement (SEO).</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;img src=\"photo.jpg\" alt=\"Photo\" loading=\"lazy\"&gt;\n\n&lt;script src=\"script.js\" defer&gt;&lt;/script&gt;</code></pre>\n<p>Minification avec un outil en ligne :</p>\n<pre><code>// Original\nfunction direBonjour(nom) {\n  console.log(\"Bonjour, \" + nom);\n}\n\n// Minifié\nfunction direBonjour(n){console.log(\"Bonjour, \"+n)}</code></pre>",
@@ -272,7 +272,7 @@
 },
 {
   "fichier": "fiche-028",
-  "competence": "Compétence : Respecter les standards W3C et valider son code",
+  "competence": "Compétence Intégration : Respecter les standards W3C et valider son code",
   "objectif": "<h3>Objectif</h3>\n<p>S’assurer que le code HTML, CSS et JavaScript respecte les standards du web définis par le W3C pour garantir compatibilité, accessibilité et maintenabilité.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Le <strong>W3C (World Wide Web Consortium)</strong> définit les normes officielles du web. Suivre ces standards assure que le code est :</p>\n<ul>\n<li>Lisible et compréhensible par tous les navigateurs.</li>\n<li>Compatible avec les technologies d’assistance.</li>\n<li>Plus facile à maintenir et à faire évoluer.</li>\n</ul>\n<p>La validation du code permet de détecter les erreurs de syntaxe ou les usages obsolètes.</p>",
   "exemple": "<h3>Exemple</h3>\n<p>Validation HTML :</p>\n<ol>\n<li>Aller sur <a href=\"https://validator.w3.org/\">validator.w3.org</a></li>\n<li>Coller le code HTML ou entrer l’URL de la page à tester.</li>\n<li>Corriger les erreurs ou avertissements signalés.</li>\n</ol>\n<p>Validation CSS :</p>\n<ul>\n<li>Utiliser <a href=\"https://jigsaw.w3.org/css-validator/\">jigsaw.w3.org/css-validator</a></li>\n</ul>",
@@ -282,7 +282,7 @@
 },
 {
   "fichier": "fiche-029",
-  "competence": "Compétence : Connaître les bases du SEO technique (balises meta, structure sémantique)",
+  "competence": "Compétence Intégration : Connaître les bases du SEO technique (balises meta, structure sémantique)",
   "objectif": "<h3>Objectif</h3>\n<p>Comprendre les principes fondamentaux du SEO technique pour optimiser la visibilité d’un site web dans les moteurs de recherche.</p>",
   "theorie": "<h3>Théorie</h3>\n<p>Le <strong>SEO technique</strong> vise à faciliter l’exploration et l’indexation d’un site web par les moteurs de recherche. Quelques éléments clés :</p>\n<ul>\n<li><strong>Balises <code>&lt;title&gt;</code> et <code>&lt;meta description&gt;</code></strong> : décrivent le contenu de la page dans les résultats de recherche.</li>\n<li><strong>Structure sémantique</strong> : usage correct des balises <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, etc., pour refléter l’organisation logique du contenu.</li>\n<li><strong>Balises Open Graph / Twitter</strong> : améliorent l’affichage sur les réseaux sociaux.</li>\n<li><strong>Attributs <code>alt</code> des images</strong> : décrivent le visuel pour le référencement et l’accessibilité.</li>\n<li><strong>URL lisibles</strong> et <strong>hiérarchie des titres</strong> (<code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code>).</li>\n</ul>",
   "exemple": "<h3>Exemple</h3>\n<pre><code>&lt;head&gt;\n  &lt;title&gt;Recettes faciles et rapides&lt;/title&gt;\n  &lt;meta name=\"description\" content=\"Découvrez des recettes simples et savoureuses pour tous les jours.\"&gt;\n  &lt;meta property=\"og:title\" content=\"Recettes faciles\"&gt;\n  &lt;meta property=\"og:description\" content=\"Recettes simples pour toute la famille.\"&gt;\n&lt;/head&gt;</code></pre>\n<p>Structure HTML :</p>\n<pre><code>&lt;main&gt;\n  &lt;article&gt;\n    &lt;h1&gt;Tarte aux pommes maison&lt;/h1&gt;\n    &lt;p&gt;Une recette classique avec une pâte croustillante.&lt;/p&gt;\n  &lt;/article&gt;\n&lt;/main&gt;</code></pre>",
@@ -292,7 +292,7 @@
 },
 {
   "fichier": "fiche-030",
-  "competence": "Compétence : Utiliser Git pour versionner son code",
+  "competence": "Compétence Intégration : Utiliser Git pour versionner son code",
   "objectif": "<h3>Objectif</h3>\n<p>Savoir utiliser les commandes de base de Git pour suivre les modifications d’un projet, revenir à une version antérieure et collaborer efficacement.</p>",
   "theorie": "<h3>Théorie</h3>\n<p><strong>Git</strong> est un système de contrôle de version distribué. Il permet de :</p>\n<ul>\n<li>Suivre l’historique des modifications d’un projet (ajouts, suppressions, évolutions).</li>\n<li>Créer des branches pour développer des fonctionnalités de façon isolée.</li>\n<li>Travailler à plusieurs sans écraser les changements des autres.</li>\n<li>Revenir à un état précédent en cas d’erreur.</li>\n</ul>\n<p>Les fichiers sont stockés dans un dépôt Git (<em>repository</em>) local, qui peut être synchronisé avec un dépôt distant (ex. : GitHub, GitLab).</p>",
   "exemple": "<h3>Exemple</h3>\n<pre><code># Initialiser un dépôt\ngit init\n\n# Suivre un fichier\ngit add index.html\n\n# Sauvegarder une version\ngit commit -m \"Ajout de la page d’accueil\"\n\n# Créer une nouvelle branche\ngit branch nouvelle-fonction\n\n# Se déplacer sur la branche\ngit checkout nouvelle-fonction\n\n# Envoyer le code sur GitHub\ngit remote add origin https://github.com/utilisateur/projet.git\ngit push -u origin main</code></pre>",
