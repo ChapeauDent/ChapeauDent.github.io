@@ -15,95 +15,90 @@
 
   <main class="max-w-7xl mx-auto px-4 py-6">
     <h1 class="text-3xl font-bold text-center text-blue-700 mb-8">Fiches Pédagogiques CSS</h1>
-
+    <div class="mb-6 flex flex-wrap justify-center gap-2">
+      <button data-niveau="Tous"
+        class="filtre-niveau px-4 py-2 rounded bg-blue-100 text-blue-700 font-medium hover:bg-blue-200">Tous</button>
+      <button data-niveau="Initial"
+        class="filtre-niveau px-4 py-2 rounded bg-gray-100 hover:bg-gray-200">Initial</button>
+      <button data-niveau="Basique"
+        class="filtre-niveau px-4 py-2 rounded bg-gray-100 hover:bg-gray-200">Basique</button>
+      <button data-niveau="Opérationnel"
+        class="filtre-niveau px-4 py-2 rounded bg-gray-100 hover:bg-gray-200">Opérationnel</button>
+      <button data-niveau="Avancé" class="filtre-niveau px-4 py-2 rounded bg-gray-100 hover:bg-gray-200">Avancé</button>
+      <button data-niveau="Expert" class="filtre-niveau px-4 py-2 rounded bg-gray-100 hover:bg-gray-200">Expert</button>
+    </div>
     <div id="cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </main>
 
   <script>
-    let toutesLesFiches = []; // déclaration globale
-    fetch('bdd/fiches_css.json')
-      .then(response => response.json())
-      .then(data => {
-        toutesLesFiches = data; // on stocke les fiches pour pouvoir les compter
-        const container = document.getElementById('cards-container');
+    let toutesLesFiches = [];
 
-        data.forEach(fiche => {
-          const card = document.createElement('div');
-          card.className =
-            'bg-white shadow-md rounded-lg p-5 hover:shadow-xl transition duration-300 ease-in-out';
+function afficherFiches(fiches) {
+  const container = document.getElementById('cards-container');
+  container.innerHTML = '';
 
-          card.innerHTML = `
-              <p class="text-sm text-gray-500 mb-1">${fiche.fichier}</p>
-              <h2 class="text-lg font-semibold text-blue-700 mb-2">${fiche.competence}</h2>
-              <section class="text-sm text-gray-700 space-y-2">
-                <div>${fiche.objectif}</div>
-                <div>${fiche.theorie}</div>
-                <div>${fiche.exemple}</div>
-                <div>${fiche.sources}</div>
-                <div>${fiche.infos_supplementaires || ''}</div>
-              </section>
-            `;
+  fiches.forEach(fiche => {
+    const card = document.createElement('div');
+    card.className =
+      'bg-white shadow-md rounded-lg p-5 hover:shadow-xl transition duration-300 ease-in-out';
 
-          container.appendChild(card);
-        });
-        document.querySelectorAll("#cards-container h3").forEach(h3 => {
-          h3.classList.add(
-            'text-lg',           // taille de police
-            'font-semibold',     // graisse
-            'text-gray-800',     // couleur
-            'mb-2',              // marge bas
-            'mt-4'               // marge haut
-          );
-        });
-        document.querySelectorAll('#cards-container a').forEach(link => {
-          link.classList.add(
-            'text-blue-600',
-            'hover:underline',
-            'hover:text-blue-800',
-            'transition-colors',
-            'duration-200'
-          );
-          link.setAttribute('target', '_blank'); // optionnel : ouvre dans un nouvel onglet
-        });
-        // 1. Nombre total de fiches
+    card.innerHTML = `
+      <p class="text-sm text-gray-500 mb-1">${fiche.fichier} — <span class="italic">${fiche.niveau}</span></p>
+      <h2 class="text-lg font-semibold text-blue-700 mb-2">${fiche.competence}</h2>
+      <section class="text-sm text-gray-700 space-y-2">
+        <div>${fiche.objectif}</div>
+        <div>${fiche.theorie}</div>
+        <div>${fiche.exemple}</div>
+        <div>${fiche.sources}</div>
+        <div>${fiche.infos_supplementaires || ''}</div>
+      </section>
+    `;
+    container.appendChild(card);
+  });
 
-        window.addEventListener('DOMContentLoaded', async () => {
-          // 1. Nombre total de fiches
-          const total = toutesLesFiches.length;
-          console.log('Total fiches:', total); // pour vérifier
+  // Styliser les <h3>
+  document.querySelectorAll('#cards-container h3').forEach(h3 => {
+    h3.classList.add('text-lg', 'font-semibold', 'text-gray-800', 'mb-2', 'mt-4');
+  });
 
-          // Vérifier que le conteneur des repères existe
-          const markerContainer = document.getElementById('scroll-markers');
-          if (!markerContainer) {
-            console.error('Le conteneur #scroll-markers est introuvable dans le DOM.');
-          } else {
-            // Vider le conteneur au cas où
-            markerContainer.innerHTML = '';
+  // Styliser les liens
+  document.querySelectorAll('#cards-container a').forEach(link => {
+    link.classList.add('text-blue-600', 'hover:underline', 'hover:text-blue-800', 'transition-colors', 'duration-200');
+    link.setAttribute('target', '_blank');
+  });
+}
 
-            // Seulement si on a plus d'une fiche
-            if (total > 1) {
-              for (let i = 1; i < total; i++) {
-                const marker = document.createElement('div');
-                marker.className = 'w-1 h-full bg-green-300 opacity-60';
-                marker.style.position = 'absolute';
-                marker.style.zIndex = '100'; // Assure que le marqueur est au-dessus
-                // Placer le marqueur en fonction de sa position relative
-                marker.style.left = `${(i / total) * 100}%`;
+// Chargement des fiches + initialisation
+fetch('bdd/fiches_css.json')
+  .then(res => res.json())
+  .then(data => {
+    toutesLesFiches = data;
+    afficherFiches(toutesLesFiches); // affichage initial
 
-                markerContainer.appendChild(marker);
-              }
-            } else {
-              console.log('Pas suffisamment de fiches pour afficher des repères.');
-            }
-          }
-        });
-      })
-      .catch(error => {
-        console.error('Erreur lors du chargement des fiches :', error);
+    // Boutons de filtre
+    const filtres = document.querySelectorAll('.filtre-niveau');
+    filtres.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const niveau = btn.dataset.niveau;
+
+        // Met à jour l'apparence active
+        filtres.forEach(b => b.classList.remove('bg-blue-100', 'text-blue-700'));
+        btn.classList.add('bg-blue-100', 'text-blue-700');
+
+        if (niveau === 'Tous') {
+          afficherFiches(toutesLesFiches);
+        } else {
+          const filtrées = toutesLesFiches.filter(fiche => fiche.niveau === niveau);
+          afficherFiches(filtrées);
+        }
       });
+    });
+  })
+  .catch(err => console.error('Erreur de chargement des fiches :', err));
+
 
   </script>
-  <script src="composants/header.js"></script>
+  <script src="/composants/header.js"></script>
 </body>
 
 </html>

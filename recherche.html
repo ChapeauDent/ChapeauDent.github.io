@@ -27,79 +27,131 @@
             <input type="text" id="search-input" placeholder="Rechercher une compétence..."
                 class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500" />
         </div>
-
+          <div class="mb-6 flex flex-wrap justify-center gap-2">
+      <button data-niveau="Tous"
+        class="filtre-niveau px-4 py-2 rounded bg-blue-100 text-blue-700 font-medium hover:bg-blue-200">Tous</button>
+      <button data-niveau="Initial"
+        class="filtre-niveau px-4 py-2 rounded bg-gray-100 hover:bg-gray-200">Initial</button>
+      <button data-niveau="Basique"
+        class="filtre-niveau px-4 py-2 rounded bg-gray-100 hover:bg-gray-200">Basique</button>
+      <button data-niveau="Opérationnel"
+        class="filtre-niveau px-4 py-2 rounded bg-gray-100 hover:bg-gray-200">Opérationnel</button>
+      <button data-niveau="Avancé" class="filtre-niveau px-4 py-2 rounded bg-gray-100 hover:bg-gray-200">Avancé</button>
+      <button data-niveau="Expert" class="filtre-niveau px-4 py-2 rounded bg-gray-100 hover:bg-gray-200">Expert</button>
+    </div>
         <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Les cartes dynamiques s’ajouteront ici -->
         </div>
     </main>
     <script>
-        const fichiers = [
-            'bdd/fiches_integration.json',
-            'bdd/fiches_css.json',
-            'bdd/fiches_html.json',
-            'bdd/fiches_js.json'
-        ];
+const fichiers = [
+  'bdd/fiches_integration.json',
+  'bdd/fiches_css.json',
+  'bdd/fiches_html.json',
+  'bdd/fiches_js.json'
+];
 
-        let toutesLesFiches = [];
+let toutesLesFiches = [];
+let niveauActif = 'Tous';
+let rechercheActuelle = '';
 
-        // Fonction pour charger tous les fichiers JSON
-        async function chargerToutesLesFiches() {
-            const promesses = fichiers.map(fichier =>
-                fetch(fichier).then(res => res.json())
-            );
+// 🔹 Chargement des données
+async function chargerToutesLesFiches() {
+  try {
+    const promesses = fichiers.map(fichier => fetch(fichier).then(res => res.json()));
+    const resultats = await Promise.all(promesses);
+    toutesLesFiches = resultats.flat();
+    filtrerEtAfficher(); // Affiche dès le chargement
+    activerFiltres();
+  } catch (error) {
+    console.error('Erreur lors du chargement des fichiers JSON :', error);
+  }
+}
 
-            try {
-                const resultats = await Promise.all(promesses);
-                toutesLesFiches = resultats.flat();
-            } catch (error) {
-                console.error('Erreur lors du chargement des fichiers JSON :', error);
-            }
-        }
+// 🔹 Affichage des fiches
+function afficherFiches(fiches) {
+  const container = document.getElementById('cards-container');
+  container.innerHTML = '';
 
-        // Fonction pour afficher les fiches dans le DOM
-        function afficherFiches(fiches) {
-            const container = document.getElementById('cards-container');
-            container.innerHTML = '';
+  fiches.forEach(fiche => {
+    const card = document.createElement('div');
+    card.className = 'bg-white shadow-md rounded-lg p-5 hover:shadow-xl transition duration-300 ease-in-out';
 
-            fiches.forEach(fiche => {
-                const card = document.createElement('div');
-                card.className =
-                    'bg-white shadow-md rounded-lg p-5 hover:shadow-xl transition duration-300 ease-in-out';
+    card.innerHTML = `
+      <p class="text-sm text-gray-500 mb-1">${fiche.fichier} — <span class="italic">${fiche.niveau || 'Non défini'}</span></p>
+      <h2 class="text-lg font-semibold text-purple-700 mb-2">${fiche.competence}</h2>
+      <section class="text-sm text-gray-700 space-y-2">
+        <div>${fiche.objectif}</div>
+        <div>${fiche.theorie}</div>
+        <div>${fiche.exemple}</div>
+        <div>${fiche.sources}</div>
+        <div>${fiche.infos_supplementaires || ''}</div>
+      </section>
+    `;
 
-                card.innerHTML = `
-              <p class="text-sm text-gray-500 mb-1">${fiche.fichier}</p>
-              <h2 class="text-lg font-semibold text-purple-700 mb-2">${fiche.competence}</h2>
-              <section class="text-sm text-gray-700 space-y-2">
-                <div><span class="font-medium text-gray-800"></span><br>${fiche.objectif}</div>
-                <div><span class="font-medium text-gray-800"></span><br>${fiche.theorie}</div>
-                <div><span class="font-medium text-gray-800"></span><br>${fiche.exemple}</div>
-                <div><span class="font-medium text-gray-800"></span><br>${fiche.sources}</div>
-                <div><span class="font-medium text-gray-800"></span><br>${fiche.infos_supplementaires || ''}</div>
-              </section>
-            `;
+    container.appendChild(card);
+  });
 
-                container.appendChild(card);
-            });
-            document.querySelectorAll("#cards-container h3").forEach(h3 => {
-                h3.classList.add(
-                    'text-lg',           // taille de police
-                    'font-semibold',     // graisse
-                    'text-gray-800',     // couleur
-                    'mb-2',              // marge bas
-                    'mt-4'               // marge haut
-                );
-            });
-            document.querySelectorAll('#cards-container a').forEach(link => {
-                link.classList.add(
-                    'text-blue-600',
-                    'hover:underline',
-                    'hover:text-blue-800',
-                    'transition-colors',
-                    'duration-200'
-                );
-                link.setAttribute('target', '_blank'); // optionnel : ouvre dans un nouvel onglet
-            });
-        }
+  document.querySelectorAll('#cards-container h3').forEach(h3 =>
+    h3.classList.add('text-lg', 'font-semibold', 'text-gray-800', 'mb-2', 'mt-4')
+  );
+
+  document.querySelectorAll('#cards-container a').forEach(link => {
+    link.classList.add(
+      'text-blue-600',
+      'hover:underline',
+      'hover:text-blue-800',
+      'transition-colors',
+      'duration-200'
+    );
+    link.setAttribute('target', '_blank');
+  });
+}
+
+// 🔹 Applique la recherche et le filtre niveau
+function filtrerEtAfficher() {
+  let resultat = toutesLesFiches;
+
+  if (niveauActif !== 'Tous') {
+    resultat = resultat.filter(f => f.niveau === niveauActif);
+  }
+
+  if (rechercheActuelle.trim() !== '') {
+    const mot = rechercheActuelle.toLowerCase();
+    resultat = resultat.filter(f =>
+      (f.competence + f.objectif + f.theorie + f.exemple + f.sources).toLowerCase().includes(mot)
+    );
+  }
+
+  afficherFiches(resultat);
+}
+
+// 🔹 Active les boutons de filtre + recherche
+function activerFiltres() {
+  document.querySelectorAll('.filtre-niveau').forEach(btn => {
+    btn.addEventListener('click', () => {
+      niveauActif = btn.dataset.niveau;
+      document.querySelectorAll('.filtre-niveau').forEach(b =>
+        b.classList.remove('bg-blue-100', 'text-blue-700')
+      );
+      btn.classList.add('bg-blue-100', 'text-blue-700');
+      filtrerEtAfficher();
+    });
+  });
+
+  const input = document.getElementById('search-input');
+  if (input) {
+    input.addEventListener('input', e => {
+      rechercheActuelle = e.target.value;
+      filtrerEtAfficher();
+    });
+  }
+}
+
+// 🔹 Démarrage
+chargerToutesLesFiches();
+
+
     </script>
     <script src="composants/header.js"></script>
     <script src="script-recherche.js"></script>

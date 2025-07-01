@@ -1,407 +1,452 @@
 [
   {
     "fichier": "fiche-001",
-    "competence": "Compétence : Expliquer l’usage principal de JavaScript",
+    "competence": "Compétence JavaScript : Expliquer l’usage principal de JavaScript",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre l'usage principal de JavaScript dans le développement web.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>JavaScript est un langage de programmation principalement utilisé pour créer des pages web interactives. Il permet de manipuler le Document Object Model (DOM) pour modifier dynamiquement le contenu et le style des pages web. JavaScript est exécuté côté client, ce qui signifie qu'il s'exécute directement dans le navigateur de l'utilisateur, offrant ainsi une expérience utilisateur plus réactive et interactive.</p>\n        <p>Les principales utilisations de JavaScript incluent :</p>\n        <ul>\n            <li>La manipulation du DOM pour modifier le contenu HTML et CSS.</li>\n            <li>La gestion des événements utilisateur, tels que les clics de souris et les entrées clavier.</li>\n            <li>La validation des formulaires avant leur soumission au serveur.</li>\n            <li>La communication asynchrone avec les serveurs web via AJAX.</li>\n            <li>La création d'animations et d'effets visuels.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple simple de code JavaScript qui affiche un message de bienvenue lorsque l'utilisateur clique sur un bouton :</p>\n        <pre><code>\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"fr\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Exemple JavaScript&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;button onclick=\"afficherMessage()\"&gt;Cliquez-moi&lt;/button&gt;\n    &lt;script&gt;\n        function afficherMessage() {\n            alert('Bienvenue sur notre site web !');\n        }\n    &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n        </code></pre>",
     "sources": "<h3>Sources Web</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide\">Guide JavaScript de MDN</a></li>\n            <li><a href=\"https://www.w3schools.com/js/\">Tutoriels JavaScript de W3Schools</a></li>\n            <li><a href=\"https://javascript.info/\">JavaScript.info</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Initial"
   },
   {
     "fichier": "fiche-002",
-    "competence": "Compétence : Créer et utiliser une variable",
+    "competence": "Compétence JavaScript : Créer et utiliser une variable",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre comment créer et utiliser des variables en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, une variable est un conteneur qui permet de stocker des données. Les variables peuvent être utilisées pour stocker différents types de données, comme des nombres, des chaînes de caractères, des objets, etc.</p>\n        <p>Pour déclarer une variable, on utilise les mots-clés <code>var</code>, <code>let</code> ou <code>const</code>. Voici les différences principales :</p>\n        <ul>\n            <li><code>var</code> : portée de fonction ou globale, peut être redéclarée et réassignée.</li>\n            <li><code>let</code> : portée de bloc, ne peut pas être redéclarée mais peut être réassignée.</li>\n            <li><code>const</code> : portée de bloc, ne peut pas être redéclarée ni réassignée.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Déclaration avec var\nvar nom = \"Raymond\";\nconsole.log(nom); // Affiche \"Raymond\"\n\n// Déclaration avec let\nlet age = 30;\nconsole.log(age); // Affiche 30\n\n// Déclaration avec const\nconst pays = \"France\";\nconsole.log(pays); // Affiche \"France\"\n        </code>\n        </pre>",
     "sources": "<h3>Sources web</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Grammar_and_types#d%C3%A9clarations_de_variables\">MDN Web Docs - Déclarations de variables</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_variables.asp\">W3Schools - JavaScript Variables</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Initial"
   },
   {
     "fichier": "fiche-003",
-    "competence": "Compétence : Différencier let, const et var",
+    "competence": "Compétence JavaScript : Différencier let, const et var",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre les différences entre les mots-clés <code>let</code>, <code>const</code> et <code>var</code> en JavaScript et savoir quand les utiliser.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, les variables peuvent être déclarées à l'aide des mots-clés <code>var</code>, <code>let</code> et <code>const</code>. Chacun de ces mots-clés a des caractéristiques spécifiques :</p>\n        <ul>\n            <li><code>var</code> : Déclare une variable avec une portée fonctionnelle ou globale. Les variables déclarées avec <code>var</code> peuvent être redéclarées et réaffectées.</li>\n            <li><code>let</code> : Déclare une variable avec une portée de bloc. Les variables déclarées avec <code>let</code> peuvent être réaffectées mais pas redéclarées dans le même bloc.</li>\n            <li><code>const</code> : Déclare une constante avec une portée de bloc. Les constantes déclarées avec <code>const</code> ne peuvent ni être redéclarées ni réaffectées.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Exemple de var\nvar x = 10;\nconsole.log(x); // 10\nx = 20;\nconsole.log(x); // 20\n\n// Exemple de let\nlet y = 10;\nconsole.log(y); // 10\ny = 20;\nconsole.log(y); // 20\n\n// Exemple de const\nconst z = 10;\nconsole.log(z); // 10\n// z = 20; // Erreur : Assignment to constant variable.\n</code>\n        </pre>",
     "sources": "<h3>Sources web</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/var\">MDN Web Docs - var</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/let\">MDN Web Docs - let</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/const\">MDN Web Docs - const</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Initial"
   },
   {
     "fichier": "fiche-004",
-    "competence": "Compétence: Comprendre les types de données (string, number, boolean, undefined, null)",
+    "competence": "Compétence JavaScript: Comprendre les types de données (string, number, boolean, undefined, null)",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre les différents types de données en JavaScript et leur utilisation.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>JavaScript est un langage de programmation faiblement typé, ce qui signifie que les variables ne sont pas directement associées à un type de données spécifique. Cependant, il est essentiel de comprendre les types de données disponibles pour écrire un code efficace et éviter les erreurs. Les principaux types de données en JavaScript sont :</p>\n        <ul>\n            <li><strong>String</strong> : Représente des chaînes de caractères. Exemple : <code>\"Bonjour\"</code></li>\n            <li><strong>Number</strong> : Représente des nombres, qu'ils soient entiers ou flottants. Exemple : <code>42</code>, <code>3.14</code></li>\n            <li><strong>Boolean</strong> : Représente une valeur vraie ou fausse. Exemple : <code>true</code>, <code>false</code></li>\n            <li><strong>Undefined</strong> : Une variable qui a été déclarée mais n'a pas encore reçu de valeur. Exemple : <code>let x;</code></li>\n            <li><strong>Null</strong> : Représente une valeur nulle ou \"vide\". Exemple : <code>let y = null;</code></li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Déclaration et utilisation des différents types de données\nlet message = \"Bonjour\"; // String\nlet age = 25; // Number\nlet isStudent = true; // Boolean\nlet address; // Undefined\nlet salary = null; // Null\n\nconsole.log(\"Message:\", message);\nconsole.log(\"Age:\", age);\nconsole.log(\"Is Student:\", isStudent);\nconsole.log(\"Address:\", address);\nconsole.log(\"Salary:\", salary);\n</code>\n        </pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Grammar_and_types#types_de_donn%C3%A9es\">MDN Web Docs - Types de données</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_datatypes.asp\">W3Schools - JavaScript Data Types</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Initial"
   },
   {
     "fichier": "fiche-005",
-    "competence": "Compétence : Utiliser typeof pour identifier le type d'une variable",
+    "competence": "Compétence JavaScript : Utiliser typeof pour identifier le type d'une variable",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre comment utiliser l'opérateur <code>typeof</code> en JavaScript pour identifier le type d'une variable.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>L'opérateur <code>typeof</code> en JavaScript est utilisé pour obtenir le type d'une variable. Il renvoie une chaîne de caractères indiquant le type de la variable. Voici les types de données que <code>typeof</code> peut identifier :</p>\n        <ul>\n            <li><code>undefined</code> : si la variable est indéfinie</li>\n            <li><code>boolean</code> : si la variable est un booléen</li>\n            <li><code>number</code> : si la variable est un nombre</li>\n            <li><code>string</code> : si la variable est une chaîne de caractères</li>\n            <li><code>object</code> : si la variable est un objet (y compris les tableaux et <code>null</code>)</li>\n            <li><code>function</code> : si la variable est une fonction</li>\n        </ul>\n        <p>Il est important de noter que <code>typeof null</code> renvoie <code>\"object\"</code> en raison d'un bug historique dans JavaScript.</p>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Déclaration des variables\nlet indéfini;\nlet booléen = true;\nlet nombre = 42;\nlet chaîne = \"Bonjour\";\nlet objet = { nom: \"Raymond\" };\nlet tableau = [1, 2, 3];\nlet fonction = function() { return \"Hello\"; };\nlet nul = null;\n\n// Utilisation de typeof\nconsole.log(typeof indéfini); // \"undefined\"\nconsole.log(typeof booléen); // \"boolean\"\nconsole.log(typeof nombre); // \"number\"\nconsole.log(typeof chaîne); // \"string\"\nconsole.log(typeof objet); // \"object\"\nconsole.log(typeof tableau); // \"object\"\nconsole.log(typeof fonction); // \"function\"\nconsole.log(typeof nul); // \"object\"\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/typeof\">MDN Web Docs - typeof</a></li>\n            <li><a href=\"https://www.w3schools.com/jsref/jsref_typeof.asp\">W3Schools - typeof</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Initial"
   },
   {
     "fichier": "fiche-006",
-    "competence": "Compétence : Écrire un commentaire monoligne",
+    "competence": "Compétence JavaScript : Écrire un commentaire monoligne",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à écrire des commentaires monolignes en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les commentaires sont des lignes de texte dans le code qui ne sont pas exécutées. Ils sont utilisés pour expliquer le code, laisser des notes ou désactiver temporairement des parties du code.</p>\n        <p>En JavaScript, un commentaire monoligne commence par <code>//</code>. Tout ce qui suit sur la même ligne sera ignoré par le moteur JavaScript.</p>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Ceci est un commentaire monoligne en JavaScript\nlet x = 5; // Déclaration de la variable x et affectation de la valeur 5\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Grammar_and_types#Commentaires\">MDN Web Docs - Commentaires</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_comments.asp\">W3Schools - JavaScript Comments</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Initial"
   },
   {
     "fichier": "fiche-007",
-    "competence": "Compétence : Utiliser les opérateurs arithmétiques de base",
+    "competence": "Compétence JavaScript : Utiliser les opérateurs arithmétiques de base",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre et utiliser les opérateurs arithmétiques de base en JavaScript pour effectuer des calculs simples.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les opérateurs arithmétiques de base en JavaScript permettent d'effectuer des opérations mathématiques simples. Voici les principaux opérateurs :</p>\n        <ul>\n            <li><code>+</code> : Addition</li>\n            <li><code>-</code> : Soustraction</li>\n            <li><code>*</code> : Multiplication</li>\n            <li><code>/</code> : Division</li>\n            <li><code>%</code> : Modulo (reste de la division)</li>\n            <li><code>++</code> : Incrémentation (ajoute 1)</li>\n            <li><code>--</code> : Décrémentation (soustrait 1)</li>\n        </ul>\n        <p>Ces opérateurs peuvent être utilisés avec des variables pour effectuer des calculs et manipuler des valeurs numériques.</p>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Déclaration de variables\nlet a = 10;\nlet b = 5;\n\n// Utilisation des opérateurs arithmétiques\nlet addition = a + b; // 15\nlet soustraction = a - b; // 5\nlet multiplication = a * b; // 50\nlet division = a / b; // 2\nlet modulo = a % b; // 0\n\n// Incrémentation et décrémentation\na++; // 11\nb--; // 4\n\nconsole.log(\"Addition: \" + addition);\nconsole.log(\"Soustraction: \" + soustraction);\nconsole.log(\"Multiplication: \" + multiplication);\nconsole.log(\"Division: \" + division);\nconsole.log(\"Modulo: \" + modulo);\nconsole.log(\"Incrémentation de a: \" + a);\nconsole.log(\"Décrémentation de b: \" + b);\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_et_Op%C3%A9rateurs#op%C3%A9rateurs_arithm%C3%A9tiques\">MDN Web Docs - Opérateurs arithmétiques</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_arithmetic.asp\">W3Schools - JavaScript Arithmetic</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Initial"
   },
   {
     "fichier": "fiche-008",
-    "competence": "Compétence : Reconnaître, créer, affecter et lire un tableau",
+    "competence": "Compétence JavaScript : Reconnaître, créer, affecter et lire un tableau",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre comment reconnaître, créer, affecter et lire un tableau en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, un tableau est un objet global utilisé pour stocker des données sous forme de liste ordonnée. Les tableaux peuvent contenir des éléments de différents types, y compris d'autres tableaux, ce qui permet de créer des structures de données complexes.</p>\n        <p>Pour créer un tableau, vous pouvez utiliser la syntaxe suivante :</p>\n        <pre><code>let monTableau = [];</code></pre>\n        <p>Vous pouvez également initialiser le tableau avec des valeurs :</p>\n        <pre><code>let monTableau = [1, 2, 3, 4, 5];</code></pre>\n        <p>Pour accéder à un élément du tableau, utilisez l'index de l'élément (les indices commencent à 0) :</p>\n        <pre><code>let premierElement = monTableau[0]; // 1</code></pre>\n        <p>Pour modifier un élément du tableau, utilisez l'index de l'élément :</p>\n        <pre><code>monTableau[0] = 10; // [10, 2, 3, 4, 5]</code></pre>\n        <p>Pour ajouter un élément à la fin du tableau, utilisez la méthode <code>push</code> :</p>\n        <pre><code>monTableau.push(6); // [10, 2, 3, 4, 5, 6]</code></pre>\n        <p>Pour supprimer le dernier élément du tableau, utilisez la méthode <code>pop</code> :</p>\n        <pre><code>monTableau.pop(); // [10, 2, 3, 4, 5]</code></pre>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code montrant comment créer, affecter et lire un tableau en JavaScript :</p>\n        <pre><code>\n// Création d'un tableau\nlet fruits = [\"Pomme\", \"Banane\", \"Orange\"];\n\n// Lecture d'un élément du tableau\nconsole.log(fruits[1]); // \"Banane\"\n\n// Modification d'un élément du tableau\nfruits[1] = \"Mangue\";\nconsole.log(fruits); // [\"Pomme\", \"Mangue\", \"Orange\"]\n\n// Ajout d'un élément à la fin du tableau\nfruits.push(\"Fraise\");\nconsole.log(fruits); // [\"Pomme\", \"Mangue\", \"Orange\", \"Fraise\"]\n\n// Suppression du dernier élément du tableau\nfruits.pop();\nconsole.log(fruits); // [\"Pomme\", \"Mangue\", \"Orange\"]\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array\">MDN Web Docs - Array</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_arrays.asp\">W3Schools - JavaScript Arrays</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Initial"
   },
   {
     "fichier": "fiche-009",
-    "competence": "Compétence : Reconnaître, créer, affecter et lire un objet",
+    "competence": "Compétence JavaScript : Reconnaître, créer, affecter et lire un objet",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre comment reconnaître, créer, affecter et lire un objet en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, un objet est une collection de propriétés, et une propriété est une association entre un nom (ou clé) et une valeur. La valeur d'une propriété peut être une fonction, ce qui fait des objets des structures pour la programmation orientée objet.</p>\n        <p>Les objets peuvent être créés de plusieurs manières :</p>\n        <ul>\n            <li>En utilisant la notation littérale d'objet.</li>\n            <li>En utilisant le constructeur Object.</li>\n        </ul>\n        <p>Exemple de création d'un objet en utilisant la notation littérale :</p>\n        <pre><code>let personne = {\n    prenom: \"John\",\n    nom: \"Doe\",\n    age: 30,\n    saluer: function() {\n        console.log(\"Bonjour, je m'appelle \" + this.prenom + \" \" + this.nom);\n    }\n};</code></pre>\n        <p>Exemple de création d'un objet en utilisant le constructeur Object :</p>\n        <pre><code>let personne = new Object();\npersonne.prenom = \"John\";\npersonne.nom = \"Doe\";\npersonne.age = 30;\npersonne.saluer = function() {\n    console.log(\"Bonjour, je m'appelle \" + this.prenom + \" \" + this.nom);\n};</code></pre>\n        <p>Pour accéder aux propriétés d'un objet, vous pouvez utiliser la notation par point ou la notation par crochets :</p>\n        <pre><code>console.log(personne.prenom); // Accès par notation par point\nconsole.log(personne[\"nom\"]); // Accès par notation par crochets</code></pre>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple complet montrant comment créer, affecter et lire un objet en JavaScript :</p>\n        <pre><code>let voiture = {\n    marque: \"Toyota\",\n    modele: \"Corolla\",\n    annee: 2020,\n    afficherDetails: function() {\n        console.log(\"Marque : \" + this.marque + \", Modèle : \" + this.modele + \", Année : \" + this.annee);\n    }\n};\n\n// Accéder aux propriétés de l'objet\nconsole.log(voiture.marque); // Toyota\nconsole.log(voiture[\"modele\"]); // Corolla\n\n// Appeler la méthode de l'objet\nvoiture.afficherDetails(); // Marque : Toyota, Modèle : Corolla, Année : 2020</code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Working_with_Objects\">MDN Web Docs - Travailler avec des objets</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_objects.asp\">W3Schools - JavaScript Objects</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Initial"
   },
   {
     "fichier": "fiche-010",
-    "competence": "Compétence : Afficher une variable dans la console (console.log, console.table)",
+    "competence": "Compétence JavaScript : Afficher une variable dans la console (console.log, console.table)",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre comment afficher des variables dans la console en utilisant les méthodes <code>console.log</code> et <code>console.table</code> en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, la console est un outil puissant pour le débogage et l'affichage d'informations. Les deux méthodes les plus couramment utilisées pour afficher des variables dans la console sont <code>console.log</code> et <code>console.table</code>.</p>\n        <ul>\n            <li><code>console.log</code> : Cette méthode affiche des messages dans la console. Elle peut afficher des chaînes de caractères, des nombres, des objets, des tableaux, etc.</li>\n            <li><code>console.table</code> : Cette méthode affiche des données tabulaires sous forme de tableau. Elle est particulièrement utile pour afficher des tableaux d'objets.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Exemple d'utilisation de console.log\nlet name = \"Raymond\";\nlet age = 30;\nconsole.log(\"Nom :\", name);\nconsole.log(\"Âge :\", age);\n\n// Exemple d'utilisation de console.table\nlet users = [\n    { name: \"Raymond\", age: 30 },\n    { name: \"Nicolas\", age: 25 }\n];\nconsole.table(users);\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Console/log\">MDN Web Docs - console.log</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Console/table\">MDN Web Docs - console.table</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Initial"
   },
   {
     "fichier": "fiche-011",
-    "competence": "Compétence : Rechercher un élément dans le DOM (getElementById, querySelector)",
+    "competence": "Compétence JavaScript : Rechercher un élément dans le DOM (getElementById, querySelector)",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre comment rechercher et manipuler des éléments dans le DOM en utilisant les méthodes <code>getElementById</code> et <code>querySelector</code>.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Le DOM (Document Object Model) est une interface de programmation pour les documents HTML et XML. Il représente la structure du document sous forme d'arbre, où chaque nœud est un objet représentant une partie du document.</p>\n        <p>Pour rechercher des éléments dans le DOM, JavaScript fournit plusieurs méthodes, dont <code>getElementById</code> et <code>querySelector</code> :</p>\n        <ul>\n            <li><code>getElementById</code> : Cette méthode renvoie l'élément qui a l'ID spécifié. Si aucun élément avec cet ID n'existe, elle renvoie <code>null</code>.</li>\n            <li><code>querySelector</code> : Cette méthode renvoie le premier élément qui correspond au sélecteur CSS spécifié. Si aucun élément ne correspond, elle renvoie <code>null</code>.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui montre comment utiliser <code>getElementById</code> et <code>querySelector</code> :</p>\n        <pre><code>\n// HTML\n// &lt;div id=\"myDiv\"&gt;Hello World!&lt;/div&gt;\n// &lt;p class=\"myClass\"&gt;This is a paragraph.&lt;/p&gt;\n\n// JavaScript\n// Rechercher un élément par ID\nvar myDiv = document.getElementById(\"myDiv\");\nconsole.log(myDiv.textContent); // Affiche \"Hello World!\"\n\n// Rechercher un élément par sélecteur CSS\nvar myParagraph = document.querySelector(\".myClass\");\nconsole.log(myParagraph.textContent); // Affiche \"This is a paragraph.\"\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Document/getElementById\">MDN Web Docs - getElementById</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector\">MDN Web Docs - querySelector</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Initial"
   },
   {
     "fichier": "fiche-012",
-    "competence": "Compétence : Utiliser des opérateurs arithmétiques booléens",
+    "competence": "Compétence JavaScript : Utiliser des opérateurs arithmétiques booléens",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre et utiliser les opérateurs arithmétiques booléens en JavaScript pour effectuer des comparaisons logiques et des opérations conditionnelles.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les opérateurs arithmétiques booléens en JavaScript permettent de réaliser des opérations logiques sur des valeurs booléennes (true ou false). Ils sont essentiels pour les conditions, les boucles et d'autres structures de contrôle. Voici les principaux opérateurs :</p>\n        <ul>\n            <li><strong>ET logique (&amp;&amp;)</strong> : Retourne true si les deux opérandes sont vrais.</li>\n            <li><strong>OU logique (||)</strong> : Retourne true si au moins un des opérandes est vrai.</li>\n            <li><strong>NON logique (!)</strong> : Inverse la valeur booléenne de l'opérande.</li>\n        </ul>\n        <p>Ces opérateurs sont utilisés pour combiner des expressions booléennes et contrôler le flux d'exécution du code.</p>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Exemple d'utilisation des opérateurs booléens\nlet a = true;\nlet b = false;\n\nconsole.log(a &amp;&amp; b); // false\nconsole.log(a || b); // true\nconsole.log(!a);     // false\n\n// Utilisation dans une condition\nif (a &amp;&amp; !b) {\n    console.log(\"a est vrai et b est faux\");\n}\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Logical_Operators\">MDN Web Docs : Opérateurs logiques</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_comparisons.asp\">W3Schools : JavaScript Comparisons</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Basique"
   },
   {
     "fichier": "fiche-013",
-    "competence": "Compétence: Créer un workflow conditionnel (if, else, switch)",
+    "competence": "Compétence JavaScript: Créer un workflow conditionnel (if, else, switch)",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre et savoir utiliser les structures conditionnelles en JavaScript pour créer des workflows logiques.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les structures conditionnelles permettent d'exécuter différentes parties de code en fonction de certaines conditions. En JavaScript, les principales structures conditionnelles sont <code>if</code>, <code>else</code> et <code>switch</code>.</p>\n        <h3>if</h3>\n        <p>La structure <code>if</code> permet d'exécuter un bloc de code si une condition est vraie.</p>\n        <pre><code>if (condition) {\n    // code à exécuter si la condition est vraie\n}</code></pre>\n        <h3>else</h3>\n        <p>La structure <code>else</code> permet d'exécuter un bloc de code si la condition dans le <code>if</code> est fausse.</p>\n        <pre><code>if (condition) {\n    // code à exécuter si la condition est vraie\n} else {\n    // code à exécuter si la condition est fausse\n}</code></pre>\n        <h3>else if</h3>\n        <p>La structure <code>else if</code> permet de tester plusieurs conditions.</p>\n        <pre><code>if (condition1) {\n    // code à exécuter si condition1 est vraie\n} else if (condition2) {\n    // code à exécuter si condition2 est vraie\n} else {\n    // code à exécuter si aucune des conditions n'est vraie\n}</code></pre>\n        <h3>switch</h3>\n        <p>La structure <code>switch</code> permet de tester une variable contre plusieurs valeurs possibles et d'exécuter des blocs de code différents en fonction de la valeur.</p>\n        <pre><code>switch (expression) {\n    case valeur1:\n        // code à exécuter si expression vaut valeur1\n        break;\n    case valeur2:\n        // code à exécuter si expression vaut valeur2\n        break;\n    default:\n        // code à exécuter si expression ne vaut aucune des valeurs précédentes\n}</code></pre>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de workflow conditionnel utilisant <code>if</code>, <code>else if</code> et <code>else</code> :</p>\n        <pre><code>let age = 25;\n\nif (age &lt; 18) {\n    console.log(\"Vous êtes mineur.\");\n} else if (age &gt;= 18 &amp;&amp; age &lt; 65) {\n    console.log(\"Vous êtes adulte.\");\n} else {\n    console.log(\"Vous êtes senior.\");\n}</code></pre>\n        <p>Et un exemple utilisant <code>switch</code> :</p>\n        <pre><code>let fruit = \"pomme\";\n\nswitch (fruit) {\n    case \"pomme\":\n        console.log(\"C'est une pomme.\");\n        break;\n    case \"banane\":\n        console.log(\"C'est une banane.\");\n        break;\n    default:\n        console.log(\"Fruit inconnu.\");\n}</code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/if...else\">MDN Web Docs - if...else</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/switch\">MDN Web Docs - switch</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Basique"
   },
   {
     "fichier": "fiche-014",
-    "competence": "Compétence : Créer des boucles simples (for, while)",
+    "competence": "Compétence JavaScript : Créer des boucles simples (for, while)",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre et utiliser les boucles simples en JavaScript pour répéter des actions.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les boucles sont des structures de contrôle qui permettent de répéter une série d'instructions tant qu'une condition est vérifiée.</p>\n        <p>Il existe principalement deux types de boucles simples en JavaScript :</p>\n        <ul>\n            <li><strong>La boucle for :</strong> Utilisée pour répéter un bloc d'instructions un nombre déterminé de fois.</li>\n            <li><strong>La boucle while :</strong> Utilisée pour répéter un bloc d'instructions tant qu'une condition est vraie.</li>\n        </ul>\n        <h3>Boucle for</h3>\n        <p>La syntaxe de la boucle <code>for</code> est la suivante :</p>\n        <pre><code>for (initialisation; condition; incrémentation) {\n    // instructions à répéter\n}</code></pre>\n        <p>Exemple :</p>\n        <pre><code>for (let i = 0; i &lt; 5; i++) {\n    console.log(i);\n}</code></pre>\n        <h3>Boucle while</h3>\n        <p>La syntaxe de la boucle <code>while</code> est la suivante :</p>\n        <pre><code>while (condition) {\n    // instructions à répéter\n}</code></pre>\n        <p>Exemple :</p>\n        <pre><code>let i = 0;\nwhile (i &lt; 5) {\n    console.log(i);\n    i++;\n}</code></pre>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple combinant les deux types de boucles :</p>\n        <pre><code>// Boucle for\nfor (let i = 0; i &lt; 3; i++) {\n    console.log(\"Boucle for : \" + i);\n}\n\n// Boucle while\nlet j = 0;\nwhile (j &lt; 3) {\n    console.log(\"Boucle while : \" + j);\n    j++;\n}</code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Boucles_et_itérations\">MDN Web Docs - Boucles et itérations</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_loop_for.asp\">W3Schools - JavaScript For Loop</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_loop_while.asp\">W3Schools - JavaScript While Loop</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Basique"
   },
   {
     "fichier": "fiche-015",
-    "competence": "Compétence : Créer sa propre fonction",
+    "competence": "Compétence JavaScript : Créer sa propre fonction",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre comment créer et utiliser des fonctions en JavaScript pour structurer et réutiliser le code.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, une fonction est un bloc de code conçu pour effectuer une tâche particulière. Une fonction est définie avec le mot-clé <code>function</code>, suivi par un nom, des parenthèses <code>()</code> et des accolades <code>{}</code>.</p>\n        <p>Voici la syntaxe de base pour définir une fonction :</p>\n        <pre><code>function nomDeLaFonction(param1, param2) {\n    // code à exécuter\n}</code></pre>\n        <p>Les fonctions peuvent prendre des paramètres et retourner une valeur avec le mot-clé <code>return</code>. Les paramètres sont des variables qui agissent comme des espaces réservés pour les valeurs qui sont passées à la fonction.</p>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de fonction qui additionne deux nombres et retourne le résultat :</p>\n        <pre><code>function additionner(a, b) {\n    return a + b;\n}\n\n// Utilisation de la fonction\nlet resultat = additionner(5, 3);\nconsole.log(resultat); // Affiche 8</code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Fonctions\">MDN Web Docs - Fonctions en JavaScript</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_functions.asp\">W3Schools - JavaScript Functions</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Basique"
   },
   {
     "fichier": "fiche-016",
-    "competence": "Compétence: Utiliser des fonctions fléchées (=&gt;)",
+    "competence": "Compétence JavaScript: Utiliser des fonctions fléchées (=&gt;)",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre et utiliser les fonctions fléchées en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les fonctions fléchées, introduites dans ECMAScript 6, offrent une syntaxe plus concise pour écrire des fonctions en JavaScript. Elles sont particulièrement utiles pour les fonctions anonymes et les callbacks.</p>\n        <p>Syntaxe de base :</p>\n        <pre><code>const maFonction = (param1, param2) =&gt; {\n    // Corps de la fonction\n    return param1 + param2;\n};</code></pre>\n        <p>Les fonctions fléchées ont des caractéristiques spécifiques :</p>\n        <ul>\n            <li>Pas de liaison propre de <code>this</code>, elles héritent du <code>this</code> du contexte englobant.</li>\n            <li>Syntaxe plus courte et plus lisible.</li>\n            <li>Pas de <code>prototype</code>.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>// Fonction classique\nfunction addition(a, b) {\n    return a + b;\n}\n\n// Fonction fléchée équivalente\nconst addition = (a, b) =&gt; a + b;\n\nconsole.log(addition(5, 3)); // Affiche 8</code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions\">MDN Web Docs - Fonctions fléchées</a></li>\n            <li><a href=\"https://javascript.info/arrow-functions-basics\">JavaScript.info - Arrow Functions</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Basique"
   },
   {
     "fichier": "fiche-017",
-    "competence": "Compétence : Appliquer des opérations simples aux chaînes de caractères",
+    "competence": "Compétence JavaScript : Appliquer des opérations simples aux chaînes de caractères",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre et appliquer des opérations simples aux chaînes de caractères en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les chaînes de caractères (ou strings) sont des séquences de caractères utilisées pour représenter du texte en JavaScript. Voici quelques opérations simples que l'on peut effectuer sur les chaînes de caractères :</p>\n        <ul>\n            <li><strong>Concaténation :</strong> On peut joindre deux chaînes de caractères en utilisant l'opérateur <code>+</code> ou la méthode <code>concat()</code>.</li>\n            <li><strong>Longueur :</strong> La propriété <code>length</code> permet de connaître la longueur d'une chaîne.</li>\n            <li><strong>Accès aux caractères :</strong> On peut accéder à un caractère d'une chaîne en utilisant la notation par crochets <code>[]</code> ou la méthode <code>charAt()</code>.</li>\n            <li><strong>Extraction de sous-chaînes :</strong> Les méthodes <code>substring()</code>, <code>substr()</code> et <code>slice()</code> permettent d'extraire des parties de chaînes.</li>\n            <li><strong>Recherche :</strong> Les méthodes <code>indexOf()</code> et <code>includes()</code> permettent de rechercher des sous-chaînes.</li>\n            <li><strong>Remplacement :</strong> La méthode <code>replace()</code> permet de remplacer des parties de chaînes.</li>\n            <li><strong>Conversion de casse :</strong> Les méthodes <code>toUpperCase()</code> et <code>toLowerCase()</code> permettent de convertir les chaînes en majuscules ou minuscules.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Exemple de quelques opérations sur les chaînes de caractères\nlet str = \"Bonjour, monde!\";\nlet str2 = \" Comment ça va?\";\n\n// Concaténation\nlet concatenated = str + str2;\nconsole.log(concatenated); // \"Bonjour, monde! Comment ça va?\"\n\n// Longueur\nconsole.log(str.length); // 14\n\n// Accès aux caractères\nconsole.log(str[0]); // \"B\"\nconsole.log(str.charAt(1)); // \"o\"\n\n// Extraction de sous-chaînes\nconsole.log(str.substring(0, 7)); // \"Bonjour\"\nconsole.log(str.slice(-6)); // \"monde!\"\n\n// Recherche\nconsole.log(str.indexOf(\"monde\")); // 8\nconsole.log(str.includes(\"Bonjour\")); // true\n\n// Remplacement\nlet newStr = str.replace(\"monde\", \"tout le monde\");\nconsole.log(newStr); // \"Bonjour, tout le monde!\"\n\n// Conversion de casse\nconsole.log(str.toUpperCase()); // \"BONJOUR, MONDE!\"\nconsole.log(str.toLowerCase()); // \"bonjour, monde!\"\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String\">MDN Web Docs - String</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_string_methods.asp\">W3Schools - JavaScript String Methods</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Basique"
   },
   {
     "fichier": "fiche-018",
-    "competence": "Compétence : Appliquer des opérations simples aux tableaux",
+    "competence": "Compétence JavaScript : Appliquer des opérations simples aux tableaux",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre et appliquer des opérations simples aux tableaux en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les tableaux en JavaScript sont des objets utilisés pour stocker des collections de données. Voici quelques opérations simples que l'on peut effectuer sur les tableaux :</p>\n        <ul>\n            <li><strong>Création :</strong> Utilisez la syntaxe <code>[]</code> pour créer un tableau.</li>\n            <li><strong>Accès :</strong> Utilisez l'index pour accéder à un élément du tableau, par exemple <code>array[0]</code>.</li>\n            <li><strong>Ajout :</strong> Utilisez <code>array.push(element)</code> pour ajouter un élément à la fin du tableau.</li>\n            <li><strong>Suppression :</strong> Utilisez <code>array.pop()</code> pour supprimer le dernier élément du tableau.</li>\n            <li><strong>Longueur :</strong> Utilisez <code>array.length</code> pour obtenir la longueur du tableau.</li>\n            <li><strong>Itération :</strong> Utilisez une boucle <code>for</code> ou <code>forEach</code> pour parcourir les éléments du tableau.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Création d'un tableau\nlet fruits = [\"pomme\", \"banane\", \"orange\"];\n\n// Accès au premier élément\nconsole.log(fruits[0]); // Affiche \"pomme\"\n\n// Ajout d'un élément\nfruits.push(\"mangue\");\nconsole.log(fruits); // Affiche [\"pomme\", \"banane\", \"orange\", \"mangue\"]\n\n// Suppression du dernier élément\nfruits.pop();\nconsole.log(fruits); // Affiche [\"pomme\", \"banane\", \"orange\"]\n\n// Longueur du tableau\nconsole.log(fruits.length); // Affiche 3\n\n// Itération sur les éléments du tableau\nfruits.forEach(function(fruit) {\n    console.log(fruit);\n});\n// Affiche \"pomme\", \"banane\", \"orange\"\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array\">MDN Web Docs - Array</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_arrays.asp\">W3Schools - JavaScript Arrays</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Basique"
   },
   {
     "fichier": "fiche-019",
-    "competence": "Compétence : Réagir à des événements DOM de base (click, input)",
+    "competence": "Compétence JavaScript : Réagir à des événements DOM de base (click, input)",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre comment réagir à des événements DOM de base tels que les événements de clic et d'entrée utilisateur en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les événements DOM (Document Object Model) permettent d'interagir avec les éléments HTML en réponse aux actions de l'utilisateur. Les événements les plus courants incluent les clics de souris et les entrées de formulaire.</p>\n        <p>Pour écouter un événement, on utilise la méthode <code>addEventListener</code> qui attache une fonction de rappel (callback) à un élément HTML. Cette fonction sera exécutée lorsque l'événement spécifié se produit.</p>\n        <p>Exemples d'événements courants :</p>\n        <ul>\n            <li><code>click</code> : se produit lorsqu'un élément est cliqué.</li>\n            <li><code>input</code> : se produit lorsqu'une entrée utilisateur est détectée dans un champ de formulaire.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui montre comment réagir à un événement de clic et à un événement d'entrée utilisateur :</p>\n        <pre>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"fr\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Exemple d'événements DOM&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n\n    &lt;button id=\"myButton\"&gt;Cliquez-moi&lt;/button&gt;\n    &lt;input type=\"text\" id=\"myInput\" placeholder=\"Tapez quelque chose...\"&gt;\n\n    &lt;script&gt;\n        // Réagir à l'événement de clic\n        document.getElementById('myButton').addEventListener('click', function() {\n            alert('Bouton cliqué !');\n        });\n\n        // Réagir à l'événement d'entrée utilisateur\n        document.getElementById('myInput').addEventListener('input', function(event) {\n            console.log('Vous avez tapé : ' + event.target.value);\n        });\n    &lt;/script&gt;\n\n&lt;/body&gt;\n&lt;/html&gt;\n        </pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener\">MDN Web Docs - addEventListener</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/Events\">MDN Web Docs - Événements</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Basique"
   },
   {
     "fichier": "fiche-020",
-    "competence": "Compétence : Reconnaître et écrire des documents JSON",
+    "competence": "Compétence JavaScript : Reconnaître et écrire des documents JSON",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre comment reconnaître et écrire des documents JSON en JavaScript.</p>",
-    "theorie": "<h3>Théorie</h3>\n        <p>JSON (JavaScript Object Notation) est un format de données léger utilisé pour échanger des données. Il est facile à lire et à écrire pour les humains, et facile à analyser et à générer pour les machines. En JavaScript, les objets JSON sont utilisés pour représenter des structures de données complexes.</p>\n        <p>Un document JSON est constitué de paires clé-valeur. Les clés sont des chaînes de caractères (strings) et les valeurs peuvent être des chaînes de caractères, des nombres, des objets, des tableaux, des booléens ou null.</p>\n        <p>Voici un exemple de document JSON :</p>\n        <pre><code>{\n    \"nom\": \"John\",\n    \"âge\": 30,\n    \"ville\": \"New York\",\n    \"estEtudiant\": false,\n    \"compétences\": [\"JavaScript\", \"HTML\", \"CSS\"]\n}</code></pre>",
-    "exemple": "<h3>Exemple</h3>\n        <p>En JavaScript, vous pouvez convertir un objet JavaScript en chaîne JSON en utilisant <code>JSON.stringify()</code> et convertir une chaîne JSON en objet JavaScript en utilisant <code>JSON.parse()</code>.</p>\n        <pre><code>// Convertir un objet JavaScript en chaîne JSON\nconst objet = {\n    nom: \"John\",\n    âge: 30,\n    ville: \"New York\",\n    estEtudiant: false,\n    compétences: [\"JavaScript\", \"HTML\", \"CSS\"]\n};\nconst jsonString = JSON.stringify(objet);\nconsole.log(jsonString);\n\n// Convertir une chaîne JSON en objet JavaScript\nconst jsonString = '{\"nom\":\"John\",\"âge\":30,\"ville\":\"New York\",\"estEtudiant\":false,\"compétences\":[\"JavaScript\",\"HTML\",\"CSS\"]}';\nconst objet = JSON.parse(jsonString);\nconsole.log(objet);</code></pre>",
+    "theorie": "<h3>Théorie</h3>\n        <p>JSON (JavaScript Object Notation) est un format de données léger utilisé pour échanger des données. Il est facile à lire et à écrire pour les humains, et facile à analyser et à générer pour les machines. En JavaScript, les objets JSON sont utilisés pour représenter des structures de données complexes.</p>\n        <p>Un document JSON est constitué de paires clé-valeur. Les clés sont des chaînes de caractères (strings) et les valeurs peuvent être des chaînes de caractères, des nombres, des objets, des tableaux, des booléens ou null.</p>\n        <p>Voici un exemple de document JSON :</p>\n        <pre><code>{\n    \"nom\": \"John\",\n    \"âge\": 30,\n    \"ville\": \"New York\",\n    \"estEtudiant\": false,\n    \"Compétence JavaScripts\": [\"JavaScript\", \"HTML\", \"CSS\"]\n}</code></pre>",
+    "exemple": "<h3>Exemple</h3>\n        <p>En JavaScript, vous pouvez convertir un objet JavaScript en chaîne JSON en utilisant <code>JSON.stringify()</code> et convertir une chaîne JSON en objet JavaScript en utilisant <code>JSON.parse()</code>.</p>\n        <pre><code>// Convertir un objet JavaScript en chaîne JSON\nconst objet = {\n    nom: \"John\",\n    âge: 30,\n    ville: \"New York\",\n    estEtudiant: false,\n    Compétence JavaScripts: [\"JavaScript\", \"HTML\", \"CSS\"]\n};\nconst jsonString = JSON.stringify(objet);\nconsole.log(jsonString);\n\n// Convertir une chaîne JSON en objet JavaScript\nconst jsonString = '{\"nom\":\"John\",\"âge\":30,\"ville\":\"New York\",\"estEtudiant\":false,\"Compétence JavaScripts\":[\"JavaScript\",\"HTML\",\"CSS\"]}';\nconst objet = JSON.parse(jsonString);\nconsole.log(objet);</code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/JSON\">MDN Web Docs - JSON</a></li>\n            <li><a href=\"https://www.json.org/json-fr\">JSON.org</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Basique"
   },
   {
     "fichier": "fiche-021",
-    "competence": "Compétence: Utiliser console.table() pour afficher des tableaux/objets",
+    "competence": "Compétence JavaScript: Utiliser console.table() pour afficher des tableaux/objets",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à utiliser la méthode <code>console.table()</code> pour afficher des tableaux et des objets de manière tabulaire dans la console JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>La méthode <code>console.table()</code> est une fonctionnalité de la console JavaScript qui permet d'afficher des données tabulaires de manière lisible. Elle est particulièrement utile pour visualiser des tableaux et des objets complexes.</p>\n        <p>Voici quelques points clés :</p>\n        <ul>\n            <li><code>console.table()</code> accepte un tableau ou un objet en argument.</li>\n            <li>Les propriétés des objets ou les indices des tableaux sont affichés en colonnes.</li>\n            <li>Les valeurs des propriétés ou des éléments du tableau sont affichées en lignes.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple d'utilisation de <code>console.table()</code> :</p>\n        <pre><code>\n// Exemple avec un tableau d'objets\nconst utilisateurs = [\n    { nom: 'Alice', age: 25, ville: 'Paris' },\n    { nom: 'Bob', age: 30, ville: 'Lyon' },\n    { nom: 'Charlie', age: 35, ville: 'Marseille' }\n];\nconsole.table(utilisateurs);\n\n// Exemple avec un objet\nconst produit = {\n    id: 1,\n    nom: 'Ordinateur Portable',\n    prix: 899.99,\n    stock: 50\n};\nconsole.table(produit);\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/console/table\">Documentation MDN sur console.table()</a></li>\n            <li><a href=\"https://www.w3schools.com/jsref/met_console_table.asp\">Documentation W3Schools sur console.table()</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Basique"
   },
   {
     "fichier": "fiche-022",
-    "competence": "Compétence : Utiliser des opérateurs d’affectation sur les variables (+=, -=, etc.)",
+    "competence": "Compétence JavaScript : Utiliser des opérateurs d’affectation sur les variables (+=, -=, etc.)",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre et utiliser les opérateurs d’affectation sur les variables en JavaScript, tels que +=, -=, *=, /=, et %=.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les opérateurs d’affectation en JavaScript permettent de modifier la valeur d’une variable en effectuant une opération arithmétique sur cette variable et en réaffectant le résultat à la même variable. Voici les principaux opérateurs d’affectation :</p>\n        <ul>\n            <li><code>+=</code> : additionne une valeur à la variable et réaffecte le résultat à cette variable.</li>\n            <li><code>-=</code> : soustrait une valeur à la variable et réaffecte le résultat à cette variable.</li>\n            <li><code>*=</code> : multiplie la variable par une valeur et réaffecte le résultat à cette variable.</li>\n            <li><code>/=</code> : divise la variable par une valeur et réaffecte le résultat à cette variable.</li>\n            <li><code>%=</code> : calcule le reste de la division de la variable par une valeur et réaffecte le résultat à cette variable.</li>\n        </ul>\n        <p>Ces opérateurs sont très utiles pour simplifier et raccourcir le code, en évitant d’écrire des expressions plus longues.</p>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Déclaration et initialisation d'une variable\nlet compteur = 10;\n\n// Utilisation des opérateurs d’affectation\ncompteur += 5;  // compteur vaut maintenant 15\ncompteur -= 3;  // compteur vaut maintenant 12\ncompteur *= 2;  // compteur vaut maintenant 24\ncompteur /= 4;  // compteur vaut maintenant 6\ncompteur %= 4;  // compteur vaut maintenant 2\n\nconsole.log(compteur);  // Affiche 2\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_et_Op%C3%A9rateurs#op%C3%A9rateurs_daffectation\">MDN Web Docs - Opérateurs d’affectation</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_operators.asp\">W3Schools - JavaScript Operators</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Opérationnel"
   },
   {
     "fichier": "fiche-023",
-    "competence": "Compétence : Gérer des comparaisons de type égalité stricte (===)",
+    "competence": "Compétence JavaScript : Gérer des comparaisons de type égalité stricte (===)",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre et utiliser les comparaisons de type égalité stricte (===) en JavaScript pour éviter les erreurs liées aux conversions de type implicites.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, l'opérateur d'égalité stricte (===) compare deux valeurs en vérifiant à la fois leur type et leur valeur. Contrairement à l'opérateur d'égalité (==) qui effectue une conversion de type implicite, l'opérateur strict ne convertit pas les types, ce qui permet d'éviter des comportements inattendus.</p>\n        <p>Par exemple :</p>\n        <ul>\n            <li><code>3 === 3</code> retourne <code>true</code> car les deux valeurs sont des nombres égaux.</li>\n            <li><code>3 === '3'</code> retourne <code>false</code> car les types sont différents (nombre et chaîne de caractères).</li>\n            <li><code>null === undefined</code> retourne <code>false</code> car les types sont différents.</li>\n        </ul>\n        <p>Il est recommandé d'utiliser l'égalité stricte (===) pour toutes les comparaisons afin d'éviter les erreurs liées aux conversions de type implicites.</p>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Exemple de comparaison avec l'égalité stricte\nlet a = 5;\nlet b = '5';\n\nif (a === b) {\n    console.log('Les valeurs et les types sont égaux');\n} else {\n    console.log('Les valeurs ou les types sont différents');\n}\n\n// Affiche : Les valeurs ou les types sont différents\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Strict_equality\">MDN Web Docs - Strict equality (===)</a></li>\n            <li><a href=\"https://www.w3schools.com/js/js_comparisons.asp\">W3Schools - JavaScript Comparisons</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Opérationnel"
   },
   {
     "fichier": "fiche-024",
-    "competence": "Compétence : Configurer des décisions conditionnelles complexes dans un workflow",
+    "competence": "Compétence JavaScript : Configurer des décisions conditionnelles complexes dans un workflow",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à configurer des décisions conditionnelles complexes dans un workflow en utilisant JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les décisions conditionnelles complexes permettent de gérer des cas où plusieurs conditions doivent être vérifiées avant de prendre une décision. En JavaScript, cela peut être réalisé en combinant des structures conditionnelles telles que <code>if</code>, <code>else if</code>, <code>else</code> et <code>switch</code> avec des opérateurs logiques (<code>&amp;&amp;</code>, <code>||</code>).</p>\n        <p>Voici quelques concepts clés :</p>\n        <ul>\n            <li><strong>Opérateurs logiques :</strong> Utilisés pour combiner plusieurs conditions. <code>&amp;&amp;</code> (ET logique) et <code>||</code> (OU logique).</li>\n            <li><strong>Imbrication des conditions :</strong> Les conditions peuvent être imbriquées pour vérifier plusieurs niveaux de critères.</li>\n            <li><strong>Utilisation de <code>switch</code> :</strong> Utile pour gérer des décisions basées sur la valeur d'une variable unique.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Exemple de décision conditionnelle complexe\nlet age = 25;\nlet hasDrivingLicense = true;\nlet isEmployed = false;\n\nif (age &gt;= 18 &amp;&amp; hasDrivingLicense) {\n    if (isEmployed) {\n        console.log(\"Vous pouvez louer une voiture.\");\n    } else {\n        console.log(\"Vous devez avoir un emploi pour louer une voiture.\");\n    }\n} else {\n    console.log(\"Vous ne remplissez pas les critères pour louer une voiture.\");\n}\n\n// Utilisation de switch pour une décision complexe\nlet day = \"Lundi\";\n\nswitch (day) {\n    case \"Lundi\":\n    case \"Mardi\":\n    case \"Mercredi\":\n    case \"Jeudi\":\n    case \"Vendredi\":\n        console.log(\"C'est un jour de semaine.\");\n        break;\n    case \"Samedi\":\n    case \"Dimanche\":\n        console.log(\"C'est le week-end.\");\n        break;\n    default:\n        console.log(\"Jour inconnu.\");\n}\n        </code>\n        </pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/if...else\">MDN Web Docs - if...else</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/switch\">MDN Web Docs - switch</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Logical_Operators\">MDN Web Docs - Opérateurs Logiques</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Opérationnel"
   },
   {
     "fichier": "fiche-025",
-    "competence": "Compétence : Gérer les propriétés indéfinies",
+    "competence": "Compétence JavaScript : Gérer les propriétés indéfinies",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre comment gérer les propriétés indéfinies en JavaScript pour éviter les erreurs et améliorer la robustesse du code.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, une propriété indéfinie est une propriété qui n'existe pas sur un objet. Tenter d'accéder à une propriété indéfinie renvoie la valeur <code>undefined</code>. Il est important de gérer ces cas pour éviter les erreurs dans le code.</p>\n        <p>Voici quelques techniques pour gérer les propriétés indéfinies :</p>\n        <ul>\n            <li>Utiliser l'opérateur <code>in</code> pour vérifier si une propriété existe dans un objet.</li>\n            <li>Utiliser <code>typeof</code> pour vérifier si la valeur d'une propriété est <code>undefined</code>.</li>\n            <li>Utiliser des valeurs par défaut avec l'opérateur de coalescence nulle (<code>??</code>).</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <pre><code>\n// Exemple d'objet\nconst personne = {\n    nom: \"Alice\",\n    age: 30\n};\n\n// Vérifier si une propriété existe avec 'in'\nif ('adresse' in personne) {\n    console.log(personne.adresse);\n} else {\n    console.log(\"L'adresse n'existe pas.\");\n}\n\n// Vérifier si une propriété est undefined avec 'typeof'\nif (typeof personne.adresse !== 'undefined') {\n    console.log(personne.adresse);\n} else {\n    console.log(\"L'adresse est undefined.\");\n}\n\n// Utiliser des valeurs par défaut avec '??'\nconst adresse = personne.adresse ?? \"Adresse non spécifiée\";\nconsole.log(adresse);\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/in\">MDN Web Docs - Opérateur in</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/typeof\">MDN Web Docs - Opérateur typeof</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator\">MDN Web Docs - Opérateur de coalescence nulle</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Opérationnel"
   },
   {
     "fichier": "fiche-026",
-    "competence": "Compétence : Ajouter un élément au DOM",
+    "competence": "Compétence JavaScript : Ajouter un élément au DOM",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à ajouter dynamiquement des éléments au DOM en utilisant JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Le DOM (Document Object Model) est une interface de programmation pour les documents HTML et XML. Il représente la structure du document sous forme d'arbre, où chaque nœud est un objet représentant une partie du document.</p>\n        <p>Pour ajouter un élément au DOM, vous pouvez utiliser les méthodes suivantes :</p>\n        <ul>\n            <li><code>document.createElement(tagName)</code> : Crée un nouvel élément du type spécifié par <code>tagName</code>.</li>\n            <li><code>element.appendChild(newElement)</code> : Ajoute <code>newElement</code> comme dernier enfant de <code>element</code>.</li>\n            <li><code>element.insertBefore(newElement, referenceElement)</code> : Insère <code>newElement</code> avant <code>referenceElement</code>.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui ajoute un nouvel élément paragraphe au DOM :</p>\n        <pre><code>\n// Crée un nouvel élément paragraphe\nvar newParagraph = document.createElement(\"p\");\n\n// Ajoute du texte au paragraphe\nnewParagraph.textContent = \"Ceci est un nouveau paragraphe ajouté au DOM.\";\n\n// Ajoute le paragraphe au body du document\ndocument.body.appendChild(newParagraph);\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Document/createElement\">MDN Web Docs - Document.createElement</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Node/appendChild\">MDN Web Docs - Node.appendChild</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Node/insertBefore\">MDN Web Docs - Node.insertBefore</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Opérationnel"
   },
   {
     "fichier": "fiche-027",
-    "competence": "Compétence : Manipuler le DOM avec classList (ajouter/supprimer des classes)",
+    "competence": "Compétence JavaScript : Manipuler le DOM avec classList (ajouter/supprimer des classes)",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à manipuler les classes CSS des éléments du DOM en utilisant JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>La propriété <code>classList</code> permet de manipuler les classes CSS des éléments du DOM. Elle fournit plusieurs méthodes utiles :</p>\n        <ul>\n            <li><code>element.classList.add(className)</code> : Ajoute la classe spécifiée à l'élément.</li>\n            <li><code>element.classList.remove(className)</code> : Supprime la classe spécifiée de l'élément.</li>\n            <li><code>element.classList.toggle(className)</code> : Ajoute la classe si elle n'est pas présente, sinon la supprime.</li>\n            <li><code>element.classList.contains(className)</code> : Vérifie si l'élément possède la classe spécifiée.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui manipule les classes CSS d'un élément du DOM :</p>\n        <pre><code>\n// Sélectionne l'élément avec l'ID \"myElement\"\nvar myElement = document.getElementById(\"myElement\");\n\n// Ajoute la classe \"active\" à l'élément\nmyElement.classList.add(\"active\");\n\n// Supprime la classe \"hidden\" de l'élément\nmyElement.classList.remove(\"hidden\");\n\n// Bascule la classe \"highlight\" sur l'élément\nmyElement.classList.toggle(\"highlight\");\n\n// Vérifie si l'élément possède la classe \"active\"\nif (myElement.classList.contains(\"active\")) {\n    console.log(\"L'élément est actif.\");\n}\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Element/classList\">MDN Web Docs - Element.classList</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/DOMTokenList\">MDN Web Docs - DOMTokenList</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Opérationnel"
   },
   {
     "fichier": "fiche-028",
-    "competence": "Compétence : Sérialiser et désérialiser JSON (JSON.stringify, JSON.parse)",
+    "competence": "Compétence JavaScript : Sérialiser et désérialiser JSON (JSON.stringify, JSON.parse)",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à sérialiser et désérialiser des objets JSON en utilisant les méthodes <code>JSON.stringify</code> et <code>JSON.parse</code> en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>JSON (JavaScript Object Notation) est un format léger d'échange de données. Il est facile à lire et à écrire pour les humains, et facile à analyser et à générer pour les machines.</p>\n        <p>La méthode <code>JSON.stringify</code> convertit une valeur JavaScript en chaîne JSON. Par exemple :</p>\n        <pre><code>\nconst obj = {{ name: \"John\", age: 30, city: \"New York\" }};\nconst jsonString = JSON.stringify(obj);\nconsole.log(jsonString); // {\"name\":\"John\",\"age\":30,\"city\":\"New York\"}\n        </code></pre>\n        <p>La méthode <code>JSON.parse</code> analyse une chaîne JSON et construit la valeur JavaScript ou l'objet décrit par cette chaîne. Par exemple :</p>\n        <pre><code>\nconst jsonString = '{\"name\":\"John\",\"age\":30,\"city\":\"New York\"}';\nconst obj = JSON.parse(jsonString);\nconsole.log(obj.name); // John\n        </code></pre>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui sérialise et désérialise un objet JSON :</p>\n        <pre><code>\n// Sérialiser un objet JavaScript en chaîne JSON\nconst user = {{ name: \"Alice\", email: \"alice@example.com\", isAdmin: true }};\nconst userJson = JSON.stringify(user);\nconsole.log(userJson); // {\"name\":\"Alice\",\"email\":\"alice@example.com\",\"isAdmin\":true}\n\n// Désérialiser une chaîne JSON en objet JavaScript\nconst userStr = '{\"name\":\"Alice\",\"email\":\"alice@example.com\",\"isAdmin\":true}';\nconst userObj = JSON.parse(userStr);\nconsole.log(userObj.email); // alice@example.com\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify\">MDN Web Docs - JSON.stringify</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse\">MDN Web Docs - JSON.parse</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Opérationnel"
   },
   {
     "fichier": "fiche-029",
-    "competence": "Compétence : Utiliser try...catch pour la gestion d’erreurs",
+    "competence": "Compétence JavaScript : Utiliser try...catch pour la gestion d’erreurs",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à utiliser les blocs try...catch en JavaScript pour gérer les erreurs de manière efficace.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, les blocs <code>try...catch</code> permettent de gérer les erreurs qui peuvent survenir lors de l'exécution du code. Le bloc <code>try</code> contient le code qui peut potentiellement générer une erreur, tandis que le bloc <code>catch</code> contient le code à exécuter si une erreur se produit.</p>\n        <p>Voici la syntaxe de base :</p>\n        <pre><code>\ntry {\n    // Code pouvant générer une erreur\n} catch (error) {\n    // Code à exécuter en cas d'erreur\n    console.error(error);\n}\n        </code></pre>\n        <p>Le bloc <code>catch</code> reçoit un objet d'erreur en argument, qui contient des informations sur l'erreur survenue. Vous pouvez utiliser cet objet pour afficher des messages d'erreur ou effectuer d'autres actions de gestion des erreurs.</p>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui utilise un bloc <code>try...catch</code> pour gérer une erreur :</p>\n        <pre><code>\ntry {\n    // Tentative de conversion d'une chaîne en JSON\n    let data = JSON.parse('{\"name\": \"John\", \"age\": 30}');\n    console.log(data);\n} catch (error) {\n    // Gestion de l'erreur si la chaîne n'est pas un JSON valide\n    console.error(\"Une erreur s'est produite lors de la conversion du JSON :\", error);\n}\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/try...catch\">MDN Web Docs - try...catch</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Error\">MDN Web Docs - Error</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Opérationnel"
   },
   {
     "fichier": "fiche-030",
-    "competence": "Compétence : Introduction à localStorage pour stocker des données",
+    "competence": "Compétence JavaScript : Introduction à localStorage pour stocker des données",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à utiliser localStorage pour stocker et récupérer des données dans le navigateur.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Le localStorage est une fonctionnalité du Web Storage qui permet de stocker des données de manière persistante dans le navigateur. Contrairement aux cookies, les données stockées dans le localStorage ne sont pas envoyées au serveur à chaque requête HTTP.</p>\n        <p>Les principales méthodes de l'API localStorage sont :</p>\n        <ul>\n            <li><code>localStorage.setItem(key, value)</code> : Stocke une paire clé-valeur.</li>\n            <li><code>localStorage.getItem(key)</code> : Récupère la valeur associée à la clé spécifiée.</li>\n            <li><code>localStorage.removeItem(key)</code> : Supprime l'élément associé à la clé spécifiée.</li>\n            <li><code>localStorage.clear()</code> : Supprime tous les éléments stockés.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui utilise localStorage pour stocker et récupérer une valeur :</p>\n        <pre><code>\n// Stocke une valeur dans le localStorage\nlocalStorage.setItem(\"username\", \"Raymond\");\n\n// Récupère la valeur stockée\nvar username = localStorage.getItem(\"username\");\nconsole.log(username); // Affiche \"Raymond\"\n\n// Supprime la valeur stockée\nlocalStorage.removeItem(\"username\");\n\n// Vérifie si la valeur a été supprimée\nconsole.log(localStorage.getItem(\"username\")); // Affiche null\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage\">MDN Web Docs - localStorage</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Storage/setItem\">MDN Web Docs - Storage.setItem</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Storage/getItem\">MDN Web Docs - Storage.getItem</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Opérationnel"
   },
   {
     "fichier": "fiche-031",
-    "competence": "Compétence : Créer des boucles avancées (for...in, for...of)",
+    "competence": "Compétence JavaScript : Créer des boucles avancées (for...in, for...of)",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à créer et utiliser des boucles avancées en JavaScript, notamment les boucles <code>for...in</code> et <code>for...of</code>.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les boucles <code>for...in</code> et <code>for...of</code> sont des structures de contrôle en JavaScript qui permettent de parcourir des collections d'éléments.</p>\n        <p><strong>La boucle <code>for...in</code></strong> permet de parcourir les propriétés énumérables d'un objet. Elle est principalement utilisée pour itérer sur les clés d'un objet.</p>\n        <p><strong>La boucle <code>for...of</code></strong> permet de parcourir les valeurs d'un objet itérable (comme un tableau, une chaîne de caractères, etc.). Elle est principalement utilisée pour itérer sur les valeurs des éléments d'un tableau.</p>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code utilisant les boucles <code>for...in</code> et <code>for...of</code> :</p>\n        <pre><code>\n// Exemple de boucle for...in\nconst objet = {{ a: 1, b: 2, c: 3 }};\nfor (const clé in objet) {{\n    console.log(`Clé : ${clé}, Valeur : ${objet[clé]}`);\n}}\n\n// Exemple de boucle for...of\nconst tableau = [1, 2, 3, 4, 5];\nfor (const valeur of tableau) {{\n    console.log(`Valeur : ${valeur}`);\n}}\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/for...in\">MDN Web Docs - for...in</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/for...of\">MDN Web Docs - for...of</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Avancé"
   },
   {
     "fichier": "fiche-032",
-    "competence": "Compétence : Utiliser des variables spéciales (this, arguments)",
+    "competence": "Compétence JavaScript : Utiliser des variables spéciales (this, arguments)",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à utiliser les variables spéciales <code>this</code> et <code>arguments</code> en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, <code>this</code> est une variable spéciale qui fait référence à l'objet courant dans lequel le code est exécuté. Sa valeur dépend du contexte d'exécution.</p>\n        <p>La variable <code>arguments</code> est un objet array-like accessible dans les fonctions, qui contient les arguments passés à la fonction.</p>\n        <p>Voici quelques points importants à noter :</p>\n        <ul>\n            <li><code>this</code> dans une méthode d'objet fait référence à l'objet.</li>\n            <li><code>this</code> dans une fonction globale fait référence à l'objet global (window en navigateur).</li>\n            <li><code>this</code> dans une fonction fléchée fait référence au contexte lexical.</li>\n            <li><code>arguments</code> contient tous les arguments passés à une fonction.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code utilisant <code>this</code> et <code>arguments</code> :</p>\n        <pre><code>\n// Exemple avec this\nvar obj = {\n    name: \"Raymond\",\n    greet: function() {\n        console.log(\"Bonjour, \" + this.name);\n    }\n};\nobj.greet(); // Bonjour, Raymond\n\n// Exemple avec arguments\nfunction sum() {\n    var total = 0;\n    for (var i = 0; i &lt; arguments.length; i++) {\n        total += arguments[i];\n    }\n    return total;\n}\nconsole.log(sum(1, 2, 3, 4)); // 10\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/this\">MDN Web Docs - this</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/arguments\">MDN Web Docs - arguments</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Avancé"
   },
   {
     "fichier": "fiche-033",
-    "competence": "Compétence : Créer et affecter des objets complexes",
+    "competence": "Compétence JavaScript : Créer et affecter des objets complexes",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à créer et affecter des objets complexes en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, un objet est une collection de propriétés, et une propriété est une association entre un nom (ou clé) et une valeur. La valeur d'une propriété peut être une fonction, ce qui fait des objets des structures idéales pour représenter des entités complexes.</p>\n        <p>Pour créer un objet complexe, vous pouvez imbriquer des objets et des tableaux à l'intérieur d'autres objets. Voici quelques méthodes pour créer et affecter des objets complexes :</p>\n        <ul>\n            <li>Utiliser la notation littérale pour créer des objets imbriqués.</li>\n            <li>Utiliser des constructeurs de fonctions pour créer des objets avec des méthodes.</li>\n            <li>Utiliser <code>Object.assign()</code> pour copier les valeurs de toutes les propriétés propres d'un ou plusieurs objets sources vers un objet cible.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui crée et affecte un objet complexe :</p>\n        <pre><code>\n// Création d'un objet complexe avec des objets imbriqués et des tableaux\nvar personne = {\n    nom: \"Dupont\",\n    age: 30,\n    adresse: {\n        rue: \"123 Rue Exemple\",\n        ville: \"Paris\",\n        pays: \"France\"\n    },\n    hobbies: [\"lecture\", \"voyage\", \"sport\"],\n    saluer: function() {\n        console.log(\"Bonjour, je m'appelle \" + this.nom);\n    }\n};\n\n// Accès aux propriétés de l'objet\nconsole.log(personne.nom); // Affiche \"Dupont\"\nconsole.log(personne.adresse.ville); // Affiche \"Paris\"\nconsole.log(personne.hobbies[1]); // Affiche \"voyage\"\n\n// Appel de la méthode de l'objet\npersonne.saluer(); // Affiche \"Bonjour, je m'appelle Dupont\"\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Working_with_Objects\">MDN Web Docs - Travailler avec des objets</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Object/assign\">MDN Web Docs - Object.assign</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Object_initializer\">MDN Web Docs - Initialiseur d'objet</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Avancé"
   },
   {
     "fichier": "fiche-034",
-    "competence": "Compétence : Manipuler les propriétés d’un objet",
+    "competence": "Compétence JavaScript : Manipuler les propriétés d’un objet",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à manipuler les propriétés d’un objet en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, les objets sont des collections de paires clé-valeur. Chaque clé est une chaîne de caractères (ou symbole) et chaque valeur peut être de n'importe quel type de données.</p>\n        <p>Pour manipuler les propriétés d'un objet, vous pouvez utiliser les méthodes suivantes :</p>\n        <ul>\n            <li><code>obj.property</code> ou <code>obj[\"property\"]</code> : Accéder à la valeur de la propriété <code>property</code> de l'objet <code>obj</code>.</li>\n            <li><code>obj.property = value</code> ou <code>obj[\"property\"] = value</code> : Définir la valeur de la propriété <code>property</code> de l'objet <code>obj</code> à <code>value</code>.</li>\n            <li><code>delete obj.property</code> ou <code>delete obj[\"property\"]</code> : Supprimer la propriété <code>property</code> de l'objet <code>obj</code>.</li>\n            <li><code>Object.keys(obj)</code> : Obtenir un tableau contenant toutes les clés de l'objet <code>obj</code>.</li>\n            <li><code>Object.values(obj)</code> : Obtenir un tableau contenant toutes les valeurs de l'objet <code>obj</code>.</li>\n            <li><code>Object.entries(obj)</code> : Obtenir un tableau contenant toutes les paires clé-valeur de l'objet <code>obj</code>.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui manipule les propriétés d'un objet :</p>\n        <pre><code>\n// Crée un nouvel objet\nvar person = {\n    name: \"John\",\n    age: 30,\n    city: \"New York\"\n};\n\n// Accéder à une propriété\nconsole.log(person.name); // \"John\"\n\n// Modifier une propriété\nperson.age = 35;\n\n// Ajouter une nouvelle propriété\nperson.country = \"USA\";\n\n// Supprimer une propriété\ndelete person.city;\n\n// Obtenir toutes les clés de l'objet\nconsole.log(Object.keys(person)); // [\"name\", \"age\", \"country\"]\n\n// Obtenir toutes les valeurs de l'objet\nconsole.log(Object.values(person)); // [\"John\", 35, \"USA\"]\n\n// Obtenir toutes les paires clé-valeur de l'objet\nconsole.log(Object.entries(person)); // [[\"name\", \"John\"], [\"age\", 35], [\"country\", \"USA\"]]\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Object\">MDN Web Docs - Object</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Working_with_Objects\">MDN Web Docs - Working with Objects</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Avancé"
   },
   {
     "fichier": "fiche-035",
-    "competence": "Compétence : Remplacer des éléments DOM",
+    "competence": "Compétence JavaScript : Remplacer des éléments DOM",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à remplacer dynamiquement des éléments dans le DOM en utilisant JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Le DOM (Document Object Model) est une interface de programmation pour les documents HTML et XML. Il représente la structure du document sous forme d'arbre, où chaque nœud est un objet représentant une partie du document.</p>\n        <p>Pour remplacer un élément dans le DOM, vous pouvez utiliser la méthode suivante :</p>\n        <ul>\n            <li><code>element.replaceChild(newChild, oldChild)</code> : Remplace <code>oldChild</code> par <code>newChild</code> dans l'élément <code>element</code>.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui remplace un élément paragraphe dans le DOM :</p>\n        <pre><code>\n// Sélectionne l'élément à remplacer\nvar oldParagraph = document.getElementById(\"old-paragraph\");\n\n// Crée un nouvel élément paragraphe\nvar newParagraph = document.createElement(\"p\");\n\n// Ajoute du texte au nouveau paragraphe\nnewParagraph.textContent = \"Ceci est un nouveau paragraphe qui remplace l'ancien.\";\n\n// Remplace l'ancien paragraphe par le nouveau\ndocument.body.replaceChild(newParagraph, oldParagraph);\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Node/replaceChild\">MDN Web Docs - Node.replaceChild</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Avancé"
   },
   {
     "fichier": "fiche-036",
-    "competence": "Compétence : Fonctions anonymes et callbacks",
+    "competence": "Compétence JavaScript : Fonctions anonymes et callbacks",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre et utiliser les fonctions anonymes et les callbacks en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les fonctions anonymes sont des fonctions qui n'ont pas de nom. Elles sont souvent utilisées comme arguments pour d'autres fonctions ou comme fonctions de rappel (callbacks).</p>\n        <p>Un callback est une fonction passée dans une autre fonction en tant qu'argument, qui est ensuite invoquée à l'intérieur de la fonction externe pour accomplir une sorte de routine ou d'action.</p>\n        <p>Voici un exemple de fonction anonyme :</p>\n        <pre><code>\nconst add = function(a, b) {\n    return a + b;\n};\nconsole.log(add(2, 3)); // Affiche 5\n        </code></pre>\n        <p>Et voici un exemple de callback :</p>\n        <pre><code>\nfunction greeting(name) {\n    console.log('Bonjour ' + name);\n}\n\nfunction processUserInput(callback) {\n    const name = prompt('Veuillez entrer votre nom.');\n    callback(name);\n}\n\nprocessUserInput(greeting);\n        </code></pre>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code utilisant une fonction anonyme comme callback :</p>\n        <pre><code>\nsetTimeout(function() {\n    console.log('Ce message est affiché après 2 secondes');\n}, 2000);\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Anonymous_functions\">MDN Web Docs - Fonctions anonymes</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Glossary/Callback_function\">MDN Web Docs - Callback function</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout\">MDN Web Docs - setTimeout</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Avancé"
   },
   {
     "fichier": "fiche-037",
-    "competence": "Compétence : Manipulation avancée des tableaux (map, filter, reduce)",
+    "competence": "Compétence JavaScript : Manipulation avancée des tableaux (map, filter, reduce)",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à utiliser les méthodes avancées de manipulation des tableaux en JavaScript, telles que <code>map</code>, <code>filter</code> et <code>reduce</code>.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les méthodes <code>map</code>, <code>filter</code> et <code>reduce</code> sont des outils puissants pour manipuler les tableaux en JavaScript.</p>\n        <ul>\n            <li><code>map</code> : Cette méthode crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant.</li>\n            <li><code>filter</code> : Cette méthode crée un nouveau tableau avec tous les éléments qui passent le test implémenté par la fonction fournie.</li>\n            <li><code>reduce</code> : Cette méthode applique une fonction à un accumulateur et à chaque valeur du tableau (de gauche à droite) pour le réduire à une seule valeur.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code utilisant les méthodes <code>map</code>, <code>filter</code> et <code>reduce</code> :</p>\n        <pre><code>\n// Exemple de tableau\nconst numbers = [1, 2, 3, 4, 5];\n\n// Utilisation de la méthode map pour doubler chaque élément\nconst doubled = numbers.map(num =&gt; num * 2);\nconsole.log(doubled); // [2, 4, 6, 8, 10]\n\n// Utilisation de la méthode filter pour obtenir les éléments pairs\nconst evens = numbers.filter(num =&gt; num % 2 === 0);\nconsole.log(evens); // [2, 4]\n\n// Utilisation de la méthode reduce pour obtenir la somme des éléments\nconst sum = numbers.reduce((acc, num) =&gt; acc + num, 0);\nconsole.log(sum); // 15\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map\">MDN Web Docs - Array.prototype.map</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/filter\">MDN Web Docs - Array.prototype.filter</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/reduce\">MDN Web Docs - Array.prototype.reduce</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Avancé"
   },
   {
     "fichier": "fiche-038",
-    "competence": "Compétence : Utilisation de setTimeout et setInterval",
+    "competence": "Compétence JavaScript : Utilisation de setTimeout et setInterval",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à utiliser les fonctions <code>setTimeout</code> et <code>setInterval</code> pour gérer les délais et les intervalles en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les fonctions <code>setTimeout</code> et <code>setInterval</code> sont utilisées pour exécuter du code après un certain délai ou à intervalles réguliers.</p>\n        <p><code>setTimeout</code> permet d'exécuter une fonction une seule fois après un délai spécifié (en millisecondes).</p>\n        <p><code>setInterval</code> permet d'exécuter une fonction à intervalles réguliers spécifiés (en millisecondes).</p>\n        <p>Syntaxe :</p>\n        <ul>\n            <li><code>setTimeout(function, delay)</code></li>\n            <li><code>setInterval(function, interval)</code></li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code utilisant <code>setTimeout</code> et <code>setInterval</code> :</p>\n        <pre><code>\n// Exemple de setTimeout\nsetTimeout(function() {\n    console.log(\"Ce message s'affiche après 3 secondes.\");\n}, 3000);\n\n// Exemple de setInterval\nsetInterval(function() {\n    console.log(\"Ce message s'affiche toutes les 2 secondes.\");\n}, 2000);\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout\">MDN Web Docs - setTimeout</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/WindowOrWorkerGlobalScope/setInterval\">MDN Web Docs - setInterval</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Avancé"
   },
   {
     "fichier": "fiche-039",
-    "competence": "Compétence : Maîtriser les opérations arithmétiques s’appliquant sur différents types",
+    "competence": "Compétence JavaScript : Maîtriser les opérations arithmétiques s’appliquant sur différents types",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à maîtriser les opérations arithmétiques s’appliquant sur différents types en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, les opérations arithmétiques peuvent être appliquées à différents types de données, notamment les nombres, les chaînes de caractères et les objets. Voici quelques points clés :</p>\n        <ul>\n            <li><strong>Opérations sur les nombres :</strong> Les opérations arithmétiques de base (addition, soustraction, multiplication, division) peuvent être effectuées directement sur les nombres.</li>\n            <li><strong>Opérations sur les chaînes de caractères :</strong> L'opérateur <code>+</code> peut être utilisé pour concaténer des chaînes de caractères. Cependant, les autres opérations arithmétiques ne sont pas applicables aux chaînes de caractères.</li>\n            <li><strong>Conversion de types :</strong> JavaScript effectue automatiquement la conversion de types dans certaines opérations. Par exemple, <code>\"5\" * 2</code> donnera <code>10</code> car la chaîne de caractères \"5\" est convertie en nombre.</li>\n            <li><strong>Opérations sur les objets :</strong> Les objets ne peuvent pas être directement utilisés dans les opérations arithmétiques. Cependant, vous pouvez définir des méthodes pour effectuer des opérations spécifiques sur les objets.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici quelques exemples de code illustrant les opérations arithmétiques sur différents types :</p>\n        <pre><code>\n// Opérations sur les nombres\nlet a = 10;\nlet b = 5;\nconsole.log(a + b); // 15\nconsole.log(a - b); // 5\nconsole.log(a * b); // 50\nconsole.log(a / b); // 2\n\n// Opérations sur les chaînes de caractères\nlet str1 = \"Hello\";\nlet str2 = \"World\";\nconsole.log(str1 + \" \" + str2); // \"Hello World\"\n\n// Conversion de types\nlet num = \"5\";\nlet result = num * 2;\nconsole.log(result); // 10\n\n// Opérations sur les objets\nlet obj1 = { value: 10 };\nlet obj2 = { value: 5 };\nlet sum = obj1.value + obj2.value;\nconsole.log(sum); // 15\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_et_Op%C3%A9rateurs\">MDN Web Docs - Expressions et Opérateurs</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators\">MDN Web Docs - Arithmetic Operators</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Object\">MDN Web Docs - Object</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Expert"
   },
   {
     "fichier": "fiche-040",
-    "competence": "Compétence : Manipuler des références d’objets",
+    "competence": "Compétence JavaScript : Manipuler des références d’objets",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre comment manipuler des références d’objets en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, les objets sont manipulés par référence. Cela signifie que lorsque vous assignez un objet à une variable, vous assignez en fait une référence à cet objet et non une copie de l'objet.</p>\n        <p>Par exemple :</p>\n        <pre><code>\nlet obj1 = { a: 1, b: 2 };\nlet obj2 = obj1;\nobj2.a = 3;\nconsole.log(obj1.a); // Affiche 3\n        </code></pre>\n        <p>Dans cet exemple, <code>obj1</code> et <code>obj2</code> pointent vers le même objet en mémoire. Modifier <code>obj2</code> modifie également <code>obj1</code>.</p>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de manipulation de références d’objets :</p>\n        <pre><code>\n// Crée un objet\nlet originalObject = { name: \"Alice\", age: 25 };\n\n// Assigne l'objet à une nouvelle variable\nlet referenceObject = originalObject;\n\n// Modifie la propriété de l'objet via la nouvelle variable\nreferenceObject.age = 30;\n\n// Affiche les propriétés de l'objet original\nconsole.log(originalObject.age); // Affiche 30\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Working_with_Objects\">MDN Web Docs - Travailler avec les objets</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Object_initializer\">MDN Web Docs - Initialiseur d'objet</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Expert"
   },
   {
     "fichier": "fiche-041",
-    "competence": "Compétence : Réagir à des événements DOM avancés (event delegation, custom events)",
+    "competence": "Compétence JavaScript : Réagir à des événements DOM avancés (event delegation, custom events)",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à réagir à des événements DOM avancés en utilisant la délégation d'événements et les événements personnalisés.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>La délégation d'événements est une technique qui consiste à utiliser un seul gestionnaire d'événements pour gérer les événements de plusieurs éléments enfants. Cela permet de réduire le nombre de gestionnaires d'événements et d'améliorer les performances.</p>\n        <p>Les événements personnalisés permettent de créer et de déclencher des événements définis par l'utilisateur. Ils sont utiles pour communiquer entre différentes parties d'une application.</p>\n        <p>Pour utiliser la délégation d'événements, vous pouvez ajouter un gestionnaire d'événements à un élément parent et utiliser la propriété <code>event.target</code> pour déterminer quel élément enfant a déclenché l'événement.</p>\n        <p>Pour créer et déclencher des événements personnalisés, vous pouvez utiliser le constructeur <code>CustomEvent</code> et la méthode <code>dispatchEvent</code>.</p>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui utilise la délégation d'événements et les événements personnalisés :</p>\n        <pre><code>\n// Délégation d'événements\ndocument.getElementById(\"parent\").addEventListener(\"click\", function(event) {\n    if (event.target &amp;&amp; event.target.matches(\"button.child\")) {\n        console.log(\"Bouton enfant cliqué :\", event.target);\n    }\n});\n\n// Événements personnalisés\nvar customEvent = new CustomEvent(\"myCustomEvent\", {\n    detail: { message: \"Ceci est un événement personnalisé.\" }\n});\n\ndocument.getElementById(\"parent\").addEventListener(\"myCustomEvent\", function(event) {\n    console.log(event.detail.message);\n});\n\ndocument.getElementById(\"parent\").dispatchEvent(customEvent);\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/EventTarget/addEventListener\">MDN Web Docs - EventTarget.addEventListener</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Event/target\">MDN Web Docs - Event.target</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/CustomEvent\">MDN Web Docs - CustomEvent</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/EventTarget/dispatchEvent\">MDN Web Docs - EventTarget.dispatchEvent</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Expert"
   },
   {
     "fichier": "fiche-042",
-    "competence": "Compétence : Asynchrone avec async/await et fetch",
+    "competence": "Compétence JavaScript : Asynchrone avec async/await et fetch",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à utiliser les fonctionnalités asynchrones en JavaScript avec async/await et fetch pour gérer les opérations asynchrones.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, les opérations asynchrones permettent d'exécuter des tâches sans bloquer le fil d'exécution principal. Les mots-clés <code>async</code> et <code>await</code> sont utilisés pour simplifier la gestion des promesses et rendre le code asynchrone plus lisible.</p>\n        <p>La fonction <code>fetch</code> est utilisée pour effectuer des requêtes HTTP et récupérer des ressources de manière asynchrone. Elle renvoie une promesse qui se résout avec la réponse de la requête.</p>\n        <p>Voici comment utiliser <code>async</code>, <code>await</code> et <code>fetch</code> :</p>\n        <ul>\n            <li><code>async</code> : Permet de déclarer une fonction asynchrone qui renvoie une promesse.</li>\n            <li><code>await</code> : Permet d'attendre la résolution d'une promesse à l'intérieur d'une fonction asynchrone.</li>\n            <li><code>fetch</code> : Permet d'effectuer des requêtes HTTP et de récupérer des ressources.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui utilise <code>async</code>, <code>await</code> et <code>fetch</code> pour récupérer des données depuis une API :</p>\n        <pre><code>\n// Fonction asynchrone pour récupérer des données depuis une API\nasync function fetchData() {\n    try {\n        // Effectuer une requête HTTP avec fetch\n        let response = await fetch('https://api.example.com/data');\n        \n        // Vérifier si la requête a réussi\n        if (!response.ok) {\n            throw new Error('Erreur HTTP : ' + response.status);\n        }\n        \n        // Extraire les données JSON de la réponse\n        let data = await response.json();\n        \n        // Afficher les données dans la console\n        console.log(data);\n    } catch (error) {\n        // Gérer les erreurs\n        console.error('Erreur lors de la récupération des données :', error);\n    }\n}\n\n// Appeler la fonction fetchData\nfetchData();\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/async_function\">MDN Web Docs - async function</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/await\">MDN Web Docs - await</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/API/Fetch_API\">MDN Web Docs - Fetch API</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Expert"
   },
   {
     "fichier": "fiche-043",
-    "competence": "Compétence : Comprendre le this contextuel",
+    "competence": "Compétence JavaScript : Comprendre le this contextuel",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à comprendre et à utiliser le mot-clé <code>this</code> en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>En JavaScript, le mot-clé <code>this</code> fait référence à l'objet auquel il appartient. Sa valeur dépend du contexte dans lequel il est utilisé :</p>\n        <ul>\n            <li>Dans une fonction globale, <code>this</code> fait référence à l'objet global (window dans un navigateur).</li>\n            <li>Dans une fonction d'objet, <code>this</code> fait référence à l'objet auquel la fonction appartient.</li>\n            <li>Dans une fonction de constructeur, <code>this</code> fait référence à l'objet nouvellement créé.</li>\n        </ul>\n        <p>Il est important de comprendre le contexte d'exécution pour utiliser correctement <code>this</code>.</p>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code illustrant l'utilisation de <code>this</code> :</p>\n        <pre><code>\n// Exemple dans une fonction globale\nfunction globalFunction() {\n    console.log(this); // Fait référence à l'objet global (window)\n}\nglobalFunction();\n\n// Exemple dans une méthode d'objet\nconst obj = {\n    name: \"Objet\",\n    method: function() {\n        console.log(this); // Fait référence à l'objet obj\n    }\n};\nobj.method();\n\n// Exemple dans un constructeur\nfunction ConstructorFunction() {\n    this.name = \"Nouvel Objet\";\n    console.log(this); // Fait référence à l'objet nouvellement créé\n}\nconst newObj = new ConstructorFunction();\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/this\">MDN Web Docs - this</a></li>\n            <li><a href=\"https://javascript.info/object-methods#method-this\">JavaScript.info - Method this</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Expert"
   },
   {
     "fichier": "fiche-044",
-    "competence": "Compétence : Closures et portée lexicale",
+    "competence": "Compétence JavaScript : Closures et portée lexicale",
     "objectif": "<h3>Objectif</h3>\n        <p>Comprendre les closures et la portée lexicale en JavaScript.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>Les closures sont une fonctionnalité puissante de JavaScript qui permet à une fonction de se souvenir de l'environnement dans lequel elle a été créée. Cela signifie que même après que la fonction externe ait terminé son exécution, la fonction interne peut toujours accéder aux variables de la fonction externe.</p>\n        <p>La portée lexicale fait référence à la manière dont les variables sont résolues dans les fonctions imbriquées. En JavaScript, les fonctions internes ont accès aux variables définies dans leurs fonctions parentes, même après que les fonctions parentes aient terminé leur exécution.</p>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code illustrant les closures et la portée lexicale :</p>\n        <pre><code>\n// Fonction externe\nfunction externe() {\n    var message = \"Bonjour\";\n\n    // Fonction interne\n    function interne() {\n        console.log(message); // Accède à la variable de la fonction externe\n    }\n\n    return interne;\n}\n\n// Crée une closure\nvar maClosure = externe();\nmaClosure(); // Affiche \"Bonjour\"\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Closures\">MDN Web Docs - Closures</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Scope\">MDN Web Docs - Scope</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Expert"
   },
   {
     "fichier": "fiche-045",
-    "competence": "Compétence : Modularisation avec import/export",
+    "competence": "Compétence JavaScript : Modularisation avec import/export",
     "objectif": "<h3>Objectif</h3>\n        <p>Apprendre à modulariser le code JavaScript en utilisant les instructions <code>import</code> et <code>export</code>.</p>",
     "theorie": "<h3>Théorie</h3>\n        <p>La modularisation permet de diviser le code en plusieurs fichiers ou modules, facilitant ainsi la maintenance et la réutilisation du code. En JavaScript, les modules sont pris en charge nativement grâce aux instructions <code>import</code> et <code>export</code>.</p>\n        <p>Les modules JavaScript permettent d'importer des fonctions, des objets ou des valeurs à partir d'un autre fichier en utilisant l'instruction <code>import</code>. De même, vous pouvez exporter des éléments d'un fichier pour les rendre disponibles à d'autres fichiers en utilisant l'instruction <code>export</code>.</p>\n        <p>Voici quelques exemples d'utilisation :</p>\n        <ul>\n            <li><code>export</code> : Permet d'exporter des fonctions, objets ou valeurs à partir d'un module.</li>\n            <li><code>import</code> : Permet d'importer des fonctions, objets ou valeurs à partir d'un autre module.</li>\n        </ul>",
     "exemple": "<h3>Exemple</h3>\n        <p>Voici un exemple de code qui montre comment utiliser <code>import</code> et <code>export</code> :</p>\n        <pre><code>\n// fichier mathUtils.js\nexport function add(a, b) {\n    return a + b;\n}\n\nexport function subtract(a, b) {\n    return a - b;\n}\n\n// fichier main.js\nimport { add, subtract } from './mathUtils.js';\n\nconsole.log(add(5, 3)); // Affiche 8\nconsole.log(subtract(5, 3)); // Affiche 2\n        </code></pre>",
     "sources": "<h3>Sources</h3>\n        <ul>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Modules\">MDN Web Docs - Modules JavaScript</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/import\">MDN Web Docs - import</a></li>\n            <li><a href=\"https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/export\">MDN Web Docs - export</a></li>\n        </ul>",
-    "infos_supplementaires": ""
+    "infos_supplementaires": "",
+    "niveau": "Expert"
   }
 ]
