@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', chargerMenu);
+
 async function chargerMenu() {
   try {
     const header = document.getElementById('header');
@@ -13,8 +15,27 @@ async function chargerMenu() {
   } catch (erreur) {
     console.error('Erreur :', erreur);
   }
+
+  const menuToggle = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    menuToggle.classList.toggle('expanded');
+  });
+
+  const currentPage = window.location.pathname;
+  const links = document.getElementsByClassName('nav_link');
+
+  console.log('Current page:', currentPage);
+
+  for (let link of links) {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.remove('text-gray-700');
+      link.classList.add('text-blue-600');
+      link.style.cursor = 'default';
+    }
+  }
 }
-document.addEventListener('DOMContentLoaded', chargerMenu);
 
 window.addEventListener('DOMContentLoaded', async () => {
   // Barre de progression du scroll

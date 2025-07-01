@@ -1,9 +1,9 @@
-.hamburger.open .bar:nth-child(1) {
+.hamburger.expanded .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-.hamburger.open .bar:nth-child(2) {
+.hamburger.expanded .bar:nth-child(2) {
   opacity: 0;
 }
-.hamburger.open .bar:nth-child(3) {
+.hamburger.expanded .bar:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
