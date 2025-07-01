@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Comprendre le Javascript avec Blockly</title>
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+    <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+    <!-- ✅ Lien vers Tailwind CDN (à mettre dans <head>) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <header id="header"></header>
+    <main class="h-screen m-0 font-sans grid  p-4 bg-white">
+        <h1 class="text-3xl font-bold text-center text-blue-700 mb-8">Comprendre le JavaScript avec Blockly</h1>
+     <div id="blocklyDiv"></div>
+
+  <div id="preview">
+    <h3>Code généré :</h3>
+    <pre id="codeOutput">// Glisse des blocs pour voir le code ici…</pre>
+  </div>
+        <!-- toolbox -->
+        <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+            <category name="DOM" colour="160">
+                <block type="get_element_by_id"></block>
+                <block type="add_event_listener"></block>
+                <block type="toggle_class"></block>
+                <block type="set_element_attribute"></block>
+                <block type="set_element_innerHTML"></block>
+            </category>
+            <sep></sep>
+            <category name="Logique" colour="210">
+                <block type="controls_if"></block>
+                <block type="logic_compare"></block>
+                <block type="logic_operation"></block>
+                <block type="logic_negate"></block>
+                <block type="logic_boolean"></block>
+                <block type="logic_null"></block>
+            </category>
+            <category name="Boucles" colour="120">
+                <block type="controls_repeat_ext">
+                    <value name="TIMES">
+                        <shadow type="math_number">
+                            <field name="NUM">5</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="controls_whileUntil"></block>
+                <block type="controls_for">
+                    <value name="FROM">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                    <value name="TO">
+                        <shadow type="math_number">
+                            <field name="NUM">10</field>
+                        </shadow>
+                    </value>
+                    <value name="BY">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                </block>
+            </category>
+            <category name="Maths" colour="230">
+                <block type="math_number">
+                    <field name="NUM">123</field>
+                </block>
+                <block type="math_arithmetic"></block>
+                <block type="math_single"></block>
+                <block type="math_random_int">
+                    <value name="FROM">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                    <value name="TO">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+                </block>
+            </category>
+            <category name="Texte" colour="160">
+                <block type="text"></block>
+                <block type="text_join"></block>
+                <block type="text_append">
+                    <value name="TEXT">
+                        <shadow type="text"></shadow>
+                    </value>
+                </block>
+                <block type="text_print"></block>
+            </category>
+            <category name="Variables" custom="VARIABLE" colour="330"></category>
+            <category name="Fonctions" custom="PROCEDURE" colour="290"></category>
+        </xml>
+
+        <script>
+            // ─── 1) Définition de tes blocs DOM avant l’injection ────────────────
+            Blockly.defineBlocksWithJsonArray([
+                {
+                    "type": "get_element_by_id",
+                    "message0": "obtenir élément avec ID %1",
+                    "args0": [{ "type": "field_input", "name": "ID", "text": "menu" }],
+                    "output": null,
+                    "colour": 230,
+                    "tooltip": "document.getElementById(id)"
+                },
+                {
+                    "type": "add_event_listener",
+                    "message0": "ajouter écouteur à %1 pour événement %2",
+                    "args0": [
+                        { "type": "input_value", "name": "ELEMENT" },
+                        { "type": "field_input", "name": "EVENT", "text": "click" }
+                    ],
+                    "message1": "faire %1",
+                    "args1": [{ "type": "input_statement", "name": "DO" }],
+                    "previousStatement": null,
+                    "nextStatement": null,
+                    "colour": 195,
+                    "tooltip": "element.addEventListener(evt, fn)"
+                },
+                {
+                    "type": "toggle_class",
+                    "message0": "basculer classe %1 sur %2",
+                    "args0": [
+                        { "type": "field_input", "name": "CLASSNAME", "text": "active" },
+                        { "type": "input_value", "name": "ELEMENT" }
+                    ],
+                    "previousStatement": null,
+                    "nextStatement": null,
+                    "colour": 160,
+                    "tooltip": "element.classList.toggle(class)"
+                },
+                {
+                    "type": "set_element_attribute",
+                    "message0": "définir attribut %1 à %2 sur %3",
+                    "args0": [
+                        { "type": "field_input", "name": "ATTR", "text": "class" },
+                        { "type": "field_input", "name": "VALUE", "text": "ma-classe" },
+                        { "type": "input_value", "name": "ELEMENT" }
+                    ],
+                    "previousStatement": null,
+                    "nextStatement": null,
+                    "colour": 20,
+                    "tooltip": "element.setAttribute(attr, val)"
+                },
+                {
+                    "type": "set_element_innerHTML",
+                    "message0": "mettre le texte %1 dans %2",
+                    "args0": [
+                        { "type": "field_input", "name": "TEXT", "text": "Hello DOM!" },
+                        { "type": "input_value", "name": "ELEMENT" }
+                    ],
+                    "previousStatement": null,
+                    "nextStatement": null,
+                    "colour": 65,
+                    "tooltip": "element.innerHTML = txt"
+                }
+            ]);
+
+            // ─── 2) Branche tes générateurs sur Blockly.JavaScript.forBlock ──────
+            const JS = Blockly.JavaScript;
+
+            // 2.1) éviter le "0" par défaut pour variables_set
+            JS.forBlock['variables_set'] = function (block, generator) {
+                const name = generator.nameDB_.getName(
+                    block.getFieldValue('VAR'),
+                    Blockly.VARIABLE_CATEGORY_NAME
+                );
+                const val = generator.valueToCode(
+                    block, 'VALUE', JS.ORDER_ASSIGNMENT
+                ) || 'null';
+                return `var ${name} = ${val};\n`;
+            };
+
+            // 2.2) get_element_by_id
+            JS.forBlock['get_element_by_id'] = function (block, generator) {
+                const id = block.getFieldValue('ID');
+                const code = `document.getElementById(${JSON.stringify(id)})`;
+                return [code, JS.ORDER_FUNCTION_CALL];
+            };
+
+            // 2.3) add_event_listener
+            JS.forBlock['add_event_listener'] = function (block, generator) {
+                const el = generator.valueToCode(block, 'ELEMENT', JS.ORDER_MEMBER) || 'null';
+                const evt = JSON.stringify(block.getFieldValue('EVENT'));
+                const body = generator.statementToCode(block, 'DO');
+                return `${el}.addEventListener(${evt}, function(event) {\n${body}});\n`;
+            };
+
+            // 2.4) toggle_class
+            JS.forBlock['toggle_class'] = function (block, generator) {
+                const el = generator.valueToCode(block, 'ELEMENT', JS.ORDER_MEMBER) || 'null';
+                const cls = JSON.stringify(block.getFieldValue('CLASSNAME'));
+                return `${el}.classList.toggle(${cls});\n`;
+            };
+
+            // 2.5) set_element_attribute
+            JS.forBlock['set_element_attribute'] = function (block, generator) {
+                const el = generator.valueToCode(block, 'ELEMENT', JS.ORDER_MEMBER) || 'null';
+                const attr = JSON.stringify(block.getFieldValue('ATTR'));
+                const val = JSON.stringify(block.getFieldValue('VALUE'));
+                return `${el}.setAttribute(${attr}, ${val});\n`;
+            };
+
+            // 2.6) set_element_innerHTML
+            JS.forBlock['set_element_innerHTML'] = function (block, generator) {
+                const el = generator.valueToCode(block, 'ELEMENT', JS.ORDER_MEMBER) || 'null';
+                const txt = JSON.stringify(block.getFieldValue('TEXT'));
+                return `${el}.innerHTML = ${txt};\n`;
+            };
+
+            // ─── 3) Injecte Blockly puis affiche le code en live ────────────────
+            const workspace = Blockly.inject('blocklyDiv', {
+                toolbox: document.getElementById('toolbox')
+            });
+
+            workspace.addChangeListener(() => {
+                const code = JS.workspaceToCode(workspace);
+                document.getElementById('codeOutput').textContent =
+                    code || "// Glisse des blocs pour voir le code ici…";
+            });
+        </script>
+        <script src="composants/header.js"></script>
+  <script src="script.js"></script>
+    </main>
+    <footer id="footer"></footer>
+</body>
